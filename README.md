@@ -2,6 +2,9 @@
 
 AI動画制作(Studio ALBA)のポートフォリオサイトです。
 
+> **Content Studio（AIコンテンツ制作ワークスペース MVP）** は `content-studio/` にある独立した Next.js アプリです。
+> ポートフォリオとは依存関係もデプロイも別です。詳しくは [`content-studio/README.md`](content-studio/README.md) を参照してください。
+
 ## 技術スタック
 - Next.js 14 (App Router)
 - Tailwind CSS

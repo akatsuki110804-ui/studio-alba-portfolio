@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* ── Design tokens ─────────────────────────────────────────
+   Neutral workspace UI with one accent. Every color is a token
+   so light/dark themes stay in sync. */
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --surface-2: #f2f2f4;
+  --surface-3: #e9e9ec;
+  --border: #e3e3e8;
+  --border-strong: #cfcfd6;
+  --fg: #16161a;
+  --fg-muted: #5e5e6a;
+  --fg-subtle: #8b8b97;
+  --accent: #5b5bd6;
+  --accent-hover: #4b4bc4;
+  --accent-soft: #ededfc;
+  --accent-fg: #ffffff;
+  --danger: #d93a3a;
+  --danger-soft: #fdecec;
+  --warning: #b86e00;
+  --warning-soft: #fff4e0;
+  --success: #1f8a4c;
+  --success-soft: #e6f6ec;
+  --ring: rgb(91 91 214 / 0.35);
+  --shadow: 0 1px 2px rgb(16 16 24 / 0.06), 0 4px 16px rgb(16 16 24 / 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f12;
+    --surface: #17171b;
+    --surface-2: #1e1e23;
+    --surface-3: #27272d;
+    --border: #2a2a31;
+    --border-strong: #3a3a43;
+    --fg: #ececf1;
+    --fg-muted: #a3a3b0;
+    --fg-subtle: #74747f;
+    --accent: #7c7cf0;
+    --accent-hover: #8f8ff5;
+    --accent-soft: #23234a;
+    --accent-fg: #0f0f12;
+    --danger: #f06363;
+    --danger-soft: #3a1818;
+    --warning: #f2a93b;
+    --warning-soft: #3a2a10;
+    --success: #4cc27f;
+    --success-soft: #133222;
+    --ring: rgb(124 124 240 / 0.45);
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --shadow-panel: var(--shadow);
+}
+
+html {
+  background: var(--bg);
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+dialog::backdrop {
+  background: rgb(10 10 14 / 0.45);
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-toast-in {
+  animation: toast-in 160ms ease-out;
+}
+
+@keyframes panel-in {
+  from { transform: translateX(16px); opacity: 0.6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.animate-panel-in {
+  animation: panel-in 160ms ease-out;
+}

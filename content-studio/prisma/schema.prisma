@@ -1,0 +1,248 @@
+// Content Studio — data model
+// Project → Characters / Locations / Shots, Shot → Prompts / Assets → AssetVersions
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ───────────────────────── Auth ─────────────────────────
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String?
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+  projects     Project[]
+}
+
+model Session {
+  // SHA-256 hash of the session token. The raw token only lives in the cookie.
+  id        String   @id
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// ───────────────────────── Project ─────────────────────────
+
+enum ProjectFormat {
+  SHORT_VIDEO
+  YOUTUBE
+  SNS_POST
+  WEB_AD
+  PRODUCT_PR
+  IMAGE_AD
+  MANGA
+  OTHER
+}
+
+enum ProjectStatus {
+  PLANNING
+  IN_PROGRESS
+  REVIEW
+  DELIVERED
+  ARCHIVED
+}
+
+model Project {
+  id          String        @id @default(cuid())
+  ownerId     String
+  owner       User          @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  title       String
+  description String        @default("")
+  format      ProjectFormat @default(SHORT_VIDEO)
+  platform    String        @default("") // e.g. TikTok / YouTube / Instagram
+  aspectRatio String        @default("9:16")
+  dueDate     DateTime?
+  status      ProjectStatus @default(PLANNING)
+
+  // Visual direction applied to every prompt (tone, style, color grading…)
+  styleGuide String @default("")
+
+  script     String    @default("")
+  // Last structured script analysis (scenes, props, required materials…)
+  analysis   Json?
+  analyzedAt DateTime?
+
+  // Bumped whenever something that feeds prompt generation changes (style guide, aspect ratio).
+  promptContextUpdatedAt DateTime @default(now())
+
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  characters Character[]
+  locations  Location[]
+  shots      Shot[]
+
+  @@index([ownerId, updatedAt])
+}
+
+// ───────────────────────── Bible (characters / locations) ─────────────────────────
+
+model Character {
+  id         String   @id @default(cuid())
+  projectId  String
+  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name       String
+  aliases    String[] @default([])
+  age        String   @default("")
+  gender     String   @default("")
+  appearance String   @default("")
+  hairStyle  String   @default("")
+  hairColor  String   @default("")
+  outfit     String   @default("")
+  build      String   @default("") // height / body type
+  vibe       String   @default("")
+  notes      String   @default("")
+  // English label + canonical English description, injected verbatim into every prompt featuring this character.
+  promptName        String  @default("")
+  promptDescription String  @default("")
+  imageKey          String?
+  sortOrder         Int     @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  shots             Shot[]
+
+  @@unique([projectId, name])
+}
+
+model Location {
+  id         String   @id @default(cuid())
+  projectId  String
+  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name       String
+  aliases    String[] @default([])
+  exterior   String   @default("")
+  interior   String   @default("")
+  colors     String   @default("")
+  mood       String   @default("")
+  timeOfDay  String   @default("")
+  lighting   String   @default("")
+  props      String   @default("")
+  notes      String   @default("")
+  promptName        String   @default("")
+  promptDescription String   @default("")
+  imageKey          String?
+  sortOrder         Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  shots             Shot[]
+
+  @@unique([projectId, name])
+}
+
+// ───────────────────────── Shots ─────────────────────────
+
+enum ShotStatus {
+  TODO
+  PROMPT_READY
+  IMAGE_DONE
+  VIDEO_DONE
+  REVISING
+  DONE
+}
+
+model Shot {
+  id          String      @id @default(cuid())
+  projectId   String
+  project     Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  order       Int
+  scene       String      @default("") // scene label, e.g. "S1 カフェ"
+  description String      @default("") // 内容
+  action      String      @default("")
+  dialogue    String      @default("")
+  emotion     String      @default("")
+  timeOfDay   String      @default("")
+  props       String      @default("")
+  camera      String      @default("") // shot size / movement
+  composition String      @default("")
+  durationSec Float?
+  notes       String      @default("") // revision notes / client feedback
+  status      ShotStatus  @default(TODO)
+  locationId  String?
+  location    Location?   @relation(fields: [locationId], references: [id], onDelete: SetNull)
+  characters  Character[]
+  prompts     Prompt[]
+  assets      Asset[]
+  // Bumped only when fields that affect prompts change (not on status changes).
+  contentUpdatedAt DateTime @default(now())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([projectId, order])
+}
+
+enum PromptKind {
+  IMAGE
+  VIDEO
+}
+
+enum PromptSource {
+  AI
+  MANUAL
+}
+
+model Prompt {
+  id        String       @id @default(cuid())
+  shotId    String
+  shot      Shot         @relation(fields: [shotId], references: [id], onDelete: Cascade)
+  kind      PromptKind
+  // Prompt formatter id, e.g. "generic". Future: "kling", "veo", "midjourney"…
+  target    String       @default("generic")
+  content   String
+  version   Int
+  source    PromptSource @default(AI)
+  createdAt DateTime     @default(now())
+
+  @@unique([shotId, kind, target, version])
+  @@index([shotId, kind, target])
+}
+
+// ───────────────────────── Assets ─────────────────────────
+
+enum AssetKind {
+  IMAGE
+  VIDEO
+  AUDIO
+  OTHER
+}
+
+model Asset {
+  id        String         @id @default(cuid())
+  shotId    String
+  shot      Shot           @relation(fields: [shotId], references: [id], onDelete: Cascade)
+  kind      AssetKind
+  label     String         @default("")
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  versions  AssetVersion[]
+
+  @@index([shotId])
+}
+
+model AssetVersion {
+  id          String   @id @default(cuid())
+  assetId     String
+  asset       Asset    @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  version     Int
+  // Either an uploaded object (storageKey) or an external link (externalUrl, e.g. Google Drive).
+  storageKey  String?
+  externalUrl String?
+  fileName    String   @default("")
+  mimeType    String   @default("")
+  size        Int      @default(0)
+  note        String   @default("")
+  createdAt   DateTime @default(now())
+
+  @@unique([assetId, version])
+}
