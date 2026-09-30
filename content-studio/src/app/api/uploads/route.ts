@@ -1,10 +1,11 @@
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import type { AssetKind } from "@/generated/prisma/enums";
-import { assertCharacterAccess, assertLocationAccess, assertShotAccess, assertUser } from "@/lib/access";
+import { assertCharacterAccess, assertLocationAccess, assertProjectAccess, assertShotAccess, assertUser } from "@/lib/access";
 import { db } from "@/lib/db";
 import { toErrorMessage, UserFacingError } from "@/lib/errors";
 import { addAssetVersion, kindFromMime } from "@/lib/services/assets";
+import { setProjectBgm } from "@/lib/services/bgm";
 import { buildStorageKey, getStorage, maxUploadBytes } from "@/lib/storage";
 
 // Files that could execute script when served from our origin are never accepted.
@@ -20,6 +21,7 @@ const FormSchema = z.discriminatedUnion("purpose", [
   }),
   z.object({ purpose: z.literal("character"), characterId: z.string().min(1) }),
   z.object({ purpose: z.literal("location"), locationId: z.string().min(1) }),
+  z.object({ purpose: z.literal("bgm"), projectId: z.string().min(1) }),
 ]);
 
 function fail(message: string, status = 400) {
@@ -69,6 +71,16 @@ export async function POST(request: Request) {
       });
       revalidatePath(`/projects/${projectId}`, "layout");
       return Response.json({ ok: true, data: { versionId: version.id, version: version.version } });
+    }
+
+    if (input.purpose === "bgm") {
+      const { projectId } = await assertProjectAccess(input.projectId);
+      if (!mime.startsWith("audio/")) throw new UserFacingError("BGMには音声ファイル（mp3・wav・m4a など）を選択してください。");
+      const key = buildStorageKey(user.id, projectId, file.name);
+      await storage.put(key, new Uint8Array(await file.arrayBuffer()), mime);
+      await setProjectBgm(projectId, { key, fileName: file.name, mimeType: mime, size: file.size });
+      revalidatePath(`/projects/${projectId}`, "layout");
+      return Response.json({ ok: true, data: { key } });
     }
 
     if (!mime.startsWith("image/")) throw new UserFacingError("参考画像には画像ファイルを選択してください。");

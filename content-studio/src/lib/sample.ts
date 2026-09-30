@@ -5,6 +5,7 @@ export const SAMPLE_PROJECT = {
   styleGuide: "cinematic, soft natural light, shallow depth of field, warm film color grading, 35mm lens look",
   script: `# カフェ・朝
 高橋がカフェに入る。
+ナレーション：あの日から、ちょうど三年が経っていた。
 店内を見渡し、窓際の席に気づく。
 近藤が振り返る。
 高橋「久しぶり。元気だった？」
@@ -14,5 +15,6 @@ export const SAMPLE_PROJECT = {
 # 駅前・夕方
 高橋と近藤が並んで歩く。
 近藤「また来週も会える？」
-高橋が笑顔でうなずく。`,
+高橋が笑顔でうなずく。
+ナレーション：止まっていた時間が、また動き出した。`,
 };

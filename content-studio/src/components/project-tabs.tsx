@@ -19,7 +19,8 @@ export function ProjectTabs({
     { href: base, label: "台本", count: null },
     { href: `${base}/characters`, label: "キャラクター", count: counts.characters },
     { href: `${base}/locations`, label: "ロケーション", count: counts.locations },
-    { href: `${base}/shots`, label: `${unit}・Prompt・素材`, count: counts.shots },
+    { href: `${base}/shots`, label: `${unit}・素材`, count: counts.shots },
+    { href: `${base}/export`, label: "編集書き出し", count: null },
     { href: `${base}/settings`, label: "設定", count: null },
   ];
 

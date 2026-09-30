@@ -139,6 +139,7 @@ export async function analyzeScript(projectId: string, mode: "replace" | "append
               description: s.description,
               action: s.action,
               dialogue: s.dialogue,
+              narration: s.narration,
               emotion: s.emotion,
               timeOfDay: s.timeOfDay,
               props: s.props,

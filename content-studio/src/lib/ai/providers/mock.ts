@@ -32,6 +32,8 @@ const EMOTION_KEYWORDS: [RegExp, string][] = [
 
 const NOT_NAMES = new Set(["二人", "三人", "全員", "彼", "彼女", "私", "僕", "俺", "皆", "客", "店員", "一同", "カメラ", "画面"]);
 
+const NARRATION_LINE = /^(?:ナレーション|ナレ|NA|N|Ｎ|ＮＡ)\s*[:：「]\s*(.+?)」?$/;
+
 const SCENE_HEADING = /^(?:#+\s*|[○◯●■□]\s*|S\s*\d+[\s.:：]*|シーン\s*\d*[\s.:：]*|【(.+)】$)/i;
 
 function detectFrom<T extends string>(text: string, table: [RegExp, T][]) {
@@ -99,6 +101,18 @@ export class MockProvider implements AIProvider {
         scenes.push(current);
       }
 
+      // Narration lines ("ナレーション：…", "N：…", "NA：…") attach to the previous shot.
+      const narrationMatch = line.match(NARRATION_LINE);
+      if (narrationMatch) {
+        const text = narrationMatch[1].trim();
+        const prev = current.shots[current.shots.length - 1];
+        if (prev) {
+          prev.narration = prev.narration ? `${prev.narration}${text}` : text;
+          if (!prev.requiredAssets.includes("ナレーション音声")) prev.requiredAssets.push("ナレーション音声");
+          continue;
+        }
+      }
+
       const location = findLocation(line) || lastLocation;
       if (location && location !== lastLocation && current.shots.length > 0) {
         // New location → new scene
@@ -125,6 +139,7 @@ export class MockProvider implements AIProvider {
         location,
         action: dialogue ? "会話する" : line.replace(/「.+?」/g, "").replace(/。$/, ""),
         dialogue,
+        narration: narrationMatch ? narrationMatch[1].trim() : "",
         emotion: detectFrom(line, EMOTION_KEYWORDS),
         timeOfDay: lastTime,
         props: "",
@@ -174,7 +189,11 @@ export class MockProvider implements AIProvider {
       })),
       scenes: scenes.filter((s) => s.shots.length > 0),
       props: [],
-      requiredAssets: scenes.some((s) => s.shots.some((sh) => sh.dialogue)) ? ["セリフ音声", "字幕"] : [],
+      requiredAssets: [
+        ...(scenes.some((s) => s.shots.some((sh) => sh.dialogue)) ? ["セリフ音声"] : []),
+        ...(scenes.some((s) => s.shots.some((sh) => sh.narration)) ? ["ナレーション音声"] : []),
+        "字幕",
+      ],
     };
   }
 

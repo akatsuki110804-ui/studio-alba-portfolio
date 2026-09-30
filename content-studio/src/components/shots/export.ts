@@ -10,7 +10,7 @@ function csvCell(value: string | number | null | undefined) {
 export function shotsToCsv(shots: ShotRow[], characters: EntityOption[], locations: EntityOption[]) {
   const charName = new Map(characters.map((c) => [c.id, c.name]));
   const locName = new Map(locations.map((l) => [l.id, l.name]));
-  const header = ["No", "シーン", "内容", "登場人物", "場所", "アクション", "セリフ", "感情", "カメラ", "構図", "秒数", "画像Prompt", "動画Prompt", "ステータス", "メモ"];
+  const header = ["No", "シーン", "内容", "登場人物", "場所", "アクション", "セリフ", "ナレーション", "感情", "カメラ", "構図", "秒数", "画像Prompt", "動画Prompt", "ステータス", "メモ"];
   const lines = shots.map((s, i) =>
     [
       i + 1,
@@ -20,6 +20,7 @@ export function shotsToCsv(shots: ShotRow[], characters: EntityOption[], locatio
       s.locationId ? (locName.get(s.locationId) ?? "") : "",
       s.action,
       s.dialogue,
+      s.narration,
       s.emotion,
       s.camera,
       s.composition,
