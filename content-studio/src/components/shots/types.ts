@@ -38,6 +38,7 @@ export type ShotRow = {
   description: string;
   action: string;
   dialogue: string;
+  narration: string;
   emotion: string;
   timeOfDay: string;
   props: string;

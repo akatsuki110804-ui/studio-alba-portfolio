@@ -36,6 +36,7 @@ Rules:
 - If a known character/location is referenced, reuse its exact name; put alternate spellings/honorifics in aliases.
 - Fill appearance fields only with what the script states or strongly implies; leave a field empty rather than guessing wildly.
 - Split into shots the way an editor would cut: one clear visual beat per shot, typically 2–6 seconds for short-form video.
+- Put on-screen lines in dialogue and voice-over (ナレーション / N: / NA:) in narration; keep the original wording, it becomes subtitles.
 - Every shot's characters must match characters[].name and its location must match locations[].name (or be empty).
 - Suggest practical camera and composition choices suited to the format and aspect ratio.`;
 

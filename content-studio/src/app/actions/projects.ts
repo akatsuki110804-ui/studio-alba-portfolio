@@ -93,8 +93,9 @@ export async function deleteProject(projectId: string) {
         select: { storageKey: true },
       }),
     ]);
+    const { bgmKey } = await db.project.findUniqueOrThrow({ where: { id: projectId }, select: { bgmKey: true } });
     await db.project.delete({ where: { id: projectId } });
-    const keys = [...chars.map((c) => c.imageKey), ...locs.map((l) => l.imageKey), ...versions.map((v) => v.storageKey)];
+    const keys = [bgmKey, ...chars.map((c) => c.imageKey), ...locs.map((l) => l.imageKey), ...versions.map((v) => v.storageKey)];
     const storage = getStorage();
     await Promise.all(keys.filter((k): k is string => !!k).map((k) => storage.delete(k).catch(() => undefined)));
   });

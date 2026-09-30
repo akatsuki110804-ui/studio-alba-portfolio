@@ -74,3 +74,35 @@ export async function uploadShotAsset(
     return { ok: false, error: "アップロードに失敗しました。通信環境を確認して再度お試しください。" };
   }
 }
+
+/** Uploads the project BGM (direct to storage when available). */
+export async function uploadProjectBgm(
+  target: UploadTarget,
+  projectId: string,
+  file: File,
+  onProgress?: (ratio: number) => void,
+): Promise<UploadResult> {
+  if (file.size > target.maxBytes) {
+    return { ok: false, error: `ファイルサイズが上限（${Math.round(target.maxBytes / 1024 / 1024)}MB）を超えています。` };
+  }
+  if (!file.type.startsWith("audio/")) return { ok: false, error: "音声ファイル（mp3・wav・m4a など）を選択してください。" };
+  if (target.mode === "server") return uploadFile({ purpose: "bgm", projectId }, file, onProgress);
+
+  try {
+    const { upload } = await import("@vercel/blob/client");
+    const { registerBgm } = await import("@/app/actions/edit-kit");
+    const key = `${target.prefix}${crypto.randomUUID()}/${safeFileName(file.name)}`;
+    await upload(key, file, {
+      access: "private",
+      handleUploadUrl: "/api/uploads/blob",
+      clientPayload: JSON.stringify({ projectId, purpose: "bgm" }),
+      contentType: file.type,
+      multipart: file.size > 20 * 1024 * 1024,
+      onUploadProgress: (e) => onProgress?.(e.percentage / 100),
+    });
+    const res = await registerBgm(projectId, { key, fileName: file.name });
+    return res.ok ? { ok: true, data: {} } : { ok: false, error: res.error };
+  } catch {
+    return { ok: false, error: "アップロードに失敗しました。通信環境を確認して再度お試しください。" };
+  }
+}

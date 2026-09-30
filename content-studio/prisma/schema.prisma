@@ -75,6 +75,12 @@ model Project {
   analysis   Json?
   analyzedAt DateTime?
 
+  // Project-wide background music used by the Premiere edit kit.
+  bgmKey      String?
+  bgmFileName String  @default("")
+  bgmMimeType String  @default("")
+  bgmSize     Int     @default(0)
+
   // Bumped whenever something that feeds prompt generation changes (style guide, aspect ratio).
   promptContextUpdatedAt DateTime @default(now())
 
@@ -161,6 +167,7 @@ model Shot {
   description String      @default("") // 内容
   action      String      @default("")
   dialogue    String      @default("")
+  narration   String      @default("") // voice-over script (subtitles + narration audio)
   emotion     String      @default("")
   timeOfDay   String      @default("")
   props       String      @default("")

@@ -18,6 +18,7 @@ const ShotPatchSchema = z
     description: text(),
     action: text(),
     dialogue: text(),
+    narration: text(5000),
     emotion: text(300),
     timeOfDay: text(100),
     props: text(1000),

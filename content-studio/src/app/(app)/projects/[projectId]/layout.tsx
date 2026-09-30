@@ -109,16 +109,10 @@ function nextStep(
   if (stats.shots === 0) return { label: `${unit}を追加しましょう`, href: `${base}/shots` };
   if ((stats.byStatus.DONE ?? 0) === stats.shots) return null;
   if (stats.characters > 0 && stats.missingSheets === stats.characters && stats.shotsWithPrompt === 0) {
-    return { label: "キャラクターの外見を確認しましょう（Promptに毎回反映されます）", href: `${base}/characters` };
-  }
-  if (stats.shotsWithPrompt < stats.shots) {
-    return { label: `Promptを一括生成しましょう（未作成 ${stats.shots - stats.shotsWithPrompt} ${unit}）`, href: `${base}/shots` };
+    return { label: "キャラクターの外見を確認しましょう（生成時の見た目をそろえます）", href: `${base}/characters` };
   }
   if (stats.shotsWithAsset < stats.shots) {
     return { label: `生成した素材をアップロードしましょう（未登録 ${stats.shots - stats.shotsWithAsset} ${unit}）`, href: `${base}/shots` };
   }
-  if ((stats.byStatus.DONE ?? 0) < stats.shots) {
-    return { label: `確認が済んだ${unit}を「完了」にしましょう`, href: `${base}/shots` };
-  }
-  return null;
+  return { label: "Premiere Pro 用の編集キットを書き出しましょう", href: `${base}/export` };
 }

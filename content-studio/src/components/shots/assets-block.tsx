@@ -90,7 +90,7 @@ export function AssetsBlock({ shot, uploadTarget }: { shot: ShotRow; uploadTarge
         ) : (
           <>
             <Upload className="size-4" />
-            <span>画像・動画・音声をドロップ、またはクリックして選択</span>
+            <span>画像・動画・ナレーション音声をドロップ、またはクリックして選択</span>
             <span className="text-fg-subtle">同じ種類は自動で v1 → v2 → v3 と版が増えます</span>
           </>
         )}

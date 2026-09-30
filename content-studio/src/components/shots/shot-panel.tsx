@@ -114,7 +114,7 @@ export function ShotPanel({
           </div>
           <TextField label="内容" value={shot.description} multiline rows={3} onSave={(v) => save({ description: v })} />
 
-          <Field label="登場人物" hint={characters.length === 0 ? "キャラクタータブで登録すると選べます" : "選んだキャラクターの設定がPromptに自動で入ります"}>
+          <Field label="登場人物" hint={characters.length === 0 ? "キャラクタータブで登録すると選べます" : "選んだキャラクターの設定が生成時の見た目に使われます"}>
             <div className="flex flex-wrap gap-1.5">
               {characters.map((c) => {
                 const on = shot.characterIds.includes(c.id);
@@ -152,7 +152,15 @@ export function ShotPanel({
           </Field>
 
           <TextField label="アクション" value={shot.action} multiline rows={2} onSave={(v) => save({ action: v })} />
-          <TextField label="セリフ" value={shot.dialogue} multiline rows={2} onSave={(v) => save({ dialogue: v })} />
+          <TextField label="セリフ（字幕になります）" value={shot.dialogue} multiline rows={2} onSave={(v) => save({ dialogue: v })} />
+          <TextField
+            label="ナレーション原稿（字幕になります）"
+            value={shot.narration}
+            multiline
+            rows={2}
+            placeholder="ナレーション音声は下の「素材」に音声ファイルをアップロード"
+            onSave={(v) => save({ narration: v })}
+          />
           <div className="grid gap-3 sm:grid-cols-2">
             <TextField label="感情" value={shot.emotion} onSave={(v) => save({ emotion: v })} />
             <TextField label="時間帯" value={shot.timeOfDay} onSave={(v) => save({ timeOfDay: v })} />
@@ -162,17 +170,26 @@ export function ShotPanel({
           <TextField label="小道具" value={shot.props} onSave={(v) => save({ props: v })} />
         </section>
 
-        {/* Prompts */}
-        <section className="flex flex-col gap-4 border-b border-border p-4">
-          {/* Keyed by prompt id so the editor resets when a new version arrives. */}
-          <PromptBlock key={shot.imagePrompt?.id ?? "image"} projectId={projectId} shot={shot} kind="IMAGE" />
-          <PromptBlock key={shot.videoPrompt?.id ?? "video"} projectId={projectId} shot={shot} kind="VIDEO" />
-        </section>
-
         {/* Assets */}
         <section className="border-b border-border p-4">
           <AssetsBlock shot={shot} uploadTarget={uploadTarget} />
         </section>
+
+        {/* Prompts — secondary: collapsed unless one already exists and is stale */}
+        <details className="group border-b border-border" open={!!(shot.imagePrompt?.stale || shot.videoPrompt?.stale)}>
+          <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-sm font-semibold hover:bg-surface-2">
+            <span className="text-fg-subtle transition-transform group-open:rotate-90">›</span>
+            画像・動画Prompt
+            <span className="text-xs font-normal text-fg-subtle">
+              {shot.imagePrompt || shot.videoPrompt ? "作成済み" : "未作成"}（外部ツールに貼る場合に使用）
+            </span>
+          </summary>
+          <div className="flex flex-col gap-4 px-4 pb-4">
+            {/* Keyed by prompt id so the editor resets when a new version arrives. */}
+            <PromptBlock key={shot.imagePrompt?.id ?? "image"} projectId={projectId} shot={shot} kind="IMAGE" />
+            <PromptBlock key={shot.videoPrompt?.id ?? "video"} projectId={projectId} shot={shot} kind="VIDEO" />
+          </div>
+        </details>
 
         {/* Notes */}
         <section className="border-b border-border p-4">

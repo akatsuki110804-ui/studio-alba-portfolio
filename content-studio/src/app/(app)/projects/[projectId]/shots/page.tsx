@@ -9,7 +9,7 @@ import { isPromptStale } from "@/lib/prompts/stale";
 import { getProjectForPage } from "@/lib/queries";
 import { maxUploadBytes, uploadMode } from "@/lib/storage";
 
-export const metadata: Metadata = { title: "カット・Prompt・素材" };
+export const metadata: Metadata = { title: "カット・素材" };
 
 const HISTORY_PER_KIND = 10;
 
@@ -57,6 +57,7 @@ export default async function ShotsPage({ params, searchParams }: PageProps<"/pr
       description: s.description,
       action: s.action,
       dialogue: s.dialogue,
+      narration: s.narration,
       emotion: s.emotion,
       timeOfDay: s.timeOfDay,
       props: s.props,

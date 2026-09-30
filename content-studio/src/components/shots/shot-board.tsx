@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState, useTransition } from "react";
 import Link from "next/link";
-import { AlertTriangle, Download, Film, GripVertical, ImageIcon, Plus, Search, Sparkles } from "lucide-react";
+import { AlertTriangle, Download, Film, GripVertical, ImageIcon, Mic, Plus, Search, Sparkles } from "lucide-react";
 import type { ShotStatus } from "@/generated/prisma/enums";
 import { generatePrompts } from "@/app/actions/prompts";
 import { createShot, reorderShots, updateShotsStatus } from "@/app/actions/shots";
@@ -79,7 +79,7 @@ export function ShotBoard({
       if (filter === "NEEDS_PROMPT" && !needsPrompt(s)) return false;
       if (filter !== "ALL" && filter !== "NEEDS_PROMPT" && s.status !== filter) return false;
       if (!q) return true;
-      const hay = [s.scene, s.description, s.action, s.dialogue, s.notes, ...s.characterIds.map((id) => charById.get(id)?.name ?? "")]
+      const hay = [s.scene, s.description, s.action, s.dialogue, s.narration, s.notes, ...s.characterIds.map((id) => charById.get(id)?.name ?? "")]
         .join(" ")
         .toLowerCase();
       return hay.includes(q);
@@ -221,7 +221,7 @@ export function ShotBoard({
             <Plus className="size-4" />
             {unit}追加
           </Button>
-          <Button variant="primary" onClick={() => runGenerate("missing")} loading={generating && selected.size === 0} disabled={generating}>
+          <Button onClick={() => runGenerate("missing")} loading={generating && selected.size === 0} disabled={generating}>
             {!generating && <Sparkles className="size-4" />}
             {needPromptCount > 0 ? `Prompt一括生成（${needPromptCount}）` : "Promptは最新"}
           </Button>
@@ -269,7 +269,7 @@ export function ShotBoard({
         <>
           {/* Desktop table */}
           <div className="hidden overflow-x-auto rounded-xl border border-border bg-surface shadow-sm md:block">
-            <table className="w-full min-w-[1240px] table-fixed border-collapse text-sm">
+            <table className="w-full min-w-[1080px] table-fixed border-collapse text-sm">
               <thead className="sticky top-0 z-10 bg-surface-2 text-left text-xs text-fg-muted">
                 <tr className="[&>th]:border-b [&>th]:border-border [&>th]:px-2 [&>th]:py-2 [&>th]:font-medium">
                   <th className="w-10 pl-3">
@@ -282,13 +282,12 @@ export function ShotBoard({
                     />
                   </th>
                   <th className="w-14">No</th>
-                  <th className="w-[20%]">内容</th>
-                  <th className="w-[9%]">登場人物</th>
-                  <th className="w-[7%]">場所</th>
-                  <th className="w-[12%]">アクション</th>
-                  <th className="w-[15%]">画像Prompt</th>
-                  <th className="w-[15%]">動画Prompt</th>
-                  <th className="w-16">素材</th>
+                  <th className="w-[26%]">内容</th>
+                  <th className="w-[10%]">登場人物</th>
+                  <th className="w-[8%]">場所</th>
+                  <th className="w-[24%]">セリフ・ナレーション</th>
+                  <th className="w-20">素材</th>
+                  <th className="w-24">Prompt</th>
                   <th className="w-40 pr-3">ステータス</th>
                 </tr>
               </thead>
@@ -333,7 +332,7 @@ export function ShotBoard({
                       <td>
                         {s.scene && <div className="mb-0.5 truncate text-[11px] font-medium text-accent">{s.scene}</div>}
                         <div className="line-clamp-3 leading-snug">{s.description || <span className="text-fg-subtle">（未入力）</span>}</div>
-                        {s.dialogue && <div className="mt-1 line-clamp-2 text-xs text-fg-muted">「{s.dialogue}」</div>}
+                        {s.camera && <div className="mt-1 line-clamp-1 text-xs text-fg-subtle">🎥 {s.camera}</div>}
                       </td>
                       <td>
                         <div className="flex flex-wrap gap-1">
@@ -345,18 +344,23 @@ export function ShotBoard({
                         </div>
                       </td>
                       <td className="text-xs">{s.locationId ? locById.get(s.locationId)?.name : <span className="text-fg-subtle">—</span>}</td>
-                      <td className="text-xs leading-snug text-fg-muted">
-                        <div className="line-clamp-3">{s.action}</div>
-                        {s.camera && <div className="mt-1 line-clamp-1 text-fg-subtle">🎥 {s.camera}</div>}
+                      <td className="text-xs leading-snug">
+                        {s.dialogue && <div className="line-clamp-2">「{s.dialogue}」</div>}
+                        {s.narration && <div className="mt-0.5 line-clamp-2 text-fg-muted">N: {s.narration}</div>}
+                        {!s.dialogue && !s.narration && <span className="text-fg-subtle">—</span>}
                       </td>
                       <td>
-                        <PromptCell prompt={s.imagePrompt} />
+                        <div className="flex items-center gap-1.5">
+                          <VisualThumb shot={s} visual={visual} />
+                          {hasNarrationAudio(s) && (
+                            <span title="ナレーション音声あり" className="text-fg-muted">
+                              <Mic className="size-3.5" />
+                            </span>
+                          )}
+                        </div>
                       </td>
                       <td>
-                        <PromptCell prompt={s.videoPrompt} />
-                      </td>
-                      <td>
-                        <VisualThumb shot={s} visual={visual} />
+                        <PromptCell image={s.imagePrompt} video={s.videoPrompt} />
                       </td>
                       <td className="pr-3">
                         <StatusSelect value={s.status} onChange={(v) => setStatus(s.id, v)} className="w-full" />
@@ -425,21 +429,24 @@ export function ShotBoard({
   );
 }
 
-function PromptCell({ prompt }: { prompt: ShotRow["imagePrompt"] }) {
-  if (!prompt) return <span className="text-xs text-fg-subtle">未作成</span>;
+function hasNarrationAudio(s: ShotRow) {
+  return s.assets.some((a) => a.kind === "AUDIO" && a.versions.length > 0);
+}
+
+/** Compact: prompts are secondary now — copy buttons plus a stale flag. */
+function PromptCell({ image, video }: { image: ShotRow["imagePrompt"]; video: ShotRow["videoPrompt"] }) {
+  if (!image && !video) return <span className="text-xs text-fg-subtle">—</span>;
+  const stale = image?.stale || video?.stale;
   return (
-    <div className="group/prompt flex flex-col gap-1">
-      <p className="line-clamp-3 font-mono text-[11.5px] leading-snug text-fg-muted">{prompt.content}</p>
-      <div className="flex items-center gap-1.5">
-        <CopyButton text={prompt.content} size="xs" />
-        <span className="text-[10.5px] text-fg-subtle">v{prompt.version}</span>
-        {prompt.stale && (
-          <span className="inline-flex items-center gap-0.5 text-[10.5px] font-medium text-warning" title="キャラクター・ロケーション・カット内容の変更後に作られていません">
-            <AlertTriangle className="size-3" />
-            要再生成
-          </span>
-        )}
-      </div>
+    <div className="flex flex-col items-start gap-0.5" onClick={(e) => e.stopPropagation()}>
+      {image && <CopyButton text={image.content} label="画像" size="xs" />}
+      {video && <CopyButton text={video.content} label="動画" size="xs" />}
+      {stale && (
+        <span className="inline-flex items-center gap-0.5 text-[10.5px] font-medium text-warning" title="キャラクター・ロケーション・カット内容の変更後に作られていません">
+          <AlertTriangle className="size-3" />
+          要再生成
+        </span>
+      )}
     </div>
   );
 }
