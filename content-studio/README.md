@@ -29,7 +29,7 @@ AI動画・画像を「生成するツール」ではありません。Kling / N
 - Tailwind CSS v4（ライト / ダーク両対応のデザイントークン）
 - PostgreSQL + Prisma 7（`@prisma/adapter-pg`）
 - 認証：メール + パスワード（bcrypt）、DBセッション（httpOnly Cookie、トークンはSHA-256でハッシュ保存）
-- ストレージ：ドライバ抽象化（`local` / `s3` = AWS S3・Cloudflare R2・MinIO）
+- ストレージ：ドライバ抽象化（`local` / `s3` = AWS S3・Cloudflare R2・MinIO / `vercel-blob`）
 - AI：プロバイダ抽象化（`anthropic` = Claude / `mock`）、Zodで構造化出力を検証
 
 ## セットアップ
@@ -56,7 +56,7 @@ npm run dev                   # http://localhost:3000
 | `AI_PROVIDER` | `anthropic` / `mock`。未設定なら `ANTHROPIC_API_KEY` の有無で自動選択 |
 | `ANTHROPIC_API_KEY` | サーバー側でのみ使用（`NEXT_PUBLIC_` を付けないこと） |
 | `AI_MODEL` / `AI_EFFORT` | 既定 `claude-opus-5-5` / `medium` |
-| `STORAGE_DRIVER` | `local`（`STORAGE_LOCAL_DIR`）または `s3`（`S3_*`） |
+| `STORAGE_DRIVER` | `local` / `s3` / `vercel-blob`。未設定なら `BLOB_READ_WRITE_TOKEN` の有無で自動選択 |
 | `UPLOAD_MAX_MB` | アップロード上限（既定 200MB） |
 | `ALLOW_SIGNUP` | `false` で新規登録を停止 |
 
@@ -117,7 +117,7 @@ User ─< Project ─< Character >─< Shot >─ Location >─ Project
 | 設定資料 | `create/update/deleteCharacter` `create/update/deleteLocation` `generateCharacterSheet` `generateLocationSheet` `removeReferenceImage` |
 | カット | `createShot` `updateShot` `updateShotsStatus` `deleteShot` `moveShot` `reorderShots` |
 | Prompt | `generatePrompts(projectId, "missing" \| "all" \| "selected", ids)` `savePrompt` |
-| 素材 | `POST /api/uploads` `GET /api/files/...` `addExternalAssetVersion` `deleteAssetVersion` |
+| 素材 | `POST /api/uploads` `POST /api/uploads/blob`（直接アップロード用トークン）`registerUploadedAsset` `GET /api/files/...` `addExternalAssetVersion` `deleteAssetVersion` |
 
 AI層（`src/lib/ai/index.ts`）：`generateScriptAnalysis` `generateCharacters` `generateLocations` `generateShots` `generateEntityDescription` `generateShotPrompts` `generateImagePrompt` `generateVideoPrompt`。
 
@@ -129,11 +129,28 @@ AI層（`src/lib/ai/index.ts`）：`generateScriptAnalysis` `generateCharacters`
 
 `src/lib/prompts/compose.ts` の `PROMPT_TARGETS` にフォーマッタ（`image` / `video`）を追加します。データは `Prompt.target` ごとに保存される設計です。
 
-## デプロイ時の注意
+## Vercel へのデプロイ
 
-- Vercel等のサーバーレス環境ではローカルディスクが揮発するため `STORAGE_DRIVER=s3` を使ってください。
-- 現在アップロードはアプリ経由（multipart）です。Vercel のリクエストサイズ上限（4.5MB）を超える動画を扱う場合は、署名付きURLによる直接アップロードへの切り替えが必要です（次の改善候補）。自前サーバー（Node）ならそのまま動作します。
-- AI解析は Server Action 内で実行されます（`maxDuration = 300` 秒）。
+コード側の準備は済んでいます（`vercel-build` でマイグレーションを自動適用、Vercel Blob 接続時はストレージを自動切り替え、ブラウザからの直接アップロードで大容量動画にも対応）。
+
+1. https://vercel.com に GitHub アカウントでサインアップ
+2. **Add New → Project** でこのリポジトリを Import
+   - **Root Directory** を `content-studio` に変更（重要）
+   - そのまま **Deploy**（初回はデータベース未接続のため失敗して構いません）
+3. プロジェクトの **Storage** タブ → **Create Database** → **Neon**（Postgres）を作成し、このプロジェクトに Connect
+   - `DATABASE_URL` / `DATABASE_URL_UNPOOLED` が自動で設定されます
+4. 同じ **Storage** タブ → **Blob** を作成し Connect（アクセスは **Private**）
+   - `BLOB_READ_WRITE_TOKEN` が自動で設定されます
+5. **Deployments** → 最新のデプロイの「…」→ **Redeploy**
+6. 発行されたURLの `/signup` でアカウントを作成
+7. 自分のアカウントを作ったら、**Settings → Environment Variables** で `ALLOW_SIGNUP=false` を追加して Redeploy（第三者の登録を防ぐ）
+
+任意：Claude で解析する場合は `ANTHROPIC_API_KEY` を環境変数に追加して Redeploy。未設定ならデモモードで動きます。
+
+補足：
+- 素材（カット画像・動画）はブラウザから Blob へ直接アップロードされるため、Vercel の 4.5MB 制限を受けません（上限は `UPLOAD_MAX_MB`、既定 200MB）。キャラクター・ロケーションの参考画像はサーバー経由のため 4MB 程度までです。
+- AI解析・Prompt生成は最大 300 秒まで実行できます（`maxDuration`）。
+- 自前サーバーで動かす場合は `STORAGE_DRIVER=local` または `s3` を使ってください。
 
 ## MVPで意図的にやっていないこと
 
@@ -143,6 +160,6 @@ AI生成APIとの直接連携、決済、チーム・権限、SNS自動投稿、
 
 1. 採用版（クライアントOK版）フラグ — 「最新版」と「採用版」は実案件ではしばしば異なる
 2. ツール別Promptフォーマット（Midjourney `--ar`、Kling/Veo のモーション記法）
-3. 署名付きURLでの大容量直接アップロード
+3. 参考画像の直接アップロード対応（現在は4MB程度まで）
 4. クライアント確認用の共有リンク（閲覧・コメントのみ）
 5. ナレーション / BGM / 字幕の工程（ElevenLabs用テキスト書き出し）

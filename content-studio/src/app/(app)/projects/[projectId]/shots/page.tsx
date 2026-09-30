@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { ShotBoard } from "@/components/shots/shot-board";
 import type { PromptInfo, ShotRow } from "@/components/shots/types";
 import { db } from "@/lib/db";
-import { fileUrl } from "@/lib/files";
+import { fileUrl, storagePrefix } from "@/lib/files";
 import { unitLabel } from "@/lib/labels";
 import { DEFAULT_TARGET } from "@/lib/prompts/compose";
 import { isPromptStale } from "@/lib/prompts/stale";
 import { getProjectForPage } from "@/lib/queries";
+import { maxUploadBytes, uploadMode } from "@/lib/storage";
 
 export const metadata: Metadata = { title: "カット・Prompt・素材" };
 
@@ -15,7 +16,7 @@ const HISTORY_PER_KIND = 10;
 export default async function ShotsPage({ params, searchParams }: PageProps<"/projects/[projectId]/shots">) {
   const { projectId } = await params;
   const { shot: initialShotId } = await searchParams;
-  const { project } = await getProjectForPage(projectId);
+  const { user, project } = await getProjectForPage(projectId);
 
   const [shots, characters, locations] = await Promise.all([
     db.shot.findMany({
@@ -97,6 +98,7 @@ export default async function ShotsPage({ params, searchParams }: PageProps<"/pr
       characters={characters.map((c) => ({ id: c.id, name: c.name, imageUrl: fileUrl(c.imageKey), hasSheet: !!c.promptDescription }))}
       locations={locations.map((l) => ({ id: l.id, name: l.name, imageUrl: fileUrl(l.imageKey), hasSheet: !!l.promptDescription }))}
       initialShotId={typeof initialShotId === "string" ? initialShotId : null}
+      uploadTarget={{ mode: uploadMode(), prefix: storagePrefix(user.id, projectId), maxBytes: maxUploadBytes() }}
     />
   );
 }

@@ -16,6 +16,7 @@ import { downloadText, promptsToText, shotsToCsv } from "./export";
 import { ShotPanel } from "./shot-panel";
 import { StatusSelect } from "./status-select";
 import type { EntityOption, ShotRow } from "./types";
+import type { UploadTarget } from "@/lib/upload-client";
 
 type Filter = "ALL" | "NEEDS_PROMPT" | ShotStatus;
 
@@ -39,6 +40,7 @@ export function ShotBoard({
   characters,
   locations,
   initialShotId,
+  uploadTarget,
 }: {
   projectId: string;
   projectTitle: string;
@@ -47,6 +49,7 @@ export function ShotBoard({
   characters: EntityOption[];
   locations: EntityOption[];
   initialShotId: string | null;
+  uploadTarget: UploadTarget;
 }) {
   const toast = useToast();
   const [openId, setOpenId] = useState<string | null>(initialShotId);
@@ -406,6 +409,7 @@ export function ShotBoard({
           number={numberOf.get(openShot.id) ?? 0}
           total={ordered.length}
           unit={unit}
+          uploadTarget={uploadTarget}
           characters={characters}
           locations={locations}
           onClose={() => open(null)}

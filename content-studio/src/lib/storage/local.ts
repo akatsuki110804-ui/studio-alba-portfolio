@@ -48,6 +48,22 @@ export class LocalStorageDriver implements StorageDriver {
     }
   }
 
+  async head(key: string) {
+    const file = this.resolve(key);
+    try {
+      const info = await stat(file);
+      let contentType = "application/octet-stream";
+      try {
+        contentType = JSON.parse(await readFile(`${file}.meta.json`, "utf8")).contentType ?? contentType;
+      } catch {
+        // metadata missing — keep default
+      }
+      return { contentType, size: info.size };
+    } catch {
+      return null;
+    }
+  }
+
   async delete(key: string) {
     const file = this.resolve(key);
     await rm(file, { force: true });

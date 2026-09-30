@@ -5,8 +5,9 @@ import { z } from "zod";
 import { assertAssetVersionAccess, assertShotAccess } from "@/lib/access";
 import { parseInput, runAction } from "@/lib/action";
 import { db } from "@/lib/db";
-import { addAssetVersion } from "@/lib/services/assets";
-import { getStorage } from "@/lib/storage";
+import { UserFacingError } from "@/lib/errors";
+import { addAssetVersion, kindFromMime } from "@/lib/services/assets";
+import { getStorage, isValidProjectKey } from "@/lib/storage";
 
 const ExternalSchema = z.object({
   url: z
@@ -30,6 +31,42 @@ export async function addExternalAssetVersion(shotId: string, input: z.input<typ
       mimeType: "",
       size: 0,
       note: data.note,
+    });
+    revalidatePath(`/projects/${projectId}`, "layout");
+    return { version: v.version };
+  });
+}
+
+const RegisterSchema = z.object({
+  key: z.string().min(1).max(500),
+  fileName: z.string().trim().min(1).max(300),
+  assetId: z.string().optional(),
+});
+
+/**
+ * Records a file the browser uploaded directly to storage as a new version.
+ * Size and type come from the storage itself, not from the client.
+ */
+export async function registerUploadedAsset(shotId: string, input: z.input<typeof RegisterSchema>) {
+  return runAction(async () => {
+    const { user, projectId } = await assertShotAccess(shotId);
+    const data = parseInput(RegisterSchema, input);
+    if (!isValidProjectKey(data.key, user.id, projectId)) throw new UserFacingError("アップロード先が不正です。");
+
+    const stored = await getStorage().head(data.key);
+    if (!stored) throw new UserFacingError("アップロードしたファイルが見つかりません。もう一度お試しください。");
+
+    const already = await db.assetVersion.findFirst({ where: { storageKey: data.key }, select: { version: true } });
+    if (already) return { version: already.version };
+
+    const v = await addAssetVersion({
+      shotId,
+      assetId: data.assetId || null,
+      kind: kindFromMime(stored.contentType),
+      storageKey: data.key,
+      fileName: data.fileName,
+      mimeType: stored.contentType,
+      size: stored.size,
     });
     revalidatePath(`/projects/${projectId}`, "layout");
     return { version: v.version };

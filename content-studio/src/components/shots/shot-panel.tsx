@@ -13,6 +13,7 @@ import { AssetsBlock } from "./assets-block";
 import { PromptBlock } from "./prompt-block";
 import { StatusSelect } from "./status-select";
 import type { EntityOption, ShotRow } from "./types";
+import type { UploadTarget } from "@/lib/upload-client";
 
 export function ShotPanel({
   projectId,
@@ -20,6 +21,7 @@ export function ShotPanel({
   number,
   total,
   unit,
+  uploadTarget,
   characters,
   locations,
   onClose,
@@ -31,6 +33,7 @@ export function ShotPanel({
   number: number;
   total: number;
   unit: string;
+  uploadTarget: UploadTarget;
   characters: EntityOption[];
   locations: EntityOption[];
   onClose: () => void;
@@ -168,7 +171,7 @@ export function ShotPanel({
 
         {/* Assets */}
         <section className="border-b border-border p-4">
-          <AssetsBlock shot={shot} />
+          <AssetsBlock shot={shot} uploadTarget={uploadTarget} />
         </section>
 
         {/* Notes */}

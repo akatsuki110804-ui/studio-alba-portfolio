@@ -9,12 +9,12 @@ import { Input, Select } from "@/components/ui/field";
 import { useToast } from "@/components/ui/toast";
 import { cn } from "@/lib/cn";
 import { ASSET_KINDS, assetKindLabel, formatBytes, formatDateTime } from "@/lib/labels";
-import { uploadFile } from "@/lib/upload-client";
+import { uploadShotAsset, type UploadTarget } from "@/lib/upload-client";
 import type { AssetRow, AssetVersionRow, ShotRow } from "./types";
 
 type Kind = AssetRow["kind"];
 
-export function AssetsBlock({ shot }: { shot: ShotRow }) {
+export function AssetsBlock({ shot, uploadTarget }: { shot: ShotRow; uploadTarget: UploadTarget }) {
   const router = useRouter();
   const toast = useToast();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -29,7 +29,7 @@ export function AssetsBlock({ shot }: { shot: ShotRow }) {
     let uploaded = 0;
     for (const file of list) {
       setProgress(0);
-      const res = await uploadFile({ purpose: "asset", shotId: shot.id, ...(assetId ? { assetId } : {}) }, file, setProgress);
+      const res = await uploadShotAsset(uploadTarget, shot.id, assetId, file, setProgress);
       if (!res.ok) {
         toast.error(`${file.name}: ${res.error}`);
         break;

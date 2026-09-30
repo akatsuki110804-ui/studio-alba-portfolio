@@ -1,5 +1,5 @@
 import "server-only";
-import { DeleteObjectCommand, GetObjectCommand, NoSuchKey, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { DeleteObjectCommand, GetObjectCommand, HeadObjectCommand, NoSuchKey, NotFound, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import type { ByteRange, StorageDriver } from "./types";
 
 /** AWS S3 / Cloudflare R2 / MinIO. Files are proxied through the app so access stays authorized. */
@@ -42,6 +42,16 @@ export class S3StorageDriver implements StorageDriver {
       return { body, contentType, size: res.ContentLength ?? 0 };
     } catch (error) {
       if (error instanceof NoSuchKey) return null;
+      throw error;
+    }
+  }
+
+  async head(key: string) {
+    try {
+      const res = await this.client.send(new HeadObjectCommand({ Bucket: this.bucket, Key: key }));
+      return { contentType: res.ContentType ?? "application/octet-stream", size: res.ContentLength ?? 0 };
+    } catch (error) {
+      if (error instanceof NotFound || error instanceof NoSuchKey) return null;
       throw error;
     }
   }

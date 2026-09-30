@@ -12,5 +12,7 @@ export type StoredObject = {
 export interface StorageDriver {
   put(key: string, data: Uint8Array, contentType: string): Promise<void>;
   get(key: string, range?: ByteRange): Promise<StoredObject | null>;
+  /** Metadata without the body, or null when missing. */
+  head(key: string): Promise<{ contentType: string; size: number } | null>;
   delete(key: string): Promise<void>;
 }
