@@ -74,7 +74,7 @@ a { color: inherit; }
 .tabs {
   display: flex; gap: 6px;
   padding: 12px 12px 0;
-  position: sticky; top: 0; z-index: 5;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
   background: var(--paper);
 }
 .tab {
@@ -216,6 +216,7 @@ a { color: inherit; }
 }
 .btn:focus-within, .btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
 .btn-danger { border-color: #c96b6b; color: #b14f4f; }
+.btn.is-armed { background: #b14f4f; border-color: #b14f4f; color: #fff; }
 .btn-small { padding: 8px 16px; font-size: 13px; }
 .pager { display: flex; justify-content: space-between; gap: 8px; padding: 14px 12px 4px; }
 

@@ -126,7 +126,7 @@
   function tabs(active) {
     const t = (href, key, label) =>
       `<a href="${href}" class="tab${active === key ? " is-active" : ""}"${active === key ? ' aria-current="page"' : ""}>${label}</a>`;
-    return `<nav class="tabs">${t("#/", "card", "カード")}${t("#/album", "album", "アルバム")}${t("#/how", "how", "遊び方")}</nav>`;
+    return `<nav class="tabs">${t("#card", "card", "カード")}${t("#album", "album", "アルバム")}${t("#how", "how", "遊び方")}</nav>`;
   }
 
   function renderCard() {
@@ -142,7 +142,7 @@
       if (inLine.has(i)) cls.push("in-line");
       if (photo) cls.push("has-photo");
       const label = m.free ? "FREE" : `${m.text}${isDone(i) ? "（達成）" : ""}`;
-      return `<a class="${cls.join(" ")}" href="#/m/${i + 1}" aria-label="${esc(label)}">
+      return `<a class="${cls.join(" ")}" href="#m${i + 1}" aria-label="${esc(label)}">
         ${photo ? `<img class="cell-photo" src="${photo}" alt="" loading="lazy" />` : ""}
         <span class="cell-icon" aria-hidden="true">${m.icon}</span>
         <span class="cell-text">${esc(m.text)}</span>
@@ -164,15 +164,15 @@
 
   function renderMission(id) {
     const m = MISSIONS[id];
-    if (!m) return go("#/");
+    if (!m) return go("#card");
     const e = entries.get(id);
     const photo = urls.get(id);
-    const prev = id > 0 ? `#/m/${id}` : null;
-    const next = id < MISSIONS.length - 1 ? `#/m/${id + 2}` : null;
+    const prev = id > 0 ? `#m${id}` : null;
+    const next = id < MISSIONS.length - 1 ? `#m${id + 2}` : null;
 
     view.innerHTML = `
       <div class="detail-top">
-        <a href="#/" class="back">← カードにもどる</a>
+        <a href="#card" class="back">← カードにもどる</a>
         <span class="detail-no">No.${String(id + 1).padStart(2, "0")}</span>
       </div>
       <article class="detail tone-${m.tone || "blue"} ${isDone(id) ? "is-done" : ""}">
@@ -229,8 +229,7 @@
 
     const remove = view.querySelector("#remove");
     if (remove) {
-      remove.addEventListener("click", async () => {
-        if (!confirm("この写真を消しますか？")) return;
+      confirmTap(remove, "もう一度タップで消す", async () => {
         await removeEntry(id);
         renderMission(id);
       });
@@ -270,7 +269,7 @@
         items.length
           ? `<section class="album">${items
               .map(
-                ({ m, i, url, e }) => `<a class="album-item" href="#/m/${i + 1}">
+                ({ m, i, url, e }) => `<a class="album-item" href="#m${i + 1}">
                   <img src="${url}" alt="" loading="lazy" />
                   <span class="album-cap"><b>${m.icon} ${esc(m.free ? "FREE" : m.text)}</b>${
                     e.memo ? `<span>${esc(e.memo)}</span>` : ""
@@ -301,11 +300,32 @@
         <button type="button" class="btn btn-danger btn-small" id="reset">すべてリセット</button>
       </section>
     `;
-    view.querySelector("#reset").addEventListener("click", async () => {
-      if (!confirm("すべての写真とメモを消します。よろしいですか？")) return;
+    confirmTap(view.querySelector("#reset"), "もう一度タップで全部消す", async () => {
       for (const id of [...entries.keys()]) await removeEntry(id);
       toast("リセットしました");
-      go("#/");
+      go("#card");
+    });
+  }
+
+  // 確認ダイアログの代わりに「2回タップで実行」
+  function confirmTap(btn, armedLabel, action) {
+    const label = btn.textContent;
+    let armed = false;
+    let timer;
+    btn.addEventListener("click", () => {
+      if (!armed) {
+        armed = true;
+        btn.textContent = armedLabel;
+        btn.classList.add("is-armed");
+        timer = setTimeout(() => {
+          armed = false;
+          btn.textContent = label;
+          btn.classList.remove("is-armed");
+        }, 3000);
+        return;
+      }
+      clearTimeout(timer);
+      action();
     });
   }
 
@@ -335,18 +355,18 @@
     setTimeout(() => box.remove(), 3600);
   }
 
-  // ---------- ルーティング（#/m/3 のように各マスに個別リンク） ----------
+  // ---------- ルーティング（#m3 のように各マスに個別リンク） ----------
   function go(hash) {
     if (location.hash === hash) route();
     else location.hash = hash;
   }
 
   function route() {
-    const h = location.hash || "#/";
-    const m = h.match(/^#\/m\/(\d+)$/);
+    const h = location.hash || "#card";
+    const m = h.match(/^#m(\d+)$/);
     if (m) renderMission(Number(m[1]) - 1);
-    else if (h === "#/album") renderAlbum();
-    else if (h === "#/how") renderHow();
+    else if (h === "#album") renderAlbum();
+    else if (h === "#how") renderHow();
     else renderCard();
     window.scrollTo(0, m ? document.querySelector(".hero").offsetHeight - 8 : 0);
   }
