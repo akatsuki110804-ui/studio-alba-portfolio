@@ -218,3 +218,21 @@ def cut_asset(project: Project, cut: dict, style: dict) -> Path | None:
         return None
     p = project.path(e["path"])
     return p if p.exists() else None
+
+
+def download(project: Project, item_id: str, url: str, timeout: int = 300) -> Path:
+    """Fetch a generated file into assets/incoming/ (kept for audit) and return its path."""
+    import requests
+
+    suffix = Path(url.split("?")[0]).suffix or ".bin"
+    out = project.path("assets", "incoming", f"{item_id}{suffix}")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with requests.get(url, stream=True, timeout=timeout) as r:
+            r.raise_for_status()
+            with out.open("wb") as f:
+                for chunk in r.iter_content(1 << 20):
+                    f.write(chunk)
+    except requests.RequestException as e:
+        raise PipelineError(f"{item_id}: download failed ({e}). Is the host allowed by the network policy?") from e
+    return out

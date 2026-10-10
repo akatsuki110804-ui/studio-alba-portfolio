@@ -76,7 +76,12 @@ def cmd_assets(a) -> None:
     elif a.action == "status":
         print(json.dumps(am.status(project), indent=1))
     elif a.action == "import":
-        e = am.import_asset(project, a.id, Path(a.file), credits=a.credits, job_id=a.job_id or "",
+        src = a.file
+        if a.url:  # download the generated file first (e.g. a Higgsfield result URL)
+            src = am.download(project, a.id, a.url)
+        if not src:
+            raise PipelineError("assets import needs --file or --url")
+        e = am.import_asset(project, a.id, Path(src), credits=a.credits, job_id=a.job_id or "",
                             kind="actual" if a.credits is not None else "estimate")
         print(f"✓ {a.id} → {e['path']}")
     elif a.action == "fail":
@@ -112,6 +117,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--project", required=True)
     p.add_argument("--id")
     p.add_argument("--file")
+    p.add_argument("--url", help="download the generated file from this URL, then import it")
     p.add_argument("--credits", type=float)
     p.add_argument("--job-id")
     p.add_argument("--error")

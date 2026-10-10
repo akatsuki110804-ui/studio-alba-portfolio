@@ -9,6 +9,7 @@ projects/*/output/
 projects/*/audio/
 projects/*/assets/images/
 projects/*/assets/video/
+projects/*/assets/incoming/
 projects/*/assets/diagrams/
 projects/*/previews/*
 !projects/*/previews/*contact_sheet.jpg
