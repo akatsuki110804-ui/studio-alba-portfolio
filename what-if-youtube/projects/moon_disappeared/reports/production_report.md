@@ -12,7 +12,7 @@
 |---|---|---|
 | 長尺動画 16:9 | `output/moon_disappeared_long_ANIMATIC.mp4`（7分28秒、-14.0 LUFS / -2.5 dBTP） | AI動画12カットが「生成待ち」カード（このカードも動く） |
 | Shorts 9:16 | `S1_ANIMATIC.mp4`（39秒）、`S2`（34秒）、`S3`（41秒） | 一部のカットが生成待ち |
-| 字幕 | `subtitles/*_en.srt`（ファイル名は旧仕様のまま。中身は日本語）＋焼き込み | 完成 |
+| 字幕 | `subtitles/*_ja.srt`（YouTubeアップロード用）＋焼き込み | 完成 |
 | サムネイル3案 | `thumbnails/T1〜T3_DRAFT.jpg` | 背景画像が未生成 |
 | 読み確認リスト | `audio/readings.md`（全106文のカタカナ読み） | 確認待ち |
 

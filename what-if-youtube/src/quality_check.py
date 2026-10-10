@@ -165,7 +165,7 @@ def validate(project: Project) -> dict:
             summary["videos"]["long"] = {"file": str(long_path.relative_to(project.dir)),
                                          **check_video(results, long_path, w=lf["width"], h=lf["height"],
                                                        dur_range=(lo * 60 - 15, hi * 60 + 15), s=s)}
-            check_srt(results, project.path("subtitles", f"{project.slug}_en.srt"), summary["videos"]["long"]["duration"])
+            check_srt(results, project.path("subtitles", f"{project.slug}_{project.settings['channel']['language']}.srt"), summary["videos"]["long"]["duration"])
             summary["previews"] += previews(project, long_path, "long")
         _check(results, "long-form: final (non-animatic) render exists", final.exists(),
                "only the ANIMATIC draft exists" if draft.exists() and not final.exists() else "")

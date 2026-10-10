@@ -115,7 +115,7 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
     ass = project.path("subtitles", f"{sid}_burn.ass")
     editor.write_ass(events, ass, w=vcfg["width"], h=vcfg["height"], font=sub["font"],
                      size=sub["short_font_size"], margin_v=470, extra_styles=styles, extra_events=header)
-    editor.write_srt(events, project.path("subtitles", f"{sid}_en.srt"))
+    editor.write_srt(events, project.path("subtitles", f"{sid}_{project.settings['channel']['language']}.srt"))
     mix = project.path("audio", "shorts", f"{sid}_mix.wav")
     editor.mix_audio(project, adir / f"{sid}.wav", end_t, mix)
     suffix = "_ANIMATIC" if placeholders else ""

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10T12:58:37+00:00",
+  "generated": "2026-10-10T13:02:56+00:00",
   "project": "moon_disappeared",
   "videos": {
     "long": {
@@ -123,13 +123,13 @@
       "detail": "[]"
     },
     {
-      "check": "moon_disappeared_en.srt: 114 cues ordered, non-overlapping, ≤2 lines",
+      "check": "moon_disappeared_ja.srt: 114 cues ordered, non-overlapping, ≤2 lines",
       "ok": true,
       "severity": "info",
       "detail": "bad cues: []"
     },
     {
-      "check": "moon_disappeared_en.srt: ends before video ends",
+      "check": "moon_disappeared_ja.srt: ends before video ends",
       "ok": true,
       "severity": "info",
       "detail": "last cue 442.94s"

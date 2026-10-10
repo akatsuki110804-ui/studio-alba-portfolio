@@ -1,6 +1,6 @@
 # QC report — moon_disappeared
 
-Generated: 2026-10-10T12:58:37+00:00
+Generated: 2026-10-10T13:02:56+00:00
 
 **Publishable:** NO · errors 2 · warnings 4
 
@@ -22,8 +22,8 @@ Generated: 2026-10-10T12:58:37+00:00
 | ✅ | moon_disappeared_long_ANIMATIC.mp4: true peak ≤ -1 dBTP | -2.5 dBTP |
 | ✅ | moon_disappeared_long_ANIMATIC.mp4: no black runs > 1s | [] |
 | ✅ | moon_disappeared_long_ANIMATIC.mp4: no silence > 3s | [] |
-| ✅ | moon_disappeared_en.srt: 114 cues ordered, non-overlapping, ≤2 lines | bad cues: [] |
-| ✅ | moon_disappeared_en.srt: ends before video ends | last cue 442.94s |
+| ✅ | moon_disappeared_ja.srt: 114 cues ordered, non-overlapping, ≤2 lines | bad cues: [] |
+| ✅ | moon_disappeared_ja.srt: ends before video ends | last cue 442.94s |
 | ❌ | long-form: final (non-animatic) render exists | only the ANIMATIC draft exists |
 | ✅ | long narration: speech rate plausible for every sentence |  |
 | ✅ | voice: reading list saved for review (audio/readings.md) |  |

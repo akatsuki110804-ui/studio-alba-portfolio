@@ -406,7 +406,7 @@ def edit_long(project: Project, animatic: bool = False) -> dict:
 
         sub = project.settings["subtitles"]
         events = subtitle_events(timing, sub["max_chars_per_line"], sub["max_lines"])
-        srt = project.path("subtitles", f"{project.slug}_en.srt")
+        srt = project.path("subtitles", f"{project.slug}_{project.settings['channel']['language']}.srt")
         ass = project.path("subtitles", f"{project.slug}_burn.ass")
         write_srt(events, srt)
         write_ass(events, ass, w=vcfg["width"], h=vcfg["height"], font=sub["font"], size=sub["long_font_size"],
