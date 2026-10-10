@@ -33,8 +33,9 @@ voice:
 
 audio:
   target_lufs: -14          # YouTube playback reference
-  true_peak: -1.5
+  true_peak: -2.5          # headroom: AAC encoding adds ~1–3 dB of inter-sample overshoot
   music_db: -24             # music bed level under narration, before ducking
+  aac_bitrate: 256k         # 192k let the native AAC encoder overshoot to +5 dBTP on one transient
   music: procedural         # "procedural" (self-generated, no rights issues) or a file path under assets_library/music
 
 subtitles:

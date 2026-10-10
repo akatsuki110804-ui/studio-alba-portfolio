@@ -1,0 +1,378 @@
+{
+  "generated": "2026-10-10T11:47:44+00:00",
+  "project": "moon_disappeared",
+  "videos": {
+    "long": {
+      "file": "output/moon_disappeared_long_ANIMATIC.mp4",
+      "duration": 378.166667,
+      "lufs": -14.1,
+      "true_peak": -1.4
+    },
+    "S1": {
+      "file": "output/shorts/S1_ANIMATIC.mp4",
+      "duration": 37.333333,
+      "lufs": -14.0,
+      "true_peak": -2.5
+    },
+    "S2": {
+      "file": "output/shorts/S2_ANIMATIC.mp4",
+      "duration": 35.4,
+      "lufs": -14.1,
+      "true_peak": -2.5
+    },
+    "S3": {
+      "file": "output/shorts/S3_ANIMATIC.mp4",
+      "duration": 42.666667,
+      "lufs": -14.1,
+      "true_peak": -2.4
+    }
+  },
+  "previews": [
+    "previews/long_contact_sheet.jpg",
+    "previews/long_audio_sample.mp3",
+    "previews/S1_contact_sheet.jpg",
+    "previews/S2_contact_sheet.jpg",
+    "previews/S3_contact_sheet.jpg"
+  ],
+  "publishable": false,
+  "errors": 2,
+  "warnings": 4,
+  "checks": [
+    {
+      "check": "research: saved with sources",
+      "ok": true,
+      "severity": "info",
+      "detail": "19 sources"
+    },
+    {
+      "check": "research: status complete",
+      "ok": true,
+      "severity": "info",
+      "detail": "complete"
+    },
+    {
+      "check": "research: no unverified fact claims",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "research: claims only partially verified (human should check)",
+      "ok": false,
+      "severity": "warning",
+      "detail": "C02, C04, C05, C07, C09, C10, C12, C14, C15, C16, C19, C20, C24, C25, C26"
+    },
+    {
+      "check": "assets: none failed permanently",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "assets: none stale (prompt changed since generation)",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "assets: all AI shots generated",
+      "ok": false,
+      "severity": "error",
+      "detail": "pending: ['C01', 'C02', 'C06', 'C09', 'C10', 'C12', 'C13', 'C14', 'C15', 'C16', 'C19', 'C21', 'C22', 'C24', 'C25', 'C29', 'C31', 'C33', 'C35', 'C36', 'C37', 'C38', 'T1', 'T2', 'T3']"
+    },
+    {
+      "check": "moon_disappeared_long_ANIMATIC.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "moon_disappeared_long_ANIMATIC.mp4: resolution 1920×1080",
+      "ok": true,
+      "severity": "info",
+      "detail": "1920×1080"
+    },
+    {
+      "check": "moon_disappeared_long_ANIMATIC.mp4: duration in 345–495s",
+      "ok": true,
+      "severity": "info",
+      "detail": "378.2s"
+    },
+    {
+      "check": "moon_disappeared_long_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.1 LUFS"
+    },
+    {
+      "check": "moon_disappeared_long_ANIMATIC.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-1.4 dBTP"
+    },
+    {
+      "check": "moon_disappeared_long_ANIMATIC.mp4: no black runs > 1s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "moon_disappeared_long_ANIMATIC.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "moon_disappeared_en.srt: 119 cues ordered, non-overlapping, ≤2 lines",
+      "ok": true,
+      "severity": "info",
+      "detail": "bad cues: []"
+    },
+    {
+      "check": "moon_disappeared_en.srt: ends before video ends",
+      "ok": true,
+      "severity": "info",
+      "detail": "last cue 373.13s"
+    },
+    {
+      "check": "long-form: final (non-animatic) render exists",
+      "ok": false,
+      "severity": "error",
+      "detail": "only the ANIMATIC draft exists"
+    },
+    {
+      "check": "long narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "shorts: 2–3 produced",
+      "ok": true,
+      "severity": "info",
+      "detail": "3"
+    },
+    {
+      "check": "S1_ANIMATIC.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "S1_ANIMATIC.mp4: resolution 1080×1920",
+      "ok": true,
+      "severity": "info",
+      "detail": "1080×1920"
+    },
+    {
+      "check": "S1_ANIMATIC.mp4: duration in 30–60s",
+      "ok": true,
+      "severity": "info",
+      "detail": "37.3s"
+    },
+    {
+      "check": "S1_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.0 LUFS"
+    },
+    {
+      "check": "S1_ANIMATIC.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-2.5 dBTP"
+    },
+    {
+      "check": "S1_ANIMATIC.mp4: no black runs > 1s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S1_ANIMATIC.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S1 narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "S2_ANIMATIC.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "S2_ANIMATIC.mp4: resolution 1080×1920",
+      "ok": true,
+      "severity": "info",
+      "detail": "1080×1920"
+    },
+    {
+      "check": "S2_ANIMATIC.mp4: duration in 30–60s",
+      "ok": true,
+      "severity": "info",
+      "detail": "35.4s"
+    },
+    {
+      "check": "S2_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.1 LUFS"
+    },
+    {
+      "check": "S2_ANIMATIC.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-2.5 dBTP"
+    },
+    {
+      "check": "S2_ANIMATIC.mp4: no black runs > 1s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S2_ANIMATIC.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S2 narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "S3_ANIMATIC.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "S3_ANIMATIC.mp4: resolution 1080×1920",
+      "ok": true,
+      "severity": "info",
+      "detail": "1080×1920"
+    },
+    {
+      "check": "S3_ANIMATIC.mp4: duration in 30–60s",
+      "ok": true,
+      "severity": "info",
+      "detail": "42.7s"
+    },
+    {
+      "check": "S3_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.1 LUFS"
+    },
+    {
+      "check": "S3_ANIMATIC.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-2.4 dBTP"
+    },
+    {
+      "check": "S3_ANIMATIC.mp4: no black runs > 1s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S3_ANIMATIC.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S3 narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "thumbnails: 3 candidates",
+      "ok": true,
+      "severity": "info",
+      "detail": "3"
+    },
+    {
+      "check": "T1_DRAFT.jpg: 1280×720, < 2 MB",
+      "ok": true,
+      "severity": "info",
+      "detail": "(1280, 720), 63 KB"
+    },
+    {
+      "check": "T1_DRAFT.jpg: real background",
+      "ok": false,
+      "severity": "warning",
+      "detail": "draft background"
+    },
+    {
+      "check": "T2_DRAFT.jpg: 1280×720, < 2 MB",
+      "ok": true,
+      "severity": "info",
+      "detail": "(1280, 720), 78 KB"
+    },
+    {
+      "check": "T2_DRAFT.jpg: real background",
+      "ok": false,
+      "severity": "warning",
+      "detail": "draft background"
+    },
+    {
+      "check": "T3_DRAFT.jpg: 1280×720, < 2 MB",
+      "ok": true,
+      "severity": "info",
+      "detail": "(1280, 720), 67 KB"
+    },
+    {
+      "check": "T3_DRAFT.jpg: real background",
+      "ok": false,
+      "severity": "warning",
+      "detail": "draft background"
+    },
+    {
+      "check": "cost: ledger recorded",
+      "ok": true,
+      "severity": "info",
+      "detail": "¥0.0 / 0.0 credits"
+    },
+    {
+      "check": "cost: within per-video budget",
+      "ok": true,
+      "severity": "info",
+      "detail": "¥0.0 of ¥2500"
+    }
+  ],
+  "cost": {
+    "by_stage": {
+      "voice": {
+        "items": 3,
+        "credits": 0.0,
+        "cost_jpy": 0.0,
+        "kinds": [
+          "free"
+        ]
+      },
+      "diagrams": {
+        "items": 1,
+        "credits": 0.0,
+        "cost_jpy": 0.0,
+        "kinds": [
+          "free"
+        ]
+      }
+    },
+    "total_jpy": 0.0,
+    "total_credits": 0.0,
+    "month_total_jpy": 0.0
+  },
+  "human_review_required": true
+}

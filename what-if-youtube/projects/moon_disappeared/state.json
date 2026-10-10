@@ -20,12 +20,12 @@
       ]
     },
     "edit": {
-      "status": "running",
-      "started": "2026-10-10T11:23:57+00:00",
+      "status": "done",
+      "started": "2026-10-10T11:42:27+00:00",
       "inputs": {
         "animatic": true
       },
-      "finished": "2026-10-10T11:16:30+00:00",
+      "finished": "2026-10-10T11:45:47+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
@@ -40,12 +40,12 @@
     },
     "shorts": {
       "status": "done",
-      "started": "2026-10-10T11:18:19+00:00",
+      "started": "2026-10-10T11:45:47+00:00",
       "inputs": {
         "count": 3,
         "animatic": true
       },
-      "finished": "2026-10-10T11:22:08+00:00",
+      "finished": "2026-10-10T11:47:43+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
@@ -59,11 +59,11 @@
     },
     "thumbnails": {
       "status": "done",
-      "started": "2026-10-10T11:22:08+00:00",
+      "started": "2026-10-10T11:49:26+00:00",
       "inputs": {
         "count": 3
       },
-      "finished": "2026-10-10T11:22:09+00:00",
+      "finished": "2026-10-10T11:49:26+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
@@ -156,11 +156,11 @@
     },
     "assets": {
       "status": "done",
-      "started": "2026-10-10T11:23:57+00:00",
+      "started": "2026-10-10T11:42:27+00:00",
       "inputs": {
         "animatic": true
       },
-      "finished": "2026-10-10T11:23:57+00:00",
+      "finished": "2026-10-10T11:42:27+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [],
@@ -168,6 +168,23 @@
       "cost_jpy": 0.0,
       "notes": [
         "diagrams rendered=0; pending AI assets=25 (≈20.75 credits, ≈¥153.55)"
+      ]
+    },
+    "validate": {
+      "status": "done",
+      "started": "2026-10-10T11:47:44+00:00",
+      "inputs": {},
+      "finished": "2026-10-10T11:48:55+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "reports/qc_report.json",
+        "reports/qc_report.md"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "errors=2 warnings=4 publishable=False"
       ]
     }
   }

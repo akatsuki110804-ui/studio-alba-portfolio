@@ -351,7 +351,7 @@ def edit_long(project: Project, animatic: bool = False) -> dict:
         run(["ffmpeg", "-y", "-v", "error", "-i", str(video_only), "-i", str(mix),
              "-vf", f"ass={ass}", "-map", "0:v", "-map", "1:a", "-c:v", "libx264",
              "-preset", vcfg.get("preset", project.settings["video"]["preset"]), "-crf",
-             str(project.settings["video"]["crf"]), "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+             str(project.settings["video"]["crf"]), "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", project.settings["audio"]["aac_bitrate"],
              "-movflags", "+faststart", "-t", f"{total:.3f}", str(out)])
         video_only.unlink(missing_ok=True)
         placeholders = [s["cut"] for s in segs if s["placeholder"]]

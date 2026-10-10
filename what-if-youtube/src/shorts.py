@@ -112,7 +112,7 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
     out = project.path("output", "shorts", f"{sid}{suffix}.mp4")
     run(["ffmpeg", "-y", "-v", "error", "-i", str(video_only), "-i", str(mix), "-vf", f"ass={ass}",
          "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", project.settings["video"]["preset"],
-         "-crf", str(project.settings["video"]["crf"]), "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+         "-crf", str(project.settings["video"]["crf"]), "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", project.settings["audio"]["aac_bitrate"],
          "-movflags", "+faststart", "-t", f"{end_t:.3f}", str(out)])
     video_only.unlink(missing_ok=True)
     return {"id": sid, "title": short["title"], "output": str(out.relative_to(project.dir)),

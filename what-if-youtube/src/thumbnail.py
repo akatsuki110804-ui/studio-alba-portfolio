@@ -41,13 +41,18 @@ def render(project: Project, spec: dict) -> dict:
     f = diagrams.font(size, "ExtraBold")
     total_h = len(lines) * size * 1.02
     y = (TH - total_h) / 2
+    accent = spec.get("accent", "")
     for ln in lines:
-        col = AMBER if ln == spec.get("accent") else (255, 255, 255)
         # drop shadow for legibility on busy backgrounds
         shadow = Image.new("RGBA", (TW, TH), (0, 0, 0, 0))
         ImageDraw.Draw(shadow).text((62, y + 6), ln, font=f, fill=(0, 0, 0, 200))
-        bg.paste(shadow.filter(ImageFilter.GaussianBlur(6)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(6)))
-        d.text((56, y), ln, font=f, fill=col, stroke_width=3, stroke_fill=(0, 0, 0))
+        blurred = shadow.filter(ImageFilter.GaussianBlur(6))
+        bg.paste(blurred, (0, 0), blurred)
+        x = 56
+        for word in ln.split(" "):
+            col = AMBER if accent and word == accent else (255, 255, 255)
+            d.text((x, y), word, font=f, fill=col, stroke_width=3, stroke_fill=(0, 0, 0))
+            x += d.textlength(word + " ", font=f)
         y += size * 1.02
     if not real:
         d.rectangle([0, 0, TW, 60], fill=(150, 30, 40))

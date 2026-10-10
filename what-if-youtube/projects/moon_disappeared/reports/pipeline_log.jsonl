@@ -25,3 +25,32 @@
 {"ts": "2026-10-10T11:23:57+00:00", "project": "moon_disappeared", "stage": "assets", "event": "start", "inputs": {"animatic": true}}
 {"ts": "2026-10-10T11:23:57+00:00", "project": "moon_disappeared", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=25 (≈20.75 credits, ≈¥153.55)"]}
 {"ts": "2026-10-10T11:23:57+00:00", "project": "moon_disappeared", "stage": "edit", "event": "start", "inputs": {"animatic": true}}
+{"ts": "2026-10-10T11:27:43+00:00", "project": "moon_disappeared", "stage": "edit", "event": "done", "outputs": ["output/moon_disappeared_long_ANIMATIC.mp4", "subtitles/moon_disappeared_en.srt"], "retries": 0, "cost_jpy": 0.0, "notes": ["ANIMATIC: 22 placeholder cuts — not publishable"]}
+{"ts": "2026-10-10T11:27:43+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": true}}
+{"ts": "2026-10-10T11:29:36+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1_ANIMATIC.mp4", "output/shorts/S2_ANIMATIC.mp4", "output/shorts/S3_ANIMATIC.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-10T11:29:36+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-10T11:29:36+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1_DRAFT.jpg", "thumbnails/T2_DRAFT.jpg", "thumbnails/T3_DRAFT.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": ["draft backgrounds: ['T1', 'T2', 'T3']"]}
+{"ts": "2026-10-10T11:29:37+00:00", "project": "moon_disappeared", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-10T11:30:47+00:00", "project": "moon_disappeared", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=3 warnings=4 publishable=False"]}
+{"ts": "2026-10-10T11:33:59+00:00", "project": "moon_disappeared", "stage": "assets", "event": "start", "inputs": {"animatic": true}}
+{"ts": "2026-10-10T11:33:59+00:00", "project": "moon_disappeared", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=25 (≈20.75 credits, ≈¥153.55)"]}
+{"ts": "2026-10-10T11:33:59+00:00", "project": "moon_disappeared", "stage": "edit", "event": "start", "inputs": {"animatic": true}}
+{"ts": "2026-10-10T11:37:45+00:00", "project": "moon_disappeared", "stage": "edit", "event": "done", "outputs": ["output/moon_disappeared_long_ANIMATIC.mp4", "subtitles/moon_disappeared_en.srt"], "retries": 0, "cost_jpy": 0.0, "notes": ["ANIMATIC: 22 placeholder cuts — not publishable"]}
+{"ts": "2026-10-10T11:37:45+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": true}}
+{"ts": "2026-10-10T11:39:42+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1_ANIMATIC.mp4", "output/shorts/S2_ANIMATIC.mp4", "output/shorts/S3_ANIMATIC.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-10T11:39:42+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-10T11:39:43+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1_DRAFT.jpg", "thumbnails/T2_DRAFT.jpg", "thumbnails/T3_DRAFT.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": ["draft backgrounds: ['T1', 'T2', 'T3']"]}
+{"ts": "2026-10-10T11:39:43+00:00", "project": "moon_disappeared", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-10T11:40:54+00:00", "project": "moon_disappeared", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=3 warnings=4 publishable=False"]}
+{"ts": "2026-10-10T11:42:27+00:00", "project": "moon_disappeared", "stage": "assets", "event": "start", "inputs": {"animatic": true}}
+{"ts": "2026-10-10T11:42:27+00:00", "project": "moon_disappeared", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=25 (≈20.75 credits, ≈¥153.55)"]}
+{"ts": "2026-10-10T11:42:27+00:00", "project": "moon_disappeared", "stage": "edit", "event": "start", "inputs": {"animatic": true}}
+{"ts": "2026-10-10T11:45:47+00:00", "project": "moon_disappeared", "stage": "edit", "event": "done", "outputs": ["output/moon_disappeared_long_ANIMATIC.mp4", "subtitles/moon_disappeared_en.srt"], "retries": 0, "cost_jpy": 0.0, "notes": ["ANIMATIC: 22 placeholder cuts — not publishable"]}
+{"ts": "2026-10-10T11:45:47+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": true}}
+{"ts": "2026-10-10T11:47:43+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1_ANIMATIC.mp4", "output/shorts/S2_ANIMATIC.mp4", "output/shorts/S3_ANIMATIC.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-10T11:47:43+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-10T11:47:43+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1_DRAFT.jpg", "thumbnails/T2_DRAFT.jpg", "thumbnails/T3_DRAFT.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": ["draft backgrounds: ['T1', 'T2', 'T3']"]}
+{"ts": "2026-10-10T11:47:44+00:00", "project": "moon_disappeared", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-10T11:48:55+00:00", "project": "moon_disappeared", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=2 warnings=4 publishable=False"]}
+{"ts": "2026-10-10T11:49:26+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-10T11:49:26+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1_DRAFT.jpg", "thumbnails/T2_DRAFT.jpg", "thumbnails/T3_DRAFT.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": ["draft backgrounds: ['T1', 'T2', 'T3']"]}
