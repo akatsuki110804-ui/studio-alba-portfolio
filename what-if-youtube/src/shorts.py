@@ -7,11 +7,11 @@ top and large subtitles below.
 """
 from __future__ import annotations
 
-import textwrap
 from pathlib import Path
 
 from . import asset_manager as am
 from . import cost_tracker, editor, voice
+from . import motion as motion_mod
 from .common import PipelineError, Project, read_json, run, sha, write_json
 
 FG_Y_OFFSET = -110  # shot sits slightly above center
@@ -71,31 +71,41 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
         start = 0.0 if i == 0 else u["start"]
         end = timing["units"][i + 1]["start"] if i + 1 < len(units) else timing["duration"]
         frames = round(end * fps) - round(start * fps)
-        src = am.cut_asset(project, cut, sb["style_bible"])
         kind, motion = cut["asset_type"], cut["camera_motion"]
-        if src is None:
+        spec = cut["diagram"] if kind == "motion" else None
+        src = None if kind == "motion" else am.cut_asset(project, cut, sb["style_bible"])
+        if kind != "motion" and src is None:
             if not animatic:
                 raise PipelineError(f"{sid}: cut {cut['id']} has no ready asset (use --animatic for a draft)")
-            src, kind, motion = editor.placeholder_card(project, cut), "image", "static"
+            kind, spec = "motion", editor.pending_spec(cut)
             placeholders.append(cut["id"])
         if kind in ("diagram", "title"):
             kind = "image"
-        st = src.stat()
-        key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames)
+        if kind == "motion":
+            key = sha(spec, editor.MOTION_CODE_HASH, frames)
+        else:
+            st = src.stat()
+            key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames)
         out = seg_dir / f"{sid}_{i:02d}_{key}.mp4"
         if not out.exists():
             for old in seg_dir.glob(f"{sid}_{i:02d}_*.mp4"):
                 old.unlink()
-            vertical_segment(src, kind, motion, frames, out, fps=fps)
+            if kind == "motion":  # draw the 16:9 animation, then re-compose it for 9:16
+                tmp = seg_dir / f"{sid}_{i:02d}_motion_src.mp4"
+                motion_mod.render_clip(spec, frames, tmp, fps=fps)
+                vertical_segment(tmp, "video", motion, frames, out, fps=fps)
+                tmp.unlink()
+            else:
+                vertical_segment(src, kind, motion, frames, out, fps=fps)
         seg_paths.append(out)
 
     video_only = editor.concat(seg_paths, project.path("output", "shorts", f"{sid}_video_only.mp4"))
     sub = project.settings["subtitles"]
-    events = editor.subtitle_events(timing, 24, 2)
+    events = editor.subtitle_events(timing, int(sub.get("short_chars_per_line", 24)), 2)
     last_start = timing["units"][-1]["start"]
     end_t = timing["duration"]
-    hook = editor.BREAK.join(textwrap.wrap(short["hook_text"].upper(), 18))
-    endc = editor.BREAK.join(textwrap.wrap(short["end_card_text"], 22))
+    hook = editor.BREAK.join(editor.wrap_lines(short["hook_text"].upper(), 12 if editor.is_cjk(short["hook_text"]) else 18))
+    endc = editor.BREAK.join(editor.wrap_lines(short["end_card_text"], 12 if editor.is_cjk(short["end_card_text"]) else 22))
     header = [
         f"Dialogue: 1,{editor._ts_ass(0)},{editor._ts_ass(last_start)},Hook,,0,0,0,,{hook}",
         f"Dialogue: 1,{editor._ts_ass(last_start)},{editor._ts_ass(end_t)},Hook,,0,0,0,,{endc}",
@@ -110,7 +120,7 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
     editor.mix_audio(project, adir / f"{sid}.wav", end_t, mix)
     suffix = "_ANIMATIC" if placeholders else ""
     out = project.path("output", "shorts", f"{sid}{suffix}.mp4")
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(video_only), "-i", str(mix), "-vf", f"ass={ass}",
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(video_only), "-i", str(mix), "-vf", editor.ass_filter(project, ass),
          "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", project.settings["video"]["preset"],
          "-crf", str(project.settings["video"]["crf"]), "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", project.settings["audio"]["aac_bitrate"],
          "-movflags", "+faststart", "-t", f"{end_t:.3f}", str(out)])
@@ -129,6 +139,6 @@ def make_shorts(project: Project, animatic: bool = False) -> list[dict]:
         rec["outputs"] += [r["output"] for r in results]
         gen = sum(r["generated_sentences"] for r in results)
         if gen:
-            cost_tracker.record(project, stage="voice", item="shorts narration", provider="kokoro (local)",
-                                units=gen, cost_jpy=0, kind="free")
+            cost_tracker.record(project, stage="voice", item="shorts narration",
+                                provider=f"{voice.engine_settings(project)[0]} (local)", units=gen, cost_jpy=0, kind="free")
     return results

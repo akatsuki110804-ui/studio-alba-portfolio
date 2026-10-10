@@ -8,7 +8,7 @@ from __future__ import annotations
 from PIL import Image, ImageDraw, ImageFilter
 
 from . import asset_manager as am
-from . import diagrams
+from . import motion
 from .common import PipelineError, Project, write_json
 
 TW, TH = 1280, 720
@@ -22,8 +22,7 @@ def _background(project: Project, spec: dict) -> tuple[Image.Image, bool]:
         p = project.path(st["path"])
         if p.exists():
             return Image.open(p).convert("RGB").resize((TW, TH), Image.LANCZOS), True
-    img, _ = diagrams.canvas()
-    return img.resize((TW, TH)), False
+    return motion.background().resize((TW, TH)), False
 
 
 def render(project: Project, spec: dict) -> dict:
@@ -38,7 +37,7 @@ def render(project: Project, spec: dict) -> dict:
     d = ImageDraw.Draw(bg)
     lines = spec["text"]
     size = 132 if len(lines) <= 2 else 108
-    f = diagrams.font(size, "ExtraBold")
+    f = motion.font(size, "Black")
     total_h = len(lines) * size * 1.02
     y = (TH - total_h) / 2
     accent = spec.get("accent", "")
@@ -56,12 +55,13 @@ def render(project: Project, spec: dict) -> dict:
         y += size * 1.02
     if not real:
         d.rectangle([0, 0, TW, 60], fill=(150, 30, 40))
-        d.text((20, 10), "DRAFT — background image pending", font=diagrams.font(36, "Bold"), fill=(255, 255, 255))
+        d.text((20, 8), "下書き — 背景画像が未生成", font=motion.font(36, "Bold"), fill=(255, 255, 255))
     out = project.path("thumbnails", f"{spec['id']}{'' if real else '_DRAFT'}.jpg")
     for stale in project.path("thumbnails").glob(f"{spec['id']}*.jpg"):
         stale.unlink()
     bg.save(out, quality=90)
     small = bg.resize((320, 180), Image.LANCZOS)
+    project.path("previews").mkdir(parents=True, exist_ok=True)
     small.save(project.path("previews", f"thumb_{spec['id']}_small.png"))
     return {"id": spec["id"], "output": str(out.relative_to(project.dir)), "publishable": real}
 

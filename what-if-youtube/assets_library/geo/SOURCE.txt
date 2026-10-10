@@ -1,0 +1,1 @@
+ne_110m_land.geojson — Natural Earth 1:110m land polygons (public domain), https://github.com/nvkelso/natural-earth-vector

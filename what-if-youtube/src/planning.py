@@ -103,15 +103,15 @@ def storyboard(project: Project, force: bool = False) -> dict:
                 problems.append(f"{c['id']}: unknown line_id {c['line_id']}")
             if c["asset_type"] in ("image", "video") and not c["prompt"]:
                 problems.append(f"{c['id']}: {c['asset_type']} cut needs a prompt")
-            if c["asset_type"] == "diagram" and not c["diagram"]:
-                problems.append(f"{c['id']}: diagram cut needs a diagram spec")
+            if c["asset_type"] in ("diagram", "motion") and not c["diagram"]:
+                problems.append(f"{c['id']}: {c['asset_type']} cut needs a graphic spec in 'diagram'")
         covered = {c["line_id"] for c in data["cuts"]}
         problems += [f"script line {lid} has no cut" for lid in lines if lid not in covered]
         if problems:
             raise PipelineError("storyboard problems:\n  - " + "\n  - ".join(problems))
         rec["outputs"].append("storyboard/storyboard.json")
         rec["notes"].append(f"{len(data['cuts'])} cuts: " + ", ".join(
-            f"{t}={sum(c['asset_type'] == t for c in data['cuts'])}" for t in ("image", "video", "diagram", "title")))
+            f"{t}={sum(c['asset_type'] == t for c in data['cuts'])}" for t in ("image", "video", "motion", "diagram", "title")))
 
     sb_cuts = [{"id": c["id"], "narration": c["narration"]} for c in data["cuts"]]
     with project.stage("shorts_plan") as rec:

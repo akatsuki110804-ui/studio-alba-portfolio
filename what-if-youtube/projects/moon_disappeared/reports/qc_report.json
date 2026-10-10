@@ -1,30 +1,30 @@
 {
-  "generated": "2026-10-10T11:47:44+00:00",
+  "generated": "2026-10-10T12:58:37+00:00",
   "project": "moon_disappeared",
   "videos": {
     "long": {
       "file": "output/moon_disappeared_long_ANIMATIC.mp4",
-      "duration": 378.166667,
-      "lufs": -14.1,
-      "true_peak": -1.4
+      "duration": 447.833333,
+      "lufs": -14.0,
+      "true_peak": -2.5
     },
     "S1": {
       "file": "output/shorts/S1_ANIMATIC.mp4",
-      "duration": 37.333333,
+      "duration": 39.333333,
       "lufs": -14.0,
       "true_peak": -2.5
     },
     "S2": {
       "file": "output/shorts/S2_ANIMATIC.mp4",
-      "duration": 35.4,
-      "lufs": -14.1,
+      "duration": 33.533333,
+      "lufs": -14.0,
       "true_peak": -2.5
     },
     "S3": {
       "file": "output/shorts/S3_ANIMATIC.mp4",
-      "duration": 42.666667,
-      "lufs": -14.1,
-      "true_peak": -2.4
+      "duration": 41.366667,
+      "lufs": -14.0,
+      "true_peak": -3.1
     }
   },
   "previews": [
@@ -78,7 +78,7 @@
       "check": "assets: all AI shots generated",
       "ok": false,
       "severity": "error",
-      "detail": "pending: ['C01', 'C02', 'C06', 'C09', 'C10', 'C12', 'C13', 'C14', 'C15', 'C16', 'C19', 'C21', 'C22', 'C24', 'C25', 'C29', 'C31', 'C33', 'C35', 'C36', 'C37', 'C38', 'T1', 'T2', 'T3']"
+      "detail": "pending: ['C01', 'C02', 'C07', 'C11', 'C14', 'C16', 'C19', 'C25', 'C38', 'C40', 'C42', 'C44', 'T1', 'T2', 'T3']"
     },
     {
       "check": "moon_disappeared_long_ANIMATIC.mp4: opens with video+audio",
@@ -96,19 +96,19 @@
       "check": "moon_disappeared_long_ANIMATIC.mp4: duration in 345–495s",
       "ok": true,
       "severity": "info",
-      "detail": "378.2s"
+      "detail": "447.8s"
     },
     {
       "check": "moon_disappeared_long_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
       "ok": true,
       "severity": "info",
-      "detail": "-14.1 LUFS"
+      "detail": "-14.0 LUFS"
     },
     {
       "check": "moon_disappeared_long_ANIMATIC.mp4: true peak ≤ -1 dBTP",
       "ok": true,
       "severity": "info",
-      "detail": "-1.4 dBTP"
+      "detail": "-2.5 dBTP"
     },
     {
       "check": "moon_disappeared_long_ANIMATIC.mp4: no black runs > 1s",
@@ -123,7 +123,7 @@
       "detail": "[]"
     },
     {
-      "check": "moon_disappeared_en.srt: 119 cues ordered, non-overlapping, ≤2 lines",
+      "check": "moon_disappeared_en.srt: 114 cues ordered, non-overlapping, ≤2 lines",
       "ok": true,
       "severity": "info",
       "detail": "bad cues: []"
@@ -132,7 +132,7 @@
       "check": "moon_disappeared_en.srt: ends before video ends",
       "ok": true,
       "severity": "info",
-      "detail": "last cue 373.13s"
+      "detail": "last cue 442.94s"
     },
     {
       "check": "long-form: final (non-animatic) render exists",
@@ -145,6 +145,18 @@
       "ok": true,
       "severity": "info",
       "detail": ""
+    },
+    {
+      "check": "voice: reading list saved for review (audio/readings.md)",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "voice: credit line 'VOICEVOX:冥鳴ひまり' must go in the video description",
+      "ok": true,
+      "severity": "info",
+      "detail": "VOICEVOX:冥鳴ひまり"
     },
     {
       "check": "shorts: 2–3 produced",
@@ -168,7 +180,7 @@
       "check": "S1_ANIMATIC.mp4: duration in 30–60s",
       "ok": true,
       "severity": "info",
-      "detail": "37.3s"
+      "detail": "39.3s"
     },
     {
       "check": "S1_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
@@ -216,13 +228,13 @@
       "check": "S2_ANIMATIC.mp4: duration in 30–60s",
       "ok": true,
       "severity": "info",
-      "detail": "35.4s"
+      "detail": "33.5s"
     },
     {
       "check": "S2_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
       "ok": true,
       "severity": "info",
-      "detail": "-14.1 LUFS"
+      "detail": "-14.0 LUFS"
     },
     {
       "check": "S2_ANIMATIC.mp4: true peak ≤ -1 dBTP",
@@ -264,19 +276,19 @@
       "check": "S3_ANIMATIC.mp4: duration in 30–60s",
       "ok": true,
       "severity": "info",
-      "detail": "42.7s"
+      "detail": "41.4s"
     },
     {
       "check": "S3_ANIMATIC.mp4: loudness ≈ -14.0 LUFS",
       "ok": true,
       "severity": "info",
-      "detail": "-14.1 LUFS"
+      "detail": "-14.0 LUFS"
     },
     {
       "check": "S3_ANIMATIC.mp4: true peak ≤ -1 dBTP",
       "ok": true,
       "severity": "info",
-      "detail": "-2.4 dBTP"
+      "detail": "-3.1 dBTP"
     },
     {
       "check": "S3_ANIMATIC.mp4: no black runs > 1s",
@@ -306,7 +318,7 @@
       "check": "T1_DRAFT.jpg: 1280×720, < 2 MB",
       "ok": true,
       "severity": "info",
-      "detail": "(1280, 720), 63 KB"
+      "detail": "(1280, 720), 52 KB"
     },
     {
       "check": "T1_DRAFT.jpg: real background",
@@ -318,7 +330,7 @@
       "check": "T2_DRAFT.jpg: 1280×720, < 2 MB",
       "ok": true,
       "severity": "info",
-      "detail": "(1280, 720), 78 KB"
+      "detail": "(1280, 720), 79 KB"
     },
     {
       "check": "T2_DRAFT.jpg: real background",
@@ -330,7 +342,7 @@
       "check": "T3_DRAFT.jpg: 1280×720, < 2 MB",
       "ok": true,
       "severity": "info",
-      "detail": "(1280, 720), 67 KB"
+      "detail": "(1280, 720), 56 KB"
     },
     {
       "check": "T3_DRAFT.jpg: real background",
@@ -354,7 +366,7 @@
   "cost": {
     "by_stage": {
       "voice": {
-        "items": 3,
+        "items": 5,
         "credits": 0.0,
         "cost_jpy": 0.0,
         "kinds": [

@@ -1,14 +1,14 @@
 {
   "style_bible": {
-    "global_style": "photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo",
-    "negative": "text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
+    "global_style": "photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
+    "negative": "text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
     "entities": {
-      "EARTH": "planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars",
-      "MOON": "Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration",
+      "EARTH": "planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space with faint stars",
+      "MOON": "Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size",
       "CITY": "an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks",
       "COAST": "a rocky temperate coastline with a wide tidal flat, wet sand reflecting the sky, kelp-covered boulders",
       "REEF": "an Indo-Pacific Acropora coral reef, branching and table corals",
-      "NIGHT_SKY": "a natural dark night sky full of stars with the Milky Way band, faint green airglow near the horizon"
+      "NIGHT_SKY": "a natural dark night sky full of stars with the Milky Way band"
     }
   },
   "cuts": [
@@ -16,18 +16,18 @@
       "id": "C01",
       "line_id": "L01",
       "section": "hook",
-      "narration": "Tonight, at nine forty-one p.m., the Moon is gone. No explosion. No flash. One moment it hangs over the city. The next, there is only black sky.",
-      "purpose": "Hook: the Moon disappears over a city",
-      "subject": "full Moon above a city skyline that suddenly vanishes",
-      "location": "CITY at night",
-      "camera_angle": "low angle from a rooftop",
+      "narration": "今夜、午後9時41分。月が、消えました。爆発も、閃光もありません。",
+      "purpose": "フック：街の上の月が音もなく消える",
+      "subject": "フック：街の上の月が音もなく消える",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "push_in",
-      "lighting": "cool moonlight then darker",
+      "lighting": "",
       "onscreen_text": "",
       "asset_type": "video",
-      "prompt": "Slow push-in from a rooftop toward a bright full MOON hanging above CITY at night; after two seconds the Moon silently vanishes with no explosion and no flash, leaving only black starry sky; city lights keep glowing; calm, eerie, no camera shake",
+      "prompt": "Slow push-in from a rooftop toward a bright full MOON hanging above CITY at night; after two seconds the Moon silently vanishes with no explosion and no flash, leaving only black starry sky; city lights keep glowing; calm, eerie",
       "diagram": null,
-      "science_notes": "Dramatization. The vanishing must be silent and instant — no explosion (matches the premise).",
+      "science_notes": "演出（D01）。爆発させない（前提と一致）。",
       "claim_ids": [
         "D01"
       ],
@@ -38,82 +38,47 @@
     },
     {
       "id": "C02",
-      "line_id": "L02",
+      "line_id": "L01",
       "section": "hook",
-      "narration": "So what breaks first? The answer is stranger than the movies. Because the most dangerous change is the slowest one.",
-      "purpose": "Pose the question",
-      "subject": "people on a rooftop looking up at an empty night sky",
-      "location": "CITY rooftop",
-      "camera_angle": "medium wide, from behind the people",
+      "narration": "さっきまで街の上に浮かんでいた月が、次の瞬間には、ただの暗い空になっていたのです。",
+      "purpose": "空を見上げる人々",
+      "subject": "空を見上げる人々",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "push_in",
-      "lighting": "city glow from below, dark sky above",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Three people seen from behind standing on a CITY rooftop at night, looking up at an empty dark sky with no moon, city glow lighting their silhouettes from below, sense of unease",
+      "asset_type": "video",
+      "prompt": "Three people seen from behind on a CITY rooftop at night slowly looking up at an empty dark sky with no moon, a light breeze moves their hair and jackets, city glow lights their silhouettes from below, slow push-in",
       "diagram": null,
       "science_notes": "",
-      "claim_ids": [],
+      "claim_ids": [
+        "D01"
+      ],
       "entities": [
         "CITY"
       ]
     },
     {
       "id": "C03",
-      "line_id": "L03",
-      "section": "rules",
-      "narration": "First, the rules. Nothing in physics lets a whole world simply vanish. Mass and energy don't just disappear. So this is a thought experiment.",
-      "purpose": "State that this is a thought experiment",
-      "subject": "title card",
-      "location": "—",
-      "camera_angle": "—",
+      "line_id": "L02",
+      "section": "hook",
+      "narration": "では、最初に壊れるのは何でしょうか。答えは、映画で見るものとは少し違います。いちばん危険な変化は、いちばんゆっくりやって来るのです。",
+      "purpose": "問いを提示",
+      "subject": "問いを提示",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "A THOUGHT EXPERIMENT",
-      "asset_type": "title",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "title",
         "params": {
-          "title": "A THOUGHT EXPERIMENT",
-          "subtitle": "Physically impossible — and that's the point"
-        }
-      },
-      "science_notes": "Premise breaks conservation of mass-energy (A01).",
-      "claim_ids": [
-        "A01"
-      ],
-      "entities": []
-    },
-    {
-      "id": "C04",
-      "line_id": "L04",
-      "section": "rules",
-      "narration": "We delete the Moon instantly and completely. Its light, its gravity, everything. Then we follow the consequences, from the first second to the next hundred million years.",
-      "purpose": "Show the time ladder the video follows",
-      "subject": "timeline",
-      "location": "—",
-      "camera_angle": "—",
-      "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "Second 0 → 100 million years",
-      "asset_type": "diagram",
-      "prompt": null,
-      "diagram": {
-        "type": "timeline",
-        "params": {
-          "title": "Our clock",
-          "ticks": [
-            "Second 0",
-            "First night",
-            "Hour 6",
-            "Year 1",
-            "10,000 yrs",
-            "100 million yrs"
-          ],
-          "highlight": [
-            0,
-            0
-          ]
+          "title": "最初に壊れるのは、何か？",
+          "subtitle": "答えは、いちばん遅くやって来る",
+          "mode": "question"
         }
       },
       "science_notes": "",
@@ -121,34 +86,98 @@
       "entities": []
     },
     {
+      "id": "C04",
+      "line_id": "L03",
+      "section": "rules",
+      "narration": "まず、ルールを決めておきましょう。物理の法則では、天体がまるごと消えることはありえません。質量やエネルギーは、ただ消えたりしないからです。つまりこれは、思考実験です。",
+      "purpose": "思考実験であることを明示",
+      "subject": "思考実験であることを明示",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "思考実験",
+          "subtitle": "物理的にはありえない — だからこそ見えるもの"
+        }
+      },
+      "science_notes": "A01",
+      "claim_ids": [
+        "A01"
+      ],
+      "entities": []
+    },
+    {
       "id": "C05",
+      "line_id": "L04",
+      "section": "rules",
+      "narration": "月を一瞬で、完全に消します。光も、重力も、すべてです。そこから、最初の1秒から1億年後までに何が起きるのかを、順番にたどっていきます。",
+      "purpose": "時間のはしご",
+      "subject": "時間のはしご",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "timeline",
+        "params": {
+          "title": "この動画の時計",
+          "ticks": [
+            "0秒",
+            "最初の夜",
+            "6時間後",
+            "1年後",
+            "1万年後",
+            "1億年後"
+          ],
+          "highlight": [
+            0,
+            5
+          ],
+          "travel": true
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C06",
       "line_id": "L05",
       "section": "rules",
-      "narration": "And we'll keep score honestly: what scientists have measured, what physics lets us infer, and where the experts still disagree.",
-      "purpose": "Explain the scorecard",
-      "subject": "three labels",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "そして、正直にいきます。科学者が実際に測ったこと。物理から推測できること。そして、専門家の間でも意見が分かれていること。この三つを区別しながら進めます。",
+      "purpose": "3種類の区別",
+      "subject": "3種類の区別",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "Measured · Inferred · Debated",
-      "asset_type": "title",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "legend",
         "params": {
           "items": [
             [
-              "MEASURED",
-              "what scientists have observed"
+              "測定された事実",
+              "科学者が実際に観測したこと"
             ],
             [
-              "INFERRED",
-              "what physics lets us reason"
+              "推論",
+              "物理から導けること"
             ],
             [
-              "DEBATED",
-              "where experts disagree"
+              "議論中",
+              "専門家の意見が分かれること"
             ]
           ]
         }
@@ -158,21 +187,21 @@
       "entities": []
     },
     {
-      "id": "C06",
+      "id": "C07",
       "line_id": "L06",
       "section": "second_zero",
-      "narration": "Second zero. In a disaster movie, Earth would be flung out of its orbit. That doesn't happen.",
-      "purpose": "Set up the orbit myth",
-      "subject": "Earth alone in space",
-      "location": "space",
-      "camera_angle": "wide, Earth small in frame, Sun glare at edge",
+      "narration": "ゼロ秒。映画なら、地球は軌道から放り出されるかもしれません。でも実際には、そうはなりません。",
+      "purpose": "宇宙に浮かぶ地球",
+      "subject": "宇宙に浮かぶ地球",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "pull_out",
-      "lighting": "hard sunlight from the left",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "EARTH alone in the blackness of space, small in the frame, harsh sunlight from the left edge of frame, vast emptiness, sense of scale, no moon visible",
+      "asset_type": "video",
+      "prompt": "EARTH slowly rotating alone in the blackness of space, small in the frame, harsh sunlight from the left, slow pull-out revealing vast emptiness, no moon visible",
       "diagram": null,
-      "science_notes": "C05: the orbit barely changes.",
+      "science_notes": "",
       "claim_ids": [
         "C05"
       ],
@@ -181,18 +210,18 @@
       ]
     },
     {
-      "id": "C07",
+      "id": "C08",
       "line_id": "L07",
       "section": "second_zero",
-      "narration": "Earth and the Moon actually circle a shared balance point. Because Earth is about eighty-one times heavier, that point sits inside our planet, roughly four thousand seven hundred kilometers from the center.",
-      "purpose": "Explain the barycenter",
-      "subject": "barycenter inside Earth",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "地球と月は、ふたつの天体に共通する重心のまわりを回っています。地球は月のおよそ81倍も重いので、この重心は地球の内部、中心からおよそ4,700キロメートルの場所にあります。",
+      "purpose": "共通重心の説明",
+      "subject": "共通重心の説明",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "Balance point: ~4,700 km from Earth's center",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "重心：中心から約4,700 km",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "barycenter",
@@ -202,7 +231,7 @@
           "mass_ratio": 81
         }
       },
-      "science_notes": "C01, C02. Draw to scale.",
+      "science_notes": "C01, C02。縮尺どおり。",
       "claim_ids": [
         "C01",
         "C02"
@@ -210,40 +239,40 @@
       "entities": []
     },
     {
-      "id": "C08",
+      "id": "C09",
       "line_id": "L08",
       "section": "second_zero",
-      "narration": "Every month, Earth makes a small loop around it, at about twelve meters per second. Our speed around the Sun is nearly thirty kilometers per second.",
-      "purpose": "Compare the two speeds",
-      "subject": "bar comparison",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "地球はひと月かけて、この点のまわりを小さく回っています。その速さは、秒速およそ12メートル。一方、地球が太陽のまわりを回る速さは、秒速およそ30キロメートルです。",
+      "purpose": "2つの速さを比較",
+      "subject": "2つの速さを比較",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "12 m/s vs 29,780 m/s",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "bar_compare",
         "params": {
-          "title": "Earth's speeds",
+          "title": "地球の2つの速さ",
           "unit": "m/s",
           "log": true,
           "bars": [
             {
-              "label": "Loop around the balance point",
+              "label": "重心のまわりの回転",
               "value": 12,
-              "text": "≈ 12 m/s"
+              "text": "秒速 約12 m"
             },
             {
-              "label": "Orbit around the Sun",
+              "label": "太陽のまわりの公転",
               "value": 29780,
-              "text": "≈ 29,780 m/s"
+              "text": "秒速 約29,780 m"
             }
           ]
         }
       },
-      "science_notes": "C03, C04 (12 m/s is a calculation: 2π×4,671 km / 27.32 d). Log scale is labelled.",
+      "science_notes": "C03, C04。12 m/s は計算値。対数目盛と明記。",
       "claim_ids": [
         "C03",
         "C04"
@@ -251,42 +280,43 @@
       "entities": []
     },
     {
-      "id": "C09",
+      "id": "C10",
       "line_id": "L09",
       "section": "second_zero",
-      "narration": "Delete the Moon, and that little loop simply straightens out. Our path around the Sun barely changes. Nobody would feel a thing.",
-      "purpose": "Resolve the myth: calm orbit",
-      "subject": "Earth and the Sun",
-      "location": "space",
-      "camera_angle": "wide",
-      "camera_motion": "pan_right",
-      "lighting": "warm sunlight",
+      "narration": "月が消えると、この小さな回転がまっすぐになるだけです。太陽をめぐる地球の道筋は、ほとんど変わりません。誰も、何も感じないでしょう。",
+      "purpose": "月が消えても公転は続く",
+      "subject": "月が消えても公転は続く",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Wide view of EARTH in space with the Sun as a brilliant star far to the right, calm and serene, thin crescent of daylight on the planet, peaceful mood",
-      "diagram": null,
-      "science_notes": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "orbit",
+        "params": {}
+      },
+      "science_notes": "C05（推論）",
       "claim_ids": [
         "C05"
       ],
-      "entities": [
-        "EARTH"
-      ]
+      "entities": []
     },
     {
-      "id": "C10",
+      "id": "C11",
       "line_id": "L10",
       "section": "first_night",
-      "narration": "What people would notice first is the dark.",
-      "purpose": "Introduce darkness",
-      "subject": "lone figure in a desert under a moonless sky",
-      "location": "desert at night",
-      "camera_angle": "wide, low horizon",
+      "narration": "人々が最初に気づくのは、暗さです。",
+      "purpose": "月のない砂漠の夜",
+      "subject": "月のない砂漠の夜",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "tilt_up",
-      "lighting": "starlight only",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "A lone person standing in a vast desert at night under a moonless NIGHT_SKY, only starlight illuminating the sand dunes faintly, very dark, Milky Way overhead",
+      "asset_type": "video",
+      "prompt": "A lone person standing in a vast desert at night under a moonless NIGHT_SKY, only starlight faintly illuminating the sand dunes, stars slowly wheeling overhead, very slow tilt up to the sky",
       "diagram": null,
       "science_notes": "",
       "claim_ids": [],
@@ -295,39 +325,40 @@
       ]
     },
     {
-      "id": "C11",
+      "id": "C12",
       "line_id": "L11",
       "section": "first_night",
-      "narration": "A full Moon on a clear night lights the ground with about a quarter of a lux. Without it, a natural sky offers starlight and faint airglow, around a hundredth of that.",
-      "purpose": "Quantify the darkness",
-      "subject": "log scale of illuminance",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "晴れた夜の満月は、地面をおよそ0.25ルクスで照らします。月がなければ、自然の夜空にあるのは星の光と、大気がかすかに放つ光だけ。明るさは、その100分の1ほどになります。",
+      "purpose": "夜の明るさの比較",
+      "subject": "夜の明るさの比較",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "0.25 lux → ~0.002 lux",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "log_scale",
         "params": {
-          "title": "How bright is the night?",
-          "unit": "lux",
+          "title": "夜はどれくらい明るい？",
+          "unit": "ルクス",
           "min": 0.0001,
           "max": 1,
           "points": [
             {
-              "label": "Full Moon",
+              "label": "満月",
               "value": 0.25
             },
             {
-              "label": "Moonless sky (stars + airglow)",
+              "label": "月のない夜空",
               "value": 0.002
             }
-          ]
+          ],
+          "dim": true
         }
       },
-      "science_notes": "C06, C07. Order-of-magnitude values.",
+      "science_notes": "C06, C07（桁の目安）",
       "claim_ids": [
         "C06",
         "C07"
@@ -335,44 +366,49 @@
       "entities": []
     },
     {
-      "id": "C12",
+      "id": "C13",
       "line_id": "L12",
       "section": "first_night",
-      "narration": "In cities, streetlights would hide the change. But in the deserts, the oceans and the forests, every night would become a new-moon night. Forever.",
-      "purpose": "Wilderness nights become new-moon nights",
-      "subject": "dark forest by a lake under stars, distant city glow",
-      "location": "forest lake",
-      "camera_angle": "wide",
-      "camera_motion": "pan_left",
-      "lighting": "starlight, faint orange skyglow on the horizon",
+      "narration": "街の中なら、街灯がこの変化を隠してしまうでしょう。でも砂漠でも、海の上でも、森の中でも、すべての夜が新月の夜になります。永遠に。",
+      "purpose": "すべての夜が新月の夜に",
+      "subject": "すべての夜が新月の夜に",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "A dark pine forest beside a still lake at night under a moonless NIGHT_SKY, stars reflected in the water, a faint orange glow of a distant city on the horizon",
-      "diagram": null,
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "night_sky",
+        "params": {
+          "forest": true,
+          "city_glow": true,
+          "milky_way": 0.5
+        }
+      },
       "science_notes": "",
       "claim_ids": [
         "C07"
       ],
-      "entities": [
-        "NIGHT_SKY"
-      ]
+      "entities": []
     },
     {
-      "id": "C13",
+      "id": "C14",
       "line_id": "L13",
       "section": "first_night",
-      "narration": "Some animals are tuned to that light. Dung beetles in Africa steer by polarized moonlight, and on moonless nights they hold their course by the glow of the Milky Way.",
-      "purpose": "Animals that navigate by night light",
-      "subject": "dung beetle rolling a ball",
-      "location": "African savanna at night",
-      "camera_angle": "macro, ground level",
+      "narration": "月の光に頼って生きる動物もいます。アフリカのフンコロガシは、月の光の偏光を手がかりに進む方向を決めています。",
+      "purpose": "月光で進むフンコロガシ",
+      "subject": "月光で進むフンコロガシ",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "push_in",
-      "lighting": "dim silver starlight, Milky Way",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Macro ground-level photo of a dung beetle rolling a dung ball across dry savanna soil at night, the Milky Way band glowing in the sky behind, dim silvery starlight, shallow depth of field",
+      "asset_type": "video",
+      "prompt": "Macro ground-level shot of a dung beetle rolling a dung ball across dry savanna soil at night, the Milky Way glowing in the sky behind, dim silvery light, shallow depth of field, slow push-in",
       "diagram": null,
-      "science_notes": "C08: Scarabaeus satyrus-type nocturnal beetle; keep it realistic.",
+      "science_notes": "C08",
       "claim_ids": [
         "C08"
       ],
@@ -381,21 +417,50 @@
       ]
     },
     {
-      "id": "C14",
+      "id": "C15",
+      "line_id": "L13",
+      "section": "first_night",
+      "narration": "月のない夜には、天の川の光を頼りにまっすぐ進むことが分かっています。",
+      "purpose": "天の川を頼りに進む",
+      "subject": "天の川を頼りに進む",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "night_sky",
+        "params": {
+          "forest": false,
+          "city_glow": false,
+          "milky_way": 1.0,
+          "beetle_path": true
+        }
+      },
+      "science_notes": "C08",
+      "claim_ids": [
+        "C08"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C16",
       "line_id": "L14",
       "section": "first_night",
-      "narration": "On coral reefs, many species spawn together, timed to the lunar cycle. A light-sensitive gene in these corals is most active under full-moon light.",
-      "purpose": "Coral spawning tied to the Moon",
-      "subject": "corals releasing egg bundles",
-      "location": "REEF at night",
-      "camera_angle": "underwater, medium",
+      "narration": "サンゴ礁では、多くのサンゴが月の満ち欠けに合わせて、いっせいに産卵します。",
+      "purpose": "サンゴの一斉産卵",
+      "subject": "サンゴの一斉産卵",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "tilt_up",
-      "lighting": "soft blue light from above",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Underwater night photo of REEF during mass spawning, branching corals releasing countless small pink and orange egg-sperm bundles that drift upward like an inverted snowfall, soft blue light filtering from the surface",
+      "asset_type": "video",
+      "prompt": "Underwater night footage of REEF during mass spawning, branching corals releasing countless small pink and orange egg bundles that drift slowly upward like an inverted snowfall, soft blue light from above, gentle camera tilt up",
       "diagram": null,
-      "science_notes": "C09.",
+      "science_notes": "C09",
       "claim_ids": [
         "C09"
       ],
@@ -404,44 +469,77 @@
       ]
     },
     {
-      "id": "C15",
+      "id": "C17",
+      "line_id": "L14",
+      "section": "first_night",
+      "narration": "こうしたサンゴには、満月の光のもとで最も活発に働く、光に反応する遺伝子があることが分かっています。",
+      "purpose": "満月の光に反応する遺伝子",
+      "subject": "満月の光に反応する遺伝子",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "particles",
+        "params": {
+          "density": 1.0,
+          "moon_phase": true,
+          "label": "満月の光に反応する遺伝子"
+        }
+      },
+      "science_notes": "C09",
+      "claim_ids": [
+        "C09"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C18",
       "line_id": "L15",
       "section": "first_night",
-      "narration": "Without that clock, spawning could drift out of sync, and eggs released on different nights may never meet. How badly this would play out is still an open question.",
-      "purpose": "Out of sync spawning",
-      "subject": "sparse eggs in dark water",
-      "location": "REEF at night",
-      "camera_angle": "underwater, wide",
-      "camera_motion": "pull_out",
-      "lighting": "very dim, blue-black",
+      "narration": "その時計がなくなれば、産卵のタイミングがばらばらになり、別々の夜に放たれた卵は出会えないかもしれません。どこまで深刻な影響になるのかは、まだ分かっていません。",
+      "purpose": "産卵がばらばらに",
+      "subject": "産卵がばらばらに",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Very dark underwater night scene over REEF, only a few scattered coral egg bundles drifting alone in the black-blue water, lonely and quiet mood",
-      "diagram": null,
-      "science_notes": "C10 — inference / open question.",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "particles",
+        "params": {
+          "density": 0.15,
+          "moon_phase": false,
+          "label": "別々の夜に放たれた卵"
+        }
+      },
+      "science_notes": "C10（推論・未解明）",
       "claim_ids": [
         "C10"
       ],
-      "entities": [
-        "REEF"
-      ]
+      "entities": []
     },
     {
-      "id": "C16",
+      "id": "C19",
       "line_id": "L16",
       "section": "first_tide",
-      "narration": "Hour six. Along the coast, the tide comes in, and stops short.",
-      "purpose": "Hero shot: the weakened tide",
-      "subject": "tide coming in and stopping short",
-      "location": "COAST",
-      "camera_angle": "low wide shot over the tidal flat",
+      "narration": "6時間後。海岸では、潮が満ちてきます。けれど、いつもの場所まで届きません。",
+      "purpose": "届かない満ち潮",
+      "subject": "届かない満ち潮",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "overcast daylight",
+      "lighting": "",
       "onscreen_text": "",
       "asset_type": "video",
       "prompt": "Low wide shot over COAST tidal flat in overcast daylight; shallow waves slide in over the wet sand, then slow and stop well short of the old high-water line marked by dark seaweed on the rocks; calm, quiet, no people",
       "diagram": null,
-      "science_notes": "C12 — dramatized illustration of smaller tides.",
+      "science_notes": "C12（演出的な描写）",
       "claim_ids": [
         "C12"
       ],
@@ -450,78 +548,65 @@
       ]
     },
     {
-      "id": "C17",
+      "id": "C20",
       "line_id": "L17",
       "section": "first_tide",
-      "narration": "The Moon raises most of our tides. The Sun raises tides too, but its tidal pull is only about forty-six percent of the Moon's.",
-      "purpose": "Compare tidal forces",
-      "subject": "bars Moon vs Sun",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "潮の満ち引きを主に起こしているのは月です。太陽も潮を起こしますが、その力は月のおよそ46パーセントしかありません。",
+      "purpose": "潮を起こす力の比較",
+      "subject": "潮を起こす力の比較",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "Sun ≈ 46% of the Moon",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "bar_compare",
         "params": {
-          "title": "Tide-raising force",
+          "title": "潮を起こす力",
           "unit": "relative",
           "bars": [
             {
-              "label": "Moon",
+              "label": "月",
               "value": 100,
               "text": "100%"
             },
             {
-              "label": "Sun",
+              "label": "太陽",
               "value": 46,
-              "text": "≈ 46%"
+              "text": "約46%"
             }
           ]
         }
       },
-      "science_notes": "C11 (NOAA: about half; Bowditch: 46%).",
+      "science_notes": "C11",
       "claim_ids": [
         "C11"
       ],
       "entities": []
     },
     {
-      "id": "C18",
+      "id": "C21",
       "line_id": "L18",
       "section": "first_tide",
-      "narration": "So the tides don't vanish. They shrink, to roughly a third of their typical size. And they follow the Sun's rhythm, with high water at nearly the same time every day.",
-      "purpose": "Today vs Sun-only tides",
-      "subject": "bars",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "つまり、潮はなくなりません。小さくなるのです。いつもの大きさの、およそ3分の1に。そして太陽のリズムに従って、満潮は毎日ほぼ同じ時刻にやって来るようになります。",
+      "purpose": "潮は約3分の1に",
+      "subject": "潮は約3分の1に",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "Roughly a third",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
-        "type": "bar_compare",
+        "type": "tide_section",
         "params": {
-          "title": "Typical tidal forcing",
-          "unit": "relative",
-          "bars": [
-            {
-              "label": "Today (Moon + Sun)",
-              "value": 100,
-              "text": "100%"
-            },
-            {
-              "label": "Sun only",
-              "value": 32,
-              "text": "≈ ⅓"
-            }
-          ]
+          "mode": "shrink"
         }
       },
-      "science_notes": "C12: 0.46/1.46 ≈ 0.32; global rule of thumb, local tides vary.",
+      "science_notes": "C12, C14（全球的な目安。地域差あり）",
       "claim_ids": [
         "C12",
         "C14"
@@ -529,89 +614,95 @@
       "entities": []
     },
     {
-      "id": "C19",
+      "id": "C22",
       "line_id": "L19",
       "section": "first_tide",
-      "narration": "There is no giant wave either. The ocean's tidal bulge is subtle, well under a meter in open water. So the sea would settle over hours, like an ordinary falling tide.",
-      "purpose": "No tsunami: calm sea",
-      "subject": "open ocean at dusk",
-      "location": "open ocean",
-      "camera_angle": "wide, low over water",
-      "camera_motion": "pan_right",
-      "lighting": "dusk, soft pastel",
+      "narration": "巨大な津波も起きません。潮による海面の盛り上がりは、外洋では1メートルにも満たない、ゆるやかなものです。海は数時間かけて、いつもの引き潮のように落ち着いていくでしょう。",
+      "purpose": "穏やかな海",
+      "subject": "穏やかな海",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Calm open ocean at dusk seen from low above the water, gentle long swell, soft pastel sky, peaceful, endless horizon",
-      "diagram": null,
-      "science_notes": "C15 — inference.",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "sea",
+        "params": {}
+      },
+      "science_notes": "C15（推論）",
       "claim_ids": [
         "C15"
       ],
       "entities": []
     },
     {
-      "id": "C20",
+      "id": "C23",
       "line_id": "L20",
       "section": "first_tide",
-      "narration": "Spring tides and neap tides end, too. They come from the Sun and Moon lining up, and now there is nothing to line up with.",
-      "purpose": "Spring and neap tides end",
-      "subject": "alignment diagram",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "大潮と小潮も、なくなります。これは太陽と月が並んだり、ずれたりすることで生まれるもの。並ぶ相手が、もういないのです。",
+      "purpose": "大潮と小潮がなくなる",
+      "subject": "大潮と小潮がなくなる",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "No more spring & neap tides",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "spring_neap",
         "params": {}
       },
-      "science_notes": "C13.",
+      "science_notes": "C13",
       "claim_ids": [
         "C13"
       ],
       "entities": []
     },
     {
-      "id": "C21",
+      "id": "C24",
       "line_id": "L21",
       "section": "first_tide",
-      "narration": "That matters. Tides flush estuaries and feed the strip of shore that is underwater half the day and dry the other half. With weaker tides, that strip narrows, and the life adapted to it loses ground.",
-      "purpose": "Intertidal life loses ground",
-      "subject": "rock pool with starfish and anemones",
-      "location": "COAST at low tide",
-      "camera_angle": "close, top-down",
-      "camera_motion": "push_in",
-      "lighting": "bright overcast",
+      "narration": "これは大切な変化です。潮は河口の水を入れ替え、一日の半分は海の中、もう半分は陸になる海岸の帯を育てています。潮が弱まれば、この帯は細くなり、そこに適応した生き物たちは住む場所を失っていきます。",
+      "purpose": "潮間帯が細くなる",
+      "subject": "潮間帯が細くなる",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Top-down close photo of an intertidal rock pool on COAST at low tide, orange starfish, green anemones, mussels and barnacles, clear water, bright overcast light",
-      "diagram": null,
-      "science_notes": "C16 — inference.",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "tide_section",
+        "params": {
+          "mode": "intertidal"
+        }
+      },
+      "science_notes": "C16（推論）",
       "claim_ids": [
         "C16"
       ],
-      "entities": [
-        "COAST"
-      ]
+      "entities": []
     },
     {
-      "id": "C22",
+      "id": "C25",
       "line_id": "L22",
       "section": "first_years",
-      "narration": "Year one. There will never be another total solar eclipse. Only the Moon could cover the Sun.",
-      "purpose": "No more total eclipses",
-      "subject": "total solar eclipse over mountains",
-      "location": "mountain landscape",
-      "camera_angle": "wide",
+      "narration": "1年後。皆既日食は、もう二度と起きません。太陽をぴったり隠せたのは、月だけだったからです。",
+      "purpose": "最後の皆既日食",
+      "subject": "最後の皆既日食",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "push_in",
-      "lighting": "eclipse twilight, glowing corona",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Total solar eclipse above a mountain landscape, the black disk of the MOON surrounded by the Sun's white glowing corona, 360-degree twilight glow on the horizon, people silhouetted on a ridge",
+      "asset_type": "video",
+      "prompt": "Total solar eclipse above a mountain landscape, the black disk of the MOON surrounded by the Sun's white glowing corona, 360-degree twilight glow on the horizon, people silhouetted on a ridge, slow push-in",
       "diagram": null,
-      "science_notes": "C17.",
+      "science_notes": "C17",
       "claim_ids": [
         "C17"
       ],
@@ -620,35 +711,35 @@
       ]
     },
     {
-      "id": "C23",
+      "id": "C26",
       "line_id": "L23",
       "section": "first_years",
-      "narration": "Something quieter changes, too. Today, tidal friction acts like a brake on Earth's spin. It adds roughly two milliseconds to the day every century, and pushes the Moon about three point eight centimeters farther away each year.",
-      "purpose": "The tidal brake in numbers",
-      "subject": "two number cards",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "もっと静かな変化もあります。いま、潮の摩擦は地球の自転にブレーキをかけています。一日の長さは100年ごとにおよそ2ミリ秒ずつ長くなり、月は毎年およそ3.8センチメートルずつ遠ざかっています。",
+      "purpose": "潮のブレーキを数字で",
+      "subject": "潮のブレーキを数字で",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "+~2 ms / century · 3.8 cm / year",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "number_cards",
         "params": {
           "cards": [
             {
-              "value": "+ ~2 ms",
-              "label": "length of day, per century"
+              "value": "+約2 ms",
+              "label": "1日の長さ（100年ごと）"
             },
             {
               "value": "3.8 cm",
-              "label": "Moon's retreat, per year"
+              "label": "月が遠ざかる距離（1年ごと）"
             }
           ]
         }
       },
-      "science_notes": "C18, C19 (estimates range 1.7–2.5 ms).",
+      "science_notes": "C18, C19（推定値に幅 1.7〜2.5 ms）",
       "claim_ids": [
         "C18",
         "C19"
@@ -656,215 +747,218 @@
       "entities": []
     },
     {
-      "id": "C24",
+      "id": "C27",
       "line_id": "L24",
       "section": "first_years",
-      "narration": "Without the Moon, most of that brake is released. You would never notice it in a lifetime. But over hundreds of millions of years, Earth's days would stay shorter than they otherwise would have.",
-      "purpose": "Earth's spin continues",
-      "subject": "sunrise over Earth from orbit",
-      "location": "low Earth orbit",
-      "camera_angle": "wide over the horizon",
-      "camera_motion": "pan_left",
-      "lighting": "sunrise on the limb",
+      "narration": "月が消えれば、このブレーキの大部分が外れます。一生のうちに気づくことはないでしょう。でも何億年という時間で見れば、地球の一日は、本来よりも短いままになるはずです。",
+      "purpose": "回り続ける地球",
+      "subject": "回り続ける地球",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Sunrise seen from low orbit over EARTH, the Sun breaking over the curved horizon, the day-night terminator line crossing cloud systems, thin blue atmosphere",
-      "diagram": null,
-      "science_notes": "C20 — inference.",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "globe",
+        "params": {
+          "tilt": 23.4,
+          "label": "1日 ≈ 24時間"
+        }
+      },
+      "science_notes": "C20（推論）",
       "claim_ids": [
         "C20"
       ],
-      "entities": [
-        "EARTH"
-      ]
+      "entities": []
     },
     {
-      "id": "C25",
+      "id": "C28",
       "line_id": "L25",
       "section": "tilt",
-      "narration": "Now, the real danger. And it is slow.",
-      "purpose": "Tone shift: the slow danger",
-      "subject": "Earth half in shadow",
-      "location": "space",
-      "camera_angle": "medium, Earth fills half frame",
-      "camera_motion": "push_in",
-      "lighting": "hard side light, deep shadow",
+      "narration": "さて、ここからが本当の危険です。そしてそれは、とてもゆっくり進みます。",
+      "purpose": "本当の危険へ",
+      "subject": "本当の危険へ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "EARTH half in deep shadow and half lit by hard sunlight from the side, ominous and still, the planet slightly tilted in the frame",
-      "diagram": null,
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "globe",
+        "params": {
+          "tilt": 23.4,
+          "dark": true
+        }
+      },
       "science_notes": "",
       "claim_ids": [],
-      "entities": [
-        "EARTH"
-      ]
+      "entities": []
     },
     {
-      "id": "C26",
+      "id": "C29",
       "line_id": "L26",
       "section": "tilt",
-      "narration": "Earth spins on a tilted axis, about twenty-three degrees. That tilt is why we have seasons.",
-      "purpose": "Axial tilt causes seasons",
-      "subject": "tilted Earth",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "地球の自転軸は、およそ23度傾いています。この傾きこそが、季節を生み出しています。",
+      "purpose": "自転軸の傾き",
+      "subject": "自転軸の傾き",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "23.4°",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "tilt",
         "params": {
           "angle": 23.4,
-          "title": "Axial tilt ≈ 23.4°",
-          "caption": "The tilt is why we have seasons"
+          "title": "自転軸の傾き 約23.4°",
+          "caption": "この傾きが季節を生む"
         }
       },
-      "science_notes": "C21.",
+      "science_notes": "C21",
       "claim_ids": [
         "C21"
       ],
       "entities": []
     },
     {
-      "id": "C27",
+      "id": "C30",
       "line_id": "L27",
       "section": "tilt",
-      "narration": "Today it only rocks gently, between roughly twenty-two and twenty-four and a half degrees, over tens of thousands of years.",
-      "purpose": "Today's narrow range",
-      "subject": "range bar",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "いま、この傾きは、およそ22度から24.5度のあいだで、何万年もかけてゆるやかに揺れているだけです。",
+      "purpose": "いまの揺れ幅",
+      "subject": "いまの揺れ幅",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "22.1° – 24.5°",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "range_compare",
         "params": {
-          "title": "How far Earth's tilt swings",
+          "title": "地球の傾きの揺れ幅",
           "min": 0,
           "max": 90,
           "unit": "°",
           "marker": 23.4,
           "ranges": [
             {
-              "label": "With the Moon (today)",
+              "label": "月がある（現在）",
               "lo": 22.1,
               "hi": 24.5,
-              "text": "22.1° – 24.5°"
+              "text": "22.1°〜24.5°",
+              "wander": true
             }
           ]
         }
       },
-      "science_notes": "C21.",
+      "science_notes": "C21",
       "claim_ids": [
         "C21"
       ],
       "entities": []
     },
     {
-      "id": "C28",
+      "id": "C31",
       "line_id": "L28",
       "section": "tilt",
-      "narration": "The Moon is a big reason why. Its gravity tugs on Earth's bulging waist, and drives about two-thirds of the slow wobble of our axis, called precession.",
-      "purpose": "Moon's share of precession",
-      "subject": "pie chart",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "その大きな理由が、月です。月の重力は地球の膨らんだ赤道部分を引っ張り、自転軸がゆっくりと首を振る歳差運動の、およそ3分の2を生み出しています。",
+      "purpose": "歳差運動の3分の2は月",
+      "subject": "歳差運動の3分の2は月",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "Moon ≈ ⅔",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
-        "type": "pie",
+        "type": "precession",
         "params": {
-          "title": "Who drives the wobble (precession)?",
-          "slices": [
-            {
-              "label": "Moon",
-              "value": 2
-            },
-            {
-              "label": "Sun",
-              "value": 1
-            }
-          ],
-          "caption": "≈ 50.3 arcseconds per year in total"
+          "moon_share": 0.6666666666666666,
+          "title": "首振り（歳差運動）を起こすのは？",
+          "caption": "合計 年間約50.3秒角"
         }
       },
-      "science_notes": "C22.",
+      "science_notes": "C22",
       "claim_ids": [
         "C22"
       ],
       "entities": []
     },
     {
-      "id": "C29",
+      "id": "C32",
       "line_id": "L29",
       "section": "tilt",
-      "narration": "That wobble keeps Earth's spin out of step with the gentle, repeating tugs of the other planets.",
-      "purpose": "The planets' gentle tugs",
-      "subject": "Earth with distant planets",
-      "location": "deep space",
-      "camera_angle": "wide",
-      "camera_motion": "pan_right",
-      "lighting": "starlight",
+      "narration": "この首振りのおかげで、地球の自転は、ほかの惑星がくり返し及ぼす小さな引力と、タイミングがずれた状態に保たれています。",
+      "purpose": "惑星の小さな引力",
+      "subject": "惑星の小さな引力",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Deep-space view of EARTH and the MOON small in the foreground, with Jupiter and Venus as bright points far in the background, quiet cosmic scale, cinematic composition",
-      "diagram": null,
-      "science_notes": "C23 — artistic; real planets are far smaller in the sky.",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "solar_system",
+        "params": {}
+      },
+      "science_notes": "C23",
       "claim_ids": [
         "C23"
       ],
-      "entities": [
-        "EARTH",
-        "MOON"
-      ]
+      "entities": []
     },
     {
-      "id": "C30",
+      "id": "C33",
       "line_id": "L30",
       "section": "tilt",
-      "narration": "Remove the Moon, and the wobble slows down, and it can fall into rhythm with those tugs. In 1993, Jacques Laskar and his colleagues calculated that a moonless Earth's tilt could wander chaotically, anywhere from near zero to about eighty-five degrees.",
-      "purpose": "Laskar 1993: chaotic zone",
-      "subject": "range bar",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "月がなくなると、首振りは遅くなり、惑星の引力とリズムがそろってしまうことがあります。1993年、ジャック・ラスカーらは、月のない地球の傾きは、ほぼ0度から約85度までのあいだを、予測できない動きでさまよいうると計算しました。",
+      "purpose": "ラスカー1993：カオス領域",
+      "subject": "ラスカー1993：カオス領域",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "0° – 85°",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "range_compare",
         "params": {
-          "title": "Moonless Earth — Laskar et al. 1993",
+          "title": "月のない地球 — Laskar ほか 1993",
           "min": 0,
           "max": 90,
           "unit": "°",
           "marker": 23.4,
           "ranges": [
             {
-              "label": "With the Moon",
+              "label": "月がある",
               "lo": 22.1,
               "hi": 24.5,
-              "text": "22.1° – 24.5°"
+              "text": "22.1°〜24.5°",
+              "wander": true
             },
             {
-              "label": "Without (chaotic zone)",
+              "label": "月がない（カオス領域）",
               "lo": 0,
               "hi": 85,
-              "text": "≈ 0° – 85°"
+              "text": "約0°〜85°",
+              "wander": true,
+              "chaos": true
             }
           ]
         }
       },
-      "science_notes": "C23. Model result.",
+      "science_notes": "C23（モデル計算の結果）",
       "claim_ids": [
         "C22",
         "C23"
@@ -872,87 +966,98 @@
       "entities": []
     },
     {
-      "id": "C31",
+      "id": "C34",
       "line_id": "L31",
       "section": "tilt",
-      "narration": "Near the top of that range, much of the planet would face months of endless daylight, followed by months of darkness.",
-      "purpose": "Extreme seasons",
-      "subject": "midnight sun over frozen land",
-      "location": "high-latitude landscape",
-      "camera_angle": "wide",
-      "camera_motion": "pan_left",
-      "lighting": "low golden sun at midnight",
+      "narration": "その上限近くでは、地球の大部分で、何か月も太陽が沈まない昼と、何か月も続く夜が、交互にやって来ることになります。",
+      "purpose": "極端な季節",
+      "subject": "極端な季節",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Midnight sun hanging low over a frozen high-latitude landscape, long shadows on snow and ice, golden light, endless daylight feeling, no people",
-      "diagram": null,
-      "science_notes": "C25 — inference about high obliquity.",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "seasons",
+        "params": {
+          "tilt": 85
+        }
+      },
+      "science_notes": "C25（推論）",
       "claim_ids": [
         "C25"
       ],
       "entities": []
     },
     {
-      "id": "C32",
+      "id": "C35",
       "line_id": "L32",
       "section": "tilt",
-      "narration": "But here is the twist. In 2011, a team led by Jack Lissauer ran direct simulations, and found far narrower swings. Roughly ten to twenty degrees, over hundreds of millions of years.",
-      "purpose": "Lissauer 2011: narrower swings",
-      "subject": "range bar",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "ところが、話はここで終わりません。2011年、ジャック・リサウアーらのチームが直接シミュレーションを行うと、揺れ幅はずっと小さく、何億年ものあいだでおよそ10度から20度にとどまるという結果になりました。",
+      "purpose": "2つの研究、2つの答え",
+      "subject": "2つの研究、2つの答え",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "DEBATED",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "議論中",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "range_compare",
         "params": {
-          "title": "Two studies, two answers",
+          "title": "2つの研究、2つの答え",
           "min": 0,
           "max": 90,
           "unit": "°",
           "marker": 23.4,
           "ranges": [
             {
-              "label": "Laskar et al. 1993",
+              "label": "Laskar ほか 1993",
               "lo": 0,
               "hi": 85,
-              "text": "chaotic, ≈ 0° – 85°"
+              "text": "カオス 約0°〜85°",
+              "wander": true,
+              "chaos": true
             },
             {
-              "label": "Lissauer et al. 2011",
+              "label": "Lissauer ほか 2011",
               "lo": 13.4,
               "hi": 33.4,
-              "text": "swings ≈ 10° – 20°"
+              "text": "揺れ幅 約10°〜20°",
+              "wander": true
             }
           ],
-          "footnote": "Lissauer band drawn as ±10° around today for illustration"
+          "footnote": "Lissauer の帯は説明のため「現在±10°」で表示"
         }
       },
-      "science_notes": "C24. The Lissauer band is illustrative (±10° around 23.4°); the paper reports variation size, not a fixed window.",
+      "science_notes": "C24",
       "claim_ids": [
         "C24"
       ],
       "entities": []
     },
     {
-      "id": "C33",
+      "id": "C36",
       "line_id": "L33",
       "section": "tilt",
-      "narration": "Even that is a different world. Today the tilt shifts by about two and a half degrees. A twenty-degree swing would redraw where ice sheets grow, where monsoons fall, and where crops can survive.",
-      "purpose": "Climate zones redrawn",
-      "subject": "ice sheet edge next to farmland and monsoon clouds",
-      "location": "composite landscape",
-      "camera_angle": "aerial, high",
-      "camera_motion": "tilt_down",
-      "lighting": "dramatic storm light",
+      "narration": "それでも、別の世界です。いまの傾きの変化は2.5度ほど。20度も揺れれば、氷床ができる場所も、モンスーンが降る場所も、作物が育つ場所も、描き直されてしまいます。",
+      "purpose": "気候帯が描き直される",
+      "subject": "気候帯が描き直される",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "Aerial view of a vast ice sheet edge meeting green farmland, towering monsoon storm clouds in the distance, dramatic shafts of light, sense of a changing climate",
-      "diagram": null,
-      "science_notes": "C25 — inference.",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "climate_bands",
+        "params": {}
+      },
+      "science_notes": "C25（推論）",
       "claim_ids": [
         "C21",
         "C25"
@@ -960,57 +1065,58 @@
       "entities": []
     },
     {
-      "id": "C34",
+      "id": "C37",
       "line_id": "L34",
       "section": "tilt",
-      "narration": "And none of it happens fast. These changes unfold over tens of thousands to millions of years. Slow for us. Fast for a planet.",
-      "purpose": "Time scale of the change",
-      "subject": "timeline highlight",
-      "location": "—",
-      "camera_angle": "—",
+      "narration": "しかも、こうした変化は一気には起きません。数万年から数百万年をかけて進みます。人間にとってはゆっくりでも、惑星にとっては速い変化です。",
+      "purpose": "変化の時間スケール",
+      "subject": "変化の時間スケール",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "static",
-      "lighting": "—",
-      "onscreen_text": "Tens of thousands → millions of years",
-      "asset_type": "diagram",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
       "prompt": null,
       "diagram": {
         "type": "timeline",
         "params": {
-          "title": "When the tilt changes",
+          "title": "傾きが変わるのは",
           "ticks": [
-            "Second 0",
-            "First night",
-            "Hour 6",
-            "Year 1",
-            "10,000 yrs",
-            "100 million yrs"
+            "0秒",
+            "最初の夜",
+            "6時間後",
+            "1年後",
+            "1万年後",
+            "1億年後"
           ],
           "highlight": [
             4,
             5
-          ]
+          ],
+          "travel": false
         }
       },
-      "science_notes": "C26.",
+      "science_notes": "C26",
       "claim_ids": [
         "C26"
       ],
       "entities": []
     },
     {
-      "id": "C35",
+      "id": "C38",
       "line_id": "L35",
       "section": "ending",
-      "narration": "So, what breaks first? Not the orbit. Not the length of the day. First, the dark. Then the tides. And last, slowly, the steady footing of our seasons.",
-      "purpose": "Answer the question",
-      "subject": "moonless coastline at night, city lights far away",
-      "location": "COAST at night",
-      "camera_angle": "wide",
+      "narration": "では、最初に壊れるのは何だったのでしょうか。軌道ではありません。一日の長さでもありません。",
+      "purpose": "月のない海岸の夜",
+      "subject": "月のない海岸の夜",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "pull_out",
-      "lighting": "starlight, distant city glow",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "COAST at night under a moonless NIGHT_SKY, small calm waves on the sand, a distant CITY glowing on the far shore, contemplative mood",
+      "asset_type": "video",
+      "prompt": "COAST at night under a moonless NIGHT_SKY, small calm waves washing over the sand, a distant CITY glowing on the far shore, slow pull-out, contemplative",
       "diagram": null,
       "science_notes": "",
       "claim_ids": [
@@ -1026,21 +1132,63 @@
       ]
     },
     {
-      "id": "C36",
+      "id": "C39",
+      "line_id": "L35",
+      "section": "ending",
+      "narration": "まず、夜の暗さ。次に、潮。そして最後に、ゆっくりと、季節を支える足場です。",
+      "purpose": "まとめ：壊れる順番",
+      "subject": "まとめ：壊れる順番",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "1. 夜の暗さ",
+              "最初の夜"
+            ],
+            [
+              "2. 潮",
+              "6時間後"
+            ],
+            [
+              "3. 季節の足場",
+              "数万年〜"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C05",
+        "C07",
+        "C12",
+        "C25"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C40",
       "line_id": "L36",
       "section": "ending",
-      "narration": "In reality, the Moon isn't going anywhere soon. Laser beams bounced off mirrors left by Apollo astronauts show it drifting away by just three point eight centimeters a year.",
-      "purpose": "Back to reality: laser ranging",
-      "subject": "observatory laser beam aimed at the Moon",
-      "location": "observatory at night",
-      "camera_angle": "low angle",
+      "narration": "現実には、月がすぐにいなくなることはありません。",
+      "purpose": "月面反射鏡へのレーザー",
+      "subject": "月面反射鏡へのレーザー",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "tilt_up",
-      "lighting": "green laser, moonlight",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "A mountain-top astronomical observatory at night firing a thin bright green laser beam toward the MOON high in the sky, telescope dome open, clear starry sky",
+      "asset_type": "video",
+      "prompt": "A mountain-top astronomical observatory at night firing a thin bright green laser beam toward the MOON high in the sky, telescope dome open, clear starry sky, slow tilt up along the beam",
       "diagram": null,
-      "science_notes": "C18 — lunar laser ranging is real; beam visibility is stylised.",
+      "science_notes": "C18（ビームの見え方は演出）",
       "claim_ids": [
         "C18"
       ],
@@ -1049,19 +1197,50 @@
       ]
     },
     {
-      "id": "C37",
+      "id": "C41",
+      "line_id": "L36",
+      "section": "ending",
+      "narration": "アポロの宇宙飛行士が月面に置いた反射鏡にレーザーを当てて測ると、月が遠ざかる速さは、1年にわずか3.8センチメートルです。",
+      "purpose": "1年に3.8cm",
+      "subject": "1年に3.8cm",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "3.8 cm",
+              "label": "月が1年に遠ざかる距離"
+            }
+          ]
+        }
+      },
+      "science_notes": "C18",
+      "claim_ids": [
+        "C18"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C42",
       "line_id": "L37",
       "section": "ending",
-      "narration": "Our scenario is impossible. But it shows what the Moon really is. A lamp. A clock for the oceans. And a hand on the steering wheel of our seasons.",
-      "purpose": "Reframe the Moon",
-      "subject": "Earth and Moon together",
-      "location": "space",
-      "camera_angle": "wide",
+      "narration": "この思考実験は、ありえない話です。でも、月が本当は何なのかを教えてくれます。",
+      "purpose": "地球と月",
+      "subject": "地球と月",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "push_in",
-      "lighting": "warm sunlight",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "EARTH and the MOON together in one frame, both lit by warm sunlight from the same side, the Moon smaller and farther away, a quiet portrait of the pair",
+      "asset_type": "video",
+      "prompt": "EARTH and the MOON together in one frame, both lit by warm sunlight from the same side, the Moon smaller and farther away, very slow push-in, serene",
       "diagram": null,
       "science_notes": "",
       "claim_ids": [
@@ -1073,19 +1252,58 @@
       ]
     },
     {
-      "id": "C38",
+      "id": "C43",
+      "line_id": "L37",
+      "section": "ending",
+      "narration": "夜を照らすランプ。海の時計。そして、季節というハンドルを握る手です。",
+      "purpose": "月とは何か",
+      "subject": "月とは何か",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "夜を照らすランプ",
+              ""
+            ],
+            [
+              "海の時計",
+              ""
+            ],
+            [
+              "季節のハンドルを握る手",
+              ""
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "D01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C44",
       "line_id": "L38",
       "section": "ending",
-      "narration": "Tonight, look up. It is still there, holding everything steady.",
-      "purpose": "Closing image",
-      "subject": "person on a hill watching the Moon rise",
-      "location": "hilltop at dusk",
-      "camera_angle": "wide, from behind",
+      "narration": "今夜、空を見上げてみてください。月はまだ、そこにあります。すべてを、静かに支えながら。",
+      "purpose": "月の出を見上げる",
+      "subject": "月の出を見上げる",
+      "location": "",
+      "camera_angle": "",
       "camera_motion": "pull_out",
-      "lighting": "blue hour, moonlight",
+      "lighting": "",
       "onscreen_text": "",
-      "asset_type": "image",
-      "prompt": "A person sitting on a grassy hilltop at blue hour, seen from behind, watching a full MOON rise over distant hills and a town, peaceful and warm",
+      "asset_type": "video",
+      "prompt": "A person sitting on a grassy hilltop at blue hour, seen from behind, watching a full MOON rise over distant hills and a town, slow pull-out, peaceful and warm",
       "diagram": null,
       "science_notes": "",
       "claim_ids": [],

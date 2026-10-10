@@ -2,48 +2,48 @@
   "shorts": [
     {
       "id": "S1",
-      "title": "Would Earth Fly Away Without the Moon?",
-      "question": "If the Moon vanished, would Earth be thrown out of its orbit?",
-      "hook_text": "No Moon. Does Earth fly away?",
+      "title": "月が消えたら、地球は飛んでいく？",
+      "question": "月が消えたら、地球は軌道から外れるのか？",
+      "hook_text": "月が消えたら地球は飛んでいく？",
       "lines": [
-        {"text": "If the Moon vanished tonight, would Earth go flying off into space?", "cut_id": "C06", "claim_ids": []},
-        {"text": "Earth and the Moon circle a shared balance point. It sits inside Earth, about four thousand seven hundred kilometers from the center.", "cut_id": "C07", "claim_ids": ["C01"]},
-        {"text": "Each month, Earth loops around it at only about twelve meters per second.", "cut_id": "C08", "claim_ids": ["C04"]},
-        {"text": "Our speed around the Sun? Nearly thirty kilometers per second.", "cut_id": "C08", "claim_ids": ["C03"]},
-        {"text": "So without the Moon, that little loop just straightens out. Our orbit barely changes.", "cut_id": "C09", "claim_ids": ["C05"]},
-        {"text": "The real changes are slower, and stranger. The full story is on our channel: The Moon Vanishes Tonight.", "cut_id": "C37", "claim_ids": []}
+        {"text": "もし今夜、月が消えたら。地球は宇宙へ飛ばされてしまうのでしょうか。", "cut_id": "C07", "claim_ids": []},
+        {"text": "地球と月は、共通の重心のまわりを回っています。その点は地球の内部、中心からおよそ4,700キロメートルの場所です。", "cut_id": "C08", "claim_ids": ["C01"]},
+        {"text": "地球がこの点のまわりを回る速さは、秒速およそ12メートル。", "cut_id": "C09", "claim_ids": ["C04"]},
+        {"text": "一方、太陽のまわりを回る速さは、秒速およそ30キロメートルです。", "cut_id": "C09", "claim_ids": ["C03"]},
+        {"text": "月が消えても、小さな回転がまっすぐになるだけ。地球の軌道は、ほとんど変わりません。", "cut_id": "C10", "claim_ids": ["C05"]},
+        {"text": "本当の変化は、もっとゆっくりで、もっと奇妙です。続きは本編で。", "cut_id": "C41", "claim_ids": []}
       ],
-      "end_card_text": "Full video: The Moon Vanishes Tonight"
+      "end_card_text": "本編「もしも今夜、月が消えたら？」"
     },
     {
       "id": "S2",
-      "title": "Tides Without the Moon",
-      "question": "Would the tides stop if the Moon disappeared?",
-      "hook_text": "No Moon. No tides?",
+      "title": "月がなくても、潮はなくならない",
+      "question": "月が消えたら、潮の満ち引きは止まるのか？",
+      "hook_text": "月が消えたら潮は止まる？",
       "lines": [
-        {"text": "Delete the Moon, and the tides... don't actually disappear.", "cut_id": "C16", "claim_ids": []},
-        {"text": "The Sun pulls on the oceans too, with about forty-six percent of the Moon's tidal force.", "cut_id": "C17", "claim_ids": ["C11"]},
-        {"text": "So tides would shrink to roughly a third of their typical size.", "cut_id": "C18", "claim_ids": ["C12"]},
-        {"text": "No more spring tides or neap tides. And high water would arrive at nearly the same time every day.", "cut_id": "C20", "claim_ids": ["C13", "C14"]},
-        {"text": "The strip of shore between high and low water would narrow, and the life that depends on it would lose ground.", "cut_id": "C21", "claim_ids": ["C16"]},
-        {"text": "And tides aren't even the biggest change. Watch the full video to see what is.", "cut_id": "C19", "claim_ids": []}
+        {"text": "月を消しても、潮の満ち引きは、実はなくなりません。", "cut_id": "C19", "claim_ids": []},
+        {"text": "太陽も海を引っ張っています。その力は、月のおよそ46パーセントです。", "cut_id": "C20", "claim_ids": ["C11"]},
+        {"text": "だから潮は、いつもの大きさの、およそ3分の1に小さくなります。", "cut_id": "C21", "claim_ids": ["C12"]},
+        {"text": "大潮と小潮はなくなり、満潮は毎日ほぼ同じ時刻にやって来ます。", "cut_id": "C23", "claim_ids": ["C13", "C14"]},
+        {"text": "満潮と干潮のあいだの海岸は細くなり、そこに住む生き物は場所を失っていきます。", "cut_id": "C24", "claim_ids": ["C16"]},
+        {"text": "でも、いちばん大きな変化は潮ではありません。続きは本編で。", "cut_id": "C22", "claim_ids": []}
       ],
-      "end_card_text": "Full video: The Moon Vanishes Tonight"
+      "end_card_text": "本編「もしも今夜、月が消えたら？」"
     },
     {
       "id": "S3",
-      "title": "The Moon Steers Our Seasons",
-      "question": "What keeps Earth's tilt, and our seasons, steady?",
-      "hook_text": "The Moon steers our seasons",
+      "title": "月が季節を支えている",
+      "question": "地球の傾きと季節を安定させているのは何か？",
+      "hook_text": "季節を支えているのは月だった",
       "lines": [
-        {"text": "The Moon is quietly holding our seasons steady. Here's how.", "cut_id": "C25", "claim_ids": []},
-        {"text": "Earth's tilt is what gives us seasons. Today it only rocks between about twenty-two and twenty-four and a half degrees.", "cut_id": "C27", "claim_ids": ["C21"]},
-        {"text": "The Moon drives about two-thirds of the slow wobble of Earth's axis.", "cut_id": "C28", "claim_ids": ["C22"]},
-        {"text": "Without it, a 1993 study found the tilt could wander chaotically, from near zero to about eighty-five degrees.", "cut_id": "C30", "claim_ids": ["C23"]},
-        {"text": "A 2011 study found narrower swings, about ten to twenty degrees. Still enough to redraw the world's climate zones.", "cut_id": "C32", "claim_ids": ["C24", "C25"]},
-        {"text": "Either way, the Moon is a hand on the steering wheel of our seasons. Full story on our channel.", "cut_id": "C38", "claim_ids": []}
+        {"text": "私たちの季節を、静かに支えているのは月かもしれません。", "cut_id": "C28", "claim_ids": []},
+        {"text": "季節を生むのは地球の傾き。いまは、およそ22度から24.5度のあいだで揺れているだけです。", "cut_id": "C30", "claim_ids": ["C21"]},
+        {"text": "地球の自転軸の首振り、歳差運動の、およそ3分の2は月が生み出しています。", "cut_id": "C31", "claim_ids": ["C22"]},
+        {"text": "1993年の研究では、月がなければ、傾きは0度から85度までさまよいうると計算されました。", "cut_id": "C33", "claim_ids": ["C23"]},
+        {"text": "2011年の研究では、揺れ幅はおよそ10度から20度。それでも、世界の気候帯を描き直すには十分です。", "cut_id": "C35", "claim_ids": ["C24", "C25"]},
+        {"text": "月は、季節というハンドルを握る手。続きは本編で。", "cut_id": "C44", "claim_ids": []}
       ],
-      "end_card_text": "Full video: The Moon Vanishes Tonight"
+      "end_card_text": "本編「もしも今夜、月が消えたら？」"
     }
   ]
 }

@@ -3,7 +3,7 @@
 
 channel:
   name: "What If Science"
-  language: en
+  language: ja              # ja: Japanese narration/subtitles/graphics · en: English
 
 llm:
   # "manual": write a prompt file and wait for a JSON response file (Claude Code fills it in).
@@ -22,14 +22,35 @@ video:
   preset: medium
 
 voice:
-  engine: kokoro            # local, free, Apache-2.0 weights
-  model_path: models/kokoro/kokoro-v1.0.onnx    # relative paths resolve from what-if-youtube/
-  voices_path: models/kokoro/voices-v1.0.bin
-  voice: af_heart           # highest-graded Kokoro English voice
-  speed: 0.92
-  lang: en-us
-  sentence_gap: 0.34        # seconds of silence between sentences
-  cut_tail: 0.7            # extra hold at end of each cut
+  engine: voicevox          # ja: VOICEVOX (free, credit line required) · en: kokoro
+  sentence_gap: 0.30        # seconds of silence between sentences
+  cut_tail: 0.6             # extra hold at end of each cut
+  voicevox:
+    root: models/voicevox   # relative paths resolve from what-if-youtube/
+    onnxruntime: voicevox_onnxruntime-linux-x64-1.17.3/lib/libvoicevox_onnxruntime.so.1.17.3
+    dict: open_jtalk_dic_utf_8-1.11
+    vvm: vvms/1.vvm
+    style_id: 14            # 冥鳴ひまり ノーマル (alt: vvms/4.vvm style 11 = 玄野武宏)
+    credit: "VOICEVOX:冥鳴ひまり"
+    speed: 1.08
+    pitch: 0.0
+    intonation: 1.0
+  kokoro:
+    model_path: models/kokoro/kokoro-v1.0.onnx
+    voices_path: models/kokoro/voices-v1.0.bin
+    voice: af_heart         # highest-graded Kokoro English voice
+    speed: 0.92
+    lang: en-us
+  # TTS-only readings (display text keeps the normal spelling). Found by checking VOICEVOX kana output.
+  readings:
+    歳差運動: さいさうんどう
+    氷床: ひょうしょう
+    3分の1: さんぶんのいち
+    3分の2: さんぶんのに
+    毎年: まいとし
+    100分の1: ひゃくぶんのいち
+    海の上: うみのうえ
+    赤道: せきどう
 
 audio:
   target_lufs: -14          # YouTube playback reference
@@ -39,17 +60,20 @@ audio:
   music: procedural         # "procedural" (self-generated, no rights issues) or a file path under assets_library/music
 
 subtitles:
-  max_chars_per_line: 42
+  max_chars_per_line: 26    # ja ≈ 26 full-width chars at 56 px; en ≈ 42
   max_lines: 2
-  font: Inter
-  long_font_size: 54
-  short_font_size: 76
+  font: Noto Sans JP        # bundled in models/fonts (OFL); en: Inter
+  font_dir: models/fonts
+  long_font_size: 56
+  short_font_size: 72
+  short_chars_per_line: 13
 
 assets:
   max_retries: 2            # per cut; never loops forever
   image_provider: higgsfield
   image_model: gpt_image_2_5
-  video_model: kling3_0
+  video_model: kling3_0      # std, 5 s, silent = 7.5 credits
+  video_max_slowdown: 1.6    # AI clips may be slowed (motion-interpolated) up to this factor to fill a cut
   # Cuts whose asset is missing make `produce` stop with an error.
   # `produce --animatic` renders labelled storyboard cards instead and marks the output NOT publishable.
 
@@ -59,7 +83,7 @@ budget:
   per_video_limit_jpy: 2500
   per_stage_limit_jpy:
     images: 800
-    video_clips: 1200
+    video_clips: 1200       # ≈ 160 credits
     voice: 0
     llm: 500
   # Conversion used for estimates only. Higgsfield Plus ≈ $59 / 1,200 credits (third-party pricing guides, 2026);

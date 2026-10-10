@@ -89,6 +89,7 @@ def run_stage(project: Project, stage: str, out_path: Path, *, force: bool = Fal
         validate(stage, data)
         return data
 
+    ctx.setdefault("language", project.settings["channel"].get("language", "en"))
     system, prompt = render_prompt(stage, **ctx)
     prompt_file = project.path("prompts", f"{stage}.prompt.md")
     prompt_file.parent.mkdir(parents=True, exist_ok=True)

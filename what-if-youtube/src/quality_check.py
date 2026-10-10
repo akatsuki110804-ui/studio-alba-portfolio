@@ -14,6 +14,7 @@ from PIL import Image
 from . import asset_manager as am
 from . import cost_tracker
 from .common import Project, ffprobe, now_iso, read_json, run, write_json
+from .editor import is_cjk
 
 
 def _check(results: list, name: str, ok: bool, detail: str = "", severity: str = "error") -> None:
@@ -93,17 +94,25 @@ def check_srt(results: list, srt: Path, duration: float) -> None:
 
 
 def check_tts(results: list, timing: dict, label: str) -> None:
+    """Flag sentences whose duration is implausible for their length (garbled or skipped TTS)."""
     odd = []
     for u in timing["units"]:
         for snt in u["sentences"]:
-            wps = len(snt["text"].split()) / max(0.01, snt["end"] - snt["start"])
-            if not 1.3 <= wps <= 4.8:
-                odd.append(f"{u['id']}: {wps:.1f} w/s “{snt['text'][:40]}”")
+            dur = max(0.01, snt["end"] - snt["start"])
+            if is_cjk(snt["text"]):
+                if len(snt["text"]) < 6:  # short exclamations ("次に、潮。") are read slowly on purpose
+                    continue
+                rate, lo, hi, unit = len(re.sub(r"[、。！？「」・\s]", "", snt["text"])) / dur, 3.0, 11.0, "字/秒"
+            else:
+                rate, lo, hi, unit = len(snt["text"].split()) / dur, 1.3, 4.8, "w/s"
+            if not lo <= rate <= hi:
+                odd.append(f"{u['id']}: {rate:.1f} {unit} “{snt['text'][:30]}”")
     _check(results, f"{label}: speech rate plausible for every sentence", not odd, "; ".join(odd[:8]), "warning")
 
 
 def previews(project: Project, video: Path, tag: str) -> list[str]:
     out = []
+    project.path("previews").mkdir(parents=True, exist_ok=True)
     sheet = project.path("previews", f"{tag}_contact_sheet.jpg")
     info = ffprobe(video)
     dur = float(info["format"]["duration"])
@@ -163,6 +172,11 @@ def validate(project: Project) -> dict:
         timing = read_json(project.path("audio", "timing.json"))
         if timing:
             check_tts(results, timing, "long narration")
+        if project.settings["voice"]["engine"] == "voicevox":
+            _check(results, "voice: reading list saved for review (audio/readings.md)",
+                   project.path("audio", "readings.md").exists(), "", "warning")
+            credit = project.settings["voice"]["voicevox"].get("credit")
+            _check(results, f"voice: credit line '{credit}' must go in the video description", True, str(credit))
 
         # --- shorts
         sf = s["video"]["short_form"]

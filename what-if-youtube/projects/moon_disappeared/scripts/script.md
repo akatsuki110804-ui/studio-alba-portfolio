@@ -1,125 +1,125 @@
-# The Moon Vanishes Tonight. What Breaks First?
+# もしも今夜、月が消えたら？最初に壊れるもの
 
-## Hook
+## フック
 
-**L01** Tonight, at nine forty-one p.m., the Moon is gone. No explosion. No flash. One moment it hangs over the city. The next, there is only black sky.  
+**L01** 今夜、午後9時41分。月が、消えました。爆発も、閃光もありません。さっきまで街の上に浮かんでいた月が、次の瞬間には、ただの暗い空になっていたのです。  
   _claims: D01 [dramatization]_
 
-**L02** So what breaks first? The answer is stranger than the movies. Because the most dangerous change is the slowest one.
+**L02** では、最初に壊れるのは何でしょうか。答えは、映画で見るものとは少し違います。いちばん危険な変化は、いちばんゆっくりやって来るのです。
 
-## The rules of the experiment
+## 思考実験のルール
 
-**L03** First, the rules. Nothing in physics lets a whole world simply vanish. Mass and energy don't just disappear. So this is a thought experiment.  
+**L03** まず、ルールを決めておきましょう。物理の法則では、天体がまるごと消えることはありえません。質量やエネルギーは、ただ消えたりしないからです。つまりこれは、思考実験です。  
   _claims: A01 [inference]_
 
-**L04** We delete the Moon instantly and completely. Its light, its gravity, everything. Then we follow the consequences, from the first second to the next hundred million years.
+**L04** 月を一瞬で、完全に消します。光も、重力も、すべてです。そこから、最初の1秒から1億年後までに何が起きるのかを、順番にたどっていきます。
 
-**L05** And we'll keep score honestly: what scientists have measured, what physics lets us infer, and where the experts still disagree.
+**L05** そして、正直にいきます。科学者が実際に測ったこと。物理から推測できること。そして、専門家の間でも意見が分かれていること。この三つを区別しながら進めます。
 
-## Second zero
+## ゼロ秒
 
-**L06** Second zero. In a disaster movie, Earth would be flung out of its orbit. That doesn't happen.  
+**L06** ゼロ秒。映画なら、地球は軌道から放り出されるかもしれません。でも実際には、そうはなりません。  
   _claims: C05 [inference]_
 
-**L07** Earth and the Moon actually circle a shared balance point. Because Earth is about eighty-one times heavier, that point sits inside our planet, roughly four thousand seven hundred kilometers from the center.  
+**L07** 地球と月は、ふたつの天体に共通する重心のまわりを回っています。地球は月のおよそ81倍も重いので、この重心は地球の内部、中心からおよそ4,700キロメートルの場所にあります。  
   _claims: C01 [fact], C02 [fact]_
 
-**L08** Every month, Earth makes a small loop around it, at about twelve meters per second. Our speed around the Sun is nearly thirty kilometers per second.  
+**L08** 地球はひと月かけて、この点のまわりを小さく回っています。その速さは、秒速およそ12メートル。一方、地球が太陽のまわりを回る速さは、秒速およそ30キロメートルです。  
   _claims: C03 [fact], C04 [inference]_
 
-**L09** Delete the Moon, and that little loop simply straightens out. Our path around the Sun barely changes. Nobody would feel a thing.  
+**L09** 月が消えると、この小さな回転がまっすぐになるだけです。太陽をめぐる地球の道筋は、ほとんど変わりません。誰も、何も感じないでしょう。  
   _claims: C05 [inference]_
 
-## The first night
+## 最初の夜
 
-**L10** What people would notice first is the dark.
+**L10** 人々が最初に気づくのは、暗さです。
 
-**L11** A full Moon on a clear night lights the ground with about a quarter of a lux. Without it, a natural sky offers starlight and faint airglow, around a hundredth of that.  
+**L11** 晴れた夜の満月は、地面をおよそ0.25ルクスで照らします。月がなければ、自然の夜空にあるのは星の光と、大気がかすかに放つ光だけ。明るさは、その100分の1ほどになります。  
   _claims: C06 [fact], C07 [fact]_
 
-**L12** In cities, streetlights would hide the change. But in the deserts, the oceans and the forests, every night would become a new-moon night. Forever.  
+**L12** 街の中なら、街灯がこの変化を隠してしまうでしょう。でも砂漠でも、海の上でも、森の中でも、すべての夜が新月の夜になります。永遠に。  
   _claims: C07 [fact]_
 
-**L13** Some animals are tuned to that light. Dung beetles in Africa steer by polarized moonlight, and on moonless nights they hold their course by the glow of the Milky Way.  
+**L13** 月の光に頼って生きる動物もいます。アフリカのフンコロガシは、月の光の偏光を手がかりに進む方向を決めています。月のない夜には、天の川の光を頼りにまっすぐ進むことが分かっています。  
   _claims: C08 [fact]_
 
-**L14** On coral reefs, many species spawn together, timed to the lunar cycle. A light-sensitive gene in these corals is most active under full-moon light.  
+**L14** サンゴ礁では、多くのサンゴが月の満ち欠けに合わせて、いっせいに産卵します。こうしたサンゴには、満月の光のもとで最も活発に働く、光に反応する遺伝子があることが分かっています。  
   _claims: C09 [fact]_
 
-**L15** Without that clock, spawning could drift out of sync, and eggs released on different nights may never meet. How badly this would play out is still an open question.  
+**L15** その時計がなくなれば、産卵のタイミングがばらばらになり、別々の夜に放たれた卵は出会えないかもしれません。どこまで深刻な影響になるのかは、まだ分かっていません。  
   _claims: C10 [inference]_
 
-## The first tide
+## 最初の潮
 
-**L16** Hour six. Along the coast, the tide comes in, and stops short.  
+**L16** 6時間後。海岸では、潮が満ちてきます。けれど、いつもの場所まで届きません。  
   _claims: C12 [inference]_
 
-**L17** The Moon raises most of our tides. The Sun raises tides too, but its tidal pull is only about forty-six percent of the Moon's.  
+**L17** 潮の満ち引きを主に起こしているのは月です。太陽も潮を起こしますが、その力は月のおよそ46パーセントしかありません。  
   _claims: C11 [fact]_
 
-**L18** So the tides don't vanish. They shrink, to roughly a third of their typical size. And they follow the Sun's rhythm, with high water at nearly the same time every day.  
+**L18** つまり、潮はなくなりません。小さくなるのです。いつもの大きさの、およそ3分の1に。そして太陽のリズムに従って、満潮は毎日ほぼ同じ時刻にやって来るようになります。  
   _claims: C12 [inference], C14 [inference]_
 
-**L19** There is no giant wave either. The ocean's tidal bulge is subtle, well under a meter in open water. So the sea would settle over hours, like an ordinary falling tide.  
+**L19** 巨大な津波も起きません。潮による海面の盛り上がりは、外洋では1メートルにも満たない、ゆるやかなものです。海は数時間かけて、いつもの引き潮のように落ち着いていくでしょう。  
   _claims: C15 [inference]_
 
-**L20** Spring tides and neap tides end, too. They come from the Sun and Moon lining up, and now there is nothing to line up with.  
+**L20** 大潮と小潮も、なくなります。これは太陽と月が並んだり、ずれたりすることで生まれるもの。並ぶ相手が、もういないのです。  
   _claims: C13 [fact]_
 
-**L21** That matters. Tides flush estuaries and feed the strip of shore that is underwater half the day and dry the other half. With weaker tides, that strip narrows, and the life adapted to it loses ground.  
+**L21** これは大切な変化です。潮は河口の水を入れ替え、一日の半分は海の中、もう半分は陸になる海岸の帯を育てています。潮が弱まれば、この帯は細くなり、そこに適応した生き物たちは住む場所を失っていきます。  
   _claims: C16 [inference]_
 
-## The first years
+## 最初の数年
 
-**L22** Year one. There will never be another total solar eclipse. Only the Moon could cover the Sun.  
+**L22** 1年後。皆既日食は、もう二度と起きません。太陽をぴったり隠せたのは、月だけだったからです。  
   _claims: C17 [fact]_
 
-**L23** Something quieter changes, too. Today, tidal friction acts like a brake on Earth's spin. It adds roughly two milliseconds to the day every century, and pushes the Moon about three point eight centimeters farther away each year.  
+**L23** もっと静かな変化もあります。いま、潮の摩擦は地球の自転にブレーキをかけています。一日の長さは100年ごとにおよそ2ミリ秒ずつ長くなり、月は毎年およそ3.8センチメートルずつ遠ざかっています。  
   _claims: C18 [fact], C19 [fact]_
 
-**L24** Without the Moon, most of that brake is released. You would never notice it in a lifetime. But over hundreds of millions of years, Earth's days would stay shorter than they otherwise would have.  
+**L24** 月が消えれば、このブレーキの大部分が外れます。一生のうちに気づくことはないでしょう。でも何億年という時間で見れば、地球の一日は、本来よりも短いままになるはずです。  
   _claims: C20 [inference]_
 
-## The slow catastrophe
+## ゆっくり進む大災害
 
-**L25** Now, the real danger. And it is slow.
+**L25** さて、ここからが本当の危険です。そしてそれは、とてもゆっくり進みます。
 
-**L26** Earth spins on a tilted axis, about twenty-three degrees. That tilt is why we have seasons.  
+**L26** 地球の自転軸は、およそ23度傾いています。この傾きこそが、季節を生み出しています。  
   _claims: C21 [fact]_
 
-**L27** Today it only rocks gently, between roughly twenty-two and twenty-four and a half degrees, over tens of thousands of years.  
+**L27** いま、この傾きは、およそ22度から24.5度のあいだで、何万年もかけてゆるやかに揺れているだけです。  
   _claims: C21 [fact]_
 
-**L28** The Moon is a big reason why. Its gravity tugs on Earth's bulging waist, and drives about two-thirds of the slow wobble of our axis, called precession.  
+**L28** その大きな理由が、月です。月の重力は地球の膨らんだ赤道部分を引っ張り、自転軸がゆっくりと首を振る歳差運動の、およそ3分の2を生み出しています。  
   _claims: C22 [fact]_
 
-**L29** That wobble keeps Earth's spin out of step with the gentle, repeating tugs of the other planets.  
+**L29** この首振りのおかげで、地球の自転は、ほかの惑星がくり返し及ぼす小さな引力と、タイミングがずれた状態に保たれています。  
   _claims: C23 [fact]_
 
-**L30** Remove the Moon, and the wobble slows down, and it can fall into rhythm with those tugs. In 1993, Jacques Laskar and his colleagues calculated that a moonless Earth's tilt could wander chaotically, anywhere from near zero to about eighty-five degrees.  
+**L30** 月がなくなると、首振りは遅くなり、惑星の引力とリズムがそろってしまうことがあります。1993年、ジャック・ラスカーらは、月のない地球の傾きは、ほぼ0度から約85度までのあいだを、予測できない動きでさまよいうると計算しました。  
   _claims: C22 [fact], C23 [fact]_
 
-**L31** Near the top of that range, much of the planet would face months of endless daylight, followed by months of darkness.  
+**L31** その上限近くでは、地球の大部分で、何か月も太陽が沈まない昼と、何か月も続く夜が、交互にやって来ることになります。  
   _claims: C25 [inference]_
 
-**L32** But here is the twist. In 2011, a team led by Jack Lissauer ran direct simulations, and found far narrower swings. Roughly ten to twenty degrees, over hundreds of millions of years.  
+**L32** ところが、話はここで終わりません。2011年、ジャック・リサウアーらのチームが直接シミュレーションを行うと、揺れ幅はずっと小さく、何億年ものあいだでおよそ10度から20度にとどまるという結果になりました。  
   _claims: C24 [fact]_
 
-**L33** Even that is a different world. Today the tilt shifts by about two and a half degrees. A twenty-degree swing would redraw where ice sheets grow, where monsoons fall, and where crops can survive.  
+**L33** それでも、別の世界です。いまの傾きの変化は2.5度ほど。20度も揺れれば、氷床ができる場所も、モンスーンが降る場所も、作物が育つ場所も、描き直されてしまいます。  
   _claims: C21 [fact], C25 [inference]_
 
-**L34** And none of it happens fast. These changes unfold over tens of thousands to millions of years. Slow for us. Fast for a planet.  
+**L34** しかも、こうした変化は一気には起きません。数万年から数百万年をかけて進みます。人間にとってはゆっくりでも、惑星にとっては速い変化です。  
   _claims: C26 [inference]_
 
-## Conclusion
+## 結論
 
-**L35** So, what breaks first? Not the orbit. Not the length of the day. First, the dark. Then the tides. And last, slowly, the steady footing of our seasons.  
+**L35** では、最初に壊れるのは何だったのでしょうか。軌道ではありません。一日の長さでもありません。まず、夜の暗さ。次に、潮。そして最後に、ゆっくりと、季節を支える足場です。  
   _claims: C05 [inference], C07 [fact], C12 [inference], C25 [inference]_
 
-**L36** In reality, the Moon isn't going anywhere soon. Laser beams bounced off mirrors left by Apollo astronauts show it drifting away by just three point eight centimeters a year.  
+**L36** 現実には、月がすぐにいなくなることはありません。アポロの宇宙飛行士が月面に置いた反射鏡にレーザーを当てて測ると、月が遠ざかる速さは、1年にわずか3.8センチメートルです。  
   _claims: C18 [fact]_
 
-**L37** Our scenario is impossible. But it shows what the Moon really is. A lamp. A clock for the oceans. And a hand on the steering wheel of our seasons.  
+**L37** この思考実験は、ありえない話です。でも、月が本当は何なのかを教えてくれます。夜を照らすランプ。海の時計。そして、季節というハンドルを握る手です。  
   _claims: D01 [dramatization]_
 
-**L38** Tonight, look up. It is still there, holding everything steady.
+**L38** 今夜、空を見上げてみてください。月はまだ、そこにあります。すべてを、静かに支えながら。

@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-10-10T11:42:27+00:00",
-  "count": 25,
-  "est_credits": 20.75,
-  "est_jpy": 153.55,
+  "generated_at": "2026-10-10T12:48:00+00:00",
+  "count": 15,
+  "est_credits": 90.75,
+  "est_jpy": 671.55,
   "note": "Estimates from settings.pricing_credits (Higgsfield get_cost preflight). Record the actual charge on import.",
   "requests": [
     {
       "id": "C01",
       "kind": "video",
-      "fingerprint": "c255c7106a2eff85",
+      "fingerprint": "2525c9a13a350184",
       "provider": "higgsfield",
       "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "Slow push-in from a rooftop toward a bright full moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration) hanging above city (an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks) at night; after two seconds the Moon silently vanishes with no explosion and no flash, leaving only black starry sky; city lights keep glowing; calm, eerie, no camera shake. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
+      "prompt": "Slow push-in from a rooftop toward a bright full moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size) hanging above city (an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks) at night; after two seconds the Moon silently vanishes with no explosion and no flash, leaving only black starry sky; city lights keep glowing; calm, eerie. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
       "params": {
         "duration": 5,
         "mode": "std",
@@ -23,108 +23,76 @@
     },
     {
       "id": "C02",
-      "kind": "image",
-      "fingerprint": "b195273a84e49ce6",
+      "kind": "video",
+      "fingerprint": "7c4c50eb8d6b0c78",
       "provider": "higgsfield",
-      "model": "gpt_image_2_5",
+      "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "Three people seen from behind standing on a city (an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks) rooftop at night, looking up at an empty dark sky with no moon, city glow lighting their silhouettes from below, sense of unease. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C02.png"
+      "prompt": "Three people seen from behind on a city (an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks) rooftop at night slowly looking up at an empty dark sky with no moon, a light breeze moves their hair and jackets, city glow lights their silhouettes from below, slow push-in. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C02.mp4"
     },
     {
-      "id": "C06",
-      "kind": "image",
-      "fingerprint": "14ae94ea8b1dbc29",
+      "id": "C07",
+      "kind": "video",
+      "fingerprint": "1b803ea76870d974",
       "provider": "higgsfield",
-      "model": "gpt_image_2_5",
+      "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars) alone in the blackness of space, small in the frame, harsh sunlight from the left edge of frame, vast emptiness, sense of scale, no moon visible. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C06.png"
+      "prompt": "earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space with faint stars) slowly rotating alone in the blackness of space, small in the frame, harsh sunlight from the left, slow pull-out revealing vast emptiness, no moon visible. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C07.mp4"
     },
     {
-      "id": "C09",
-      "kind": "image",
-      "fingerprint": "fb204a2d6621bee1",
+      "id": "C11",
+      "kind": "video",
+      "fingerprint": "b4e22600add42c69",
       "provider": "higgsfield",
-      "model": "gpt_image_2_5",
+      "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "Wide view of earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars) in space with the Sun as a brilliant star far to the right, calm and serene, thin crescent of daylight on the planet, peaceful mood. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C09.png"
-    },
-    {
-      "id": "C10",
-      "kind": "image",
-      "fingerprint": "977d7995b89c3ec5",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "A lone person standing in a vast desert at night under a moonless night sky (a natural dark night sky full of stars with the Milky Way band, faint green airglow near the horizon), only starlight illuminating the sand dunes faintly, very dark, Milky Way overhead. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C10.png"
-    },
-    {
-      "id": "C12",
-      "kind": "image",
-      "fingerprint": "bedace4634164028",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "A dark pine forest beside a still lake at night under a moonless night sky (a natural dark night sky full of stars with the Milky Way band, faint green airglow near the horizon), stars reflected in the water, a faint orange glow of a distant city on the horizon. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C12.png"
-    },
-    {
-      "id": "C13",
-      "kind": "image",
-      "fingerprint": "5273c7830598ce3b",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Macro ground-level photo of a dung beetle rolling a dung ball across dry savanna soil at night, the Milky Way band glowing in the sky behind, dim silvery starlight, shallow depth of field. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C13.png"
+      "prompt": "A lone person standing in a vast desert at night under a moonless night sky (a natural dark night sky full of stars with the Milky Way band), only starlight faintly illuminating the sand dunes, stars slowly wheeling overhead, very slow tilt up to the sky. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C11.mp4"
     },
     {
       "id": "C14",
-      "kind": "image",
-      "fingerprint": "c63b18a8005ca015",
+      "kind": "video",
+      "fingerprint": "578ab02065062139",
       "provider": "higgsfield",
-      "model": "gpt_image_2_5",
+      "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "Underwater night photo of reef (an Indo-Pacific Acropora coral reef, branching and table corals) during mass spawning, branching corals releasing countless small pink and orange egg-sperm bundles that drift upward like an inverted snowfall, soft blue light filtering from the surface. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C14.png"
-    },
-    {
-      "id": "C15",
-      "kind": "image",
-      "fingerprint": "12a7213154c65e1f",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Very dark underwater night scene over reef (an Indo-Pacific Acropora coral reef, branching and table corals), only a few scattered coral egg bundles drifting alone in the black-blue water, lonely and quiet mood. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C15.png"
+      "prompt": "Macro ground-level shot of a dung beetle rolling a dung ball across dry savanna soil at night, the Milky Way glowing in the sky behind, dim silvery light, shallow depth of field, slow push-in. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C14.mp4"
     },
     {
       "id": "C16",
       "kind": "video",
-      "fingerprint": "c7d71eeef38a245a",
+      "fingerprint": "c5fda66d215ff68e",
       "provider": "higgsfield",
       "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "Low wide shot over coast (a rocky temperate coastline with a wide tidal flat, wet sand reflecting the sky, kelp-covered boulders) tidal flat in overcast daylight; shallow waves slide in over the wet sand, then slow and stop well short of the old high-water line marked by dark seaweed on the rocks; calm, quiet, no people. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
+      "prompt": "Underwater night footage of reef (an Indo-Pacific Acropora coral reef, branching and table corals) during mass spawning, branching corals releasing countless small pink and orange egg bundles that drift slowly upward like an inverted snowfall, soft blue light from above, gentle camera tilt up. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
       "params": {
         "duration": 5,
         "mode": "std",
@@ -135,156 +103,108 @@
     },
     {
       "id": "C19",
-      "kind": "image",
-      "fingerprint": "44663a3411c5b1ca",
+      "kind": "video",
+      "fingerprint": "1f248e5766b97418",
       "provider": "higgsfield",
-      "model": "gpt_image_2_5",
+      "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "Calm open ocean at dusk seen from low above the water, gentle long swell, soft pastel sky, peaceful, endless horizon. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C19.png"
-    },
-    {
-      "id": "C21",
-      "kind": "image",
-      "fingerprint": "aef2198bef6f31ff",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Top-down close photo of an intertidal rock pool on coast (a rocky temperate coastline with a wide tidal flat, wet sand reflecting the sky, kelp-covered boulders) at low tide, orange starfish, green anemones, mussels and barnacles, clear water, bright overcast light. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C21.png"
-    },
-    {
-      "id": "C22",
-      "kind": "image",
-      "fingerprint": "5c3d9bc0f525e14e",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Total solar eclipse above a mountain landscape, the black disk of the moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration) surrounded by the Sun's white glowing corona, 360-degree twilight glow on the horizon, people silhouetted on a ridge. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C22.png"
-    },
-    {
-      "id": "C24",
-      "kind": "image",
-      "fingerprint": "f6330a04b77cc1f6",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Sunrise seen from low orbit over earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars), the Sun breaking over the curved horizon, the day-night terminator line crossing cloud systems, thin blue atmosphere. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C24.png"
+      "prompt": "Low wide shot over coast (a rocky temperate coastline with a wide tidal flat, wet sand reflecting the sky, kelp-covered boulders) tidal flat in overcast daylight; shallow waves slide in over the wet sand, then slow and stop well short of the old high-water line marked by dark seaweed on the rocks; calm, quiet, no people. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C19.mp4"
     },
     {
       "id": "C25",
-      "kind": "image",
-      "fingerprint": "0b337920cdcc35e2",
+      "kind": "video",
+      "fingerprint": "d7d98f86c1497d83",
       "provider": "higgsfield",
-      "model": "gpt_image_2_5",
+      "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars) half in deep shadow and half lit by hard sunlight from the side, ominous and still, the planet slightly tilted in the frame. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C25.png"
-    },
-    {
-      "id": "C29",
-      "kind": "image",
-      "fingerprint": "a273bf8dd85f0f98",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Deep-space view of earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars) and the moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration) small in the foreground, with Jupiter and Venus as bright points far in the background, quiet cosmic scale, cinematic composition. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C29.png"
-    },
-    {
-      "id": "C31",
-      "kind": "image",
-      "fingerprint": "45910e7223b522e5",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Midnight sun hanging low over a frozen high-latitude landscape, long shadows on snow and ice, golden light, endless daylight feeling, no people. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C31.png"
-    },
-    {
-      "id": "C33",
-      "kind": "image",
-      "fingerprint": "77708213eafdc084",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Aerial view of a vast ice sheet edge meeting green farmland, towering monsoon storm clouds in the distance, dramatic shafts of light, sense of a changing climate. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C33.png"
-    },
-    {
-      "id": "C35",
-      "kind": "image",
-      "fingerprint": "40035fefdf935830",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "coast (a rocky temperate coastline with a wide tidal flat, wet sand reflecting the sky, kelp-covered boulders) at night under a moonless night sky (a natural dark night sky full of stars with the Milky Way band, faint green airglow near the horizon), small calm waves on the sand, a distant city (an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks) glowing on the far shore, contemplative mood. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C35.png"
-    },
-    {
-      "id": "C36",
-      "kind": "image",
-      "fingerprint": "5e74a341cf16dba6",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "A mountain-top astronomical observatory at night firing a thin bright green laser beam toward the moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration) high in the sky, telescope dome open, clear starry sky. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C36.png"
-    },
-    {
-      "id": "C37",
-      "kind": "image",
-      "fingerprint": "c0b80802ceacc037",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars) and the moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration) together in one frame, both lit by warm sunlight from the same side, the Moon smaller and farther away, a quiet portrait of the pair. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C37.png"
+      "prompt": "Total solar eclipse above a mountain landscape, the black disk of the moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size) surrounded by the Sun's white glowing corona, 360-degree twilight glow on the horizon, people silhouetted on a ridge, slow push-in. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C25.mp4"
     },
     {
       "id": "C38",
-      "kind": "image",
-      "fingerprint": "f663f7eaab0045d3",
+      "kind": "video",
+      "fingerprint": "f3a8d6171e5b07e2",
       "provider": "higgsfield",
-      "model": "gpt_image_2_5",
+      "model": "kling3_0",
       "aspect_ratio": "16:9",
-      "prompt": "A person sitting on a grassy hilltop at blue hour, seen from behind, watching a full moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration) rise over distant hills and a town, peaceful and warm. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C38.png"
+      "prompt": "coast (a rocky temperate coastline with a wide tidal flat, wet sand reflecting the sky, kelp-covered boulders) at night under a moonless night sky (a natural dark night sky full of stars with the Milky Way band), small calm waves washing over the sand, a distant city (an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks) glowing on the far shore, slow pull-out, contemplative. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C38.mp4"
+    },
+    {
+      "id": "C40",
+      "kind": "video",
+      "fingerprint": "faf46a612fd0be0d",
+      "provider": "higgsfield",
+      "model": "kling3_0",
+      "aspect_ratio": "16:9",
+      "prompt": "A mountain-top astronomical observatory at night firing a thin bright green laser beam toward the moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size) high in the sky, telescope dome open, clear starry sky, slow tilt up along the beam. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C40.mp4"
+    },
+    {
+      "id": "C42",
+      "kind": "video",
+      "fingerprint": "714ad30e9069c426",
+      "provider": "higgsfield",
+      "model": "kling3_0",
+      "aspect_ratio": "16:9",
+      "prompt": "earth (planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space with faint stars) and the moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size) together in one frame, both lit by warm sunlight from the same side, the Moon smaller and farther away, very slow push-in, serene. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C42.mp4"
+    },
+    {
+      "id": "C44",
+      "kind": "video",
+      "fingerprint": "2a47c0df07ee8f7c",
+      "provider": "higgsfield",
+      "model": "kling3_0",
+      "aspect_ratio": "16:9",
+      "prompt": "A person sitting on a grassy hilltop at blue hour, seen from behind, watching a full moon (Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size) rise over distant hills and a town, slow pull-out, peaceful and warm. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, extra moons, distorted continents, oversized moon, fast cuts, shaky camera",
+      "params": {
+        "duration": 5,
+        "mode": "std",
+        "sound": "off"
+      },
+      "est_credits": 7.5,
+      "dest": "assets/video/C44.mp4"
     },
     {
       "id": "T1",
       "kind": "image",
-      "fingerprint": "d66bdb1a9125bdc0",
+      "fingerprint": "f8332db36a956423",
       "provider": "higgsfield",
       "model": "gpt_image_2_5",
       "aspect_ratio": "16:9",
-      "prompt": "Night city skyline seen from a rooftop, an empty dark sky on the right side where the Moon should be, a faint perfectly circular ghostly outline of where the Moon used to be, people looking up, strong contrast, large empty dark area on the left for title text. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo",
+      "prompt": "Night city skyline seen from a rooftop, an empty dark sky on the right side where the Moon should be, a faint perfectly circular ghostly outline of where the Moon used to be, people looking up, strong contrast, large empty dark area on the left for title text. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
       "params": {},
       "est_credits": 0.25,
       "dest": "thumbnails/T1_bg.png"
@@ -292,11 +212,11 @@
     {
       "id": "T2",
       "kind": "image",
-      "fingerprint": "3d6c2ec813b70b8d",
+      "fingerprint": "49317f4e6d8e1b85",
       "provider": "higgsfield",
       "model": "gpt_image_2_5",
       "aspect_ratio": "16:9",
-      "prompt": "Planet Earth seen from space on the right half of the frame, dramatic hard sunlight, deep black space on the left half, no moon anywhere, ominous mood, clean composition with empty space for title text. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo",
+      "prompt": "Planet Earth seen from space on the right half of the frame, dramatic hard sunlight, deep black space on the left half, no moon anywhere, ominous mood, clean composition with empty space for title text. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
       "params": {},
       "est_credits": 0.25,
       "dest": "thumbnails/T2_bg.png"
@@ -304,11 +224,11 @@
     {
       "id": "T3",
       "kind": "image",
-      "fingerprint": "5975f4ffd344ae53",
+      "fingerprint": "c56c97c53569ed1d",
       "provider": "higgsfield",
       "model": "gpt_image_2_5",
       "aspect_ratio": "16:9",
-      "prompt": "A rocky coastline at low tide at dusk on the right side of the frame with seaweed-covered rocks far above the water line, moonless deep blue sky with first stars, dark negative space on the left for title text. Style: photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo",
+      "prompt": "A rocky coastline at low tide at dusk on the right side of the frame with seaweed-covered rocks far above the water line, moonless deep blue sky with first stars, dark negative space on the left for title text. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
       "params": {},
       "est_credits": 0.25,
       "dest": "thumbnails/T3_bg.png"

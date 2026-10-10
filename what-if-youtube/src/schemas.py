@@ -65,7 +65,7 @@ STORYBOARD = {
             "properties": {
                 "id": {"type": "string", "pattern": "^C[0-9]{2,3}$"},
                 "camera_motion": {"enum": CAMERA},
-                "asset_type": {"enum": ["image", "video", "diagram", "title"]},
+                "asset_type": {"enum": ["image", "video", "diagram", "title", "motion"]},
                 "prompt": {"type": ["string", "null"]},
                 "diagram": {"type": ["object", "null"]},
                 "claim_ids": _strlist}}},

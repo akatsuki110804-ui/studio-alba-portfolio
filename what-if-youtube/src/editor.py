@@ -12,18 +12,20 @@ from __future__ import annotations
 import json
 import math
 import re
-import textwrap
 import wave
 from pathlib import Path
 
+import os
+from concurrent.futures import ProcessPoolExecutor, as_completed
+
 import numpy as np
-from PIL import Image, ImageDraw
 
 from . import asset_manager as am
-from . import diagrams
-from .common import PipelineError, Project, media_duration, read_json, run, sha, write_json
+from . import motion as motion_mod
+from .common import PipelineError, Project, expand, media_duration, read_json, run, sha, write_json
 
 END_CARD_SECONDS = 4.0
+MOTION_CODE_HASH = sha(Path(motion_mod.__file__).read_text())  # re-render motion clips when the renderer changes
 BREAK = "\\N"  # ASS hard line break
 SECTION_FADE = 0.35
 
@@ -45,7 +47,8 @@ def _zoompan(motion: str, frames: int, w: int, h: int, fps: int) -> str:
 
 
 def render_segment(src: Path, kind: str, motion: str, frames: int, out: Path, *, w: int, h: int, fps: int,
-                   fade_in: bool = False, fade_out: bool = False, crf: int = 18) -> Path:
+                   fade_in: bool = False, fade_out: bool = False, crf: int = 18, max_slowdown: float = 1.6) -> Path:
+    """kind: image (Ken Burns), video (AI clip, slowed with motion interpolation to fill the cut if needed)."""
     dur = frames / fps
     fades = []
     if fade_in:
@@ -53,8 +56,12 @@ def render_segment(src: Path, kind: str, motion: str, frames: int, out: Path, *,
     if fade_out:
         fades.append(f"fade=t=out:st={max(0.0, dur - SECTION_FADE):.3f}:d={SECTION_FADE}")
     if kind == "video":
-        vf = [f"scale={w}:{h}:force_original_aspect_ratio=increase", f"crop={w}:{h}", f"fps={fps}",
-              f"tpad=stop_mode=clone:stop_duration={dur:.3f}"]
+        slow = min(max_slowdown, dur / max(0.1, media_duration(src)))
+        vf = []
+        if slow > 1.03:  # interpolate at source resolution (cheaper), then scale
+            vf += [f"setpts={slow:.4f}*PTS", f"minterpolate=fps={fps}:mi_mode=mci:mc_mode=aobmc:vsbmc=1"]
+        vf += [f"scale={w}:{h}:force_original_aspect_ratio=increase", f"crop={w}:{h}", f"fps={fps}",
+               f"tpad=stop_mode=clone:stop_duration={dur:.3f}"]
         inp = ["-i", str(src)]
     else:
         vf = [f"scale={w * 2}:{h * 2}:force_original_aspect_ratio=increase", f"crop={w * 2}:{h * 2}",
@@ -68,39 +75,54 @@ def render_segment(src: Path, kind: str, motion: str, frames: int, out: Path, *,
 
 
 # ------------------------------------------------------------------ cards
-def placeholder_card(project: Project, cut: dict, w: int = 1920, h: int = 1080) -> Path:
-    out = project.path("previews", "placeholders", f"{cut['id']}.png")
-    img, d = diagrams.canvas()
-    d.rectangle([0, 0, w, h], fill=(32, 34, 40))
-    d.rectangle([0, 0, w, 110], fill=(150, 30, 40))
-    diagrams.center_text(d, 22, "ANIMATIC — PENDING ASSET — NOT FOR PUBLISHING", diagrams.font(54, "Bold"))
-    d.text((120, 200), f"{cut['id']}  ·  {cut['asset_type'].upper()}  ·  {cut['camera_motion']}",
-           font=diagrams.font(64, "Bold"), fill=(240, 240, 240))
-    d.text((120, 300), cut["purpose"], font=diagrams.font(44, "SemiBold"), fill=(255, 200, 120))
-    y = 400
-    for line in textwrap.wrap(cut.get("prompt") or "", 78)[:9]:
-        d.text((120, y), line, font=diagrams.font(36, "Regular"), fill=(190, 195, 205))
-        y += 52
-    out.parent.mkdir(parents=True, exist_ok=True)
-    img.resize((w, h)).save(out)
-    return out
+def pending_spec(cut: dict) -> dict:
+    """Animated, clearly labelled stand-in for an AI shot that is not generated yet (animatic only)."""
+    return {"type": "pending", "params": {"cut": f"{cut['id']} · AI動画", "purpose": cut.get("purpose", ""),
+                                          "prompt": cut.get("prompt") or ""}}
 
 
-def end_card(project: Project, title: str) -> Path:
-    out = project.path("previews", "end_card.png")
-    img, d = diagrams.canvas()
-    diagrams.center_text(d, 380, "WHAT IF SCIENCE", diagrams.font(96, "Bold"), diagrams.CYAN)
-    diagrams.center_text(d, 520, title, diagrams.font(48, "SemiBold"))
-    diagrams.center_text(d, 640, "Sources and assumptions are listed in the description.",
-                         diagrams.font(36, "Regular"), diagrams.MUTED)
-    img.save(out)
-    return out
+def end_card_spec(project: Project, title: str) -> dict:
+    v = project.settings["voice"]
+    credit = v.get(v["engine"], {}).get("credit", "")
+    sub = "出典と前提は概要欄に記載しています" + (f"　｜　ナレーション {credit}" if credit else "")
+    return {"type": "title", "params": {"title": "What If Science", "subtitle": f"{title}\n{sub}"}}
 
 
 # ------------------------------------------------------------------ subtitles
+CJK = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+NO_LINE_START = set("、。，．！？!?）」』ー〜ぁぃぅぇぉっゃゅょゎァィゥェォッャュョヮヵヶ・")
+GOOD_BREAK_AFTER = set("、はがをにでともへやか」")
+
+
+def is_cjk(text: str) -> bool:
+    return bool(CJK.search(text))
+
+
 def chunk_sentence(text: str, max_chars: int) -> list[str]:
+    """Split a sentence into subtitle-sized chunks (≤ max_chars), preferring clause boundaries."""
     if len(text) <= max_chars:
         return [text]
+    if is_cjk(text):
+        parts = [p for p in re.split(r"(?<=、)", text) if p]
+        chunks, cur = [], ""
+        for p in parts:
+            while len(p) > max_chars:
+                if cur:
+                    chunks.append(cur)
+                    cur = ""
+                cut = max_chars
+                while cut > max_chars // 2 and p[cut] in NO_LINE_START:
+                    cut -= 1
+                chunks.append(p[:cut])
+                p = p[cut:]
+            if len(cur) + len(p) > max_chars:
+                chunks.append(cur)
+                cur = p
+            else:
+                cur += p
+        if cur:
+            chunks.append(cur)
+        return [c for c in chunks if c]
     parts = re.split(r"(?<=[,;:—])\s+", text)
     chunks, cur = [], ""
     for p in parts:
@@ -119,8 +141,18 @@ def chunk_sentence(text: str, max_chars: int) -> list[str]:
 
 
 def wrap_lines(text: str, max_line: int) -> list[str]:
+    """Break a chunk into at most two balanced lines."""
     if len(text) <= max_line:
         return [text]
+    if is_cjk(text):
+        best, best_score = [text], 10 ** 9
+        for i in range(1, len(text)):
+            if text[i] in NO_LINE_START:
+                continue
+            score = max(i, len(text) - i) - (3 if text[i - 1] in GOOD_BREAK_AFTER else 0)
+            if score < best_score:
+                best, best_score = [text[:i], text[i:]], score
+        return best
     words = text.split()
     best, best_score = [text], 10 ** 9
     for i in range(1, len(words)):
@@ -177,7 +209,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,{font},{size},&H00FFFFFF,&H00FFFFFF,&H00101010,&H96000000,-1,0,0,0,100,100,0,0,1,{max(2, size // 18)},1,2,80,80,{margin_v},1
+Style: Sub,{font},{size},&H00FFFFFF,&H00FFFFFF,&H70000000,&H70000000,-1,0,0,0,100,100,0,0,3,{max(6, size // 7)},0,2,80,80,{margin_v},1
 {extra_styles}
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -186,6 +218,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             for e in events]
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(head + "\n".join(list(extra_events) + body) + "\n")
+
+
+def ass_filter(project: Project, ass: Path) -> str:
+    """libass filter with the bundled font directory (Noto Sans JP is not a system font)."""
+    fdir = expand(project.settings["subtitles"].get("font_dir", ""))
+    return f"ass={ass}:fontsdir={fdir}" if fdir.exists() else f"ass={ass}"
 
 
 # ------------------------------------------------------------------ audio
@@ -273,20 +311,21 @@ def plan_segments(project: Project, timing: dict, animatic: bool) -> list[dict]:
         start = 0.0 if i == 0 else units[c["id"]]["start"]
         end = units[cuts[i + 1]["id"]]["start"] if i + 1 < len(cuts) else timing["duration"]
         frames = round(end * fps) - round(start * fps)
-        src = am.cut_asset(project, c, style)
         kind = c["asset_type"]
         placeholder = False
-        if src is None:
+        spec = c["diagram"] if kind == "motion" else None
+        src = None if kind == "motion" else am.cut_asset(project, c, style)
+        if kind != "motion" and src is None:
             if c["asset_type"] in ("diagram", "title"):
                 raise PipelineError(f"{c['id']}: diagram not rendered — run `produce` (assets step) first")
             missing.append(c["id"])
             if not animatic:
                 continue
-            src, kind, placeholder = placeholder_card(project, c), "image", True
-        motion = "static" if placeholder else c["camera_motion"]
+            kind, spec, placeholder = "motion", pending_spec(c), True
+        motion = c["camera_motion"]
         first_in_sec = i == 0 or cuts[i - 1]["section"] != c["section"]
         last_in_sec = i + 1 == len(cuts) or cuts[i + 1]["section"] != c["section"]
-        segs.append({"cut": c["id"], "src": src, "kind": kind, "motion": motion, "frames": frames,
+        segs.append({"cut": c["id"], "src": src, "spec": spec, "kind": kind, "motion": motion, "frames": frames,
                      "start": start, "end": end, "placeholder": placeholder,
                      "fade_in": first_in_sec and i > 0, "fade_out": last_in_sec and i + 1 < len(cuts)})
     if missing and not animatic:
@@ -295,19 +334,47 @@ def plan_segments(project: Project, timing: dict, animatic: bool) -> list[dict]:
     return segs
 
 
-def build_segments(project: Project, segs: list[dict], vcfg: dict, seg_dir: Path) -> list[Path]:
-    paths = []
-    for s in segs:
+def _render_one(job: dict) -> str:
+    out = Path(job["out"])
+    if job["kind"] == "motion":
+        motion_mod.render_clip(job["spec"], job["frames"], out, fps=job["fps"],
+                               fade_in=job["fade_in"], fade_out=job["fade_out"])
+    else:
+        render_segment(Path(job["src"]), job["kind"], job["motion"], job["frames"], out, w=job["w"], h=job["h"],
+                       fps=job["fps"], fade_in=job["fade_in"], fade_out=job["fade_out"],
+                       max_slowdown=job["max_slowdown"])
+    return str(out)
+
+
+def segment_key(s: dict, vcfg: dict) -> str:
+    if s["kind"] == "motion":
+        src_id = (s["spec"], MOTION_CODE_HASH)
+    else:
         st = s["src"].stat()
-        key = sha(str(s["src"]), st.st_size, st.st_mtime, s["kind"], s["motion"], s["frames"],
-                  s["fade_in"], s["fade_out"], vcfg["width"], vcfg["height"])
-        out = seg_dir / f"{s['cut']}_{key}.mp4"
-        if not out.exists():
-            for old in seg_dir.glob(f"{s['cut']}_*.mp4"):
-                old.unlink()
-            render_segment(s["src"], s["kind"], s["motion"], s["frames"], out, w=vcfg["width"], h=vcfg["height"],
-                           fps=vcfg["fps"], fade_in=s["fade_in"], fade_out=s["fade_out"])
+        src_id = (str(s["src"]), st.st_size, st.st_mtime)
+    return sha(src_id, s["kind"], s["motion"], s["frames"], s["fade_in"], s["fade_out"], vcfg["width"], vcfg["height"])
+
+
+def build_segments(project: Project, segs: list[dict], vcfg: dict, seg_dir: Path) -> list[Path]:
+    """Render every cut segment (cached by content key), in parallel across CPU cores."""
+    paths, jobs = [], []
+    for s in segs:
+        out = seg_dir / f"{s['cut']}_{segment_key(s, vcfg)}.mp4"
         paths.append(out)
+        if out.exists():
+            continue
+        for old in seg_dir.glob(f"{s['cut']}_*.mp4"):
+            old.unlink()
+        jobs.append({"out": str(out), "kind": s["kind"], "spec": s.get("spec"), "src": str(s["src"]) if s["src"] else None,
+                     "motion": s["motion"], "frames": s["frames"], "fps": vcfg["fps"], "w": vcfg["width"],
+                     "h": vcfg["height"], "fade_in": s["fade_in"], "fade_out": s["fade_out"],
+                     "max_slowdown": float(project.settings["assets"].get("video_max_slowdown", 1.6))})
+    if jobs:
+        seg_dir.mkdir(parents=True, exist_ok=True)
+        workers = max(1, min(len(jobs), (os.cpu_count() or 2)))
+        with ProcessPoolExecutor(max_workers=workers) as ex:
+            for f in as_completed([ex.submit(_render_one, j) for j in jobs]):
+                f.result()
     return paths
 
 
@@ -330,10 +397,10 @@ def edit_long(project: Project, animatic: bool = False) -> dict:
     with project.stage("edit", {"animatic": animatic}) as rec:
         segs = plan_segments(project, timing, animatic)
         seg_paths = build_segments(project, segs, vcfg, project.path("output", "segments"))
-        ec = end_card(project, script["title"])
         ec_frames = int(END_CARD_SECONDS * vcfg["fps"])
-        ec_seg = render_segment(ec, "image", "static", ec_frames, project.path("output", "segments", "end_card.mp4"),
-                                w=vcfg["width"], h=vcfg["height"], fps=vcfg["fps"], fade_in=True, fade_out=True)
+        ec_seg = motion_mod.render_clip(end_card_spec(project, script["title"]), ec_frames,
+                                        project.path("output", "segments", "end_card.mp4"), fps=vcfg["fps"],
+                                        fade_in=True, fade_out=True)
         video_only = concat(seg_paths + [ec_seg], project.path("output", "video_only.mp4"))
         total = timing["duration"] + END_CARD_SECONDS
 
@@ -349,7 +416,7 @@ def edit_long(project: Project, animatic: bool = False) -> dict:
         loud = mix_audio(project, project.path("audio", "narration.wav"), total, mix)
 
         run(["ffmpeg", "-y", "-v", "error", "-i", str(video_only), "-i", str(mix),
-             "-vf", f"ass={ass}", "-map", "0:v", "-map", "1:a", "-c:v", "libx264",
+             "-vf", ass_filter(project, ass), "-map", "0:v", "-map", "1:a", "-c:v", "libx264",
              "-preset", vcfg.get("preset", project.settings["video"]["preset"]), "-crf",
              str(project.settings["video"]["crf"]), "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", project.settings["audio"]["aac_bitrate"],
              "-movflags", "+faststart", "-t", f"{total:.3f}", str(out)])
@@ -358,7 +425,8 @@ def edit_long(project: Project, animatic: bool = False) -> dict:
         manifest = {"output": str(out.relative_to(project.dir)), "animatic": animatic, "duration": total,
                     "placeholder_cuts": placeholders, "subtitles_srt": str(srt.relative_to(project.dir)),
                     "loudness_input": {k: loud[k] for k in ("input_i", "input_tp")},
-                    "segments": [{k: (str(v) if isinstance(v, Path) else v) for k, v in s.items()} for s in segs]}
+                    "segments": [{k: (str(v) if isinstance(v, Path) else v) for k, v in s.items() if k != "spec"}
+                                 for s in segs]}
         write_json(project.path("output", f"edit_manifest{suffix}.json"), manifest)
         rec["outputs"] += [manifest["output"], manifest["subtitles_srt"]]
         if placeholders:
