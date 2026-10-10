@@ -5,3 +5,20 @@ ts,project,stage,item,provider,model,units,credits,cost_jpy,kind,note
 2026-10-10T11:22:08+00:00,moon_disappeared,voice,shorts narration,kokoro (local),,28,0.0,0,free,
 2026-10-10T12:25:10+00:00,moon_disappeared,voice,long-form narration,voicevox (local),VOICEVOX:冥鳴ひまり,106,0.0,0,free,local CPU synthesis
 2026-10-10T12:36:35+00:00,moon_disappeared,voice,shorts narration,voicevox (local),,25,0.0,0,free,
+2026-10-10T13:34:44+00:00,moon_disappeared,video_clips,C07,higgsfield,kling3_0,1,7.5,55.5,actual,4f4df329-d8a2-41d7-8dee-f9e819dc5606
+2026-10-10T13:34:46+00:00,moon_disappeared,images,T1,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,8af9a0a8-b824-47a4-967c-50e33d99f9fc
+2026-10-10T13:34:48+00:00,moon_disappeared,images,T2,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,2388382c-34da-495c-978e-4e3831189706
+2026-10-10T13:34:50+00:00,moon_disappeared,images,T3,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,f0bdc004-79d8-40bf-b638-c2cdb15f121f
+2026-10-10T13:34:52+00:00,moon_disappeared,video_clips,C02,higgsfield,kling3_0,1,7.5,55.5,actual,efe04561-7528-40f1-878d-68cbab53c6c7
+2026-10-10T13:34:54+00:00,moon_disappeared,video_clips,C14,higgsfield,kling3_0,1,7.5,55.5,actual,502406c0-427d-4b13-a876-61612c091487
+2026-10-10T13:34:56+00:00,moon_disappeared,video_clips,C16,higgsfield,kling3_0,1,7.5,55.5,actual,e8c5730f-d39d-412e-915c-ac3765828e37
+2026-10-10T13:34:58+00:00,moon_disappeared,video_clips,C19,higgsfield,kling3_0,1,7.5,55.5,actual,4116b5dc-3cbe-419f-a51f-c8e653221296
+2026-10-10T13:35:00+00:00,moon_disappeared,video_clips,C25,higgsfield,kling3_0,1,7.5,55.5,actual,aeb6026e-c1db-4b8d-b533-8ed9cee3cb63
+2026-10-10T13:35:02+00:00,moon_disappeared,video_clips,C38,higgsfield,kling3_0,1,7.5,55.5,actual,0a728e43-ef13-451a-9721-eefc62a40022
+2026-10-10T13:35:03+00:00,moon_disappeared,video_clips,C40,higgsfield,kling3_0,1,7.5,55.5,actual,5cf73e66-7b1f-4a1e-9bf3-24f440a243ad
+2026-10-10T13:35:04+00:00,moon_disappeared,video_clips,C42,higgsfield,kling3_0,1,7.5,55.5,actual,5be48131-c690-4904-97f7-3c13cb365c39
+2026-10-10T13:35:12+00:00,moon_disappeared,video_clips,C01,higgsfield,kling3_0,1,7.5,55.5,actual,59ebb5e9-1b85-422e-9147-9737593d5aba
+2026-10-10T13:35:13+00:00,moon_disappeared,video_clips,C11,higgsfield,kling3_0,1,7.5,55.5,actual,1ec95917-e739-412d-97f7-18791bad69ce
+2026-10-10T13:35:15+00:00,moon_disappeared,video_clips,C44,higgsfield,kling3_0,1,7.5,55.5,actual,1455a085-6ed3-4f88-aef7-bf2f21337894
+2026-10-10T14:35:45+00:00,moon_disappeared,video_clips,C25,higgsfield,kling3_0,1,7.5,55.5,actual,dffba92d-dab1-45a3-b73b-1bc8c0e5a739
+2026-10-10T14:35:47+00:00,moon_disappeared,video_clips,C42,higgsfield,kling3_0,1,7.5,55.5,actual,d6600738-3aec-47fa-a881-8696fc2ba008

@@ -21,37 +21,35 @@
     },
     "edit": {
       "status": "done",
-      "started": "2026-10-10T12:48:00+00:00",
+      "started": "2026-10-10T14:35:58+00:00",
       "inputs": {
-        "animatic": true
+        "animatic": false
       },
-      "finished": "2026-10-10T12:55:05+00:00",
+      "finished": "2026-10-10T14:43:46+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
-        "output/moon_disappeared_long_ANIMATIC.mp4",
-        "subtitles/moon_disappeared_en.srt"
+        "output/moon_disappeared_long.mp4",
+        "subtitles/moon_disappeared_ja.srt"
       ],
       "retries": 0,
       "cost_jpy": 0.0,
-      "notes": [
-        "ANIMATIC: 12 placeholder cuts — not publishable"
-      ]
+      "notes": []
     },
     "shorts": {
       "status": "done",
-      "started": "2026-10-10T12:55:05+00:00",
+      "started": "2026-10-10T14:43:46+00:00",
       "inputs": {
         "count": 3,
-        "animatic": true
+        "animatic": false
       },
-      "finished": "2026-10-10T12:58:36+00:00",
+      "finished": "2026-10-10T14:45:06+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
-        "output/shorts/S1_ANIMATIC.mp4",
-        "output/shorts/S2_ANIMATIC.mp4",
-        "output/shorts/S3_ANIMATIC.mp4"
+        "output/shorts/S1.mp4",
+        "output/shorts/S2.mp4",
+        "output/shorts/S3.mp4"
       ],
       "retries": 0,
       "cost_jpy": 0.0,
@@ -59,23 +57,21 @@
     },
     "thumbnails": {
       "status": "done",
-      "started": "2026-10-10T12:58:36+00:00",
+      "started": "2026-10-10T14:45:06+00:00",
       "inputs": {
         "count": 3
       },
-      "finished": "2026-10-10T12:58:36+00:00",
+      "finished": "2026-10-10T14:45:07+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
-        "thumbnails/T1_DRAFT.jpg",
-        "thumbnails/T2_DRAFT.jpg",
-        "thumbnails/T3_DRAFT.jpg"
+        "thumbnails/T1.jpg",
+        "thumbnails/T2.jpg",
+        "thumbnails/T3.jpg"
       ],
       "retries": 0,
       "cost_jpy": 0.0,
-      "notes": [
-        "draft backgrounds: ['T1', 'T2', 'T3']"
-      ]
+      "notes": []
     },
     "plan": {
       "status": "done",
@@ -156,25 +152,25 @@
     },
     "assets": {
       "status": "done",
-      "started": "2026-10-10T12:48:00+00:00",
+      "started": "2026-10-10T14:35:58+00:00",
       "inputs": {
-        "animatic": true
+        "animatic": false
       },
-      "finished": "2026-10-10T12:48:00+00:00",
+      "finished": "2026-10-10T14:35:58+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [],
       "retries": 0,
       "cost_jpy": 0.0,
       "notes": [
-        "diagrams rendered=0; pending AI assets=15 (≈90.75 credits, ≈¥671.55)"
+        "diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"
       ]
     },
     "validate": {
       "status": "done",
-      "started": "2026-10-10T13:02:56+00:00",
+      "started": "2026-10-10T14:45:07+00:00",
       "inputs": {},
-      "finished": "2026-10-10T13:04:16+00:00",
+      "finished": "2026-10-10T14:46:36+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
@@ -184,7 +180,7 @@
       "retries": 0,
       "cost_jpy": 0.0,
       "notes": [
-        "errors=2 warnings=4 publishable=False"
+        "errors=0 warnings=1 publishable=True"
       ]
     }
   }

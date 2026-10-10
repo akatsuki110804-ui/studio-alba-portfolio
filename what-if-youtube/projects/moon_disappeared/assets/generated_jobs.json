@@ -1,20 +1,114 @@
 {
   "note": "Higgsfield jobs submitted 2026-10-10. Import with: python -m src.main assets import --project moon_disappeared --id <id> --url <result_url> --credits <credits> --job-id <job_id>. Result URLs are on d8j0ntlcm91z4.cloudfront.net.",
   "jobs": [
-    {"id": "C07", "job_id": "4f4df329-d8a2-41d7-8dee-f9e819dc5606", "credits": 7.5, "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_132941_4f4df329-d8a2-41d7-8dee-f9e819dc5606.mp4"},
-    {"id": "T1", "job_id": "8af9a0a8-b824-47a4-967c-50e33d99f9fc", "credits": 0.25, "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133122_8af9a0a8-b824-47a4-967c-50e33d99f9fc.png"},
-    {"id": "T2", "job_id": "2388382c-34da-495c-978e-4e3831189706", "credits": 0.25, "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133122_2388382c-34da-495c-978e-4e3831189706.png"},
-    {"id": "T3", "job_id": "f0bdc004-79d8-40bf-b638-c2cdb15f121f", "credits": 0.25, "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133123_f0bdc004-79d8-40bf-b638-c2cdb15f121f.png"},
-    {"id": "C01", "job_id": "59ebb5e9-1b85-422e-9147-9737593d5aba", "credits": 7.5},
-    {"id": "C02", "job_id": "efe04561-7528-40f1-878d-68cbab53c6c7", "credits": 7.5},
-    {"id": "C11", "job_id": "1ec95917-e739-412d-97f7-18791bad69ce", "credits": 7.5},
-    {"id": "C14", "job_id": "502406c0-427d-4b13-a876-61612c091487", "credits": 7.5},
-    {"id": "C16", "job_id": "e8c5730f-d39d-412e-915c-ac3765828e37", "credits": 7.5},
-    {"id": "C19", "job_id": "4116b5dc-3cbe-419f-a51f-c8e653221296", "credits": 7.5},
-    {"id": "C25", "job_id": "aeb6026e-c1db-4b8d-b533-8ed9cee3cb63", "credits": 7.5},
-    {"id": "C38", "job_id": "0a728e43-ef13-451a-9721-eefc62a40022", "credits": 7.5},
-    {"id": "C40", "job_id": "5cf73e66-7b1f-4a1e-9bf3-24f440a243ad", "credits": 7.5},
-    {"id": "C42", "job_id": "5be48131-c690-4904-97f7-3c13cb365c39", "credits": 7.5},
-    {"id": "C44", "job_id": "1455a085-6ed3-4f88-aef7-bf2f21337894", "credits": 7.5}
-  ]
+    {
+      "id": "C07",
+      "job_id": "4f4df329-d8a2-41d7-8dee-f9e819dc5606",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_132941_4f4df329-d8a2-41d7-8dee-f9e819dc5606.mp4"
+    },
+    {
+      "id": "T1",
+      "job_id": "8af9a0a8-b824-47a4-967c-50e33d99f9fc",
+      "credits": 0.25,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133122_8af9a0a8-b824-47a4-967c-50e33d99f9fc.png"
+    },
+    {
+      "id": "T2",
+      "job_id": "2388382c-34da-495c-978e-4e3831189706",
+      "credits": 0.25,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133122_2388382c-34da-495c-978e-4e3831189706.png"
+    },
+    {
+      "id": "T3",
+      "job_id": "f0bdc004-79d8-40bf-b638-c2cdb15f121f",
+      "credits": 0.25,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133123_f0bdc004-79d8-40bf-b638-c2cdb15f121f.png"
+    },
+    {
+      "id": "C01",
+      "job_id": "59ebb5e9-1b85-422e-9147-9737593d5aba",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_59ebb5e9-1b85-422e-9147-9737593d5aba.mp4"
+    },
+    {
+      "id": "C02",
+      "job_id": "efe04561-7528-40f1-878d-68cbab53c6c7",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_efe04561-7528-40f1-878d-68cbab53c6c7.mp4"
+    },
+    {
+      "id": "C11",
+      "job_id": "1ec95917-e739-412d-97f7-18791bad69ce",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_1ec95917-e739-412d-97f7-18791bad69ce.mp4"
+    },
+    {
+      "id": "C14",
+      "job_id": "502406c0-427d-4b13-a876-61612c091487",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133213_502406c0-427d-4b13-a876-61612c091487.mp4"
+    },
+    {
+      "id": "C16",
+      "job_id": "e8c5730f-d39d-412e-915c-ac3765828e37",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_e8c5730f-d39d-412e-915c-ac3765828e37.mp4"
+    },
+    {
+      "id": "C19",
+      "job_id": "4116b5dc-3cbe-419f-a51f-c8e653221296",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_4116b5dc-3cbe-419f-a51f-c8e653221296.mp4"
+    },
+    {
+      "id": "C25",
+      "job_id": "aeb6026e-c1db-4b8d-b533-8ed9cee3cb63",
+      "credits": 7.5,
+      "superseded": true,
+      "reason": "moon surface visible during totality (should be black)",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_aeb6026e-c1db-4b8d-b533-8ed9cee3cb63.mp4"
+    },
+    {
+      "id": "C38",
+      "job_id": "0a728e43-ef13-451a-9721-eefc62a40022",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_0a728e43-ef13-451a-9721-eefc62a40022.mp4"
+    },
+    {
+      "id": "C40",
+      "job_id": "5cf73e66-7b1f-4a1e-9bf3-24f440a243ad",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_5cf73e66-7b1f-4a1e-9bf3-24f440a243ad.mp4"
+    },
+    {
+      "id": "C42",
+      "job_id": "5be48131-c690-4904-97f7-3c13cb365c39",
+      "credits": 7.5,
+      "superseded": true,
+      "reason": "Earth and Moon lit from different sides",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_5be48131-c690-4904-97f7-3c13cb365c39.mp4"
+    },
+    {
+      "id": "C44",
+      "job_id": "1455a085-6ed3-4f88-aef7-bf2f21337894",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133212_1455a085-6ed3-4f88-aef7-bf2f21337894.mp4"
+    },
+    {
+      "id": "C25",
+      "job_id": "dffba92d-dab1-45a3-b73b-1bc8c0e5a739",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133604_dffba92d-dab1-45a3-b73b-1bc8c0e5a739.mp4",
+      "note": "regenerated"
+    },
+    {
+      "id": "C42",
+      "job_id": "d6600738-3aec-47fa-a881-8696fc2ba008",
+      "credits": 7.5,
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JFnDM6UNDDC0CWvpQCs40YdWCq/hf_20261010_133604_d6600738-3aec-47fa-a881-8696fc2ba008.mp4",
+      "note": "regenerated"
+    }
+  ],
+  "status": "all imported 2026-10-10"
 }

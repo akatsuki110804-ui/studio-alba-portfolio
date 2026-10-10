@@ -700,15 +700,13 @@
       "lighting": "",
       "onscreen_text": "",
       "asset_type": "video",
-      "prompt": "Total solar eclipse above a mountain landscape, the black disk of the MOON surrounded by the Sun's white glowing corona, 360-degree twilight glow on the horizon, people silhouetted on a ridge, slow push-in",
+      "prompt": "Total solar eclipse at totality above a mountain landscape: the Moon is a completely black silhouette disk with no visible surface detail, surrounded by the Sun's pearly white glowing corona with fine streamers, deep twilight sky, orange 360-degree sunset glow along the horizon, small silhouettes of people on a ridge, slow push-in",
       "diagram": null,
-      "science_notes": "C17",
+      "science_notes": "C17。皆既中の月は真っ黒なシルエット（表面の模様は見えない）。初回生成で月面が明るく写ったため再生成。",
       "claim_ids": [
         "C17"
       ],
-      "entities": [
-        "MOON"
-      ]
+      "entities": []
     },
     {
       "id": "C26",
@@ -1240,9 +1238,9 @@
       "lighting": "",
       "onscreen_text": "",
       "asset_type": "video",
-      "prompt": "EARTH and the MOON together in one frame, both lit by warm sunlight from the same side, the Moon smaller and farther away, very slow push-in, serene",
+      "prompt": "EARTH and the MOON together in one frame, both lit by sunlight coming from the right side of the frame, so both show the same half-lit phase with matching day-night terminators and dark night sides on the left, the Moon much smaller and farther away, black space with faint stars, very slow push-in, serene",
       "diagram": null,
-      "science_notes": "",
+      "science_notes": "地球と月の光の向きをそろえる（初回は不一致のため再生成）。",
       "claim_ids": [
         "D01"
       ],
