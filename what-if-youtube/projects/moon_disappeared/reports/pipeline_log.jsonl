@@ -1,0 +1,27 @@
+{"ts": "2026-10-10T11:05:35+00:00", "project": "moon_disappeared", "stage": "voice", "event": "start", "inputs": {"cuts": 38}}
+{"ts": "2026-10-10T11:05:35+00:00", "project": "moon_disappeared", "stage": "voice", "event": "failed", "error": "PipelineError: Kokoro model files missing: /root/models/kokoro/kokoro-v1.0.onnx / /root/models/kokoro/voices-v1.0.bin. See README › Setup."}
+{"ts": "2026-10-10T11:05:47+00:00", "project": "moon_disappeared", "stage": "voice", "event": "start", "inputs": {"cuts": 38}}
+{"ts": "2026-10-10T11:07:21+00:00", "project": "moon_disappeared", "stage": "voice", "event": "done", "outputs": ["audio/narration.wav", "audio/timing.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["353.2s narration; sentences generated=98 reused from cache=0"]}
+{"ts": "2026-10-10T11:07:38+00:00", "project": "moon_disappeared", "stage": "voice", "event": "start", "inputs": {"cuts": 38}}
+{"ts": "2026-10-10T11:09:16+00:00", "project": "moon_disappeared", "stage": "voice", "event": "done", "outputs": ["audio/narration.wav", "audio/timing.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["374.2s narration; sentences generated=98 reused from cache=0"]}
+{"ts": "2026-10-10T11:11:57+00:00", "project": "moon_disappeared", "stage": "edit", "event": "start", "inputs": {"animatic": true}}
+{"ts": "2026-10-10T11:16:30+00:00", "project": "moon_disappeared", "stage": "edit", "event": "done", "outputs": ["output/moon_disappeared_long_ANIMATIC.mp4", "subtitles/moon_disappeared_en.srt"], "retries": 0, "cost_jpy": 0.0, "notes": ["ANIMATIC: 22 placeholder cuts — not publishable"]}
+{"ts": "2026-10-10T11:18:19+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": true}}
+{"ts": "2026-10-10T11:22:08+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1_ANIMATIC.mp4", "output/shorts/S2_ANIMATIC.mp4", "output/shorts/S3_ANIMATIC.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-10T11:22:08+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-10T11:22:09+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1_DRAFT.jpg", "thumbnails/T2_DRAFT.jpg", "thumbnails/T3_DRAFT.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": ["draft backgrounds: ['T1', 'T2', 'T3']"]}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "plan", "event": "start", "inputs": {"topic": "What If the Moon Suddenly Disappeared?"}}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "plan", "event": "done", "outputs": ["plan/plan.json"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "research", "event": "start", "inputs": {}}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "research", "event": "done", "outputs": ["research/research.json"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "script", "event": "start", "inputs": {}}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "script", "event": "done", "outputs": ["scripts/script.json", "scripts/script.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["945 words ≈ 6.3 min at 150 wpm"]}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "storyboard", "event": "start", "inputs": {}}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "storyboard", "event": "done", "outputs": ["storyboard/storyboard.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["38 cuts: image=20, video=2, diagram=14, title=2"]}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "shorts_plan", "event": "start", "inputs": {}}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "shorts_plan", "event": "done", "outputs": ["shorts/shorts.json"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-10T11:23:34+00:00", "project": "moon_disappeared", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=25 (≈20.75 credits, ≈¥153.55)"]}
+{"ts": "2026-10-10T11:23:57+00:00", "project": "moon_disappeared", "stage": "assets", "event": "start", "inputs": {"animatic": true}}
+{"ts": "2026-10-10T11:23:57+00:00", "project": "moon_disappeared", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=25 (≈20.75 credits, ≈¥153.55)"]}
+{"ts": "2026-10-10T11:23:57+00:00", "project": "moon_disappeared", "stage": "edit", "event": "start", "inputs": {"animatic": true}}

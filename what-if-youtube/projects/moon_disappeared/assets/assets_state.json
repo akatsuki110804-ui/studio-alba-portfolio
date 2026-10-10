@@ -1,0 +1,130 @@
+{
+  "C03": {
+    "status": "ready",
+    "path": "assets/diagrams/C03.png",
+    "fingerprint": "91840a54bc4e6fd9",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:30+00:00",
+    "attempts": 1
+  },
+  "C04": {
+    "status": "ready",
+    "path": "assets/diagrams/C04.png",
+    "fingerprint": "ffe0faef7334624c",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:31+00:00",
+    "attempts": 1
+  },
+  "C05": {
+    "status": "ready",
+    "path": "assets/diagrams/C05.png",
+    "fingerprint": "ea723e70a6936347",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:31+00:00",
+    "attempts": 1
+  },
+  "C07": {
+    "status": "ready",
+    "path": "assets/diagrams/C07.png",
+    "fingerprint": "3037e976c7c19cb5",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:31+00:00",
+    "attempts": 1
+  },
+  "C08": {
+    "status": "ready",
+    "path": "assets/diagrams/C08.png",
+    "fingerprint": "71485b9189ab34d3",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:31+00:00",
+    "attempts": 1
+  },
+  "C11": {
+    "status": "ready",
+    "path": "assets/diagrams/C11.png",
+    "fingerprint": "9dde7e616a1e2d70",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:31+00:00",
+    "attempts": 1
+  },
+  "C17": {
+    "status": "ready",
+    "path": "assets/diagrams/C17.png",
+    "fingerprint": "b8b7087255b7b7db",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:31+00:00",
+    "attempts": 1
+  },
+  "C18": {
+    "status": "ready",
+    "path": "assets/diagrams/C18.png",
+    "fingerprint": "a272b9789d9fa0af",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:31+00:00",
+    "attempts": 1
+  },
+  "C20": {
+    "status": "ready",
+    "path": "assets/diagrams/C20.png",
+    "fingerprint": "22ffc6734b35d8cf",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  },
+  "C23": {
+    "status": "ready",
+    "path": "assets/diagrams/C23.png",
+    "fingerprint": "37a1f6c0c09de9c1",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  },
+  "C26": {
+    "status": "ready",
+    "path": "assets/diagrams/C26.png",
+    "fingerprint": "94c5fa70cc4234c6",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  },
+  "C27": {
+    "status": "ready",
+    "path": "assets/diagrams/C27.png",
+    "fingerprint": "d09e5095571c0478",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  },
+  "C28": {
+    "status": "ready",
+    "path": "assets/diagrams/C28.png",
+    "fingerprint": "309fc1dba3c5edc9",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  },
+  "C30": {
+    "status": "ready",
+    "path": "assets/diagrams/C30.png",
+    "fingerprint": "a1f00d53ad8631db",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  },
+  "C32": {
+    "status": "ready",
+    "path": "assets/diagrams/C32.png",
+    "fingerprint": "b72da301de9c0c51",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  },
+  "C34": {
+    "status": "ready",
+    "path": "assets/diagrams/C34.png",
+    "fingerprint": "7f2b563f7b066608",
+    "provider": "local (Pillow)",
+    "imported": "2026-10-10T11:10:32+00:00",
+    "attempts": 1
+  }
+}

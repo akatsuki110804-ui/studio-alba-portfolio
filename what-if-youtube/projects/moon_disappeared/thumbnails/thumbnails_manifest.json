@@ -1,0 +1,17 @@
+[
+  {
+    "id": "T1",
+    "output": "thumbnails/T1_DRAFT.jpg",
+    "publishable": false
+  },
+  {
+    "id": "T2",
+    "output": "thumbnails/T2_DRAFT.jpg",
+    "publishable": false
+  },
+  {
+    "id": "T3",
+    "output": "thumbnails/T3_DRAFT.jpg",
+    "publishable": false
+  }
+]

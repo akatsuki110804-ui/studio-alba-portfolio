@@ -1,0 +1,10 @@
+{
+  "thumbnails": [
+    {"id": "T1", "text": ["THE MOON", "IS GONE"], "accent": "GONE", "layout": "left",
+     "prompt": "Night city skyline seen from a rooftop, an empty dark sky on the right side where the Moon should be, a faint perfectly circular ghostly outline of where the Moon used to be, people looking up, strong contrast, large empty dark area on the left for title text"},
+    {"id": "T2", "text": ["NO MOON.", "WHAT BREAKS", "FIRST?"], "accent": "FIRST?", "layout": "left",
+     "prompt": "Planet Earth seen from space on the right half of the frame, dramatic hard sunlight, deep black space on the left half, no moon anywhere, ominous mood, clean composition with empty space for title text"},
+    {"id": "T3", "text": ["EARTH", "WITHOUT", "A MOON"], "accent": "WITHOUT", "layout": "left",
+     "prompt": "A rocky coastline at low tide at dusk on the right side of the frame with seaweed-covered rocks far above the water line, moonless deep blue sky with first stars, dark negative space on the left for title text"}
+  ]
+}

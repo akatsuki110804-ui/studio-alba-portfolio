@@ -1,0 +1,5 @@
+ts,project,stage,item,provider,model,units,credits,cost_jpy,kind,note
+2026-10-10T11:07:21+00:00,moon_disappeared,voice,long-form narration,kokoro (local),kokoro-v1.0 af_heart,98,0.0,0,free,local CPU synthesis
+2026-10-10T11:09:16+00:00,moon_disappeared,voice,long-form narration,kokoro (local),kokoro-v1.0 af_heart,98,0.0,0,free,local CPU synthesis
+2026-10-10T11:10:32+00:00,moon_disappeared,diagrams,16 diagrams,local (Pillow),,16,0.0,0,free,
+2026-10-10T11:22:08+00:00,moon_disappeared,voice,shorts narration,kokoro (local),,28,0.0,0,free,

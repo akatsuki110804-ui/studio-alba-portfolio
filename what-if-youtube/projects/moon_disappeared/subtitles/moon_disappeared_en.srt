@@ -1,0 +1,535 @@
+1
+00:00:00,600 --> 00:00:04,240
+Tonight, at nine forty-one
+p.m., the Moon is gone.
+
+2
+00:00:04,330 --> 00:00:05,683
+No explosion.
+
+3
+00:00:05,773 --> 00:00:06,920
+No flash.
+
+4
+00:00:07,010 --> 00:00:09,335
+One moment it hangs over the city.
+
+5
+00:00:09,425 --> 00:00:11,569
+The next, there is only black sky.
+
+6
+00:00:12,359 --> 00:00:13,821
+So what breaks first?
+
+7
+00:00:13,911 --> 00:00:16,296
+The answer is stranger than the movies.
+
+8
+00:00:16,386 --> 00:00:19,645
+Because the most dangerous
+change is the slowest one.
+
+9
+00:00:20,435 --> 00:00:21,724
+First, the rules.
+
+10
+00:00:21,814 --> 00:00:25,201
+Nothing in physics lets a
+whole world simply vanish.
+
+11
+00:00:25,291 --> 00:00:27,773
+Mass and energy don't just disappear.
+
+12
+00:00:27,863 --> 00:00:29,808
+So this is a thought experiment.
+
+13
+00:00:30,598 --> 00:00:33,369
+We delete the Moon
+instantly and completely.
+
+14
+00:00:33,459 --> 00:00:35,824
+Its light, its gravity, everything.
+
+15
+00:00:35,914 --> 00:00:40,698
+Then we follow the consequences, from the
+first second to the next hundred million
+
+16
+00:00:40,718 --> 00:00:41,319
+years.
+
+17
+00:00:42,109 --> 00:00:45,813
+And we'll keep score honestly:
+what scientists have measured,
+
+18
+00:00:45,833 --> 00:00:50,051
+what physics lets us infer, and
+where the experts still disagree.
+
+19
+00:00:50,841 --> 00:00:52,037
+Second zero.
+
+20
+00:00:52,127 --> 00:00:55,540
+In a disaster movie, Earth
+would be flung out of its orbit.
+
+21
+00:00:55,630 --> 00:00:56,946
+That doesn't happen.
+
+22
+00:00:57,736 --> 00:01:01,343
+Earth and the Moon actually
+circle a shared balance point.
+
+23
+00:01:01,433 --> 00:01:04,279
+Because Earth is about
+eighty-one times heavier,
+
+24
+00:01:04,299 --> 00:01:09,117
+that point sits inside our planet, roughly
+four thousand seven hundred kilometers
+
+25
+00:01:09,137 --> 00:01:10,342
+from the center.
+
+26
+00:01:11,132 --> 00:01:16,088
+Every month, Earth makes a small loop around
+it, at about twelve meters per second.
+
+27
+00:01:16,178 --> 00:01:20,216
+Our speed around the Sun is nearly
+thirty kilometers per second.
+
+28
+00:01:21,006 --> 00:01:24,253
+Delete the Moon, and that little
+loop simply straightens out.
+
+29
+00:01:24,343 --> 00:01:26,970
+Our path around the Sun barely changes.
+
+30
+00:01:27,060 --> 00:01:28,715
+Nobody would feel a thing.
+
+31
+00:01:29,505 --> 00:01:31,982
+What people would notice
+first is the dark.
+
+32
+00:01:32,772 --> 00:01:37,205
+A full Moon on a clear night lights the
+ground with about a quarter of a lux.
+
+33
+00:01:37,295 --> 00:01:40,836
+Without it, a natural sky offers
+starlight and faint airglow,
+
+34
+00:01:40,856 --> 00:01:42,682
+around a hundredth of that.
+
+35
+00:01:43,472 --> 00:01:46,147
+In cities, streetlights
+would hide the change.
+
+36
+00:01:46,237 --> 00:01:48,841
+But in the deserts, the
+oceans and the forests,
+
+37
+00:01:48,861 --> 00:01:51,456
+every night would become a new-moon night.
+
+38
+00:01:51,546 --> 00:01:52,429
+Forever.
+
+39
+00:01:53,219 --> 00:01:55,354
+Some animals are tuned to that light.
+
+40
+00:01:55,444 --> 00:01:58,667
+Dung beetles in Africa steer
+by polarized moonlight,
+
+41
+00:01:58,687 --> 00:02:03,615
+and on moonless nights they hold their
+course by the glow of the Milky Way.
+
+42
+00:02:04,405 --> 00:02:09,133
+On coral reefs, many species spawn
+together, timed to the lunar cycle.
+
+43
+00:02:09,223 --> 00:02:13,964
+A light-sensitive gene in these corals
+is most active under full-moon light.
+
+44
+00:02:14,754 --> 00:02:17,656
+Without that clock, spawning
+could drift out of sync,
+
+45
+00:02:17,676 --> 00:02:20,848
+and eggs released on different
+nights may never meet.
+
+46
+00:02:20,938 --> 00:02:24,241
+How badly this would play out
+is still an open question.
+
+47
+00:02:25,031 --> 00:02:26,128
+Hour six.
+
+48
+00:02:26,218 --> 00:02:29,404
+Along the coast, the tide
+comes in, and stops short.
+
+49
+00:02:30,194 --> 00:02:32,532
+The Moon raises most of our tides.
+
+50
+00:02:32,622 --> 00:02:37,874
+The Sun raises tides too, but its tidal
+pull is only about forty-six percent of the
+
+51
+00:02:37,894 --> 00:02:38,589
+Moon's.
+
+52
+00:02:39,379 --> 00:02:41,125
+So the tides don't vanish.
+
+53
+00:02:41,215 --> 00:02:44,475
+They shrink, to roughly a
+third of their typical size.
+
+54
+00:02:44,565 --> 00:02:49,519
+And they follow the Sun's rhythm, with high
+water at nearly the same time every day.
+
+55
+00:02:50,309 --> 00:02:52,242
+There is no giant wave either.
+
+56
+00:02:52,332 --> 00:02:56,965
+The ocean's tidal bulge is subtle,
+well under a meter in open water.
+
+57
+00:02:57,055 --> 00:03:01,276
+So the sea would settle over hours,
+like an ordinary falling tide.
+
+58
+00:03:02,066 --> 00:03:04,587
+Spring tides and neap tides end, too.
+
+59
+00:03:04,677 --> 00:03:09,814
+They come from the Sun and Moon lining up,
+and now there is nothing to line up with.
+
+60
+00:03:10,604 --> 00:03:11,691
+That matters.
+
+61
+00:03:11,781 --> 00:03:16,531
+Tides flush estuaries and feed the strip
+of shore that is underwater half the day
+
+62
+00:03:16,551 --> 00:03:18,156
+and dry the other half.
+
+63
+00:03:18,246 --> 00:03:23,327
+With weaker tides, that strip narrows,
+and the life adapted to it loses ground.
+
+64
+00:03:24,117 --> 00:03:25,068
+Year one.
+
+65
+00:03:25,158 --> 00:03:27,885
+There will never be another
+total solar eclipse.
+
+66
+00:03:27,975 --> 00:03:30,071
+Only the Moon could cover the Sun.
+
+67
+00:03:30,861 --> 00:03:32,962
+Something quieter changes, too.
+
+68
+00:03:33,052 --> 00:03:36,557
+Today, tidal friction acts
+like a brake on Earth's spin.
+
+69
+00:03:36,647 --> 00:03:39,969
+It adds roughly two milliseconds
+to the day every century,
+
+70
+00:03:39,989 --> 00:03:44,790
+and pushes the Moon about three point
+eight centimeters farther away each year.
+
+71
+00:03:45,580 --> 00:03:48,502
+Without the Moon, most of
+that brake is released.
+
+72
+00:03:48,592 --> 00:03:50,874
+You would never notice it in a lifetime.
+
+73
+00:03:50,964 --> 00:03:55,134
+But over hundreds of millions of years,
+Earth's days would stay shorter than they
+
+74
+00:03:55,154 --> 00:03:56,490
+otherwise would have.
+
+75
+00:03:57,280 --> 00:03:58,986
+Now, the real danger.
+
+76
+00:03:59,076 --> 00:04:00,287
+And it is slow.
+
+77
+00:04:01,077 --> 00:04:04,763
+Earth spins on a tilted axis,
+about twenty-three degrees.
+
+78
+00:04:04,853 --> 00:04:07,006
+That tilt is why we have seasons.
+
+79
+00:04:07,796 --> 00:04:12,735
+Today it only rocks gently, between roughly
+twenty-two and twenty-four and a half
+
+80
+00:04:12,755 --> 00:04:15,515
+degrees, over tens of thousands of years.
+
+81
+00:04:16,305 --> 00:04:18,290
+The Moon is a big reason why.
+
+82
+00:04:18,380 --> 00:04:23,507
+Its gravity tugs on Earth's bulging waist,
+and drives about two-thirds of the slow
+
+83
+00:04:23,527 --> 00:04:26,162
+wobble of our axis, called precession.
+
+84
+00:04:26,952 --> 00:04:30,210
+That wobble keeps Earth's spin
+out of step with the gentle,
+
+85
+00:04:30,230 --> 00:04:32,480
+repeating tugs of the other planets.
+
+86
+00:04:33,270 --> 00:04:38,165
+Remove the Moon, and the wobble slows down,
+and it can fall into rhythm with those
+
+87
+00:04:38,185 --> 00:04:38,735
+tugs.
+
+88
+00:04:38,825 --> 00:04:44,561
+In 1993, Jacques Laskar and his colleagues
+calculated that a moonless Earth's tilt
+
+89
+00:04:44,581 --> 00:04:50,377
+could wander chaotically, anywhere from
+near zero to about eighty-five degrees.
+
+90
+00:04:51,167 --> 00:04:55,606
+Near the top of that range, much of
+the planet would face months of endless
+
+91
+00:04:55,626 --> 00:04:58,314
+daylight, followed by months of darkness.
+
+92
+00:04:59,104 --> 00:05:00,623
+But here is the twist.
+
+93
+00:05:00,713 --> 00:05:05,521
+In 2011, a team led by Jack
+Lissauer ran direct simulations,
+
+94
+00:05:05,541 --> 00:05:08,205
+and found far narrower swings.
+
+95
+00:05:08,295 --> 00:05:12,364
+Roughly ten to twenty degrees,
+over hundreds of millions of years.
+
+96
+00:05:13,154 --> 00:05:15,018
+Even that is a different world.
+
+97
+00:05:15,108 --> 00:05:18,131
+Today the tilt shifts by
+about two and a half degrees.
+
+98
+00:05:18,221 --> 00:05:21,588
+A twenty-degree swing would
+redraw where ice sheets grow,
+
+99
+00:05:21,608 --> 00:05:24,769
+where monsoons fall, and
+where crops can survive.
+
+100
+00:05:25,559 --> 00:05:27,267
+And none of it happens fast.
+
+101
+00:05:27,357 --> 00:05:32,026
+These changes unfold over tens of
+thousands to millions of years.
+
+102
+00:05:32,116 --> 00:05:33,293
+Slow for us.
+
+103
+00:05:33,383 --> 00:05:34,746
+Fast for a planet.
+
+104
+00:05:35,536 --> 00:05:37,006
+So, what breaks first?
+
+105
+00:05:37,096 --> 00:05:38,322
+Not the orbit.
+
+106
+00:05:38,412 --> 00:05:39,992
+Not the length of the day.
+
+107
+00:05:40,082 --> 00:05:41,338
+First, the dark.
+
+108
+00:05:41,428 --> 00:05:42,685
+Then the tides.
+
+109
+00:05:42,775 --> 00:05:46,060
+And last, slowly, the steady
+footing of our seasons.
+
+110
+00:05:46,850 --> 00:05:49,886
+In reality, the Moon
+isn't going anywhere soon.
+
+111
+00:05:49,976 --> 00:05:55,060
+Laser beams bounced off mirrors left by
+Apollo astronauts show it drifting away by
+
+112
+00:05:55,080 --> 00:05:57,944
+just three point eight centimeters a year.
+
+113
+00:05:58,734 --> 00:06:00,739
+Our scenario is impossible.
+
+114
+00:06:00,829 --> 00:06:02,897
+But it shows what the Moon really is.
+
+115
+00:06:02,987 --> 00:06:03,895
+A lamp.
+
+116
+00:06:03,985 --> 00:06:05,639
+A clock for the oceans.
+
+117
+00:06:05,729 --> 00:06:08,476
+And a hand on the steering
+wheel of our seasons.
+
+118
+00:06:09,266 --> 00:06:10,516
+Tonight, look up.
+
+119
+00:06:10,606 --> 00:06:13,134
+It is still there,
+holding everything steady.

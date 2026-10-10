@@ -1,0 +1,1097 @@
+{
+  "style_bible": {
+    "global_style": "photorealistic cinematic film still, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, high dynamic range, subtle film grain, physically plausible lighting, no text, no letters, no watermark, no logo",
+    "negative": "text, captions, watermark, logo, cartoon, illustration, extra moons, distorted continents, oversized moon, fantasy creatures",
+    "entities": {
+      "EARTH": "planet Earth seen from space, accurate continents and oceans, white swirling cloud systems, thin glowing blue atmospheric limb, black space background with faint stars",
+      "MOON": "Earth's Moon with its accurate near-side pattern of dark grey maria and bright highlands, realistic apparent size, no exaggeration",
+      "CITY": "an unnamed modern coastal city skyline at night with warm sodium and white LED lights, no recognizable landmarks",
+      "COAST": "a rocky temperate coastline with a wide tidal flat, wet sand reflecting the sky, kelp-covered boulders",
+      "REEF": "an Indo-Pacific Acropora coral reef, branching and table corals",
+      "NIGHT_SKY": "a natural dark night sky full of stars with the Milky Way band, faint green airglow near the horizon"
+    }
+  },
+  "cuts": [
+    {
+      "id": "C01",
+      "line_id": "L01",
+      "section": "hook",
+      "narration": "Tonight, at nine forty-one p.m., the Moon is gone. No explosion. No flash. One moment it hangs over the city. The next, there is only black sky.",
+      "purpose": "Hook: the Moon disappears over a city",
+      "subject": "full Moon above a city skyline that suddenly vanishes",
+      "location": "CITY at night",
+      "camera_angle": "low angle from a rooftop",
+      "camera_motion": "push_in",
+      "lighting": "cool moonlight then darker",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "Slow push-in from a rooftop toward a bright full MOON hanging above CITY at night; after two seconds the Moon silently vanishes with no explosion and no flash, leaving only black starry sky; city lights keep glowing; calm, eerie, no camera shake",
+      "diagram": null,
+      "science_notes": "Dramatization. The vanishing must be silent and instant — no explosion (matches the premise).",
+      "claim_ids": [
+        "D01"
+      ],
+      "entities": [
+        "MOON",
+        "CITY"
+      ]
+    },
+    {
+      "id": "C02",
+      "line_id": "L02",
+      "section": "hook",
+      "narration": "So what breaks first? The answer is stranger than the movies. Because the most dangerous change is the slowest one.",
+      "purpose": "Pose the question",
+      "subject": "people on a rooftop looking up at an empty night sky",
+      "location": "CITY rooftop",
+      "camera_angle": "medium wide, from behind the people",
+      "camera_motion": "push_in",
+      "lighting": "city glow from below, dark sky above",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Three people seen from behind standing on a CITY rooftop at night, looking up at an empty dark sky with no moon, city glow lighting their silhouettes from below, sense of unease",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": [
+        "CITY"
+      ]
+    },
+    {
+      "id": "C03",
+      "line_id": "L03",
+      "section": "rules",
+      "narration": "First, the rules. Nothing in physics lets a whole world simply vanish. Mass and energy don't just disappear. So this is a thought experiment.",
+      "purpose": "State that this is a thought experiment",
+      "subject": "title card",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "A THOUGHT EXPERIMENT",
+      "asset_type": "title",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "A THOUGHT EXPERIMENT",
+          "subtitle": "Physically impossible — and that's the point"
+        }
+      },
+      "science_notes": "Premise breaks conservation of mass-energy (A01).",
+      "claim_ids": [
+        "A01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C04",
+      "line_id": "L04",
+      "section": "rules",
+      "narration": "We delete the Moon instantly and completely. Its light, its gravity, everything. Then we follow the consequences, from the first second to the next hundred million years.",
+      "purpose": "Show the time ladder the video follows",
+      "subject": "timeline",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "Second 0 → 100 million years",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "timeline",
+        "params": {
+          "title": "Our clock",
+          "ticks": [
+            "Second 0",
+            "First night",
+            "Hour 6",
+            "Year 1",
+            "10,000 yrs",
+            "100 million yrs"
+          ],
+          "highlight": [
+            0,
+            0
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C05",
+      "line_id": "L05",
+      "section": "rules",
+      "narration": "And we'll keep score honestly: what scientists have measured, what physics lets us infer, and where the experts still disagree.",
+      "purpose": "Explain the scorecard",
+      "subject": "three labels",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "Measured · Inferred · Debated",
+      "asset_type": "title",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "MEASURED",
+              "what scientists have observed"
+            ],
+            [
+              "INFERRED",
+              "what physics lets us reason"
+            ],
+            [
+              "DEBATED",
+              "where experts disagree"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C06",
+      "line_id": "L06",
+      "section": "second_zero",
+      "narration": "Second zero. In a disaster movie, Earth would be flung out of its orbit. That doesn't happen.",
+      "purpose": "Set up the orbit myth",
+      "subject": "Earth alone in space",
+      "location": "space",
+      "camera_angle": "wide, Earth small in frame, Sun glare at edge",
+      "camera_motion": "pull_out",
+      "lighting": "hard sunlight from the left",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "EARTH alone in the blackness of space, small in the frame, harsh sunlight from the left edge of frame, vast emptiness, sense of scale, no moon visible",
+      "diagram": null,
+      "science_notes": "C05: the orbit barely changes.",
+      "claim_ids": [
+        "C05"
+      ],
+      "entities": [
+        "EARTH"
+      ]
+    },
+    {
+      "id": "C07",
+      "line_id": "L07",
+      "section": "second_zero",
+      "narration": "Earth and the Moon actually circle a shared balance point. Because Earth is about eighty-one times heavier, that point sits inside our planet, roughly four thousand seven hundred kilometers from the center.",
+      "purpose": "Explain the barycenter",
+      "subject": "barycenter inside Earth",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "Balance point: ~4,700 km from Earth's center",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "barycenter",
+        "params": {
+          "distance_km": 4671,
+          "earth_radius_km": 6371,
+          "mass_ratio": 81
+        }
+      },
+      "science_notes": "C01, C02. Draw to scale.",
+      "claim_ids": [
+        "C01",
+        "C02"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C08",
+      "line_id": "L08",
+      "section": "second_zero",
+      "narration": "Every month, Earth makes a small loop around it, at about twelve meters per second. Our speed around the Sun is nearly thirty kilometers per second.",
+      "purpose": "Compare the two speeds",
+      "subject": "bar comparison",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "12 m/s vs 29,780 m/s",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "bar_compare",
+        "params": {
+          "title": "Earth's speeds",
+          "unit": "m/s",
+          "log": true,
+          "bars": [
+            {
+              "label": "Loop around the balance point",
+              "value": 12,
+              "text": "≈ 12 m/s"
+            },
+            {
+              "label": "Orbit around the Sun",
+              "value": 29780,
+              "text": "≈ 29,780 m/s"
+            }
+          ]
+        }
+      },
+      "science_notes": "C03, C04 (12 m/s is a calculation: 2π×4,671 km / 27.32 d). Log scale is labelled.",
+      "claim_ids": [
+        "C03",
+        "C04"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C09",
+      "line_id": "L09",
+      "section": "second_zero",
+      "narration": "Delete the Moon, and that little loop simply straightens out. Our path around the Sun barely changes. Nobody would feel a thing.",
+      "purpose": "Resolve the myth: calm orbit",
+      "subject": "Earth and the Sun",
+      "location": "space",
+      "camera_angle": "wide",
+      "camera_motion": "pan_right",
+      "lighting": "warm sunlight",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Wide view of EARTH in space with the Sun as a brilliant star far to the right, calm and serene, thin crescent of daylight on the planet, peaceful mood",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "C05"
+      ],
+      "entities": [
+        "EARTH"
+      ]
+    },
+    {
+      "id": "C10",
+      "line_id": "L10",
+      "section": "first_night",
+      "narration": "What people would notice first is the dark.",
+      "purpose": "Introduce darkness",
+      "subject": "lone figure in a desert under a moonless sky",
+      "location": "desert at night",
+      "camera_angle": "wide, low horizon",
+      "camera_motion": "tilt_up",
+      "lighting": "starlight only",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "A lone person standing in a vast desert at night under a moonless NIGHT_SKY, only starlight illuminating the sand dunes faintly, very dark, Milky Way overhead",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": [
+        "NIGHT_SKY"
+      ]
+    },
+    {
+      "id": "C11",
+      "line_id": "L11",
+      "section": "first_night",
+      "narration": "A full Moon on a clear night lights the ground with about a quarter of a lux. Without it, a natural sky offers starlight and faint airglow, around a hundredth of that.",
+      "purpose": "Quantify the darkness",
+      "subject": "log scale of illuminance",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "0.25 lux → ~0.002 lux",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "log_scale",
+        "params": {
+          "title": "How bright is the night?",
+          "unit": "lux",
+          "min": 0.0001,
+          "max": 1,
+          "points": [
+            {
+              "label": "Full Moon",
+              "value": 0.25
+            },
+            {
+              "label": "Moonless sky (stars + airglow)",
+              "value": 0.002
+            }
+          ]
+        }
+      },
+      "science_notes": "C06, C07. Order-of-magnitude values.",
+      "claim_ids": [
+        "C06",
+        "C07"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C12",
+      "line_id": "L12",
+      "section": "first_night",
+      "narration": "In cities, streetlights would hide the change. But in the deserts, the oceans and the forests, every night would become a new-moon night. Forever.",
+      "purpose": "Wilderness nights become new-moon nights",
+      "subject": "dark forest by a lake under stars, distant city glow",
+      "location": "forest lake",
+      "camera_angle": "wide",
+      "camera_motion": "pan_left",
+      "lighting": "starlight, faint orange skyglow on the horizon",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "A dark pine forest beside a still lake at night under a moonless NIGHT_SKY, stars reflected in the water, a faint orange glow of a distant city on the horizon",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "C07"
+      ],
+      "entities": [
+        "NIGHT_SKY"
+      ]
+    },
+    {
+      "id": "C13",
+      "line_id": "L13",
+      "section": "first_night",
+      "narration": "Some animals are tuned to that light. Dung beetles in Africa steer by polarized moonlight, and on moonless nights they hold their course by the glow of the Milky Way.",
+      "purpose": "Animals that navigate by night light",
+      "subject": "dung beetle rolling a ball",
+      "location": "African savanna at night",
+      "camera_angle": "macro, ground level",
+      "camera_motion": "push_in",
+      "lighting": "dim silver starlight, Milky Way",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Macro ground-level photo of a dung beetle rolling a dung ball across dry savanna soil at night, the Milky Way band glowing in the sky behind, dim silvery starlight, shallow depth of field",
+      "diagram": null,
+      "science_notes": "C08: Scarabaeus satyrus-type nocturnal beetle; keep it realistic.",
+      "claim_ids": [
+        "C08"
+      ],
+      "entities": [
+        "NIGHT_SKY"
+      ]
+    },
+    {
+      "id": "C14",
+      "line_id": "L14",
+      "section": "first_night",
+      "narration": "On coral reefs, many species spawn together, timed to the lunar cycle. A light-sensitive gene in these corals is most active under full-moon light.",
+      "purpose": "Coral spawning tied to the Moon",
+      "subject": "corals releasing egg bundles",
+      "location": "REEF at night",
+      "camera_angle": "underwater, medium",
+      "camera_motion": "tilt_up",
+      "lighting": "soft blue light from above",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Underwater night photo of REEF during mass spawning, branching corals releasing countless small pink and orange egg-sperm bundles that drift upward like an inverted snowfall, soft blue light filtering from the surface",
+      "diagram": null,
+      "science_notes": "C09.",
+      "claim_ids": [
+        "C09"
+      ],
+      "entities": [
+        "REEF"
+      ]
+    },
+    {
+      "id": "C15",
+      "line_id": "L15",
+      "section": "first_night",
+      "narration": "Without that clock, spawning could drift out of sync, and eggs released on different nights may never meet. How badly this would play out is still an open question.",
+      "purpose": "Out of sync spawning",
+      "subject": "sparse eggs in dark water",
+      "location": "REEF at night",
+      "camera_angle": "underwater, wide",
+      "camera_motion": "pull_out",
+      "lighting": "very dim, blue-black",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Very dark underwater night scene over REEF, only a few scattered coral egg bundles drifting alone in the black-blue water, lonely and quiet mood",
+      "diagram": null,
+      "science_notes": "C10 — inference / open question.",
+      "claim_ids": [
+        "C10"
+      ],
+      "entities": [
+        "REEF"
+      ]
+    },
+    {
+      "id": "C16",
+      "line_id": "L16",
+      "section": "first_tide",
+      "narration": "Hour six. Along the coast, the tide comes in, and stops short.",
+      "purpose": "Hero shot: the weakened tide",
+      "subject": "tide coming in and stopping short",
+      "location": "COAST",
+      "camera_angle": "low wide shot over the tidal flat",
+      "camera_motion": "static",
+      "lighting": "overcast daylight",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "Low wide shot over COAST tidal flat in overcast daylight; shallow waves slide in over the wet sand, then slow and stop well short of the old high-water line marked by dark seaweed on the rocks; calm, quiet, no people",
+      "diagram": null,
+      "science_notes": "C12 — dramatized illustration of smaller tides.",
+      "claim_ids": [
+        "C12"
+      ],
+      "entities": [
+        "COAST"
+      ]
+    },
+    {
+      "id": "C17",
+      "line_id": "L17",
+      "section": "first_tide",
+      "narration": "The Moon raises most of our tides. The Sun raises tides too, but its tidal pull is only about forty-six percent of the Moon's.",
+      "purpose": "Compare tidal forces",
+      "subject": "bars Moon vs Sun",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "Sun ≈ 46% of the Moon",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "bar_compare",
+        "params": {
+          "title": "Tide-raising force",
+          "unit": "relative",
+          "bars": [
+            {
+              "label": "Moon",
+              "value": 100,
+              "text": "100%"
+            },
+            {
+              "label": "Sun",
+              "value": 46,
+              "text": "≈ 46%"
+            }
+          ]
+        }
+      },
+      "science_notes": "C11 (NOAA: about half; Bowditch: 46%).",
+      "claim_ids": [
+        "C11"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C18",
+      "line_id": "L18",
+      "section": "first_tide",
+      "narration": "So the tides don't vanish. They shrink, to roughly a third of their typical size. And they follow the Sun's rhythm, with high water at nearly the same time every day.",
+      "purpose": "Today vs Sun-only tides",
+      "subject": "bars",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "Roughly a third",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "bar_compare",
+        "params": {
+          "title": "Typical tidal forcing",
+          "unit": "relative",
+          "bars": [
+            {
+              "label": "Today (Moon + Sun)",
+              "value": 100,
+              "text": "100%"
+            },
+            {
+              "label": "Sun only",
+              "value": 32,
+              "text": "≈ ⅓"
+            }
+          ]
+        }
+      },
+      "science_notes": "C12: 0.46/1.46 ≈ 0.32; global rule of thumb, local tides vary.",
+      "claim_ids": [
+        "C12",
+        "C14"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C19",
+      "line_id": "L19",
+      "section": "first_tide",
+      "narration": "There is no giant wave either. The ocean's tidal bulge is subtle, well under a meter in open water. So the sea would settle over hours, like an ordinary falling tide.",
+      "purpose": "No tsunami: calm sea",
+      "subject": "open ocean at dusk",
+      "location": "open ocean",
+      "camera_angle": "wide, low over water",
+      "camera_motion": "pan_right",
+      "lighting": "dusk, soft pastel",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Calm open ocean at dusk seen from low above the water, gentle long swell, soft pastel sky, peaceful, endless horizon",
+      "diagram": null,
+      "science_notes": "C15 — inference.",
+      "claim_ids": [
+        "C15"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C20",
+      "line_id": "L20",
+      "section": "first_tide",
+      "narration": "Spring tides and neap tides end, too. They come from the Sun and Moon lining up, and now there is nothing to line up with.",
+      "purpose": "Spring and neap tides end",
+      "subject": "alignment diagram",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "No more spring & neap tides",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "spring_neap",
+        "params": {}
+      },
+      "science_notes": "C13.",
+      "claim_ids": [
+        "C13"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C21",
+      "line_id": "L21",
+      "section": "first_tide",
+      "narration": "That matters. Tides flush estuaries and feed the strip of shore that is underwater half the day and dry the other half. With weaker tides, that strip narrows, and the life adapted to it loses ground.",
+      "purpose": "Intertidal life loses ground",
+      "subject": "rock pool with starfish and anemones",
+      "location": "COAST at low tide",
+      "camera_angle": "close, top-down",
+      "camera_motion": "push_in",
+      "lighting": "bright overcast",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Top-down close photo of an intertidal rock pool on COAST at low tide, orange starfish, green anemones, mussels and barnacles, clear water, bright overcast light",
+      "diagram": null,
+      "science_notes": "C16 — inference.",
+      "claim_ids": [
+        "C16"
+      ],
+      "entities": [
+        "COAST"
+      ]
+    },
+    {
+      "id": "C22",
+      "line_id": "L22",
+      "section": "first_years",
+      "narration": "Year one. There will never be another total solar eclipse. Only the Moon could cover the Sun.",
+      "purpose": "No more total eclipses",
+      "subject": "total solar eclipse over mountains",
+      "location": "mountain landscape",
+      "camera_angle": "wide",
+      "camera_motion": "push_in",
+      "lighting": "eclipse twilight, glowing corona",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Total solar eclipse above a mountain landscape, the black disk of the MOON surrounded by the Sun's white glowing corona, 360-degree twilight glow on the horizon, people silhouetted on a ridge",
+      "diagram": null,
+      "science_notes": "C17.",
+      "claim_ids": [
+        "C17"
+      ],
+      "entities": [
+        "MOON"
+      ]
+    },
+    {
+      "id": "C23",
+      "line_id": "L23",
+      "section": "first_years",
+      "narration": "Something quieter changes, too. Today, tidal friction acts like a brake on Earth's spin. It adds roughly two milliseconds to the day every century, and pushes the Moon about three point eight centimeters farther away each year.",
+      "purpose": "The tidal brake in numbers",
+      "subject": "two number cards",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "+~2 ms / century · 3.8 cm / year",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "+ ~2 ms",
+              "label": "length of day, per century"
+            },
+            {
+              "value": "3.8 cm",
+              "label": "Moon's retreat, per year"
+            }
+          ]
+        }
+      },
+      "science_notes": "C18, C19 (estimates range 1.7–2.5 ms).",
+      "claim_ids": [
+        "C18",
+        "C19"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C24",
+      "line_id": "L24",
+      "section": "first_years",
+      "narration": "Without the Moon, most of that brake is released. You would never notice it in a lifetime. But over hundreds of millions of years, Earth's days would stay shorter than they otherwise would have.",
+      "purpose": "Earth's spin continues",
+      "subject": "sunrise over Earth from orbit",
+      "location": "low Earth orbit",
+      "camera_angle": "wide over the horizon",
+      "camera_motion": "pan_left",
+      "lighting": "sunrise on the limb",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Sunrise seen from low orbit over EARTH, the Sun breaking over the curved horizon, the day-night terminator line crossing cloud systems, thin blue atmosphere",
+      "diagram": null,
+      "science_notes": "C20 — inference.",
+      "claim_ids": [
+        "C20"
+      ],
+      "entities": [
+        "EARTH"
+      ]
+    },
+    {
+      "id": "C25",
+      "line_id": "L25",
+      "section": "tilt",
+      "narration": "Now, the real danger. And it is slow.",
+      "purpose": "Tone shift: the slow danger",
+      "subject": "Earth half in shadow",
+      "location": "space",
+      "camera_angle": "medium, Earth fills half frame",
+      "camera_motion": "push_in",
+      "lighting": "hard side light, deep shadow",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "EARTH half in deep shadow and half lit by hard sunlight from the side, ominous and still, the planet slightly tilted in the frame",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": [
+        "EARTH"
+      ]
+    },
+    {
+      "id": "C26",
+      "line_id": "L26",
+      "section": "tilt",
+      "narration": "Earth spins on a tilted axis, about twenty-three degrees. That tilt is why we have seasons.",
+      "purpose": "Axial tilt causes seasons",
+      "subject": "tilted Earth",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "23.4°",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "tilt",
+        "params": {
+          "angle": 23.4,
+          "title": "Axial tilt ≈ 23.4°",
+          "caption": "The tilt is why we have seasons"
+        }
+      },
+      "science_notes": "C21.",
+      "claim_ids": [
+        "C21"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C27",
+      "line_id": "L27",
+      "section": "tilt",
+      "narration": "Today it only rocks gently, between roughly twenty-two and twenty-four and a half degrees, over tens of thousands of years.",
+      "purpose": "Today's narrow range",
+      "subject": "range bar",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "22.1° – 24.5°",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "range_compare",
+        "params": {
+          "title": "How far Earth's tilt swings",
+          "min": 0,
+          "max": 90,
+          "unit": "°",
+          "marker": 23.4,
+          "ranges": [
+            {
+              "label": "With the Moon (today)",
+              "lo": 22.1,
+              "hi": 24.5,
+              "text": "22.1° – 24.5°"
+            }
+          ]
+        }
+      },
+      "science_notes": "C21.",
+      "claim_ids": [
+        "C21"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C28",
+      "line_id": "L28",
+      "section": "tilt",
+      "narration": "The Moon is a big reason why. Its gravity tugs on Earth's bulging waist, and drives about two-thirds of the slow wobble of our axis, called precession.",
+      "purpose": "Moon's share of precession",
+      "subject": "pie chart",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "Moon ≈ ⅔",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "pie",
+        "params": {
+          "title": "Who drives the wobble (precession)?",
+          "slices": [
+            {
+              "label": "Moon",
+              "value": 2
+            },
+            {
+              "label": "Sun",
+              "value": 1
+            }
+          ],
+          "caption": "≈ 50.3 arcseconds per year in total"
+        }
+      },
+      "science_notes": "C22.",
+      "claim_ids": [
+        "C22"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C29",
+      "line_id": "L29",
+      "section": "tilt",
+      "narration": "That wobble keeps Earth's spin out of step with the gentle, repeating tugs of the other planets.",
+      "purpose": "The planets' gentle tugs",
+      "subject": "Earth with distant planets",
+      "location": "deep space",
+      "camera_angle": "wide",
+      "camera_motion": "pan_right",
+      "lighting": "starlight",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Deep-space view of EARTH and the MOON small in the foreground, with Jupiter and Venus as bright points far in the background, quiet cosmic scale, cinematic composition",
+      "diagram": null,
+      "science_notes": "C23 — artistic; real planets are far smaller in the sky.",
+      "claim_ids": [
+        "C23"
+      ],
+      "entities": [
+        "EARTH",
+        "MOON"
+      ]
+    },
+    {
+      "id": "C30",
+      "line_id": "L30",
+      "section": "tilt",
+      "narration": "Remove the Moon, and the wobble slows down, and it can fall into rhythm with those tugs. In 1993, Jacques Laskar and his colleagues calculated that a moonless Earth's tilt could wander chaotically, anywhere from near zero to about eighty-five degrees.",
+      "purpose": "Laskar 1993: chaotic zone",
+      "subject": "range bar",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "0° – 85°",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "range_compare",
+        "params": {
+          "title": "Moonless Earth — Laskar et al. 1993",
+          "min": 0,
+          "max": 90,
+          "unit": "°",
+          "marker": 23.4,
+          "ranges": [
+            {
+              "label": "With the Moon",
+              "lo": 22.1,
+              "hi": 24.5,
+              "text": "22.1° – 24.5°"
+            },
+            {
+              "label": "Without (chaotic zone)",
+              "lo": 0,
+              "hi": 85,
+              "text": "≈ 0° – 85°"
+            }
+          ]
+        }
+      },
+      "science_notes": "C23. Model result.",
+      "claim_ids": [
+        "C22",
+        "C23"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C31",
+      "line_id": "L31",
+      "section": "tilt",
+      "narration": "Near the top of that range, much of the planet would face months of endless daylight, followed by months of darkness.",
+      "purpose": "Extreme seasons",
+      "subject": "midnight sun over frozen land",
+      "location": "high-latitude landscape",
+      "camera_angle": "wide",
+      "camera_motion": "pan_left",
+      "lighting": "low golden sun at midnight",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Midnight sun hanging low over a frozen high-latitude landscape, long shadows on snow and ice, golden light, endless daylight feeling, no people",
+      "diagram": null,
+      "science_notes": "C25 — inference about high obliquity.",
+      "claim_ids": [
+        "C25"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C32",
+      "line_id": "L32",
+      "section": "tilt",
+      "narration": "But here is the twist. In 2011, a team led by Jack Lissauer ran direct simulations, and found far narrower swings. Roughly ten to twenty degrees, over hundreds of millions of years.",
+      "purpose": "Lissauer 2011: narrower swings",
+      "subject": "range bar",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "DEBATED",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "range_compare",
+        "params": {
+          "title": "Two studies, two answers",
+          "min": 0,
+          "max": 90,
+          "unit": "°",
+          "marker": 23.4,
+          "ranges": [
+            {
+              "label": "Laskar et al. 1993",
+              "lo": 0,
+              "hi": 85,
+              "text": "chaotic, ≈ 0° – 85°"
+            },
+            {
+              "label": "Lissauer et al. 2011",
+              "lo": 13.4,
+              "hi": 33.4,
+              "text": "swings ≈ 10° – 20°"
+            }
+          ],
+          "footnote": "Lissauer band drawn as ±10° around today for illustration"
+        }
+      },
+      "science_notes": "C24. The Lissauer band is illustrative (±10° around 23.4°); the paper reports variation size, not a fixed window.",
+      "claim_ids": [
+        "C24"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C33",
+      "line_id": "L33",
+      "section": "tilt",
+      "narration": "Even that is a different world. Today the tilt shifts by about two and a half degrees. A twenty-degree swing would redraw where ice sheets grow, where monsoons fall, and where crops can survive.",
+      "purpose": "Climate zones redrawn",
+      "subject": "ice sheet edge next to farmland and monsoon clouds",
+      "location": "composite landscape",
+      "camera_angle": "aerial, high",
+      "camera_motion": "tilt_down",
+      "lighting": "dramatic storm light",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "Aerial view of a vast ice sheet edge meeting green farmland, towering monsoon storm clouds in the distance, dramatic shafts of light, sense of a changing climate",
+      "diagram": null,
+      "science_notes": "C25 — inference.",
+      "claim_ids": [
+        "C21",
+        "C25"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C34",
+      "line_id": "L34",
+      "section": "tilt",
+      "narration": "And none of it happens fast. These changes unfold over tens of thousands to millions of years. Slow for us. Fast for a planet.",
+      "purpose": "Time scale of the change",
+      "subject": "timeline highlight",
+      "location": "—",
+      "camera_angle": "—",
+      "camera_motion": "static",
+      "lighting": "—",
+      "onscreen_text": "Tens of thousands → millions of years",
+      "asset_type": "diagram",
+      "prompt": null,
+      "diagram": {
+        "type": "timeline",
+        "params": {
+          "title": "When the tilt changes",
+          "ticks": [
+            "Second 0",
+            "First night",
+            "Hour 6",
+            "Year 1",
+            "10,000 yrs",
+            "100 million yrs"
+          ],
+          "highlight": [
+            4,
+            5
+          ]
+        }
+      },
+      "science_notes": "C26.",
+      "claim_ids": [
+        "C26"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C35",
+      "line_id": "L35",
+      "section": "ending",
+      "narration": "So, what breaks first? Not the orbit. Not the length of the day. First, the dark. Then the tides. And last, slowly, the steady footing of our seasons.",
+      "purpose": "Answer the question",
+      "subject": "moonless coastline at night, city lights far away",
+      "location": "COAST at night",
+      "camera_angle": "wide",
+      "camera_motion": "pull_out",
+      "lighting": "starlight, distant city glow",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "COAST at night under a moonless NIGHT_SKY, small calm waves on the sand, a distant CITY glowing on the far shore, contemplative mood",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "C05",
+        "C07",
+        "C12",
+        "C25"
+      ],
+      "entities": [
+        "COAST",
+        "NIGHT_SKY",
+        "CITY"
+      ]
+    },
+    {
+      "id": "C36",
+      "line_id": "L36",
+      "section": "ending",
+      "narration": "In reality, the Moon isn't going anywhere soon. Laser beams bounced off mirrors left by Apollo astronauts show it drifting away by just three point eight centimeters a year.",
+      "purpose": "Back to reality: laser ranging",
+      "subject": "observatory laser beam aimed at the Moon",
+      "location": "observatory at night",
+      "camera_angle": "low angle",
+      "camera_motion": "tilt_up",
+      "lighting": "green laser, moonlight",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "A mountain-top astronomical observatory at night firing a thin bright green laser beam toward the MOON high in the sky, telescope dome open, clear starry sky",
+      "diagram": null,
+      "science_notes": "C18 — lunar laser ranging is real; beam visibility is stylised.",
+      "claim_ids": [
+        "C18"
+      ],
+      "entities": [
+        "MOON"
+      ]
+    },
+    {
+      "id": "C37",
+      "line_id": "L37",
+      "section": "ending",
+      "narration": "Our scenario is impossible. But it shows what the Moon really is. A lamp. A clock for the oceans. And a hand on the steering wheel of our seasons.",
+      "purpose": "Reframe the Moon",
+      "subject": "Earth and Moon together",
+      "location": "space",
+      "camera_angle": "wide",
+      "camera_motion": "push_in",
+      "lighting": "warm sunlight",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "EARTH and the MOON together in one frame, both lit by warm sunlight from the same side, the Moon smaller and farther away, a quiet portrait of the pair",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "D01"
+      ],
+      "entities": [
+        "EARTH",
+        "MOON"
+      ]
+    },
+    {
+      "id": "C38",
+      "line_id": "L38",
+      "section": "ending",
+      "narration": "Tonight, look up. It is still there, holding everything steady.",
+      "purpose": "Closing image",
+      "subject": "person on a hill watching the Moon rise",
+      "location": "hilltop at dusk",
+      "camera_angle": "wide, from behind",
+      "camera_motion": "pull_out",
+      "lighting": "blue hour, moonlight",
+      "onscreen_text": "",
+      "asset_type": "image",
+      "prompt": "A person sitting on a grassy hilltop at blue hour, seen from behind, watching a full MOON rise over distant hills and a town, peaceful and warm",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": [
+        "MOON"
+      ]
+    }
+  ]
+}

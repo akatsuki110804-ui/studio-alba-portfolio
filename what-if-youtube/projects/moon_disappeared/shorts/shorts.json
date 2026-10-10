@@ -1,0 +1,49 @@
+{
+  "shorts": [
+    {
+      "id": "S1",
+      "title": "Would Earth Fly Away Without the Moon?",
+      "question": "If the Moon vanished, would Earth be thrown out of its orbit?",
+      "hook_text": "No Moon. Does Earth fly away?",
+      "lines": [
+        {"text": "If the Moon vanished tonight, would Earth go flying off into space?", "cut_id": "C06", "claim_ids": []},
+        {"text": "Earth and the Moon circle a shared balance point. It sits inside Earth, about four thousand seven hundred kilometers from the center.", "cut_id": "C07", "claim_ids": ["C01"]},
+        {"text": "Each month, Earth loops around it at only about twelve meters per second.", "cut_id": "C08", "claim_ids": ["C04"]},
+        {"text": "Our speed around the Sun? Nearly thirty kilometers per second.", "cut_id": "C08", "claim_ids": ["C03"]},
+        {"text": "So without the Moon, that little loop just straightens out. Our orbit barely changes.", "cut_id": "C09", "claim_ids": ["C05"]},
+        {"text": "The real changes are slower, and stranger. The full story is on our channel: The Moon Vanishes Tonight.", "cut_id": "C37", "claim_ids": []}
+      ],
+      "end_card_text": "Full video: The Moon Vanishes Tonight"
+    },
+    {
+      "id": "S2",
+      "title": "Tides Without the Moon",
+      "question": "Would the tides stop if the Moon disappeared?",
+      "hook_text": "No Moon. No tides?",
+      "lines": [
+        {"text": "Delete the Moon, and the tides... don't actually disappear.", "cut_id": "C16", "claim_ids": []},
+        {"text": "The Sun pulls on the oceans too, with about forty-six percent of the Moon's tidal force.", "cut_id": "C17", "claim_ids": ["C11"]},
+        {"text": "So tides would shrink to roughly a third of their typical size.", "cut_id": "C18", "claim_ids": ["C12"]},
+        {"text": "No more spring tides or neap tides. And high water would arrive at nearly the same time every day.", "cut_id": "C20", "claim_ids": ["C13", "C14"]},
+        {"text": "The strip of shore between high and low water would narrow, and the life that depends on it would lose ground.", "cut_id": "C21", "claim_ids": ["C16"]},
+        {"text": "And tides aren't even the biggest change. Watch the full video to see what is.", "cut_id": "C19", "claim_ids": []}
+      ],
+      "end_card_text": "Full video: The Moon Vanishes Tonight"
+    },
+    {
+      "id": "S3",
+      "title": "The Moon Steers Our Seasons",
+      "question": "What keeps Earth's tilt, and our seasons, steady?",
+      "hook_text": "The Moon steers our seasons",
+      "lines": [
+        {"text": "The Moon is quietly holding our seasons steady. Here's how.", "cut_id": "C25", "claim_ids": []},
+        {"text": "Earth's tilt is what gives us seasons. Today it only rocks between about twenty-two and twenty-four and a half degrees.", "cut_id": "C27", "claim_ids": ["C21"]},
+        {"text": "The Moon drives about two-thirds of the slow wobble of Earth's axis.", "cut_id": "C28", "claim_ids": ["C22"]},
+        {"text": "Without it, a 1993 study found the tilt could wander chaotically, from near zero to about eighty-five degrees.", "cut_id": "C30", "claim_ids": ["C23"]},
+        {"text": "A 2011 study found narrower swings, about ten to twenty degrees. Still enough to redraw the world's climate zones.", "cut_id": "C32", "claim_ids": ["C24", "C25"]},
+        {"text": "Either way, the Moon is a hand on the steering wheel of our seasons. Full story on our channel.", "cut_id": "C38", "claim_ids": []}
+      ],
+      "end_card_text": "Full video: The Moon Vanishes Tonight"
+    }
+  ]
+}

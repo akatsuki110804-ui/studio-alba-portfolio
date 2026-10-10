@@ -1,0 +1,10 @@
+PyYAML>=6.0
+jsonschema>=4.20
+numpy>=1.26
+Pillow>=10.0
+requests>=2.31
+kokoro-onnx>=0.4      # local English TTS (Apache-2.0 model weights)
+soundfile>=0.12
+pytest>=8.0
+# optional: only when config llm.provider is "anthropic"
+# anthropic>=0.70

@@ -1,0 +1,78 @@
+# Prompt templates for the LLM stages. {placeholders} are filled by src/llm.py.
+# The same text is used in both modes: sent to the Claude API ("anthropic"),
+# or written to projects/<slug>/prompts/<stage>.prompt.md for Claude Code to answer ("manual").
+
+system: |
+  You are the head writer and science editor of "What If Science", an English-language
+  YouTube channel that turns impossible "what if" scenarios into cinematic, scientifically
+  grounded stories. Rules you never break:
+  - Never invent facts, numbers, studies or quotes. If you are not sure, say so and mark the claim unverified.
+  - Keep three categories apart: established FACT, reasoned INFERENCE (physics applied to the scenario),
+    and DRAMATIZATION (creative framing). Label every claim.
+  - State the assumptions of the thought experiment openly, including where it breaks physics.
+  - Write original material. Do not imitate or paraphrase other channels' videos, titles or thumbnails.
+  - Return only the JSON object requested — no prose before or after it.
+
+plan: |
+  Topic: {topic}
+
+  Produce a video plan as JSON with these keys:
+  titles (5 English title options, each under 70 characters, honest — no claims the video won't back up),
+  unique_angle (one paragraph: what makes this take different from the obvious version of this video),
+  overview_ja (Japanese, 3–5 sentences), why_interesting (list), hook (first 15 seconds, English),
+  structure (list of {{section, goal, approx_seconds}}; total {min_seconds}–{max_seconds} s; adapt the
+  arc to the topic rather than forcing a template), target_seconds, estimated_cuts,
+  shorts_candidates (list of {{idea, why_standalone}}, 3 items),
+  claims_to_verify (list of factual claims the script will depend on).
+
+research: |
+  Topic: {topic}
+  Plan: {plan}
+
+  Research every item in claims_to_verify (and anything else the story needs). Prefer primary
+  sources: peer-reviewed papers, NASA/NOAA/ESA, universities, standard references. Return JSON:
+  assumptions (list of the thought-experiment's premises, including any that are physically impossible),
+  sources (list of {{id, title, publisher, url, type, accessed, access_method}}; access_method says how you
+  actually checked it, e.g. "web search summary" or "read full text"),
+  claims (list of {{id, text, category: fact|inference|dramatization, source_ids, status:
+  verified|partially_verified|unverified, notes}}), open_questions (list), research_status
+  ("complete" only if every fact claim is at least partially verified; otherwise "incomplete").
+  If you cannot access the web, set research_status "not_performed" and leave sources empty. Do not guess.
+
+script: |
+  Topic: {topic}
+  Plan: {plan}
+  Research (claims you may use; only use fact claims whose status is not "unverified"): {research}
+
+  Write the English narration as JSON: title, target_seconds, word_count,
+  sections (list of {{id, name, lines: [{{id, text, claim_ids}}]}}).
+  Each line is 1–3 sentences that will sit under one shot. Spoken style, short sentences, concrete images,
+  numbers only when they help. Around 150 words per minute. Open with the hook in the first 15 seconds,
+  state the assumptions within the first minute, and end with an honest conclusion and the limits of the
+  scenario. Every line that states a fact must list the claim ids it relies on.
+
+storyboard: |
+  Script: {script}
+  Research: {research}
+
+  Break the script into shots as JSON:
+  style_bible: {{global_style, negative, entities: {{NAME: description}}}} — fixed looks for anything that
+  recurs (planets, places, objects) so every shot matches.
+  cuts: list, one per script line, each {{id (C01…), line_id, section, narration, purpose, subject, location,
+  camera_angle, camera_motion (push_in|pull_out|pan_left|pan_right|tilt_up|tilt_down|static),
+  lighting, onscreen_text, asset_type (image|video|diagram|title), prompt (for image/video: a full
+  generation prompt that names the entities from the style bible; for diagram: null),
+  diagram (for diagram cuts: {{type, params}}; else null), science_notes, claim_ids, entities}}.
+  Use images with slow camera moves for most shots, a few diagrams wherever a number or cause-and-effect
+  needs explaining, and video only for 1–3 hero shots where motion is the point.
+
+shorts: |
+  Script: {script}
+  Storyboard cut ids and narration: {cuts}
+  Research: {research}
+
+  Design 3 YouTube Shorts (30–60 s each) as JSON: shorts: list of {{id, title, question,
+  hook_text (on-screen, max 6 words), lines: [{{text, cut_id, claim_ids}}], end_card_text}}.
+  Each short must stand alone: its own spoken hook in the first line, one question, one payoff at the end,
+  a natural pointer to the full video. Reuse cut ids for visuals. New factual statements must cite claim ids
+  from the research; do not add facts the research does not support.

@@ -1,0 +1,76 @@
+# What If Science — pipeline settings
+# Values here are defaults. A project can override any key in projects/<slug>/project.yaml.
+
+channel:
+  name: "What If Science"
+  language: en
+
+llm:
+  # "manual": write a prompt file and wait for a JSON response file (Claude Code fills it in).
+  # "anthropic": call the Claude API (needs ANTHROPIC_API_KEY or an `ant auth login` profile).
+  provider: manual
+  model: claude-opus-5-5
+  effort: high
+  max_tokens: 64000
+
+video:
+  long_form: {width: 1920, height: 1080, fps: 30}
+  short_form: {width: 1080, height: 1920, fps: 30}
+  target_minutes: [6, 8]
+  shorts_seconds: [30, 60]
+  crf: 20
+  preset: medium
+
+voice:
+  engine: kokoro            # local, free, Apache-2.0 weights
+  model_path: models/kokoro/kokoro-v1.0.onnx    # relative paths resolve from what-if-youtube/
+  voices_path: models/kokoro/voices-v1.0.bin
+  voice: af_heart           # highest-graded Kokoro English voice
+  speed: 0.92
+  lang: en-us
+  sentence_gap: 0.34        # seconds of silence between sentences
+  cut_tail: 0.7            # extra hold at end of each cut
+
+audio:
+  target_lufs: -14          # YouTube playback reference
+  true_peak: -1.5
+  music_db: -24             # music bed level under narration, before ducking
+  music: procedural         # "procedural" (self-generated, no rights issues) or a file path under assets_library/music
+
+subtitles:
+  max_chars_per_line: 42
+  max_lines: 2
+  font: Inter
+  long_font_size: 54
+  short_font_size: 76
+
+assets:
+  max_retries: 2            # per cut; never loops forever
+  image_provider: higgsfield
+  image_model: gpt_image_2_5
+  video_model: kling3_0
+  # Cuts whose asset is missing make `produce` stop with an error.
+  # `produce --animatic` renders labelled storyboard cards instead and marks the output NOT publishable.
+
+budget:
+  currency: JPY
+  monthly_limit_jpy: 10000
+  per_video_limit_jpy: 2500
+  per_stage_limit_jpy:
+    images: 800
+    video_clips: 1200
+    voice: 0
+    llm: 500
+  # Conversion used for estimates only. Higgsfield Plus ≈ $59 / 1,200 credits (third-party pricing guides, 2026);
+  # update when the real invoice is known.
+  credit_to_jpy: 7.4
+  usd_to_jpy: 150
+  # Stop and ask when the projected spend for a stage would exceed this share of its limit.
+  confirm_threshold: 0.8
+
+pricing_credits:            # measured with Higgsfield get_cost preflight on 2026-10-10
+  gpt_image_2_5: 0.25
+  z_image: 0.15
+  nano_banana_2_1: 1.5
+  kling3_0_std_5s_silent: 7.5
+  seed_audio_per_90_chars: 0.6

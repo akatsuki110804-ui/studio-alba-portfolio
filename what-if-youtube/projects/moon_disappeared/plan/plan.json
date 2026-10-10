@@ -1,0 +1,52 @@
+{
+  "titles": [
+    "The Moon Vanishes Tonight. What Breaks First?",
+    "Delete the Moon: The Slowest Disaster Is the Worst",
+    "If the Moon Disappeared, Earth Would Barely Notice… At First",
+    "No Moon: Darker Nights, Smaller Tides, a Wandering Planet",
+    "What Really Happens Without the Moon (Second 0 to 100 Million Years)"
+  ],
+  "unique_angle": "Most takes on this question list disasters as if they all hit at once. This one is told as a clock — second zero, first night, first tide, first year, then millions of years — and keeps an honest scorecard of measured facts, physics inferences and open scientific debate. The twist is that the orbit, the day and the oceans survive the first shock; the real threat is the slowest one, Earth's tilt, and even the experts disagree on how bad it would get (Laskar 1993 vs. Lissauer et al. 2011). The ending reframes the Moon as a lamp, a tide clock and a hand on the steering wheel of our seasons.",
+  "overview_ja": "ある夜、月が音もなく消えたら何が起きるのかを、時間軸（0秒→初めての夜→最初の潮→1年後→数百万年後）に沿って描く。映画的な「地球が軌道から外れる」「巨大津波」といった誤解をまず科学的に否定し、本当に起きる変化（夜の暗さ、潮の縮小、生物のリズムの乱れ、日食の消滅）を示す。最大の山場は、最も遅く進む変化である地軸の傾きの不安定化で、Laskar（1993）とLissauerら（2011）の見解の違いも正直に紹介する。事実・推論・演出を区別し、仮説の限界を明示して終える。",
+  "why_interesting": [
+    "Everyone has looked at the Moon; the premise needs no explanation.",
+    "It overturns the expected disaster-movie answer in the first minute, which rewards staying.",
+    "The time-ladder structure creates natural cliffhangers between chapters.",
+    "A real scientific disagreement (how chaotic Earth's tilt would become) gives the ending substance.",
+    "Visually rich: night skies, reefs, coastlines, eclipses, Earth from orbit."
+  ],
+  "hook": "Tonight, at nine forty-one p.m., the Moon is gone. No explosion. No flash. One moment it hangs over the city — the next, there is only black sky. So what breaks first? The answer is stranger than the movies — because the most dangerous change is the slowest one.",
+  "structure": [
+    {"section": "Hook — the Moon is gone", "goal": "Vivid image plus the central question", "approx_seconds": 15},
+    {"section": "The rules of the experiment", "goal": "State the impossible premise, the timeline, and the fact/inference/debate scorecard", "approx_seconds": 30},
+    {"section": "Second zero — what does NOT happen", "goal": "Bust the orbit myth with the barycenter numbers", "approx_seconds": 45},
+    {"section": "The first night", "goal": "Darkness and the animals that steer by moonlight", "approx_seconds": 70},
+    {"section": "The first tide", "goal": "Tides shrink but survive; no tsunami; spring/neap ends; shorelines change", "approx_seconds": 75},
+    {"section": "The first years", "goal": "No more total solar eclipses; the tidal brake on Earth's spin is released", "approx_seconds": 50},
+    {"section": "The slow catastrophe", "goal": "Tilt, precession and chaos; Laskar vs. Lissauer; what a wandering tilt would mean", "approx_seconds": 110},
+    {"section": "Conclusion", "goal": "Answer the question, return to reality (3.8 cm/yr), reframe the Moon", "approx_seconds": 40}
+  ],
+  "target_seconds": 435,
+  "estimated_cuts": 38,
+  "shorts_candidates": [
+    {"idea": "Would Earth fly off into space without the Moon? (No — 12 m/s vs 30 km/s)", "why_standalone": "One myth, one surprising number, one-sentence payoff."},
+    {"idea": "Tides without the Moon: smaller, not gone", "why_standalone": "Clear before/after comparison that works on a vertical chart."},
+    {"idea": "The Moon steers our seasons (Earth's tilt)", "why_standalone": "Big idea with a built-in scientific debate as the payoff."}
+  ],
+  "claims_to_verify": [
+    "Location of the Earth–Moon barycenter (inside Earth, ~4,700 km from the center)",
+    "Earth/Moon mass ratio (~81)",
+    "Earth's mean orbital speed around the Sun",
+    "Illuminance of a full Moon vs a moonless clear sky",
+    "Dung beetles navigating by polarized moonlight and the Milky Way",
+    "Coral spawning linked to moonlight (cry2 gene)",
+    "Sun's tidal force relative to the Moon's",
+    "Spring and neap tides come from Sun–Moon alignment",
+    "Moon recession rate from lunar laser ranging (3.8 cm/yr)",
+    "Tidal braking lengthens the day by ~2 ms per century",
+    "Present range of Earth's obliquity (~22.1°–24.5°)",
+    "Moon's share of luni-solar precession (~2/3)",
+    "Laskar et al. 1993: moonless obliquity chaotic 0°–85°",
+    "Lissauer et al. 2011: moonless obliquity variations much narrower"
+  ]
+}
