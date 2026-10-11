@@ -1,6 +1,6 @@
 """Channel artwork: icon (800×800) and banner (2560×1440) in the same style as the videos.
 
-    python -m src.branding   → writes branding/icon_<style>.png, banner_<style>.png and previews for each style
+    python -m src.branding   → writes branding/icon.png, banner.png (+ previews) in the chosen style (A_flask)
 
 YouTube shows the icon as a circle and crops the banner per device; everything important sits inside the
 1546×423 "safe area" in the middle of the banner.
@@ -184,18 +184,23 @@ def preview(img: Image.Image, kind: str) -> Image.Image:
     return p.resize((p.width // 4, p.height // 4), Image.LANCZOS)
 
 
+CHOSEN = "A_flask"  # chosen 2026-10-11
+
+
 def main() -> None:
+    """Writes the chosen style as icon.png / banner.png. `python -m src.branding B_question` renders another style."""
+    import sys
+    style = sys.argv[1] if len(sys.argv) > 1 else CHOSEN
     name = load_settings()["channel"]["name"]
     OUT.mkdir(exist_ok=True)
     for old in OUT.glob("*.png"):
         old.unlink()
-    for style in MARKS:
-        ic, bn = icon(style), banner(name, style)
-        ic.save(OUT / f"icon_{style}.png")
-        bn.save(OUT / f"banner_{style}.png", optimize=True)
-        preview(ic, "icon").save(OUT / f"preview_icon_{style}.png")
-        preview(bn, "banner").save(OUT / f"preview_banner_{style}.png")
-        print(f"✓ icon_{style}.png / banner_{style}.png")
+    ic, bn = icon(style), banner(name, style)
+    ic.save(OUT / "icon.png")
+    bn.save(OUT / "banner.png", optimize=True)
+    preview(ic, "icon").save(OUT / "preview_icon.png")
+    preview(bn, "banner").save(OUT / "preview_banner.png")
+    print(f"✓ {style}: icon.png ({ic.width}×{ic.height}) / banner.png ({bn.width}×{bn.height})")
 
 
 if __name__ == "__main__":

@@ -39,8 +39,7 @@ What If Lab は、ありえない「もしも」を科学でたどる思考実�
 - 動画の言語：日本語
 - 字幕：各動画の `subtitles/*_ja.srt` をアップロードする（焼き込み字幕とは別。検索とアクセシビリティのため）
 
-## 画像（どの回にも使える汎用デザイン。2案から選ぶ）
-- A案（フラスコ）：`branding/icon_A_flask.png` / `branding/banner_A_flask.png` — 実験用フラスコの中に宇宙。「Lab（研究所）」と「科学の思考実験」を表す
-- B案（？マーク）：`branding/icon_B_question.png` / `branding/banner_B_question.png` — 「？」の点が惑星。「What If（もしも）」を表す
-- アイコンは800×800（円形に切り抜かれる前提で配置）。バナーは2560×1440で、文字とロゴは中央1546×423の安全範囲に収めてある
-- 作り直し：`python -m src.branding`
+## 画像（どの回にも使える汎用デザイン：A案「宇宙入りフラスコ」に決定）
+- アイコン：`branding/icon.png`（800×800。円形に切り抜かれる前提で配置）
+- バナー：`branding/banner.png`（2560×1440。文字とロゴは中央1546×423の安全範囲に収めてある）
+- 作り直し：`python -m src.branding`（不採用のB案は `python -m src.branding B_question` で再生成できる）
