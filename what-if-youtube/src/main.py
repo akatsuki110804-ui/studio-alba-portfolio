@@ -1,4 +1,4 @@
-"""What If Science — command line.
+"""What If Lab — command line.
 
   python -m src.main plan     --topic "What If the Moon Suddenly Disappeared?" [--slug moon_disappeared]
   python -m src.main produce  --project moon_disappeared [--animatic] [--confirm-spend]

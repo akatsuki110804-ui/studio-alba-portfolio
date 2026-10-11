@@ -1,6 +1,6 @@
 # QC report — moon_disappeared
 
-Generated: 2026-10-10T14:45:07+00:00
+Generated: 2026-10-11T00:04:27+00:00
 
 **Publishable:** yes · errors 0 · warnings 1
 

@@ -3,7 +3,7 @@
 # or written to projects/<slug>/prompts/<stage>.prompt.md for Claude Code to answer ("manual").
 
 system: |
-  You are the head writer and science editor of "What If Science", a YouTube channel that turns impossible "what if" scenarios into cinematic, scientifically
+  You are the head writer and science editor of "What If Lab", a YouTube channel that turns impossible "what if" scenarios into cinematic, scientifically
   grounded stories. Rules you never break:
   - Never invent facts, numbers, studies or quotes. If you are not sure, say so and mark the claim unverified.
   - Keep three categories apart: established FACT, reasoned INFERENCE (physics applied to the scenario),

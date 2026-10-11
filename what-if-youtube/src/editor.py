@@ -85,7 +85,7 @@ def end_card_spec(project: Project, title: str) -> dict:
     v = project.settings["voice"]
     credit = v.get(v["engine"], {}).get("credit", "")
     sub = "出典と前提は概要欄に記載しています" + (f"　｜　ナレーション {credit}" if credit else "")
-    return {"type": "title", "params": {"title": "What If Science", "subtitle": f"{title}\n{sub}"}}
+    return {"type": "title", "params": {"title": project.settings["channel"]["name"], "subtitle": f"{title}\n{sub}"}}
 
 
 # ------------------------------------------------------------------ subtitles

@@ -1,8 +1,8 @@
-# What If Science — pipeline settings
+# What If Lab — pipeline settings
 # Values here are defaults. A project can override any key in projects/<slug>/project.yaml.
 
 channel:
-  name: "What If Science"
+  name: "What If Lab"        # YouTube channel name (shown on the end card)
   language: ja              # ja: Japanese narration/subtitles/graphics · en: English
 
 llm:

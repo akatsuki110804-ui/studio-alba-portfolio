@@ -119,3 +119,13 @@
 {"ts": "2026-10-10T14:45:07+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
 {"ts": "2026-10-10T14:45:07+00:00", "project": "moon_disappeared", "stage": "validate", "event": "start", "inputs": {}}
 {"ts": "2026-10-10T14:46:36+00:00", "project": "moon_disappeared", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=1 publishable=True"]}
+{"ts": "2026-10-10T23:58:35+00:00", "project": "moon_disappeared", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-10T23:58:35+00:00", "project": "moon_disappeared", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-10T23:58:35+00:00", "project": "moon_disappeared", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-11T00:03:10+00:00", "project": "moon_disappeared", "stage": "edit", "event": "done", "outputs": ["output/moon_disappeared_long.mp4", "subtitles/moon_disappeared_ja.srt"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-11T00:03:10+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-11T00:04:26+00:00", "project": "moon_disappeared", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-11T00:04:26+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-11T00:04:27+00:00", "project": "moon_disappeared", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-11T00:04:27+00:00", "project": "moon_disappeared", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-11T00:05:57+00:00", "project": "moon_disappeared", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=1 publishable=True"]}
