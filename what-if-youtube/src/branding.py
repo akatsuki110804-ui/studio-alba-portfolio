@@ -1,6 +1,6 @@
 """Channel artwork: icon (800×800) and banner (2560×1440) in the same style as the videos.
 
-    python -m src.branding            → writes branding/icon.png, branding/banner.png, branding/*_preview.png
+    python -m src.branding   → writes branding/icon_<style>.png, banner_<style>.png and previews for each style
 
 YouTube shows the icon as a circle and crops the banner per device; everything important sits inside the
 1546×423 "safe area" in the middle of the banner.
@@ -10,7 +10,8 @@ from __future__ import annotations
 import math
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+import numpy as np
+from PIL import Image, ImageDraw, ImageFilter
 
 from . import motion
 from .common import ROOT, load_settings
@@ -44,40 +45,125 @@ def _dashed_ellipse(d: ImageDraw.ImageDraw, cx, cy, rx, ry, color, width=4, dash
         d.line(pts, fill=color, width=width)
 
 
-def _earth_with_missing_moon(img: Image.Image, cx: float, cy: float, r: int, scale: float = 1.0,
-                             moon_angle: float = 0.45, orbit: float = 1.75) -> None:
-    """Earth plus a dashed, empty orbit and an empty dashed circle where the Moon should be."""
-    d = ImageDraw.Draw(img)
-    rx, ry = r * orbit, r * 0.55
-    _dashed_ellipse(d, cx, cy, rx, ry, (110, 130, 175), width=max(2, int(3 * scale)), dash=int(14 * scale), gap=int(10 * scale))
-    motion.glow(img, cx, cy, int(r * 1.08), (60, 130, 255), 0.4)
-    g = motion.render_globe(r, spin=2.2, tilt_deg=23.4, sun=(-0.75, 0.35, 0.55))
-    img.paste(g, (int(cx - r), int(cy - r)), g)
-    d = ImageDraw.Draw(img)
-    # front half of the orbit passes in front of the planet
-    mx, my = cx + rx * math.cos(moon_angle), cy + ry * math.sin(moon_angle)
-    mr = r * 0.27
-    motion.glow(img, mx, my, int(mr * 1.6), (255, 181, 71), 0.35)
-    _dashed_ellipse(ImageDraw.Draw(img), mx, my, mr, mr, motion.AMBER, width=max(3, int(5 * scale)),
-                    dash=int(9 * scale), gap=int(7 * scale))
+def _nebula(size: int, seed: int = 4) -> np.ndarray:
+    """Soft generic nebula (purple/blue/cyan clouds + stars) — not tied to any one episode."""
+    rng = np.random.default_rng(seed)
+    yy, xx = np.mgrid[0:size, 0:size].astype(np.float32) / size
+    out = np.zeros((size, size, 3), np.float32) + np.array([8, 12, 32], np.float32)
+    for (cx, cy, rad, col) in [(0.35, 0.65, 0.30, (120, 60, 200)), (0.65, 0.45, 0.28, (40, 150, 230)),
+                               (0.50, 0.80, 0.22, (200, 70, 160)), (0.70, 0.75, 0.18, (60, 200, 220))]:
+        out += np.exp(-(((xx - cx) ** 2 + (yy - cy) ** 2) / rad ** 2) * 2.2)[..., None] * np.array(col, np.float32) * 0.8
+    n = rng.random((size // 16 + 2, size // 16 + 2)).astype(np.float32)
+    n = np.asarray(Image.fromarray((n * 255).astype(np.uint8)).resize((size + 32, size + 32), Image.BICUBIC)
+                   .filter(ImageFilter.GaussianBlur(size / 60)), np.float32)[:size, :size] / 255
+    out *= (0.65 + 0.7 * n)[..., None]
+    stars = rng.random((size, size)) > 0.9975
+    out[stars] = 255
+    return np.clip(out, 0, 255)
 
 
-def icon(size: int = 800) -> Image.Image:
-    img = _sky(size, size, seed=3)
-    _earth_with_missing_moon(img, size * 0.5, size * 0.47, int(size * 0.27), scale=size / 800,
-                             moon_angle=1.15, orbit=1.5)
+def _sphere(d_img: Image.Image, cx: float, cy: float, r: float, base=(255, 181, 71), ring: bool = True) -> None:
+    """Generic ringed planet (shaded sphere + tilted ring)."""
+    S = int(r * 4)
+    yy, xx = np.mgrid[0:S, 0:S].astype(np.float32)
+    x, y = (xx - S / 2) / r, (yy - S / 2) / r
+    rr = x * x + y * y
+    z = np.sqrt(np.clip(1 - rr, 0, 1))
+    light = np.clip(-0.55 * x - 0.45 * y + 0.7 * z, 0, 1) * 0.85 + 0.15
+    band = 0.88 + 0.12 * np.sin(y * 9)
+    col = np.array(base, np.float32)[None, None, :] * (light * band)[..., None]
+    alpha = (np.clip((1 - np.sqrt(rr)) * r, 0, 1) * 255).astype(np.uint8)
+    sph = Image.fromarray(np.dstack([np.clip(col, 0, 255).astype(np.uint8), alpha]), "RGBA")
+    ringc = (255, 225, 170, 255)
+    if ring:
+        back = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        ImageDraw.Draw(back).ellipse([S / 2 - r * 1.85, S / 2 - r * 0.5, S / 2 + r * 1.85, S / 2 + r * 0.5],
+                                     outline=ringc, width=max(2, int(r * 0.16)))
+        back = back.rotate(-18, resample=Image.BICUBIC)
+        front = back.copy()
+        ImageDraw.Draw(front).rectangle([0, 0, S, S / 2], fill=(0, 0, 0, 0))  # front half = lower part
+        d_img.paste(back, (int(cx - S / 2), int(cy - S / 2)), back)
+        d_img.paste(sph, (int(cx - S / 2), int(cy - S / 2)), sph)
+        d_img.paste(front, (int(cx - S / 2), int(cy - S / 2)), front)
+    else:
+        d_img.paste(sph, (int(cx - S / 2), int(cy - S / 2)), sph)
+
+
+def mark_flask(S: int) -> Image.Image:
+    """A: lab flask with a small universe inside (What If + Lab)."""
+    cx = S / 2
+    mask = Image.new("L", (S, S), 0)
+    md = ImageDraw.Draw(mask)
+    br, by = S * 0.30, S * 0.62
+    md.ellipse([cx - br, by - br, cx + br, by + br], fill=255)
+    nw = S * 0.17
+    md.rectangle([cx - nw / 2, S * 0.16, cx + nw / 2, by - br * 0.6], fill=255)
+    stroke = int(S * 0.028)
+    outer = mask.filter(ImageFilter.MaxFilter(stroke * 2 + 1))
+    neb = Image.fromarray(_nebula(S).astype(np.uint8))
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    img.paste(neb, (0, 0), mask)
+    _sphere(img, cx + S * 0.06, by + S * 0.03, S * 0.075)
+    d = ImageDraw.Draw(img)
+    for (bx, byy, rr) in [(cx - S * 0.02, S * 0.33, S * 0.018), (cx + S * 0.025, S * 0.25, S * 0.012),
+                          (cx - S * 0.12, by - S * 0.05, S * 0.014)]:
+        d.ellipse([bx - rr, byy - rr, bx + rr, byy + rr], outline=(220, 240, 255, 230), width=max(2, int(S * 0.006)))
+    ring = Image.eval(outer, lambda v: v)
+    ring = Image.fromarray(np.clip(np.asarray(outer, np.int16) - np.asarray(mask, np.int16), 0, 255).astype(np.uint8))
+    img.paste(Image.new("RGBA", (S, S), (236, 241, 250, 255)), (0, 0), ring)
+    d = ImageDraw.Draw(img)
+    lip_w, lip_h = S * 0.25, S * 0.045
+    d.rounded_rectangle([cx - lip_w / 2, S * 0.13, cx + lip_w / 2, S * 0.13 + lip_h], radius=int(lip_h / 2),
+                        fill=(236, 241, 250, 255))
     return img
 
 
-def banner(name: str, w: int = 2560, h: int = 1440) -> Image.Image:
-    img = _sky(w, h, seed=5)
+def mark_question(S: int) -> Image.Image:
+    """B: a question mark whose dot is a planet."""
+    img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    cx, cy, r = S / 2, S * 0.37, S * 0.19
+    w = int(S * 0.085)
+    col = (236, 241, 250, 255)
+    d.arc([cx - r, cy - r, cx + r, cy + r], 190, 450, fill=col, width=w)
+    d.line([(cx, cy + r - w / 2), (cx, cy + r + S * 0.09)], fill=col, width=w)
+    d.ellipse([cx - w / 2, cy + r + S * 0.09 - w / 2, cx + w / 2, cy + r + S * 0.09 + w / 2], fill=col)
+    lx, ly = cx + r * math.cos(math.radians(190)), cy + r * math.sin(math.radians(190))
+    d.ellipse([lx - w / 2, ly - w / 2, lx + w / 2, ly + w / 2], fill=col)
+    _sphere(img, cx, S * 0.80, S * 0.065, base=(255, 181, 71))
+    return img
+
+
+MARKS = {"A_flask": mark_flask, "B_question": mark_question}
+
+
+def icon(style: str = "A_flask", size: int = 800) -> Image.Image:
+    S = size * 2  # supersample for clean edges
+    bg = _sky(S, S, seed=3)
+    motion.glow(bg, S / 2, S / 2, int(S * 0.33), (70, 90, 200), 0.35)
+    m = MARKS[style](S)
+    bg.paste(m, (0, 0), m)
+    return bg.resize((size, size), Image.LANCZOS)
+
+
+def banner(name: str, style: str = "A_flask", w: int = 2560, h: int = 1440) -> Image.Image:
+    img = Image.fromarray(_nebula_wide(w, h))
     sx, sy, sw, sh = (w - 1546) // 2, (h - 423) // 2, 1546, 423  # safe area on every device
-    _earth_with_missing_moon(img, sx + 250, sy + sh / 2, 150, scale=0.75, moon_angle=math.pi - 0.5, orbit=1.6)
-    tx = sx + 560
-    motion.text(img, (tx, sy + 120), name, motion.font(132, "Black"), motion.INK, 1, "lm")
-    motion.text(img, (tx, sy + 245), TAGLINE, motion.font(56, "Bold"), motion.AMBER, 1, "lm")
-    motion.text(img, (tx, sy + 325), SUBLINE, motion.font(40, "Regular"), motion.MUTED, 1, "lm")
+    m = MARKS[style](760).resize((380, 380), Image.LANCZOS)
+    img.paste(m, (sx + 40, sy + (sh - 380) // 2), m)
+    tx = sx + 480
+    motion.text(img, (tx, sy + 120), name, motion.font(140, "Black"), motion.INK, 1, "lm")
+    motion.text(img, (tx, sy + 250), TAGLINE, motion.font(56, "Bold"), motion.AMBER, 1, "lm")
+    motion.text(img, (tx, sy + 330), SUBLINE, motion.font(40, "Regular"), motion.MUTED, 1, "lm")
     return img
+
+
+def _nebula_wide(w: int, h: int) -> np.ndarray:
+    sq = _nebula(1024, seed=9)
+    big = Image.fromarray(sq.astype(np.uint8)).resize((w, w), Image.BICUBIC).crop((0, (w - h) // 2, w, (w - h) // 2 + h))
+    arr = np.asarray(big, np.float32) * 0.55  # keep it dark so the text reads
+    sky = np.asarray(_sky(w, h, seed=5), np.float32)
+    return np.clip(np.maximum(arr, sky), 0, 255).astype(np.uint8)
 
 
 def preview(img: Image.Image, kind: str) -> Image.Image:
@@ -101,12 +187,15 @@ def preview(img: Image.Image, kind: str) -> Image.Image:
 def main() -> None:
     name = load_settings()["channel"]["name"]
     OUT.mkdir(exist_ok=True)
-    ic, bn = icon(), banner(name)
-    ic.save(OUT / "icon.png")
-    bn.save(OUT / "banner.png", optimize=True)
-    preview(ic, "icon").save(OUT / "icon_preview.png")
-    preview(bn, "banner").save(OUT / "banner_preview.png")
-    print(f"✓ {OUT / 'icon.png'} ({ic.size[0]}×{ic.size[1]})\n✓ {OUT / 'banner.png'} ({bn.size[0]}×{bn.size[1]})")
+    for old in OUT.glob("*.png"):
+        old.unlink()
+    for style in MARKS:
+        ic, bn = icon(style), banner(name, style)
+        ic.save(OUT / f"icon_{style}.png")
+        bn.save(OUT / f"banner_{style}.png", optimize=True)
+        preview(ic, "icon").save(OUT / f"preview_icon_{style}.png")
+        preview(bn, "banner").save(OUT / f"preview_banner_{style}.png")
+        print(f"✓ icon_{style}.png / banner_{style}.png")
 
 
 if __name__ == "__main__":
