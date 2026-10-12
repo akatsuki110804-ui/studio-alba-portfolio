@@ -1,0 +1,98 @@
+{
+  "C15": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C15.mp4",
+    "fingerprint": "4a55c947c19abc36",
+    "imported": "2026-10-12T07:22:27+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:ep1_digest",
+    "prompt": "LOCAL FOOTAGE: digest of What If Lab episode 1 (moon_disappeared) segments. Style: local footage reused from What If Lab; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C19": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C19.mp4",
+    "fingerprint": "44c0c68be7835fc4",
+    "imported": "2026-10-12T07:22:27+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:c25_compare",
+    "prompt": "LOCAL FOOTAGE: side-by-side of the first (wrong) and regenerated C25 total eclipse clips. Style: local footage reused from What If Lab; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C20": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C20.mp4",
+    "fingerprint": "185bce2d9c273065",
+    "imported": "2026-10-12T07:22:27+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:c42_compare",
+    "prompt": "LOCAL FOOTAGE: side-by-side of the first (wrong) and regenerated C42 Earth and Moon clips. Style: local footage reused from What If Lab; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C24": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C24.mp4",
+    "fingerprint": "b1e94bd49f5755e5",
+    "imported": "2026-10-12T07:22:28+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:ep2_digest",
+    "prompt": "LOCAL FOOTAGE: digest of What If Lab episode 2 (no_sleep) segments. Style: local footage reused from What If Lab; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C27": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C27.mp4",
+    "fingerprint": "783440f2135e1afc",
+    "imported": "2026-10-12T07:22:28+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:ep2_motion",
+    "prompt": "LOCAL FOOTAGE: motion-graphic segments from What If Lab episode 2. Style: local footage reused from What If Lab; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "T1": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T1_bg.png",
+    "fingerprint": "6d0d8731820bc243",
+    "imported": "2026-10-12T07:22:45+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "local composite",
+    "prompt": "LOCAL COMPOSITE: YouTube Studio analytics crop showing views 1 on the right. Style: local footage reused from What If Lab; no new AI generation",
+    "last_error": null
+  },
+  "T2": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T2_bg.png",
+    "fingerprint": "c8e8ed56ae41564b",
+    "imported": "2026-10-12T07:22:46+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "local composite",
+    "prompt": "LOCAL COMPOSITE: What If Lab episode frames on the right. Style: local footage reused from What If Lab; no new AI generation",
+    "last_error": null
+  },
+  "T3": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T3_bg.png",
+    "fingerprint": "5d5567205d499f1b",
+    "imported": "2026-10-12T07:22:46+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "local composite",
+    "prompt": "LOCAL COMPOSITE: the wrong AI eclipse frame on the right. Style: local footage reused from What If Lab; no new AI generation",
+    "last_error": null
+  }
+}

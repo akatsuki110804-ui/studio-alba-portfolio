@@ -1,0 +1,36 @@
+{
+  "thumbnails": [
+    {
+      "id": "T1",
+      "text": [
+        "経験ゼロの27歳",
+        "AIだけで作った",
+        "再生数「1」"
+      ],
+      "accent": "再生数「1」",
+      "layout": "left",
+      "prompt": "LOCAL COMPOSITE: YouTube Studio analytics crop showing views 1 on the right"
+    },
+    {
+      "id": "T2",
+      "text": [
+        "1本61円で",
+        "動画を作った",
+        "結果…"
+      ],
+      "accent": "1本61円で",
+      "layout": "left",
+      "prompt": "LOCAL COMPOSITE: What If Lab episode frames on the right"
+    },
+    {
+      "id": "T3",
+      "text": [
+        "AIが作った",
+        "ウソの映像"
+      ],
+      "accent": "ウソの映像",
+      "layout": "left",
+      "prompt": "LOCAL COMPOSITE: the wrong AI eclipse frame on the right"
+    }
+  ]
+}

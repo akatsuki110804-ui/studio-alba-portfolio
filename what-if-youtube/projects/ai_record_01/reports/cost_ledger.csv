@@ -1,0 +1,9 @@
+ts,project,stage,item,provider,model,units,credits,cost_jpy,kind,note
+2026-10-12T07:22:27+00:00,ai_record_01,video_clips,C15,higgsfield,kling3_0,1,0.0,0.0,actual,local:ep1_digest
+2026-10-12T07:22:27+00:00,ai_record_01,video_clips,C19,higgsfield,kling3_0,1,0.0,0.0,actual,local:c25_compare
+2026-10-12T07:22:27+00:00,ai_record_01,video_clips,C20,higgsfield,kling3_0,1,0.0,0.0,actual,local:c42_compare
+2026-10-12T07:22:28+00:00,ai_record_01,video_clips,C24,higgsfield,kling3_0,1,0.0,0.0,actual,local:ep2_digest
+2026-10-12T07:22:28+00:00,ai_record_01,video_clips,C27,higgsfield,kling3_0,1,0.0,0.0,actual,local:ep2_motion
+2026-10-12T07:22:45+00:00,ai_record_01,images,T1,higgsfield,gpt_image_2_5,1,0.0,0.0,actual,local composite
+2026-10-12T07:22:46+00:00,ai_record_01,images,T2,higgsfield,gpt_image_2_5,1,0.0,0.0,actual,local composite
+2026-10-12T07:22:46+00:00,ai_record_01,images,T3,higgsfield,gpt_image_2_5,1,0.0,0.0,actual,local composite

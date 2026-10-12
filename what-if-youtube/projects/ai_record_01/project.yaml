@@ -1,0 +1,19 @@
+topic: プログラミング経験ゼロの27歳会社員が、AIだけでYouTubeを始めた結果
+slug: ai_record_01
+created: '2026-10-12T00:00:00+00:00'
+overrides:
+  channel:
+    name: AIでつくる、27歳の記録
+  video:
+    target_minutes:
+    - 4
+    - 8
+  voice:
+    voicevox:
+      vvm: vvms/4.vvm
+      style_id: 11
+      credit: VOICEVOX:玄野武宏
+      speed: 1.08
+    readings:
+      13分の1: じゅうさんぶんのいち
+      0.0時間: れいてんれいじかん

@@ -1,0 +1,11 @@
+{"ts": "2026-10-12T07:22:27+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "C15", "path": "assets/video/C15.mp4", "credits": 0.0, "job_id": "local:ep1_digest"}
+{"ts": "2026-10-12T07:22:27+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "C19", "path": "assets/video/C19.mp4", "credits": 0.0, "job_id": "local:c25_compare"}
+{"ts": "2026-10-12T07:22:27+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "C20", "path": "assets/video/C20.mp4", "credits": 0.0, "job_id": "local:c42_compare"}
+{"ts": "2026-10-12T07:22:28+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "C24", "path": "assets/video/C24.mp4", "credits": 0.0, "job_id": "local:ep2_digest"}
+{"ts": "2026-10-12T07:22:28+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "C27", "path": "assets/video/C27.mp4", "credits": 0.0, "job_id": "local:ep2_motion"}
+{"ts": "2026-10-12T07:22:45+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "T1", "path": "thumbnails/T1_bg.png", "credits": 0.0, "job_id": "local composite"}
+{"ts": "2026-10-12T07:22:46+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "T2", "path": "thumbnails/T2_bg.png", "credits": 0.0, "job_id": "local composite"}
+{"ts": "2026-10-12T07:22:46+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "T3", "path": "thumbnails/T3_bg.png", "credits": 0.0, "job_id": "local composite"}
+{"ts": "2026-10-12T07:22:51+00:00", "project": "ai_record_01", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:22:51+00:00", "project": "ai_record_01", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-12T07:22:51+00:00", "project": "ai_record_01", "stage": "voice", "event": "start", "inputs": {"cuts": 34}}

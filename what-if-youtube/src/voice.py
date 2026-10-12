@@ -63,8 +63,9 @@ def engine_settings(project: Project) -> tuple[str, dict]:
 
 
 def tts_text(project: Project, text: str) -> str:
-    for spelled, reading in (project.settings["voice"].get("readings") or {}).items():
-        text = text.replace(spelled, reading)
+    readings = project.settings["voice"].get("readings") or {}
+    for spelled in sorted(readings, key=len, reverse=True):  # longest first: 13分の1 before 3分の1
+        text = text.replace(spelled, readings[spelled])
     return text
 
 

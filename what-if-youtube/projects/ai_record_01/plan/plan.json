@@ -1,0 +1,73 @@
+{
+  "language": "ja",
+  "titles": [
+    "プログラミング経験ゼロの27歳会社員が、AIだけでYouTubeを始めた結果｜1本61円、再生数は「1」",
+    "AIに動画を全部作らせて30日。費用と再生数を全部公開します",
+    "1本61円でAIに動画を作らせたら、再生数は12時間で「1」でした",
+    "AIが作った科学動画、ウソの映像を平気で出してきた",
+    "経験ゼロでもAIでYouTubeは作れる。でも見てもらえるかは別の話"
+  ],
+  "unique_angle": "本物の費用・失敗・再生数をそのまま見せる制作記録",
+  "overview_ja": "AIだけでYouTubeチャンネルを作った最初の記録",
+  "why_interesting": [
+    "実際の数字",
+    "AIの失敗例",
+    "正直な再生数"
+  ],
+  "hook": "プログラミング経験ゼロ、27歳の会社員です。",
+  "structure": [
+    {
+      "section": "フック",
+      "goal": "フック",
+      "approx_seconds": 40
+    },
+    {
+      "section": "なぜやったのか",
+      "goal": "なぜやったのか",
+      "approx_seconds": 40
+    },
+    {
+      "section": "使ったAIと仕組み",
+      "goal": "使ったAIと仕組み",
+      "approx_seconds": 40
+    },
+    {
+      "section": "1本目",
+      "goal": "1本目",
+      "approx_seconds": 40
+    },
+    {
+      "section": "AIがついたウソ",
+      "goal": "AIがついたウソ",
+      "approx_seconds": 40
+    },
+    {
+      "section": "2本目は61円",
+      "goal": "2本目は61円",
+      "approx_seconds": 40
+    },
+    {
+      "section": "再生数",
+      "goal": "再生数",
+      "approx_seconds": 40
+    },
+    {
+      "section": "これから",
+      "goal": "これから",
+      "approx_seconds": 40
+    }
+  ],
+  "target_seconds": 330,
+  "estimated_cuts": 34,
+  "shorts_candidates": [
+    {
+      "idea": "AIのウソ映像"
+    },
+    {
+      "idea": "1本61円"
+    }
+  ],
+  "claims_to_verify": [
+    "制作記録の数字"
+  ]
+}

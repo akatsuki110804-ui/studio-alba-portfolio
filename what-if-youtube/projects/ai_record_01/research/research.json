@@ -1,0 +1,209 @@
+{
+  "assumptions": [
+    "数字は制作記録とYouTube Studioのスクリーンショット（2026-10-12時点）による",
+    "円換算は推定。Claude Codeの月額料金は「素材代」に含めていない"
+  ],
+  "research_status": "complete",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "What If Lab 第1弾 制作レポート",
+      "publisher": "自作パイプラインの記録",
+      "url": "projects/moon_disappeared/reports/production_report.md",
+      "access_method": "local file"
+    },
+    {
+      "id": "R02",
+      "title": "第1弾 生成ジョブ記録（作り直し前のジョブを含む）",
+      "publisher": "自作パイプラインの記録",
+      "url": "projects/moon_disappeared/assets/generated_jobs.json",
+      "access_method": "local file"
+    },
+    {
+      "id": "R03",
+      "title": "What If Lab 第2弾 制作レポート・費用台帳",
+      "publisher": "自作パイプラインの記録",
+      "url": "projects/no_sleep/reports/production_report.md",
+      "access_method": "local file"
+    },
+    {
+      "id": "R04",
+      "title": "本人の報告「12時間たってまだ1」（2026-10-11）",
+      "publisher": "制作者",
+      "url": "chat log",
+      "access_method": "conversation"
+    },
+    {
+      "id": "R05",
+      "title": "YouTube Studio スクリーンショット（アナリティクス・コンテンツ・チャンネルページ）2026-10-12",
+      "publisher": "制作者",
+      "url": "projects/ai_record_01/assets/screens/",
+      "access_method": "screenshot"
+    },
+    {
+      "id": "R06",
+      "title": "読み方の辞書 config/settings.yaml voice.readings",
+      "publisher": "自作パイプライン",
+      "url": "config/settings.yaml",
+      "access_method": "local file"
+    },
+    {
+      "id": "R07",
+      "title": "パイプラインのソースコード（src/*.py）",
+      "publisher": "自作パイプライン",
+      "url": "src/",
+      "access_method": "local file (wc -l)"
+    },
+    {
+      "id": "R08",
+      "title": "最初の仕様書（制作ルール）",
+      "publisher": "制作者",
+      "url": "chat log",
+      "access_method": "conversation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "F01",
+      "text": "第1弾は7分28秒・44カット、うちAI映像12カット、費用105.75クレジット",
+      "category": "fact",
+      "source_ids": [
+        "R01"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F03",
+      "text": "第2弾はAI映像1カット＋図解アニメ35カット、費用8.25クレジット",
+      "category": "fact",
+      "source_ids": [
+        "R03"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F04",
+      "text": "第1弾は公開12時間で再生数1",
+      "category": "fact",
+      "source_ids": [
+        "R04",
+        "R05"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F05",
+      "text": "過去28日間（9/13〜10/10）の視聴回数1、総再生時間0.0時間",
+      "category": "fact",
+      "source_ids": [
+        "R05"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F06",
+      "text": "AI映像C25は皆既中の月面が明るく、C42は地球と月の光の向きが不一致で、作り直した",
+      "category": "fact",
+      "source_ids": [
+        "R01",
+        "R02"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F07",
+      "text": "VOICEVOXの読み違いを読み方の辞書で修正した（氷床・歳差運動など）",
+      "category": "fact",
+      "source_ids": [
+        "R06"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F08",
+      "text": "パイプラインのコードは約4,000行（AIが作成）",
+      "category": "fact",
+      "source_ids": [
+        "R07"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F09",
+      "text": "制作者は27歳の会社員でプログラミング経験なし",
+      "category": "fact",
+      "source_ids": [
+        "R04"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F10",
+      "text": "台本・調査・ナレーション・映像・編集はAIとプログラムで作成",
+      "category": "fact",
+      "source_ids": [
+        "R01",
+        "R03"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F11",
+      "text": "チャンネル名は What If Lab",
+      "category": "fact",
+      "source_ids": [
+        "R05"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F12",
+      "text": "自動投稿しない・出典をつける・課金操作は確認、というルールで制作",
+      "category": "fact",
+      "source_ids": [
+        "R08"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F13",
+      "text": "使用ツールと費用（Claude Code Pro、VOICEVOX無料、Kling 3.0 は5秒7.5クレジット）",
+      "category": "fact",
+      "source_ids": [
+        "R01",
+        "R06"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F14",
+      "text": "制作者は日本語の指示と確認を担当した",
+      "category": "fact",
+      "source_ids": [
+        "R04"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "I01",
+      "text": "円換算は1クレジット≒7.4円の推定（サブスク料金は含まない）",
+      "category": "inference",
+      "source_ids": [
+        "R01"
+      ],
+      "status": "partially_verified"
+    },
+    {
+      "id": "I02",
+      "text": "総再生時間0.0時間（6分未満）なので、7分28秒の動画を最後まで見た視聴ではなさそう",
+      "category": "inference",
+      "source_ids": [
+        "R05"
+      ],
+      "status": "verified"
+    }
+  ],
+  "open_questions": [
+    "公開直前に再生数を最新に差し替えるか"
+  ]
+}

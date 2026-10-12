@@ -1,0 +1,1136 @@
+{
+  "style_bible": {
+    "global_style": "local footage reused from What If Lab; no new AI generation",
+    "negative": "",
+    "entities": {}
+  },
+  "cuts": [
+    {
+      "id": "C01",
+      "line_id": "L01",
+      "section": "hook",
+      "narration": "プログラミング経験ゼロ、27歳の会社員です。",
+      "purpose": "プログラミング経験ゼロ、27歳の会社員で",
+      "subject": "プログラミング経験ゼロ、27歳の会社員で",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "27歳・会社員",
+          "subtitle": "プログラミング経験：ゼロ"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F09"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C02",
+      "line_id": "L02",
+      "section": "hook",
+      "narration": "この動画、作ったのは全部AIです。台本も、調べものも、ナレーションも、映像も、編集も。",
+      "purpose": "この動画、作ったのは全部AIです。台本も",
+      "subject": "この動画、作ったのは全部AIです。台本も",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "台本・調べもの",
+              "Claude Code"
+            ],
+            [
+              "ナレーション",
+              "VOICEVOX"
+            ],
+            [
+              "映像",
+              "AI動画＋図解アニメ"
+            ],
+            [
+              "編集",
+              "FFmpeg"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F10"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C03",
+      "line_id": "L03",
+      "section": "hook",
+      "narration": "素材にかかった費用は、1本61円。",
+      "purpose": "素材にかかった費用は、1本61円。",
+      "subject": "素材にかかった費用は、1本61円。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "約61円",
+              "label": "1本あたりの素材代（第2弾）"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F03",
+        "I01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C04",
+      "line_id": "L04",
+      "section": "hook",
+      "narration": "そして、公開してから12時間たった再生数は……1回でした。",
+      "purpose": "そして、公開してから12時間たった再生数",
+      "subject": "そして、公開してから12時間たった再生数",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "screen",
+        "params": {
+          "image": "projects/ai_record_01/assets/screens/studio_content.webp",
+          "zoom": [
+            [
+              0.15,
+              0.05,
+              1.0,
+              0.45
+            ],
+            [
+              0.7,
+              0.25,
+              0.95,
+              0.42
+            ]
+          ],
+          "highlight": [
+            0.88,
+            0.315,
+            0.91,
+            0.36
+          ],
+          "highlight_at": 2.2,
+          "caption": "1本目・公開から約12時間"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F04"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C05",
+      "line_id": "L05",
+      "section": "hook",
+      "narration": "今日は、AIだけでYouTubeチャンネルを作ってみた結果を、費用も失敗も、全部お見せします。",
+      "purpose": "今日は、AIだけでYouTubeチャンネ",
+      "subject": "今日は、AIだけでYouTubeチャンネ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "費用も、失敗も、全部公開",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C06",
+      "line_id": "L06",
+      "section": "why",
+      "narration": "「AIで動画を量産して稼ぐ」という話、よく見かけますよね。",
+      "purpose": "「AIで動画を量産して稼ぐ」という話、よ",
+      "subject": "「AIで動画を量産して稼ぐ」という話、よ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "「AIで動画を量産して稼ぐ」",
+          "subtitle": "……本当に？"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C07",
+      "line_id": "L07",
+      "section": "why",
+      "narration": "でも、本当にいくらかかって、どれくらい見られるのか。自分で確かめたくなりました。",
+      "purpose": "でも、本当にいくらかかって、どれくらい見",
+      "subject": "でも、本当にいくらかかって、どれくらい見",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "いくらかかる？　何回見られる？",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C08",
+      "line_id": "L08",
+      "section": "why",
+      "narration": "そこで、チャンネルを1つ作りました。科学の思考実験を解説する、「What If Lab」です。",
+      "purpose": "そこで、チャンネルを1つ作りました。科学",
+      "subject": "そこで、チャンネルを1つ作りました。科学",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "screen",
+        "params": {
+          "image": "projects/ai_record_01/assets/screens/channel_page.webp",
+          "zoom": [
+            [
+              0.1,
+              0.0,
+              1.0,
+              0.75
+            ],
+            [
+              0.17,
+              0.05,
+              0.6,
+              0.45
+            ]
+          ],
+          "caption": "What If Lab"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F11"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C09",
+      "line_id": "L09",
+      "section": "why",
+      "narration": "ただし、ルールを3つ決めました。自動で投稿はしない、必ず人間が見てから出す。調べた内容には出典をつけ、分からないことは分からないと言う。そして、お金がかかる操作は、毎回自分で確認する。",
+      "purpose": "ただし、ルールを3つ決めました。自動で投",
+      "subject": "ただし、ルールを3つ決めました。自動で投",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "自動で投稿しない",
+              "人間が見てから出す"
+            ],
+            [
+              "出典をつける",
+              "分からないことは分からないと言う"
+            ],
+            [
+              "お金がかかる操作",
+              "毎回自分で確認する"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F12"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C10",
+      "line_id": "L10",
+      "section": "system",
+      "narration": "作ったのは、テーマを決めると、動画ができあがるまでの流れを、まとめて動かす仕組みです。企画、調査、台本、絵コンテ、素材、ナレーション、編集、字幕、サムネイル。そして最後に、人間がチェックします。",
+      "purpose": "作ったのは、テーマを決めると、動画ができ",
+      "subject": "作ったのは、テーマを決めると、動画ができ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "flow",
+        "params": {
+          "title": "テーマ → 動画ができるまで",
+          "steps": [
+            "企画",
+            "調査",
+            "台本",
+            "絵コンテ",
+            "素材",
+            "ナレーション",
+            "編集",
+            "字幕",
+            "サムネイル",
+            "チェック"
+          ],
+          "human": [
+            9
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F12"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C11",
+      "line_id": "L11",
+      "section": "system",
+      "narration": "使っている道具は、これだけです。",
+      "purpose": "使っている道具は、これだけです。",
+      "subject": "使っている道具は、これだけです。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "table",
+        "params": {
+          "title": "使っている道具",
+          "columns": [
+            "道具",
+            "役割",
+            "費用"
+          ],
+          "widths": [
+            0.36,
+            0.38,
+            0.26
+          ],
+          "highlight_cols": [
+            2
+          ],
+          "rows": [
+            [
+              "Claude Code",
+              "企画・調査・台本・プログラム",
+              "Proプラン（月額）"
+            ],
+            [
+              "VOICEVOX",
+              "ナレーション",
+              "無料"
+            ],
+            [
+              "Higgsfield（Kling 3.0）",
+              "AI動画",
+              "5秒 7.5クレジット"
+            ],
+            [
+              "自作プログラム",
+              "図解アニメ",
+              "0円"
+            ],
+            [
+              "FFmpeg",
+              "編集・字幕",
+              "0円"
+            ]
+          ],
+          "note": "VOICEVOXはクレジット表記が条件"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F13"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C12",
+      "line_id": "L12",
+      "section": "system",
+      "narration": "私がやったのは、「何を作りたいか」を日本語で伝えることと、できたものをチェックすることだけ。",
+      "purpose": "私がやったのは、「何を作りたいか」を日本",
+      "subject": "私がやったのは、「何を作りたいか」を日本",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "chat",
+        "params": {
+          "messages": [
+            {
+              "role": "user",
+              "text": "やっぱり日本語にしてもらえる？できるだけ静止画は使わないでほしいな。動きを出してほしい。"
+            },
+            {
+              "role": "ai",
+              "text": "動画全体を日本語に切り替えます。静止画はやめて、AIの動画と、動く図解アニメを組み合わせる形にします。"
+            },
+            {
+              "role": "user",
+              "text": "2本目作ろうか"
+            },
+            {
+              "role": "ai",
+              "text": "テーマの候補を出します。「人間が眠らなかったら」はどうでしょう。"
+            }
+          ],
+          "note": "実際のやりとりを再現（AIの返答は要約）"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F14"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C13",
+      "line_id": "L13",
+      "section": "system",
+      "narration": "プログラムを書いたのも、AIです。全部で、およそ4,000行あります。",
+      "purpose": "プログラムを書いたのも、AIです。全部で",
+      "subject": "プログラムを書いたのも、AIです。全部で",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "code",
+        "params": {
+          "file": "src/motion.py",
+          "start": 240,
+          "caption": "AIが書いたプログラム（src/motion.py）",
+          "speed": 90
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F08"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C14",
+      "line_id": "L14",
+      "section": "system",
+      "narration": "私自身は、プログラミングの経験がまったくありません。会社員をしながら、日本語でAIに頼むだけで、ここまで作れました。",
+      "purpose": "私自身は、プログラミングの経験がまったく",
+      "subject": "私自身は、プログラミングの経験がまったく",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "chat",
+        "params": {
+          "messages": [
+            {
+              "role": "user",
+              "text": "アイコンは今回の動画の場合でしょ？他にも動画出すんだからそれは違うよ"
+            },
+            {
+              "role": "ai",
+              "text": "その通りです。どの動画にも合う、チャンネル共通のマークに作り直します。"
+            },
+            {
+              "role": "user",
+              "text": "A"
+            }
+          ],
+          "note": "実際のやりとりを再現（AIの返答は要約）"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F09",
+        "F14"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C15",
+      "line_id": "L15",
+      "section": "ep1",
+      "narration": "1本目のテーマは、「もしも今夜、月が消えたら」。",
+      "purpose": "1本目のテーマは、「もしも今夜、月が消え",
+      "subject": "1本目のテーマは、「もしも今夜、月が消え",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: digest of What If Lab episode 1 (moon_disappeared) segments",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C16",
+      "line_id": "L16",
+      "section": "ep1",
+      "narration": "7分28秒、44カット。そのうち12カットを、AIの映像で作りました。",
+      "purpose": "7分28秒、44カット。そのうち12カッ",
+      "subject": "7分28秒、44カット。そのうち12カッ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "44カット",
+              "label": "1本目の全カット"
+            },
+            {
+              "value": "12カット",
+              "label": "そのうちAI映像"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C17",
+      "line_id": "L17",
+      "section": "ep1",
+      "narration": "かかった費用は、105.75クレジット。日本円にして、約783円です。",
+      "purpose": "かかった費用は、105.75クレジット。",
+      "subject": "かかった費用は、105.75クレジット。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "105.75",
+              "label": "クレジット"
+            },
+            {
+              "value": "約783円",
+              "label": "日本円（推定）"
+            }
+          ],
+          "joiner": "≈"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F01",
+        "I01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C18",
+      "line_id": "L18",
+      "section": "lies",
+      "narration": "ただ、AIの映像を、そのまま使えたわけではありません。",
+      "purpose": "ただ、AIの映像を、そのまま使えたわけで",
+      "subject": "ただ、AIの映像を、そのまま使えたわけで",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "AIがついた「ウソ」"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C19",
+      "line_id": "L19",
+      "section": "lies",
+      "narration": "皆既日食の場面。本当なら、月は真っ黒に見えるはずなのに、AIは、月の模様を明るく描いてきました。",
+      "purpose": "皆既日食の場面。本当なら、月は真っ黒に見",
+      "subject": "皆既日食の場面。本当なら、月は真っ黒に見",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: side-by-side of the first (wrong) and regenerated C25 total eclipse clips",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F06"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C20",
+      "line_id": "L20",
+      "section": "lies",
+      "narration": "地球と月が並ぶ場面では、2つの天体に当たる光の向きが、バラバラでした。",
+      "purpose": "地球と月が並ぶ場面では、2つの天体に当た",
+      "subject": "地球と月が並ぶ場面では、2つの天体に当た",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: side-by-side of the first (wrong) and regenerated C42 Earth and Moon clips",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F06"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C21",
+      "line_id": "L21",
+      "section": "lies",
+      "narration": "ナレーションも同じです。VOICEVOXは、「氷床」や「歳差運動」を、間違った読み方で読みました。辞書に正しい読み方を登録して、直しています。",
+      "purpose": "ナレーションも同じです。VOICEVOX",
+      "subject": "ナレーションも同じです。VOICEVOX",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "table",
+        "params": {
+          "title": "読み方の辞書（一部）",
+          "columns": [
+            "文字",
+            "登録した読み"
+          ],
+          "widths": [
+            0.45,
+            0.55
+          ],
+          "highlight_cols": [
+            1
+          ],
+          "rows": [
+            [
+              "氷床",
+              "ひょうしょう"
+            ],
+            [
+              "歳差運動",
+              "さいさうんどう"
+            ],
+            [
+              "赤道",
+              "せきどう"
+            ],
+            [
+              "毎年",
+              "まいとし"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F07"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C22",
+      "line_id": "L22",
+      "section": "lies",
+      "narration": "AIは完璧じゃない。これを、どこまで精度を上げていけるか。",
+      "purpose": "AIは完璧じゃない。これを、どこまで精度",
+      "subject": "AIは完璧じゃない。これを、どこまで精度",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "bubble",
+        "params": {
+          "text": "AIは完璧じゃない。\nこれをどこまで精度上げていけるか",
+          "label": "27歳の本音"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C23",
+      "line_id": "L23",
+      "section": "lies",
+      "narration": "AIは、それっぽいものを、自信満々に作ってきます。間違いを見つけるのは、まだ人間の仕事でした。",
+      "purpose": "AIは、それっぽいものを、自信満々に作っ",
+      "subject": "AIは、それっぽいものを、自信満々に作っ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "間違いを見つけるのは、まだ人間"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C24",
+      "line_id": "L24",
+      "section": "ep2",
+      "narration": "2本目では、作り方を変えました。テーマは、「人間が眠らないとどうなる？」。",
+      "purpose": "2本目では、作り方を変えました。テーマは",
+      "subject": "2本目では、作り方を変えました。テーマは",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: digest of What If Lab episode 2 (no_sleep) segments",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F03"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C25",
+      "line_id": "L25",
+      "section": "ep2",
+      "narration": "AIの映像を1カットだけにして、残りの35カットは、図解のアニメにしたんです。",
+      "purpose": "AIの映像を1カットだけにして、残りの3",
+      "subject": "AIの映像を1カットだけにして、残りの3",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "1カット",
+              "label": "AI映像"
+            },
+            {
+              "value": "35カット",
+              "label": "図解アニメ"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F03"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C26",
+      "line_id": "L26",
+      "section": "ep2",
+      "narration": "費用は8.25クレジット、約61円。1本目の、およそ13分の1です。",
+      "purpose": "費用は8.25クレジット、約61円。1本",
+      "subject": "費用は8.25クレジット、約61円。1本",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "bar_compare",
+        "params": {
+          "title": "1本あたりの素材代",
+          "bars": [
+            {
+              "label": "1本目",
+              "value": 783,
+              "text": "約783円"
+            },
+            {
+              "label": "2本目",
+              "value": 61,
+              "text": "約61円"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F03",
+        "I01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C27",
+      "line_id": "L27",
+      "section": "ep2",
+      "narration": "しかも、図解のほうが、数字が正確に伝わります。AIの映像は、雰囲気を出したいところだけで、十分でした。",
+      "purpose": "しかも、図解のほうが、数字が正確に伝わり",
+      "subject": "しかも、図解のほうが、数字が正確に伝わり",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: motion-graphic segments from What If Lab episode 2",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C28",
+      "line_id": "L28",
+      "section": "views",
+      "narration": "そして、肝心の再生数。",
+      "purpose": "そして、肝心の再生数。",
+      "subject": "そして、肝心の再生数。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "再生数は？",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C29",
+      "line_id": "L29",
+      "section": "views",
+      "narration": "過去28日間の、チャンネル全体の視聴回数は……1回。総再生時間は、0.0時間。",
+      "purpose": "過去28日間の、チャンネル全体の視聴回数",
+      "subject": "過去28日間の、チャンネル全体の視聴回数",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "screen",
+        "params": {
+          "image": "projects/ai_record_01/assets/screens/studio_analytics.webp",
+          "zoom": [
+            [
+              0.15,
+              0.05,
+              1.0,
+              0.85
+            ],
+            [
+              0.16,
+              0.28,
+              0.7,
+              0.52
+            ]
+          ],
+          "highlight": [
+            0.237,
+            0.425,
+            0.262,
+            0.465
+          ],
+          "highlight_at": 2.4,
+          "caption": "YouTube Studio・過去28日間"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F05"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C30",
+      "line_id": "L30",
+      "section": "views",
+      "narration": "その1回も、最後まで見てもらえたわけでは、なさそうです。",
+      "purpose": "その1回も、最後まで見てもらえたわけでは",
+      "subject": "その1回も、最後まで見てもらえたわけでは",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "screen",
+        "params": {
+          "image": "projects/ai_record_01/assets/screens/studio_analytics.webp",
+          "zoom": [
+            [
+              0.16,
+              0.28,
+              0.7,
+              0.52
+            ],
+            [
+              0.34,
+              0.37,
+              0.52,
+              0.48
+            ]
+          ],
+          "highlight": [
+            0.405,
+            0.425,
+            0.445,
+            0.465
+          ],
+          "highlight_at": 0.8,
+          "caption": "総再生時間 0.0時間"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "I02"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C31",
+      "line_id": "L31",
+      "section": "views",
+      "narration": "まあ、1日目だしな。",
+      "purpose": "まあ、1日目だしな。",
+      "subject": "まあ、1日目だしな。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "bubble",
+        "params": {
+          "text": "まあ、1日目だしな",
+          "label": "27歳の本音"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C32",
+      "line_id": "L32",
+      "section": "views",
+      "narration": "少なくとも私のチャンネルは、最初は、ほとんど見つけてもらえませんでした。AIで動画を作るのは、思っていたよりずっと安く、簡単になりました。でも、「見てもらう」のは、まったく別の話でした。",
+      "purpose": "少なくとも私のチャンネルは、最初は、ほと",
+      "subject": "少なくとも私のチャンネルは、最初は、ほと",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "作るのは簡単になった",
+          "subtitle": "でも「見てもらう」のは別の話"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F05"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C33",
+      "line_id": "L33",
+      "section": "next",
+      "narration": "このチャンネルでは、AIで動画を作り続けて、何が起きるのかを記録していきます。",
+      "purpose": "このチャンネルでは、AIで動画を作り続け",
+      "subject": "このチャンネルでは、AIで動画を作り続け",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "AIでつくる、27歳の記録",
+          "subtitle": "AIで動画を作り続けたら、何が起きるのか"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C34",
+      "line_id": "L34",
+      "section": "next",
+      "narration": "30日後、もう一度、費用と再生数を、全部公開します。伸びるのか、伸びないのか。一緒に見届けてもらえたら、うれしいです。",
+      "purpose": "30日後、もう一度、費用と再生数を、全部",
+      "subject": "30日後、もう一度、費用と再生数を、全部",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "30日後、もう一度ぜんぶ公開",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    }
+  ]
+}

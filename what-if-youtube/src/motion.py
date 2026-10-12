@@ -1090,7 +1090,290 @@ class Pending(Renderer):
         return img
 
 
+# ------------------------------------------------------------------ "making-of" renderers (screens, chat, tables)
+def wrap_px(s: str, f, maxw: float) -> list[str]:
+    """Wrap text to a pixel width, character by character (works for Japanese), keeping explicit newlines."""
+    d = ImageDraw.Draw(Image.new("RGB", (8, 8)))
+    out = []
+    for para in s.split("\n"):
+        line = ""
+        for ch in para:
+            if d.textlength(line + ch, font=f) > maxw and line:
+                out.append(line)
+                line = ""
+            line += ch
+        out.append(line)
+    return out
+
+
+@lru_cache(maxsize=8)
+def _load_image(path: str) -> Image.Image:
+    p = Path(path) if Path(path).is_absolute() else ROOT / path
+    if not p.exists():
+        raise PipelineError(f"screen image missing: {p}")
+    return Image.open(p).convert("RGB")
+
+
+def panel(img: Image.Image, box, radius=26, fill=(14, 22, 42), outline=(40, 55, 85)):
+    ImageDraw.Draw(img).rounded_rectangle(box, radius, fill=fill, outline=outline, width=3)
+
+
+class Chat(Renderer):
+    """A chat conversation re-created from real messages: the person's lines type in, the AI's replies appear."""
+    BOX = (300, 70, 1620, SAFE_Y + 10)
+
+    def __init__(self, p, T):
+        super().__init__(p, T)
+        self.fb = font(38, "Regular")
+        self.fl = font(26, "Bold")
+        x0, y0, x1, y1 = self.BOX
+        self.maxw = (x1 - x0) * 0.62
+        self.msgs = []
+        for m in p["messages"]:
+            lines = wrap_px(m["text"], self.fb, self.maxw)
+            self.msgs.append({**m, "lines": lines, "h": 70 + len(lines) * 54})
+        total = sum(len(m["text"]) * (1.0 if m["role"] == "user" else 0.35) for m in self.msgs)
+        span = max(1.0, T * 0.82 - 0.4)
+        t0 = 0.4
+        for m in self.msgs:
+            share = span * (len(m["text"]) * (1.0 if m["role"] == "user" else 0.35)) / max(1, total)
+            m["s"], m["e"] = t0, t0 + share * 0.8
+            t0 += share
+
+    def frame(self, t):
+        img = self.base(t, (3, 0))
+        x0, y0, x1, y1 = self.BOX
+        panel(img, self.BOX)
+        d = ImageDraw.Draw(img)
+        text(img, (x0 + 36, y0 + 24), self.p.get("title", "Claude Code"), font(30, "Bold"), MUTED)
+        d.line([x0, y0 + 76, x1, y0 + 76], fill=GRID, width=2)
+        inner = Image.new("RGB", (x1 - x0 - 6, y1 - y0 - 86), (14, 22, 42))
+        ih = inner.height
+        # scroll so the newest visible message sits at the bottom
+        bottom = 20
+        for m in self.msgs:
+            k = eo(window(t, m["s"] - 0.25, m["s"] + 0.15))
+            bottom += (m["h"] + 24) * k
+        off = max(0.0, bottom - ih)
+        y = 20 - off
+        for m in self.msgs:
+            k = eo(window(t, m["s"] - 0.25, m["s"] + 0.15))
+            if k <= 0:
+                break
+            prog = window(t, m["s"], m["e"])
+            user = m["role"] == "user"
+            if user:  # typing
+                n = int(len(m["text"]) * prog + 0.999)
+                shown = wrap_px(m["text"][:n], self.fb, self.maxw)
+            else:  # reply appears line by line
+                shown = m["lines"][:max(1, int(len(m["lines"]) * prog + 0.999))]
+            bw = max(ImageDraw.Draw(inner).textlength(ln, font=self.fb) for ln in m["lines"]) + 60
+            bh = m["h"] - 30
+            bx = inner.width - 30 - bw if user else 30
+            col = (64, 46, 18) if user else (20, 44, 70)
+            ImageDraw.Draw(inner).rounded_rectangle([bx, y + 30, bx + bw, y + 30 + bh], 22, fill=col)
+            text(inner, (bx + (bw if user else 0), y), "あなた" if user else "Claude", self.fl,
+                 AMBER if user else CYAN, k, "ra" if user else "la")
+            for i, ln in enumerate(shown):
+                text(inner, (bx + 30, y + 46 + i * 54), ln, self.fb, INK, k)
+            if user and prog < 1 and int(t * 2.5) % 2 == 0 and shown:
+                lw = ImageDraw.Draw(inner).textlength(shown[-1], font=self.fb)
+                ImageDraw.Draw(inner).rectangle([bx + 32 + lw, y + 50 + (len(shown) - 1) * 54,
+                                                 bx + 36 + lw, y + 90 + (len(shown) - 1) * 54], fill=AMBER)
+            y += m["h"] + 24
+        img.paste(inner, (x0 + 3, y0 + 80))
+        if self.p.get("note"):
+            note(img, self.p["note"])
+        return img
+
+
+class Screen(Renderer):
+    """A screenshot inside a frame, with a slow camera move between two regions and an optional highlight."""
+    BOX = (110, 60, 1810, SAFE_Y + 30)
+
+    def frame(self, t):
+        img = self.base(t, (2, 0))
+        p = self.p
+        src = _load_image(p["image"])
+        iw, ih = src.size
+        x0, y0, x1, y1 = self.BOX
+        bw, bh = x1 - x0, y1 - y0
+        a, b = p.get("zoom", [[0, 0, 1, 1], [0, 0, 1, 1]])
+        k = eio(window(t, 0.3, self.T * 0.8))
+        r = [a[i] * (1 - k) + b[i] * k for i in range(4)]
+        cx, cy = (r[0] + r[2]) / 2 * iw, (r[1] + r[3]) / 2 * ih
+        cw = (r[2] - r[0]) * iw
+        ch = cw * bh / bw
+        if ch > ih:
+            ch, cw = ih, ih * bw / bh
+        cx = min(max(cx, cw / 2), iw - cw / 2)
+        cy = min(max(cy, ch / 2), ih - ch / 2)
+        crop = (cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2)
+        view = src.resize((bw, bh), Image.BICUBIC, box=crop)
+        sh = Image.new("RGBA", (bw + 80, bh + 80), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).rounded_rectangle([40, 50, bw + 40, bh + 50], 24, fill=(0, 0, 0, 170))
+        sh = sh.filter(ImageFilter.GaussianBlur(18))
+        img.paste(sh, (x0 - 40, y0 - 40), sh)
+        mask = Image.new("L", (bw, bh), 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, bw, bh], 20, fill=255)
+        img.paste(view, (x0, y0), mask)
+        if p.get("highlight"):
+            hk = eo(window(t, p.get("highlight_at", self.T * 0.6), p.get("highlight_at", self.T * 0.6) + 0.5))
+            if hk > 0:
+                hx0, hy0, hx1, hy1 = p["highlight"]
+                sx = lambda v: x0 + (v * iw - crop[0]) / cw * bw
+                sy = lambda v: y0 + (v * ih - crop[1]) / ch * bh
+                pad = 10 + 4 * math.sin(t * 5)
+                ImageDraw.Draw(img).rounded_rectangle([sx(hx0) - pad, sy(hy0) - pad, sx(hx1) + pad, sy(hy1) + pad],
+                                                      16, outline=mix((40, 30, 10), AMBER, hk), width=7)
+        if p.get("caption"):
+            f = font(34, "Bold")
+            tw = ImageDraw.Draw(img).textlength(p["caption"], font=f)
+            ImageDraw.Draw(img).rounded_rectangle([x0 + 24, y0 + 24, x0 + 68 + tw, y0 + 88], 30, fill=(10, 14, 28))
+            text(img, (x0 + 46, y0 + 56), p["caption"], f, AMBER, 1, "lm")
+        if p.get("note"):
+            note(img, p["note"])
+        return img
+
+
+class Flow(Renderer):
+    """Pipeline steps light up one after another; steps a person handles are marked in amber."""
+
+    def frame(self, t):
+        img = self.base(t)
+        d = ImageDraw.Draw(img)
+        p = self.p
+        title_bar(img, p.get("title", ""), t)
+        steps, human = p["steps"], set(p.get("human", []))
+        per = math.ceil(len(steps) / 2)
+        cw, chh, gx = 280, 120, 60
+        for i, s in enumerate(steps):
+            row, col = divmod(i, per)
+            n = min(per, len(steps) - row * per)
+            left = (W - (n * cw + (n - 1) * gx)) / 2
+            x = left + col * (cw + gx)
+            y = 300 + row * 260
+            k = eo(window(t, 0.6 + i * (self.T * 0.6 / len(steps)), 1.1 + i * (self.T * 0.6 / len(steps))))
+            c = AMBER if i in human else CYAN
+            d.rounded_rectangle([x, y + 20 * (1 - k), x + cw, y + chh + 20 * (1 - k)], 22,
+                                fill=mix((14, 22, 42), (20, 34, 60), k), outline=mix(GRID, c, k), width=4)
+            text(img, (x + cw / 2, y + chh / 2 + 20 * (1 - k)), s, font(40, "Bold"), mix(MUTED, INK, k), max(0.25, k), "mm")
+            if i in human:
+                text(img, (x + cw / 2, y + chh + 34), "人が確認", font(28, "Bold"), AMBER, k, "mm")
+            if col < n - 1:
+                ax = x + cw + 10
+                d.polygon([(ax, y + chh / 2 - 14), (ax + gx - 20, y + chh / 2), (ax, y + chh / 2 + 14)],
+                          fill=mix(BG_MID, MUTED, k))
+        if p.get("note"):
+            note(img, p["note"], eo(window(t, 1, 2)))
+        return img
+
+
+class Table(Renderer):
+    """Rows slide in one at a time."""
+
+    def frame(self, t):
+        img = self.base(t)
+        d = ImageDraw.Draw(img)
+        p = self.p
+        title_bar(img, p.get("title", ""), t)
+        cols, rows = p["columns"], p["rows"]
+        widths = p.get("widths") or [1 / len(cols)] * len(cols)
+        x0, x1 = 200, W - 200
+        xs = [x0]
+        for w_ in widths:
+            xs.append(xs[-1] + (x1 - x0) * w_)
+        rh = min(110, (SAFE_Y - 260) / (len(rows) + 1))
+        y = 230
+        for j, c in enumerate(cols):
+            text(img, (xs[j] + 24, y + rh / 2), c, font(32, "Bold"), MUTED, eo(window(t, 0.3, 0.9)), "lm")
+        d.line([x0, y + rh, x1, y + rh], fill=GRID, width=2)
+        hl = set(p.get("highlight_cols", []))
+        for i, r in enumerate(rows):
+            k = eo(window(t, 0.6 + i * (self.T * 0.5 / len(rows)), 1.2 + i * (self.T * 0.5 / len(rows))))
+            yy = y + rh * (i + 1)
+            if k <= 0:
+                continue
+            for j, cell in enumerate(r):
+                f = font(40 if j == 0 else 36, "Bold" if j == 0 or j in hl else "Regular")
+                text(img, (xs[j] + 24 + 40 * (1 - k), yy + rh / 2), cell, f, AMBER if j in hl else INK, k, "lm")
+            d.line([x0, yy + rh, x1, yy + rh], fill=mix(BG_MID, GRID, k), width=1)
+        if p.get("note"):
+            note(img, p["note"], eo(window(t, 1, 2)))
+        return img
+
+
+class Bubble(Renderer):
+    """The creator's own words, in a speech bubble."""
+
+    def frame(self, t):
+        img = self.base(t, (4, 0))
+        d = ImageDraw.Draw(img)
+        p = self.p
+        f = font(76, "Black")
+        lines = wrap_px(p["text"], f, 1300)
+        k = eo(window(t, 0.2, 0.8))
+        bh = len(lines) * 104 + 120
+        bw = max(d.textlength(ln, font=f) for ln in lines) + 160
+        cx, cy = W / 2, 430
+        s = 0.9 + 0.1 * k
+        x0, y0 = cx - bw * s / 2, cy - bh * s / 2
+        d.rounded_rectangle([x0, y0, x0 + bw * s, y0 + bh * s], 48, fill=mix(BG_MID, (250, 246, 236), k))
+        d.polygon([(cx - 140, y0 + bh * s - 2), (cx - 60, y0 + bh * s - 2), (cx - 170, y0 + bh * s + 90)],
+                  fill=mix(BG_MID, (250, 246, 236), k))
+        n = int(len(p["text"]) * window(t, 0.5, 0.5 + len(p["text"]) / 14) + 0.999)
+        shown = wrap_px(p["text"][:n], f, 1300)
+        for i, ln in enumerate(shown):
+            text(img, (cx - (bw * s) / 2 + 80, y0 + 60 * s + i * 104), ln, f, (24, 26, 34), k)
+        text(img, (cx - 200, y0 + bh * s + 110), p.get("label", "27歳の本音"), font(40, "Bold"), AMBER, k, "lm")
+        return img
+
+
+@lru_cache(maxsize=2)
+def _mono(size: int):
+    for pth in ("/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+                "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf"):
+        if Path(pth).exists():
+            return ImageFont.truetype(pth, size)
+    return font(size, "Regular")
+
+
+class Code(Renderer):
+    """Real source lines from this project scroll by (ASCII lines only, so no missing glyphs)."""
+
+    def __init__(self, p, T):
+        super().__init__(p, T)
+        src = (ROOT / p["file"]).read_text().splitlines()[p.get("start", 0):]
+        self.lines = [ln.rstrip() for ln in src if ln.isascii()][:400]
+
+    def frame(self, t):
+        img = self.base(t, (2, 0))
+        box = (220, 70, 1700, SAFE_Y + 10)
+        panel(img, box, fill=(10, 14, 26))
+        f = _mono(30)
+        lh = 42
+        off = t * self.p.get("speed", 70)
+        inner = Image.new("RGB", (box[2] - box[0] - 6, box[3] - box[1] - 70), (10, 14, 26))
+        first = int(off // lh)
+        for i in range(first, first + inner.height // lh + 2):
+            if i >= len(self.lines):
+                break
+            ln = self.lines[i]
+            y = i * lh - off + 10
+            s = ln.strip()
+            col = MUTED if s.startswith("#") else CYAN if s.startswith(("def ", "class ", "return", "for ", "if ")) \
+                else AMBER if '"' in s else INK
+            ImageDraw.Draw(inner).text((70, y), f"{i + 1 + self.p.get('start', 0):>4}", font=f, fill=(70, 85, 115))
+            ImageDraw.Draw(inner).text((170, y), ln[:80], font=f, fill=col)
+        img.paste(inner, (box[0] + 3, box[1] + 60))
+        text(img, (box[0] + 30, box[1] + 18), self.p.get("caption", self.p["file"]), font(28, "Bold"), MUTED)
+        if self.p.get("note"):
+            note(img, self.p["note"])
+        return img
+
+
 RENDERERS = {
+    "chat": Chat, "screen": Screen, "flow": Flow, "table": Table, "bubble": Bubble, "code": Code,
     "pending": Pending, "awake_clock": AwakeClock, "microsleep": Microsleep, "distort": Distort,
     "brain_clean": BrainClean, "ros_gut": RosGut, "half_brain": HalfBrain,
     "title": Title, "legend": Legend, "timeline": Timeline, "barycenter": Barycenter, "bar_compare": BarCompare,
