@@ -149,9 +149,9 @@ def banner(fn) -> Image.Image:
     ImageDraw.Draw(m).ellipse([0, 0, 300, 300], fill=255)
     sx, sy = (W - 1546) // 2, (H - 423) // 2  # YouTube safe area
     img.paste(mark, (sx + 30, sy + 60), m)
-    d.text((sx + 380, sy + 120), NAME, font=motion.font(104, "Black"), fill=PAPER, anchor="lm")
-    d.text((sx + 384, sy + 250), TAGLINE, font=motion.font(46, "Bold"), fill=PAPER, anchor="lm")
-    d.text((sx + 384, sy + 325), SUBLINE, font=motion.font(40, "Regular"), fill=AMBER, anchor="lm")
+    d.text((sx + 380, sy + 120), NAME, font=motion.font(90, "Black"), fill=PAPER, anchor="lm")
+    d.text((sx + 384, sy + 250), TAGLINE, font=motion.font(39, "Bold"), fill=PAPER, anchor="lm")
+    d.text((sx + 384, sy + 325), SUBLINE, font=motion.font(36, "Regular"), fill=AMBER, anchor="lm")
     return img
 
 
@@ -168,8 +168,25 @@ def build(pick: str) -> None:
     _circle(fn(800).resize((400, 400), Image.LANCZOS)).save(OUT / "preview_icon.png")
 
 
+def from_image(path) -> callable:
+    """Use a generated illustration (square-cropped) as the mark."""
+    src = Image.open(path).convert("RGB")
+    w, h = src.size
+    m = min(w, h)
+    src = src.crop(((w - m) // 2, (h - m) // 2, (w + m) // 2, (h + m) // 2))
+    return lambda S: src.resize((S, S), Image.LANCZOS)
+
+
+CHOSEN = "D3"  # 2026-10-12: night room, editing video at the desk (branding/ai27/generated/D3.png)
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--pick", choices=list(MARKS))
+    ap.add_argument("--pick", help="A/B/C (drawn marks) or D1–D4 (generated illustrations)")
     a = ap.parse_args()
-    build(a.pick) if a.pick else options()
+    if not a.pick:
+        options()
+    elif a.pick in MARKS:
+        build(a.pick)
+    else:
+        MARKS[a.pick] = (a.pick, from_image(OUT / "generated" / f"{a.pick}.png"))
+        build(a.pick)
