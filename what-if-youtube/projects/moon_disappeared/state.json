@@ -37,13 +37,13 @@
       "notes": []
     },
     "shorts": {
-      "status": "running",
-      "started": "2026-10-12T12:07:01+00:00",
+      "status": "done",
+      "started": "2026-10-12T12:17:24+00:00",
       "inputs": {
         "count": 3,
         "animatic": false
       },
-      "finished": "2026-10-11T00:04:26+00:00",
+      "finished": "2026-10-12T12:18:32+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [

@@ -47,10 +47,17 @@ def _voicevox(v: dict):
         missing = [str(p) for p in paths.values() if not p.exists()]
         if missing:
             raise PipelineError(f"VOICEVOX files missing: {missing}. See README › Setup.")
-        syn = Synthesizer(Onnxruntime.load_once(filename=str(paths["onnxruntime"])), OpenJtalk(str(paths["dict"])))
-        with VoiceModelFile.open(str(paths["vvm"])) as m:
-            syn.load_voice_model(m)
-        _engines["voicevox"] = syn
+        _engines["voicevox"] = Synthesizer(Onnxruntime.load_once(filename=str(paths["onnxruntime"])),
+                                           OpenJtalk(str(paths["dict"])))
+        _engines["voicevox_models"] = set()
+    vvm = str(expand(v["root"]) / v["vvm"])
+    if vvm not in _engines["voicevox_models"]:  # projects may use different voices in one process
+        from voicevox_core.blocking import VoiceModelFile
+        if not Path(vvm).exists():
+            raise PipelineError(f"VOICEVOX voice model missing: {vvm}")
+        with VoiceModelFile.open(vvm) as m:
+            _engines["voicevox"].load_voice_model(m)
+        _engines["voicevox_models"].add(vvm)
     return _engines["voicevox"]
 
 

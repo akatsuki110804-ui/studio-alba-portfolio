@@ -100,7 +100,7 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
             key = sha(spec, editor.MOTION_CODE_HASH, frames, LAYOUT)
         else:
             st = src.stat()
-            key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames, LAYOUT)
+            key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames, LAYOUT, cut.get("vertical", "fill"))
         out = seg_dir / f"{sid}_{i:02d}_{key}.mp4"
         if not out.exists():
             for old in seg_dir.glob(f"{sid}_{i:02d}_*.mp4"):
@@ -111,7 +111,9 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
                 vertical_segment(tmp, "video", motion, frames, out, fps=fps)
                 tmp.unlink()
             else:
-                vertical_segment(src, kind, motion, frames, out, fps=fps, fill=kind == "video")
+                # raw footage fills the screen; composites (side-by-side, screen captures) keep their full frame
+                vertical_segment(src, kind, motion, frames, out, fps=fps,
+                                 fill=kind == "video" and cut.get("vertical", "fill") == "fill")
         seg_paths.append(out)
 
     video_only = editor.concat(seg_paths, project.path("output", "shorts", f"{sid}_video_only.mp4"))
@@ -121,7 +123,7 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
     end_t = timing["duration"]
     hook = editor.BREAK.join(editor.wrap_lines(short["hook_text"].upper(), 12 if editor.is_cjk(short["hook_text"]) else 18))
     endc = editor.BREAK.join(editor.wrap_lines(short["end_card_text"], 12 if editor.is_cjk(short["end_card_text"]) else 22))
-    big = editor.BREAK.join(editor.wrap_lines(short["hook_text"].upper(), 8 if editor.is_cjk(short["hook_text"]) else 14))
+    big = editor.BREAK.join(editor.wrap_lines(short["hook_text"].upper(), 7 if editor.is_cjk(short["hook_text"]) else 12))
     hook_end = min(HOOK_SECONDS, last_start)
     header = [
         f"Dialogue: 2,{editor._ts_ass(0)},{editor._ts_ass(hook_end)},HookBig,,0,0,0,,{{\\fad(0,180)}}{big}",
@@ -130,8 +132,8 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
     ]
     styles = (f"Style: Hook,{sub['font']},88,&H0047B5FF,&H00FFFFFF,&H00101010,&H96000000,-1,0,0,0,100,100,0,0,1,5,1,8,"
               f"60,60,170,1\n"
-              f"Style: HookBig,{sub['font']},128,&H0047B5FF,&H00FFFFFF,&H00101010,&HB4000000,-1,0,0,0,100,100,0,0,3,26,0,5,"
-              f"50,50,0,1\n")
+              f"Style: HookBig,{sub['font']},150,&H0047B5FF,&H00FFFFFF,&H00101010,&HB4000000,-1,0,0,0,100,100,0,0,3,26,0,8,"
+              f"40,40,150,1\n")
     ass = project.path("subtitles", f"{sid}_burn.ass")
     editor.write_ass(events, ass, w=vcfg["width"], h=vcfg["height"], font=sub["font"],
                      size=sub["short_font_size"], margin_v=470, extra_styles=styles, extra_events=header)

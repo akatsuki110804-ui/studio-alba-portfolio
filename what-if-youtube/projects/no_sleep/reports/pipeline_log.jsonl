@@ -26,3 +26,9 @@
 {"ts": "2026-10-12T01:16:15+00:00", "project": "no_sleep", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
 {"ts": "2026-10-12T01:16:15+00:00", "project": "no_sleep", "stage": "validate", "event": "start", "inputs": {}}
 {"ts": "2026-10-12T01:17:20+00:00", "project": "no_sleep", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=2 publishable=True"]}
+{"ts": "2026-10-12T12:10:46+00:00", "project": "no_sleep", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-12T12:13:48+00:00", "project": "no_sleep", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T12:14:07+00:00", "project": "no_sleep", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-12T12:14:54+00:00", "project": "no_sleep", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T12:18:32+00:00", "project": "no_sleep", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-12T12:19:19+00:00", "project": "no_sleep", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}

@@ -551,7 +551,8 @@
       "claim_ids": [
         "F01"
       ],
-      "entities": []
+      "entities": [],
+      "vertical": "fit"
     },
     {
       "id": "C16",
@@ -668,7 +669,8 @@
       "claim_ids": [
         "F06"
       ],
-      "entities": []
+      "entities": [],
+      "vertical": "fit"
     },
     {
       "id": "C20",
@@ -689,7 +691,8 @@
       "claim_ids": [
         "F06"
       ],
-      "entities": []
+      "entities": [],
+      "vertical": "fit"
     },
     {
       "id": "C21",
@@ -814,7 +817,8 @@
       "claim_ids": [
         "F03"
       ],
-      "entities": []
+      "entities": [],
+      "vertical": "fit"
     },
     {
       "id": "C25",
@@ -907,7 +911,8 @@
       "diagram": null,
       "science_notes": "",
       "claim_ids": [],
-      "entities": []
+      "entities": [],
+      "vertical": "fit"
     },
     {
       "id": "C28",
