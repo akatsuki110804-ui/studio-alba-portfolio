@@ -1364,7 +1364,8 @@ class Code(Renderer):
             col = MUTED if s.startswith("#") else CYAN if s.startswith(("def ", "class ", "return", "for ", "if ")) \
                 else AMBER if '"' in s else INK
             ImageDraw.Draw(inner).text((70, y), f"{i + 1 + self.p.get('start', 0):>4}", font=f, fill=(70, 85, 115))
-            ImageDraw.Draw(inner).text((170, y), ln[:80], font=f, fill=col)
+            if s:  # Pillow refuses to rasterise whitespace-only strings
+                ImageDraw.Draw(inner).text((170, y), ln[:80], font=f, fill=col)
         img.paste(inner, (box[0] + 3, box[1] + 60))
         text(img, (box[0] + 30, box[1] + 18), self.p.get("caption", self.p["file"]), font(28, "Bold"), MUTED)
         if self.p.get("note"):

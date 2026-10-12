@@ -15,3 +15,11 @@
 {"ts": "2026-10-12T07:24:01+00:00", "project": "ai_record_01", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
 {"ts": "2026-10-12T07:24:01+00:00", "project": "ai_record_01", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
 {"ts": "2026-10-12T07:24:01+00:00", "project": "ai_record_01", "stage": "voice", "event": "start", "inputs": {"cuts": 34}}
+{"ts": "2026-10-12T07:24:23+00:00", "project": "ai_record_01", "stage": "voice", "event": "done", "outputs": ["audio/narration.wav", "audio/timing.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["240.4s narration; sentences generated=18 reused from cache=41"]}
+{"ts": "2026-10-12T07:24:23+00:00", "project": "ai_record_01", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:26:03+00:00", "project": "ai_record_01", "stage": "edit", "event": "failed", "error": "ValueError: bad image size"}
+{"ts": "2026-10-12T07:26:03+00:00", "project": "ai_record_01", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T07:26:03+00:00", "project": "ai_record_01", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=3 warnings=1 publishable=False"]}
+{"ts": "2026-10-12T07:29:16+00:00", "project": "ai_record_01", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:29:16+00:00", "project": "ai_record_01", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-12T07:29:16+00:00", "project": "ai_record_01", "stage": "voice", "event": "start", "inputs": {"cuts": 34}}

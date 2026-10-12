@@ -2,11 +2,11 @@
   "stages": {
     "assets": {
       "status": "done",
-      "started": "2026-10-12T07:24:01+00:00",
+      "started": "2026-10-12T07:29:16+00:00",
       "inputs": {
         "animatic": false
       },
-      "finished": "2026-10-12T07:24:01+00:00",
+      "finished": "2026-10-12T07:29:16+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [],
@@ -18,18 +18,28 @@
     },
     "voice": {
       "status": "running",
-      "started": "2026-10-12T07:24:01+00:00",
+      "started": "2026-10-12T07:29:16+00:00",
       "inputs": {
         "cuts": 34
       },
-      "finished": "2026-10-12T07:23:40+00:00",
-      "error": "AnalyzeTextError: 入力テキストの解析に失敗しました"
+      "finished": "2026-10-12T07:24:23+00:00",
+      "error": null,
+      "fingerprint": "7dfeb845bb8a38dd",
+      "outputs": [
+        "audio/narration.wav",
+        "audio/timing.json"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "240.4s narration; sentences generated=18 reused from cache=41"
+      ]
     },
     "validate": {
       "status": "done",
-      "started": "2026-10-12T07:23:40+00:00",
+      "started": "2026-10-12T07:26:03+00:00",
       "inputs": {},
-      "finished": "2026-10-12T07:23:40+00:00",
+      "finished": "2026-10-12T07:26:03+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
@@ -39,8 +49,17 @@
       "retries": 0,
       "cost_jpy": 0.0,
       "notes": [
-        "errors=3 warnings=2 publishable=False"
+        "errors=3 warnings=1 publishable=False"
       ]
+    },
+    "edit": {
+      "status": "failed",
+      "started": "2026-10-12T07:24:23+00:00",
+      "inputs": {
+        "animatic": false
+      },
+      "finished": "2026-10-12T07:26:03+00:00",
+      "error": "ValueError: bad image size"
     }
   }
 }

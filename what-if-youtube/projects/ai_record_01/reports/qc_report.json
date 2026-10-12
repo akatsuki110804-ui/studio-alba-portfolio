@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-12T07:23:40+00:00",
+  "generated": "2026-10-12T07:26:03+00:00",
   "project": "ai_record_01",
   "videos": {},
   "previews": [],
   "publishable": false,
   "errors": 3,
-  "warnings": 2,
+  "warnings": 1,
   "checks": [
     {
       "check": "research: saved with sources",
@@ -56,9 +56,15 @@
       "detail": ""
     },
     {
+      "check": "long narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
       "check": "voice: reading list saved for review (audio/readings.md)",
-      "ok": false,
-      "severity": "warning",
+      "ok": true,
+      "severity": "info",
       "detail": ""
     },
     {
@@ -108,6 +114,14 @@
         "cost_jpy": 0.0,
         "kinds": [
           "actual"
+        ]
+      },
+      "voice": {
+        "items": 1,
+        "credits": 0.0,
+        "cost_jpy": 0.0,
+        "kinds": [
+          "free"
         ]
       }
     },
