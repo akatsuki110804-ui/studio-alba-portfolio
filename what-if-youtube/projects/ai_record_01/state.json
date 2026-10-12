@@ -17,14 +17,14 @@
       ]
     },
     "voice": {
-      "status": "running",
+      "status": "done",
       "started": "2026-10-12T07:29:16+00:00",
       "inputs": {
         "cuts": 34
       },
-      "finished": "2026-10-12T07:24:23+00:00",
+      "finished": "2026-10-12T07:29:21+00:00",
       "error": null,
-      "fingerprint": "7dfeb845bb8a38dd",
+      "fingerprint": "dd7bb4091f965a3b",
       "outputs": [
         "audio/narration.wav",
         "audio/timing.json"
@@ -32,7 +32,7 @@
       "retries": 0,
       "cost_jpy": 0.0,
       "notes": [
-        "240.4s narration; sentences generated=18 reused from cache=41"
+        "237.8s narration; sentences generated=2 reused from cache=57"
       ]
     },
     "validate": {
@@ -53,8 +53,8 @@
       ]
     },
     "edit": {
-      "status": "failed",
-      "started": "2026-10-12T07:24:23+00:00",
+      "status": "running",
+      "started": "2026-10-12T07:29:21+00:00",
       "inputs": {
         "animatic": false
       },

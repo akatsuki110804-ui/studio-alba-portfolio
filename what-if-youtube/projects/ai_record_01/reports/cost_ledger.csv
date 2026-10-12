@@ -8,3 +8,4 @@ ts,project,stage,item,provider,model,units,credits,cost_jpy,kind,note
 2026-10-12T07:22:46+00:00,ai_record_01,images,T2,higgsfield,gpt_image_2_5,1,0.0,0.0,actual,local composite
 2026-10-12T07:22:46+00:00,ai_record_01,images,T3,higgsfield,gpt_image_2_5,1,0.0,0.0,actual,local composite
 2026-10-12T07:24:23+00:00,ai_record_01,voice,long-form narration,voicevox (local),VOICEVOX:玄野武宏,18,0.0,0,free,local CPU synthesis
+2026-10-12T07:29:21+00:00,ai_record_01,voice,long-form narration,voicevox (local),VOICEVOX:玄野武宏,2,0.0,0,free,local CPU synthesis
