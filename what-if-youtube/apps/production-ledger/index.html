@@ -98,6 +98,14 @@ textarea { min-height: 4.5em; resize: vertical; }
 .log td { font-family: var(--f-num); }
 .viewform { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 8px; align-items: end; }
 @media (max-width: 560px) { .viewform { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.row.sub > .head { padding-left: 28px; grid-template-columns: 5em minmax(0, 1fr) auto; }
+.row.sub { border-bottom-style: dashed; }
+.row.sub .title { font-weight: 500; font-size: .93rem; }
+.row.sub .detail { padding-left: 28px; }
+.kb { display: inline-block; font-size: .66rem; font-weight: 700; letter-spacing: .06em; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: 0 5px; margin-right: 6px; vertical-align: 2px; }
+.split { font-size: .72rem; color: var(--muted); font-family: var(--f-body); }
+.filters { display: grid; gap: 8px; }
+@media (max-width: 560px) { .row.sub > .head { padding-left: 16px; grid-template-columns: 4.6em minmax(0, 1fr); } .row.sub .detail { padding-left: 16px; } }
 .empty { padding: 28px 8px; color: var(--muted); text-align: center; }
 .err { color: var(--danger); font-size: .85rem; }
 @media (prefers-reduced-motion: no-preference) { .detail { animation: open .18s ease-out; } @keyframes open { from { opacity: .4; transform: translateY(-4px); } } }
@@ -116,11 +124,14 @@ textarea { min-height: 4.5em; resize: vertical; }
   <section class="totals" aria-label="合計">
     <div class="total"><span class="k">動画</span><span class="v" id="t-count">0<small>本</small></span></div>
     <div class="total"><span class="k">かかったお金</span><span class="v" id="t-yen">¥0</span></div>
-    <div class="total"><span class="k">再生数（最新の合計）</span><span class="v" id="t-views">0<small>回</small></span></div>
+    <div class="total"><span class="k">再生数（最新の合計）</span><span class="v" id="t-views">0<small>回</small></span><span class="split" id="t-split"></span></div>
     <div class="total"><span class="k">1再生あたり</span><span class="v" id="t-per">—</span></div>
   </section>
 
-  <nav class="chips" id="chips" aria-label="チャンネルで絞り込む"></nav>
+  <div class="filters">
+    <nav class="chips" id="chips" aria-label="チャンネルで絞り込む"></nav>
+    <nav class="chips" id="kchips" aria-label="種類で絞り込む"></nav>
+  </div>
   <div id="new"></div>
   <section class="list" id="list" aria-live="polite">
     <p class="empty" id="loading">読み込み中…</p>
@@ -138,11 +149,15 @@ const KINDS = ["長尺", "Shorts"];
 const SAMPLE = [
   { id: "s1", title: "（見本）もしも○○だったら？", channel: "見本チャンネル", kind: "長尺", status: "live", published: "2026-10-01",
     yen: 500, credits: 0, memo: "見本の行です。保存されません。", views: [{ date: "2026-10-02", views: 12, hours: 0.4 }, { date: "2026-10-05", views: 40, hours: 1.6 }] },
+  { id: "s3", title: "（見本）切り抜きShorts", channel: "見本チャンネル", kind: "Shorts", parent: "s1", status: "live", published: "2026-10-03",
+    yen: 0, credits: 0, memo: "", views: [{ date: "2026-10-04", views: 150, hours: 0.5 }, { date: "2026-10-05", views: 320, hours: 1.1 }] },
   { id: "s2", title: "（見本）次の企画", channel: "見本チャンネル", kind: "長尺", status: "plan", published: "", yen: 0, credits: 0, memo: "", views: [] },
 ];
 
 let videos = [];
 let filter = "all";
+let kindFilter = "all";
+let draft = null;        // defaults for the "new" form
 let openId = null;
 let editing = null;      // id being edited, or "new"
 let confirmDel = null;
@@ -173,7 +188,7 @@ function spark(v) {
 function visible() {
   const order = Object.fromEntries(STATUS.map((s, i) => [s.key, i]));
   return videos
-    .filter((v) => filter === "all" || v.channel === filter)
+    .filter((v) => (filter === "all" || v.channel === filter) && (kindFilter === "all" || (v.kind || "長尺") === kindFilter))
     .sort((a, b) => (order[b.status] ?? 0) - (order[a.status] ?? 0) || String(b.published || "").localeCompare(String(a.published || "")) || String(b.created || "").localeCompare(String(a.created || "")));
 }
 
@@ -184,6 +199,8 @@ function renderTotals(list) {
   $("#t-yen").textContent = yen(totalYen);
   $("#t-views").innerHTML = `${num(totalViews)}<small>回</small>`;
   $("#t-per").textContent = totalViews ? yen(totalYen / totalViews) : "—";
+  const sv = list.filter((v) => v.kind === "Shorts").reduce((s, v) => s + (latest(v)?.views || 0), 0);
+  $("#t-split").textContent = kindFilter === "all" && list.some((v) => v.kind === "Shorts") ? `長尺 ${num(totalViews - sv)}・Shorts ${num(sv)}` : "";
 }
 
 function renderChips() {
@@ -191,6 +208,8 @@ function renderChips() {
   if (filter !== "all" && !chans.includes(filter)) filter = "all";
   $("#chips").innerHTML = ["all", ...chans].map((c) =>
     `<button class="chip" data-chip="${esc(c)}" aria-pressed="${filter === c}">${c === "all" ? "すべて" : esc(c)}</button>`).join("");
+  $("#kchips").innerHTML = ["all", ...KINDS].map((k) =>
+    `<button class="chip" data-kchip="${k}" aria-pressed="${kindFilter === k}">${k === "all" ? "長尺＋Shorts" : k}</button>`).join("");
 }
 
 function formHTML(v, id) {
@@ -200,7 +219,10 @@ function formHTML(v, id) {
     <div class="form">
       <label class="full">タイトル（企画名でOK）<input id="f-title-${esc(id)}" name="title" required value="${esc(v.title)}"></label>
       <label>チャンネル<input id="f-channel-${esc(id)}" name="channel" list="chans" value="${esc(v.channel)}"></label>
-      <label>種類<select id="f-kind-${esc(id)}" name="kind">${KINDS.map((k) => `<option ${v.kind === k ? "selected" : ""}>${k}</option>`).join("")}</select></label>
+      <label>種類<select id="f-kind-${esc(id)}" name="kind" data-kindsel>${KINDS.map((k) => `<option ${v.kind === k ? "selected" : ""}>${k}</option>`).join("")}</select></label>
+      <label class="full" data-parentfield ${v.kind === "Shorts" ? "" : "hidden"}>元の長尺動画（切り抜き元）<select id="f-parent-${esc(id)}" name="parent">
+        <option value="">なし</option>${videos.filter((x) => x.kind !== "Shorts" && x.id !== id).map((x) =>
+          `<option value="${esc(x.id)}" ${v.parent === x.id ? "selected" : ""}>${esc(x.title)}</option>`).join("")}</select></label>
       <label>状態<select id="f-status-${esc(id)}" name="status">${STATUS.map((s) => `<option value="${s.key}" ${v.status === s.key ? "selected" : ""}>${s.label}</option>`).join("")}</select></label>
       <label>公開日<input id="f-published-${esc(id)}" name="published" type="date" value="${esc(v.published)}"></label>
       <label>かかったお金（円）<input id="f-yen-${esc(id)}" name="yen" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.yen ?? "")}"></label>
@@ -241,35 +263,51 @@ function render() {
   renderChips();
   renderTotals(list);
   $("#add").hidden = !canWrite;
-  $("#new").innerHTML = editing === "new" ? formHTML({ kind: "長尺", status: "plan", channel: filter === "all" ? "" : filter }, "new") : "";
+  $("#new").innerHTML = editing === "new" ? formHTML(draft || { kind: "長尺", status: "plan", channel: filter === "all" ? "" : filter }, "new") : "";
   if (!list.length) {
     $("#list").innerHTML = `<p class="empty">まだ動画がありません。「＋ 動画を追加」から、企画だけでも登録できます。</p>`;
     return;
   }
-  $("#list").innerHTML = list.map((v) => {
-    const st = statusOf(v.status), l = latest(v), open = openId === v.id;
-    return `<article class="row">
+  const byId = Object.fromEntries(videos.map((v) => [v.id, v]));
+  const shown = new Set(list.map((v) => v.id));
+  const nest = kindFilter === "all";
+  const kids = {};
+  if (nest) list.forEach((v) => { if (v.kind === "Shorts" && v.parent && shown.has(v.parent)) (kids[v.parent] ||= []).push(v); });
+  const tops = list.filter((v) => !(nest && v.kind === "Shorts" && v.parent && shown.has(v.parent)));
+  $("#list").innerHTML = tops.map((v) => rowHTML(v, false, byId, kids[v.id] || [])
+    + (kids[v.id] || []).map((k) => rowHTML(k, true, byId, [])).join("")).join("");
+}
+
+function rowHTML(v, nested, byId, kids) {
+  const st = statusOf(v.status), l = latest(v), open = openId === v.id, isShort = v.kind === "Shorts";
+  const kidViews = kids.reduce((s, k) => s + (latest(k)?.views || 0), 0);
+  const meta = [
+    nested ? "" : `<span>${esc(v.channel || "チャンネル未設定")}</span>`,
+    isShort && !nested && v.parent && byId[v.parent] ? `<span>元：${esc(byId[v.parent].title)}</span>` : "",
+    kids.length ? `<span>Shorts ${kids.length}本・${num(kidViews)}回</span>` : "",
+    v.published ? `<span>公開 ${esc(v.published)}</span>` : "",
+  ].join("");
+  return `<article class="row${nested ? " sub" : ""}">
       <button class="head" data-open="${esc(v.id)}" aria-expanded="${open}">
         <span class="pill s-${st.key}">${st.label}</span>
-        <span class="t"><span class="title">${esc(v.title)}</span>
-          <span class="meta"><span>${esc(v.channel || "チャンネル未設定")}</span><span>${esc(v.kind || "")}</span>${v.published ? `<span>公開 ${esc(v.published)}</span>` : ""}</span></span>
+        <span class="t"><span class="title">${isShort ? '<span class="kb">Shorts</span>' : ""}${esc(v.title)}</span>
+          <span class="meta">${meta}</span></span>
         <span class="nums">${spark(v)}
           <span class="c"><b>${yen(v.yen)}</b><span>${v.credits ? `${v.credits} cr` : "費用"}</span></span>
           <span class="c"><b>${l ? num(l.views) : "—"}</b><span>${l ? `再生 ${esc(l.date.slice(5))}` : "再生"}</span></span></span>
       </button>
       ${open ? `<div class="detail">${editing === v.id ? formHTML(v, v.id) : `
         ${v.memo ? `<p class="sub" style="white-space:pre-wrap">${esc(v.memo)}</p>` : ""}
-        ${canWrite ? `<div class="actions"><button data-edit="${esc(v.id)}">情報を編集</button></div>` : ""}`}
+        ${canWrite ? `<div class="actions"><button data-edit="${esc(v.id)}">情報を編集</button>${isShort ? "" : `<button data-addshort="${esc(v.id)}">＋ この動画のShortsを追加</button>`}</div>` : ""}`}
         ${viewsHTML(v)}</div>` : ""}
     </article>`;
-  }).join("");
 }
 
 function readForm(f) {
   const d = Object.fromEntries(new FormData(f));
   return {
     title: d.title.trim(), channel: (d.channel || "").trim(), kind: d.kind, status: d.status,
-    published: d.published || "", memo: d.memo || "",
+    published: d.published || "", memo: d.memo || "", parent: d.kind === "Shorts" ? (d.parent || "") : "",
     yen: d.yen === "" ? 0 : Number(d.yen), credits: d.credits === "" ? 0 : Number(d.credits),
   };
 }
@@ -290,7 +328,13 @@ async function guarded(fn, form) {
 document.addEventListener("click", async (ev) => {
   const t = ev.target.closest("button");
   if (!t) return;
-  if (t.id === "add") { editing = "new"; openId = null; render(); $("#f-title-new")?.focus(); return; }
+  if (t.id === "add") { draft = null; editing = "new"; openId = null; render(); $("#f-title-new")?.focus(); return; }
+  if (t.dataset.addshort) {
+    const p = videos.find((v) => v.id === t.dataset.addshort);
+    draft = { kind: "Shorts", status: "plan", channel: p?.channel || "", parent: p?.id || "" };
+    editing = "new"; openId = null; render(); $("#f-title-new")?.focus(); return;
+  }
+  if (t.dataset.kchip) { kindFilter = t.dataset.kchip; render(); return; }
   if (t.dataset.chip) { filter = t.dataset.chip; render(); return; }
   if (t.dataset.open) { openId = openId === t.dataset.open ? null : t.dataset.open; editing = null; confirmDel = null; render(); return; }
   if (t.dataset.edit) { editing = t.dataset.edit; render(); return; }
@@ -300,6 +344,13 @@ document.addEventListener("click", async (ev) => {
   if (t.dataset.delYes) {
     const id = t.dataset.delYes;
     if (await guarded(() => store.remove(id), t.closest("form"))) { openId = editing = confirmDel = null; render(); }
+  }
+});
+
+document.addEventListener("change", (ev) => {
+  if (ev.target.matches("[data-kindsel]")) {
+    const pf = ev.target.closest("form").querySelector("[data-parentfield]");
+    if (pf) pf.hidden = ev.target.value !== "Shorts";
   }
 });
 
@@ -313,7 +364,7 @@ document.addEventListener("submit", async (ev) => {
     const body = { ...(prev ? { views: prev.views || [], created: prev.created } : { views: [], created: new Date().toISOString() }), ...data };
     let newId = id;
     if (await guarded(async () => { newId = await store.save(id === "new" ? null : id, body); }, f)) {
-      editing = null; openId = newId; render();
+      editing = null; draft = null; openId = newId; render();
     }
   } else if (f.dataset.vform) {
     const v = videos.find((x) => x.id === f.dataset.vform);
