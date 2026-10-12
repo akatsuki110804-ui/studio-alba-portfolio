@@ -16,3 +16,4 @@ projects/*/previews/*
 projects/*/thumbnails/*.jpg
 projects/*/thumbnails/*.png
 projects/*/subtitles/*.ass
+deliver/
