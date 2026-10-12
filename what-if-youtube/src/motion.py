@@ -1386,12 +1386,13 @@ RENDERERS = {
 
 
 def render_clip(spec: dict, frames: int, out: Path, *, fps: int = 30, crf: int = 18,
-                fade_in: bool = False, fade_out: bool = False) -> Path:
+                fade_in: bool = False, fade_out: bool = False, t0: float = 0.0) -> Path:
+    """t0 > 0 starts the animation part-way in (Shorts: the first frame must already show something)."""
     kind = spec["type"]
     if kind not in RENDERERS:
         raise PipelineError(f"unknown motion type '{kind}' (known: {', '.join(RENDERERS)})")
     T = frames / fps
-    r = RENDERERS[kind](spec.get("params", {}), T)
+    r = RENDERERS[kind](spec.get("params", {}), T + t0)
     vf = []
     if fade_in:
         vf.append("fade=t=in:st=0:d=0.35")
@@ -1404,7 +1405,7 @@ def render_clip(spec: dict, frames: int, out: Path, *, fps: int = 30, crf: int =
                              "-crf", str(crf), "-r", str(fps), str(out)], stdin=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
         for i in range(frames):
-            proc.stdin.write(r.frame(i / fps).convert("RGB").tobytes())
+            proc.stdin.write(r.frame(t0 + i / fps).convert("RGB").tobytes())
         proc.stdin.close()
     except BrokenPipeError:
         pass

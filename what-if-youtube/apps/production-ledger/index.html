@@ -96,7 +96,7 @@ textarea { min-height: 4.5em; resize: vertical; }
 .log th:first-child, .log td:first-child { text-align: left; }
 .log th { font-size: .72rem; color: var(--muted); font-weight: 500; }
 .log td { font-family: var(--f-num); }
-.viewform { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 8px; align-items: end; }
+.viewform { display: grid; grid-template-columns: repeat(auto-fit, minmax(7.5em, 1fr)); gap: 8px; align-items: end; }
 @media (max-width: 560px) { .viewform { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .row.sub > .head { padding-left: 28px; grid-template-columns: 5em minmax(0, 1fr) auto; }
 .row.sub { border-bottom-style: dashed; }
@@ -106,6 +106,16 @@ textarea { min-height: 4.5em; resize: vertical; }
 .split { font-size: .72rem; color: var(--muted); font-family: var(--f-body); }
 .filters { display: grid; gap: 8px; }
 @media (max-width: 560px) { .row.sub > .head { padding-left: 16px; grid-template-columns: 4.6em minmax(0, 1fr); } .row.sub .detail { padding-left: 16px; } }
+.goal { display: grid; gap: 6px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+.goal .row1 { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-size: .85rem; }
+.goal .row1 b { font-family: var(--f-num); font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.meter { position: relative; height: 10px; border-radius: 5px; background: var(--line); }
+.meter .fill { position: absolute; inset: 0 auto 0 0; border-radius: 5px; }
+.meter .mark { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--ink); }
+.meter-scale { display: flex; justify-content: space-between; font-size: .68rem; color: var(--muted); font-family: var(--f-num); }
+.ret { font-family: var(--f-num); font-weight: 600; }
+.r-good { color: var(--st-live); } .r-mid { color: var(--st-make); } .r-low { color: var(--danger); }
+.bg-good { background: var(--st-live); } .bg-mid { background: var(--st-make); } .bg-low { background: var(--danger); }
 .empty { padding: 28px 8px; color: var(--muted); text-align: center; }
 .err { color: var(--danger); font-size: .85rem; }
 @media (prefers-reduced-motion: no-preference) { .detail { animation: open .18s ease-out; } @keyframes open { from { opacity: .4; transform: translateY(-4px); } } }
@@ -127,6 +137,7 @@ textarea { min-height: 4.5em; resize: vertical; }
     <div class="total"><span class="k">再生数（最新の合計）</span><span class="v" id="t-views">0<small>回</small></span><span class="split" id="t-split"></span></div>
     <div class="total"><span class="k">1再生あたり</span><span class="v" id="t-per">—</span></div>
   </section>
+  <section class="goal" id="goal" hidden aria-label="Shortsの目標"></section>
 
   <div class="filters">
     <nav class="chips" id="chips" aria-label="チャンネルで絞り込む"></nav>
@@ -150,7 +161,7 @@ const SAMPLE = [
   { id: "s1", title: "（見本）もしも○○だったら？", channel: "見本チャンネル", kind: "長尺", status: "live", published: "2026-10-01",
     yen: 500, credits: 0, memo: "見本の行です。保存されません。", views: [{ date: "2026-10-02", views: 12, hours: 0.4 }, { date: "2026-10-05", views: 40, hours: 1.6 }] },
   { id: "s3", title: "（見本）切り抜きShorts", channel: "見本チャンネル", kind: "Shorts", parent: "s1", status: "live", published: "2026-10-03",
-    yen: 0, credits: 0, memo: "", views: [{ date: "2026-10-04", views: 150, hours: 0.5 }, { date: "2026-10-05", views: 320, hours: 1.1 }] },
+    yen: 0, credits: 0, memo: "", views: [{ date: "2026-10-04", views: 150, hours: 0.5, stayed: 41.5 }, { date: "2026-10-05", views: 320, hours: 1.1, stayed: 48.2 }] },
   { id: "s2", title: "（見本）次の企画", channel: "見本チャンネル", kind: "長尺", status: "plan", published: "", yen: 0, credits: 0, memo: "", views: [] },
 ];
 
@@ -169,11 +180,15 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const yen = (n) => "¥" + Math.round(n || 0).toLocaleString("ja-JP");
 const num = (n) => Math.round(n || 0).toLocaleString("ja-JP");
 const today = () => { const d = new Date(); return new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); };
-const latest = (v) => (v.views && v.views.length ? v.views[v.views.length - 1] : null);
+const GOAL = 70; // % of Shorts viewers who stay instead of swiping away
+const withViews = (v) => (v.views || []).filter((p) => typeof p.views === "number");
+const latest = (v) => { const a = withViews(v); return a.length ? a[a.length - 1] : null; };
+const latestStayed = (v) => { const a = (v.views || []).filter((p) => typeof p.stayed === "number"); return a.length ? a[a.length - 1] : null; };
+const band = (pct) => (pct >= GOAL ? "good" : pct >= 40 ? "mid" : "low");
 const statusOf = (k) => STATUS.find((s) => s.key === k) || STATUS[0];
 
 function spark(v) {
-  const pts = (v.views || []).map((p) => p.views);
+  const pts = withViews(v).map((p) => p.views);
   if (pts.length < 2) return "";
   const max = Math.max(...pts, 1), w = 64, h = 26, pad = 3;
   const xy = pts.map((p, i) => [pad + (i * (w - pad * 2)) / (pts.length - 1), h - pad - (p / max) * (h - pad * 2)]);
@@ -200,6 +215,15 @@ function renderTotals(list) {
   $("#t-views").innerHTML = `${num(totalViews)}<small>回</small>`;
   $("#t-per").textContent = totalViews ? yen(totalYen / totalViews) : "—";
   const sv = list.filter((v) => v.kind === "Shorts").reduce((s, v) => s + (latest(v)?.views || 0), 0);
+  const rs = list.filter((v) => v.kind === "Shorts").map(latestStayed).filter(Boolean);
+  if (rs.length && kindFilter !== "長尺") {
+    const avg = rs.reduce((s, p) => s + p.stayed, 0) / rs.length, b = band(avg);
+    $("#goal").innerHTML = `<div class="row1"><span>Shorts「視聴を継続」の平均（${rs.length}本）</span>
+      <span><b class="r-${b}">${avg.toFixed(1)}%</b>　目標 ${GOAL}%</span></div>
+      <div class="meter" role="img" aria-label="平均${avg.toFixed(1)}%、目標${GOAL}%"><span class="fill bg-${b}" style="width:${Math.min(100, avg)}%"></span><span class="mark" style="left:${GOAL}%"></span></div>
+      <div class="meter-scale"><span>0%</span><span>50%</span><span>100%</span></div>`;
+    $("#goal").hidden = false;
+  } else { $("#goal").hidden = true; }
   $("#t-split").textContent = kindFilter === "all" && list.some((v) => v.kind === "Shorts") ? `長尺 ${num(totalViews - sv)}・Shorts ${num(sv)}` : "";
 }
 
@@ -243,18 +267,20 @@ function formHTML(v, id) {
 }
 
 function viewsHTML(v) {
+  const sh = v.kind === "Shorts";
   const rows = (v.views || []).slice().reverse().map((p) =>
-    `<tr><td>${esc(p.date)}</td><td>${num(p.views)}</td><td>${p.hours != null && p.hours !== "" ? Number(p.hours).toFixed(1) : "—"}</td></tr>`).join("");
+    `<tr><td>${esc(p.date)}</td><td>${typeof p.views === "number" ? num(p.views) : "—"}</td><td>${p.hours != null && p.hours !== "" ? Number(p.hours).toFixed(1) : "—"}</td>${sh ? `<td>${typeof p.stayed === "number" ? `<span class="ret r-${band(p.stayed)}">${p.stayed.toFixed(1)}%</span>` : "—"}</td>` : ""}</tr>`).join("");
   return `<div class="panel">
     <h3>再生数の記録</h3>
-    ${rows ? `<div class="log"><table><thead><tr><th>日付</th><th>再生数</th><th>総再生時間（時間）</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    ${rows ? `<div class="log"><table><thead><tr><th>日付</th><th>再生数</th><th>総再生(時間)</th>${sh ? "<th>視聴を継続</th>" : ""}</tr></thead><tbody>${rows}</tbody></table></div>`
       : `<p class="sub">まだ記録がありません。YouTube Studioの数字を入れてください。</p>`}
     ${canWrite ? `<form class="viewform" data-vform="${esc(v.id)}">
       <label>日付<input id="v-date-${esc(v.id)}" name="date" type="date" value="${today()}" required></label>
-      <label>再生数<input id="v-views-${esc(v.id)}" name="views" type="number" min="0" step="1" inputmode="numeric" required></label>
+      <label>再生数<input id="v-views-${esc(v.id)}" name="views" type="number" min="0" step="1" inputmode="numeric" ${sh ? "" : "required"}></label>
       <label>総再生時間<input id="v-hours-${esc(v.id)}" name="hours" type="number" min="0" step="0.1" inputmode="decimal"></label>
+      ${sh ? `<label>視聴を継続（%）<input id="v-stayed-${esc(v.id)}" name="stayed" type="number" min="0" max="100" step="0.1" inputmode="decimal"></label>` : ""}
       <button class="primary" type="submit">記録</button>
-    </form>` : ""}
+    </form>${sh ? `<p class="sub">「視聴を継続」はYouTube Studioの「視聴者のエンゲージメント」で見られます。目標は${GOAL}%以上。</p>` : ""}` : ""}
   </div>`;
 }
 
@@ -294,7 +320,8 @@ function rowHTML(v, nested, byId, kids) {
           <span class="meta">${meta}</span></span>
         <span class="nums">${spark(v)}
           <span class="c"><b>${yen(v.yen)}</b><span>${v.credits ? `${v.credits} cr` : "費用"}</span></span>
-          <span class="c"><b>${l ? num(l.views) : "—"}</b><span>${l ? `再生 ${esc(l.date.slice(5))}` : "再生"}</span></span></span>
+          <span class="c"><b>${l ? num(l.views) : "—"}</b><span>${l ? `再生 ${esc(l.date.slice(5))}` : "再生"}</span></span>${isShort ? (() => { const r = latestStayed(v);
+            return `<span class="c"><b class="${r ? `r-${band(r.stayed)}` : ""}">${r ? r.stayed.toFixed(0) + "%" : "—"}</b><span>継続</span></span>`; })() : ""}</span>
       </button>
       ${open ? `<div class="detail">${editing === v.id ? formHTML(v, v.id) : `
         ${v.memo ? `<p class="sub" style="white-space:pre-wrap">${esc(v.memo)}</p>` : ""}
@@ -369,7 +396,9 @@ document.addEventListener("submit", async (ev) => {
   } else if (f.dataset.vform) {
     const v = videos.find((x) => x.id === f.dataset.vform);
     const d = Object.fromEntries(new FormData(f));
-    const entry = { date: d.date, views: Number(d.views), hours: d.hours === "" ? null : Number(d.hours) };
+    const entry = { date: d.date, views: d.views === "" || d.views == null ? null : Number(d.views), hours: d.hours === "" || d.hours == null ? null : Number(d.hours) };
+    if (d.stayed != null && d.stayed !== "") entry.stayed = Number(d.stayed);
+    if (entry.views == null && entry.stayed == null) return;
     const list = (v.views || []).filter((p) => p.date !== entry.date).concat(entry).sort((a, b) => a.date.localeCompare(b.date));
     const { id, ...rest } = v;
     await guarded(() => store.save(v.id, { ...rest, views: list }), f);

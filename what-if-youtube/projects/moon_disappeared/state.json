@@ -37,8 +37,8 @@
       "notes": []
     },
     "shorts": {
-      "status": "done",
-      "started": "2026-10-11T00:03:10+00:00",
+      "status": "running",
+      "started": "2026-10-12T12:07:01+00:00",
       "inputs": {
         "count": 3,
         "animatic": false

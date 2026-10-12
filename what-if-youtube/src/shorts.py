@@ -4,6 +4,11 @@ Each short has its own narration (written to stand alone: hook → one question 
 full video), reuses long-form cut visuals, and is re-composed for vertical: a blurred, darkened copy of the
 shot fills the frame and the shot itself sits in the upper-middle, leaving room for a hook header at the
 top and large subtitles below.
+
+Layout v2 (hook-first, after the first published Shorts kept only ~26% of viewers past the swipe):
+- AI footage fills the whole 9:16 frame instead of sitting in a letterbox;
+- the hook is shown huge in the middle of the screen from the very first frame, then moves to the header;
+- motion graphics start part-way into their animation, so frame 0 is never an empty background.
 """
 from __future__ import annotations
 
@@ -15,6 +20,9 @@ from . import motion as motion_mod
 from .common import PipelineError, Project, read_json, run, sha, write_json
 
 FG_Y_OFFSET = -110  # shot sits slightly above center
+LAYOUT = "hook-fill-v2"  # part of every segment cache key
+HOOK_SECONDS = 1.8  # how long the big centered hook stays before it moves to the header
+MOTION_T0 = 1.2  # seconds of animation skipped at the start of a motion cut
 
 
 def _claims_ok(project: Project, short: dict) -> None:
@@ -29,8 +37,15 @@ def _claims_ok(project: Project, short: dict) -> None:
 
 
 def vertical_segment(src: Path, kind: str, motion: str, frames: int, out: Path, *, fps: int,
-                     w: int = 1080, h: int = 1920) -> Path:
+                     w: int = 1080, h: int = 1920, fill: bool = False) -> Path:
     fw, fh = w, round(w * 9 / 16 / 2) * 2
+    if fill:  # real footage: crop to 9:16 and use the whole screen
+        vf = (f"scale=-2:{h},crop={w}:{h},fps={fps},tpad=stop_mode=clone:stop_duration={frames / fps:.3f},"
+              f"format=yuv420p,setsar=1")
+        out.parent.mkdir(parents=True, exist_ok=True)
+        run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, "-frames:v", str(frames), "-an",
+             "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", str(fps), str(out)])
+        return out
     if kind == "video":
         base = (f"scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps={fps},"
                 f"tpad=stop_mode=clone:stop_duration={frames / fps:.3f}")
@@ -82,21 +97,21 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
         if kind in ("diagram", "title"):
             kind = "image"
         if kind == "motion":
-            key = sha(spec, editor.MOTION_CODE_HASH, frames)
+            key = sha(spec, editor.MOTION_CODE_HASH, frames, LAYOUT)
         else:
             st = src.stat()
-            key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames)
+            key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames, LAYOUT)
         out = seg_dir / f"{sid}_{i:02d}_{key}.mp4"
         if not out.exists():
             for old in seg_dir.glob(f"{sid}_{i:02d}_*.mp4"):
                 old.unlink()
             if kind == "motion":  # draw the 16:9 animation, then re-compose it for 9:16
                 tmp = seg_dir / f"{sid}_{i:02d}_motion_src.mp4"
-                motion_mod.render_clip(spec, frames, tmp, fps=fps)
+                motion_mod.render_clip(spec, frames, tmp, fps=fps, t0=0.0 if spec["type"] == "pending" else MOTION_T0)
                 vertical_segment(tmp, "video", motion, frames, out, fps=fps)
                 tmp.unlink()
             else:
-                vertical_segment(src, kind, motion, frames, out, fps=fps)
+                vertical_segment(src, kind, motion, frames, out, fps=fps, fill=kind == "video")
         seg_paths.append(out)
 
     video_only = editor.concat(seg_paths, project.path("output", "shorts", f"{sid}_video_only.mp4"))
@@ -106,12 +121,17 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
     end_t = timing["duration"]
     hook = editor.BREAK.join(editor.wrap_lines(short["hook_text"].upper(), 12 if editor.is_cjk(short["hook_text"]) else 18))
     endc = editor.BREAK.join(editor.wrap_lines(short["end_card_text"], 12 if editor.is_cjk(short["end_card_text"]) else 22))
+    big = editor.BREAK.join(editor.wrap_lines(short["hook_text"].upper(), 8 if editor.is_cjk(short["hook_text"]) else 14))
+    hook_end = min(HOOK_SECONDS, last_start)
     header = [
-        f"Dialogue: 1,{editor._ts_ass(0)},{editor._ts_ass(last_start)},Hook,,0,0,0,,{hook}",
+        f"Dialogue: 2,{editor._ts_ass(0)},{editor._ts_ass(hook_end)},HookBig,,0,0,0,,{{\\fad(0,180)}}{big}",
+        f"Dialogue: 1,{editor._ts_ass(hook_end)},{editor._ts_ass(last_start)},Hook,,0,0,0,,{{\\fad(180,0)}}{hook}",
         f"Dialogue: 1,{editor._ts_ass(last_start)},{editor._ts_ass(end_t)},Hook,,0,0,0,,{endc}",
     ]
-    styles = (f"Style: Hook,{sub['font']},78,&H0047B5FF,&H00FFFFFF,&H00101010,&H96000000,-1,0,0,0,100,100,0,0,1,4,1,8,"
-              f"60,60,170,1\n")
+    styles = (f"Style: Hook,{sub['font']},88,&H0047B5FF,&H00FFFFFF,&H00101010,&H96000000,-1,0,0,0,100,100,0,0,1,5,1,8,"
+              f"60,60,170,1\n"
+              f"Style: HookBig,{sub['font']},128,&H0047B5FF,&H00FFFFFF,&H00101010,&HB4000000,-1,0,0,0,100,100,0,0,3,26,0,5,"
+              f"50,50,0,1\n")
     ass = project.path("subtitles", f"{sid}_burn.ass")
     editor.write_ass(events, ass, w=vcfg["width"], h=vcfg["height"], font=sub["font"],
                      size=sub["short_font_size"], margin_v=470, extra_styles=styles, extra_events=header)
