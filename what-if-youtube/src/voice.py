@@ -72,7 +72,7 @@ def tts_text(project: Project, text: str) -> str:
 def split_sentences(text: str) -> list[str]:
     text = text.strip()
     if re.search(r"[\u3040-\u30ff\u4e00-\u9fff]", text):
-        parts = re.split(r"(?<=[。！？!?])", text)
+        parts = re.split(r"(?<=[。！？!?])(?![」』）)。、])", text)  # keep 「…？」。 together
     else:
         parts = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"'])", text)
     return [p.strip() for p in parts if p.strip()]
