@@ -25,3 +25,31 @@
 {"ts": "2026-10-12T07:29:16+00:00", "project": "ai_record_01", "stage": "voice", "event": "start", "inputs": {"cuts": 34}}
 {"ts": "2026-10-12T07:29:21+00:00", "project": "ai_record_01", "stage": "voice", "event": "done", "outputs": ["audio/narration.wav", "audio/timing.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["237.8s narration; sentences generated=2 reused from cache=57"]}
 {"ts": "2026-10-12T07:29:21+00:00", "project": "ai_record_01", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:32:56+00:00", "project": "ai_record_01", "stage": "edit", "event": "done", "outputs": ["output/ai_record_01_long.mp4", "subtitles/ai_record_01_ja.srt"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T07:32:56+00:00", "project": "ai_record_01", "stage": "shorts", "event": "start", "inputs": {"count": 2, "animatic": false}}
+{"ts": "2026-10-12T07:33:01+00:00", "project": "ai_record_01", "stage": "shorts", "event": "failed", "error": "PipelineError: S1: narration is 23.3s, outside 30–60s — edit shorts.json"}
+{"ts": "2026-10-12T07:33:01+00:00", "project": "ai_record_01", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T07:33:36+00:00", "project": "ai_record_01", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=2 warnings=1 publishable=False"]}
+{"ts": "2026-10-12T07:33:49+00:00", "project": "ai_record_01", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:33:49+00:00", "project": "ai_record_01", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-12T07:33:49+00:00", "project": "ai_record_01", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:35:37+00:00", "project": "ai_record_01", "stage": "edit", "event": "done", "outputs": ["output/ai_record_01_long.mp4", "subtitles/ai_record_01_ja.srt"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T07:35:37+00:00", "project": "ai_record_01", "stage": "shorts", "event": "start", "inputs": {"count": 2, "animatic": false}}
+{"ts": "2026-10-12T07:36:45+00:00", "project": "ai_record_01", "stage": "shorts", "event": "failed", "error": "PipelineError: S2: narration is 26.8s, outside 30–60s — edit shorts.json"}
+{"ts": "2026-10-12T07:36:46+00:00", "project": "ai_record_01", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T07:37:21+00:00", "project": "ai_record_01", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=2 warnings=1 publishable=False"]}
+{"ts": "2026-10-12T07:37:27+00:00", "project": "ai_record_01", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:37:27+00:00", "project": "ai_record_01", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-12T07:37:27+00:00", "project": "ai_record_01", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:39:23+00:00", "project": "ai_record_01", "stage": "edit", "event": "done", "outputs": ["output/ai_record_01_long.mp4", "subtitles/ai_record_01_ja.srt"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T07:39:23+00:00", "project": "ai_record_01", "stage": "shorts", "event": "start", "inputs": {"count": 2, "animatic": false}}
+{"ts": "2026-10-12T07:40:46+00:00", "project": "ai_record_01", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T07:40:46+00:00", "project": "ai_record_01", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-12T07:40:46+00:00", "project": "ai_record_01", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T07:40:47+00:00", "project": "ai_record_01", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T07:41:31+00:00", "project": "ai_record_01", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=1 publishable=True"]}
+{"ts": "2026-10-12T07:41:51+00:00", "project": "ai_record_01", "stage": "assets", "event": "imported", "item": "T1", "path": "thumbnails/T1_bg.png", "credits": 0.0, "job_id": "local composite"}
+{"ts": "2026-10-12T07:41:51+00:00", "project": "ai_record_01", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-12T07:41:51+00:00", "project": "ai_record_01", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T07:41:52+00:00", "project": "ai_record_01", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T07:42:35+00:00", "project": "ai_record_01", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=1 publishable=True"]}

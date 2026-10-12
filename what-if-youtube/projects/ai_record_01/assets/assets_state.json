@@ -60,11 +60,11 @@
     "last_error": null
   },
   "T1": {
-    "attempts": 1,
+    "attempts": 2,
     "status": "ready",
     "path": "thumbnails/T1_bg.png",
     "fingerprint": "6d0d8731820bc243",
-    "imported": "2026-10-12T07:22:45+00:00",
+    "imported": "2026-10-12T07:41:51+00:00",
     "provider": "higgsfield",
     "model": "gpt_image_2_5",
     "job_id": "local composite",
