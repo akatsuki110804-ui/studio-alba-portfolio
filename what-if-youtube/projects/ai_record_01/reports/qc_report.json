@@ -1,0 +1,119 @@
+{
+  "generated": "2026-10-12T07:23:40+00:00",
+  "project": "ai_record_01",
+  "videos": {},
+  "previews": [],
+  "publishable": false,
+  "errors": 3,
+  "warnings": 2,
+  "checks": [
+    {
+      "check": "research: saved with sources",
+      "ok": true,
+      "severity": "info",
+      "detail": "8 sources"
+    },
+    {
+      "check": "research: status complete",
+      "ok": true,
+      "severity": "info",
+      "detail": "complete"
+    },
+    {
+      "check": "research: no unverified fact claims",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "research: claims only partially verified (human should check)",
+      "ok": false,
+      "severity": "warning",
+      "detail": "I01"
+    },
+    {
+      "check": "assets: none failed permanently",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "assets: none stale (prompt changed since generation)",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "assets: all AI shots generated",
+      "ok": true,
+      "severity": "info",
+      "detail": "pending: []"
+    },
+    {
+      "check": "long-form: final (non-animatic) render exists",
+      "ok": false,
+      "severity": "error",
+      "detail": ""
+    },
+    {
+      "check": "voice: reading list saved for review (audio/readings.md)",
+      "ok": false,
+      "severity": "warning",
+      "detail": ""
+    },
+    {
+      "check": "voice: credit line 'VOICEVOX:玄野武宏' must go in the video description",
+      "ok": true,
+      "severity": "info",
+      "detail": "VOICEVOX:玄野武宏"
+    },
+    {
+      "check": "shorts: 2–3 produced",
+      "ok": false,
+      "severity": "error",
+      "detail": "0"
+    },
+    {
+      "check": "thumbnails: 3 candidates",
+      "ok": false,
+      "severity": "error",
+      "detail": "0"
+    },
+    {
+      "check": "cost: ledger recorded",
+      "ok": true,
+      "severity": "info",
+      "detail": "¥0.0 / 0.0 credits"
+    },
+    {
+      "check": "cost: within per-video budget",
+      "ok": true,
+      "severity": "info",
+      "detail": "¥0.0 of ¥2500"
+    }
+  ],
+  "cost": {
+    "by_stage": {
+      "video_clips": {
+        "items": 5,
+        "credits": 0.0,
+        "cost_jpy": 0.0,
+        "kinds": [
+          "actual"
+        ]
+      },
+      "images": {
+        "items": 3,
+        "credits": 0.0,
+        "cost_jpy": 0.0,
+        "kinds": [
+          "actual"
+        ]
+      }
+    },
+    "total_jpy": 0.0,
+    "total_credits": 0.0,
+    "month_total_jpy": 843.6
+  },
+  "human_review_required": true
+}

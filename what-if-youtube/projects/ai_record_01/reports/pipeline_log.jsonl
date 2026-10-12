@@ -9,3 +9,9 @@
 {"ts": "2026-10-12T07:22:51+00:00", "project": "ai_record_01", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
 {"ts": "2026-10-12T07:22:51+00:00", "project": "ai_record_01", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
 {"ts": "2026-10-12T07:22:51+00:00", "project": "ai_record_01", "stage": "voice", "event": "start", "inputs": {"cuts": 34}}
+{"ts": "2026-10-12T07:23:40+00:00", "project": "ai_record_01", "stage": "voice", "event": "failed", "error": "AnalyzeTextError: 入力テキストの解析に失敗しました"}
+{"ts": "2026-10-12T07:23:40+00:00", "project": "ai_record_01", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T07:23:40+00:00", "project": "ai_record_01", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=3 warnings=2 publishable=False"]}
+{"ts": "2026-10-12T07:24:01+00:00", "project": "ai_record_01", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T07:24:01+00:00", "project": "ai_record_01", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-12T07:24:01+00:00", "project": "ai_record_01", "stage": "voice", "event": "start", "inputs": {"cuts": 34}}

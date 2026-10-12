@@ -2,11 +2,11 @@
   "stages": {
     "assets": {
       "status": "done",
-      "started": "2026-10-12T07:22:51+00:00",
+      "started": "2026-10-12T07:24:01+00:00",
       "inputs": {
         "animatic": false
       },
-      "finished": "2026-10-12T07:22:51+00:00",
+      "finished": "2026-10-12T07:24:01+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [],
@@ -18,10 +18,29 @@
     },
     "voice": {
       "status": "running",
-      "started": "2026-10-12T07:22:51+00:00",
+      "started": "2026-10-12T07:24:01+00:00",
       "inputs": {
         "cuts": 34
-      }
+      },
+      "finished": "2026-10-12T07:23:40+00:00",
+      "error": "AnalyzeTextError: 入力テキストの解析に失敗しました"
+    },
+    "validate": {
+      "status": "done",
+      "started": "2026-10-12T07:23:40+00:00",
+      "inputs": {},
+      "finished": "2026-10-12T07:23:40+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "reports/qc_report.json",
+        "reports/qc_report.md"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "errors=3 warnings=2 publishable=False"
+      ]
     }
   }
 }
