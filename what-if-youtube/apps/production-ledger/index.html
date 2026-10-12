@@ -1,0 +1,367 @@
+<title>YouTube制作台帳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a production ledger — totals strip on top, one row per video like an edit decision list, details open in place */
+:root {
+  --bg: #f3f4f1;
+  --paper: #fbfbf8;
+  --ink: #1d232b;
+  --muted: #66707c;
+  --line: #d9ddd6;
+  --accent: #2f5d50;
+  --accent-ink: #ffffff;
+  --st-plan: #6b7a8c;
+  --st-make: #b7791f;
+  --st-ready: #6b4fa0;
+  --st-live: #2f7d4f;
+  --danger: #b4382f;
+  --spark: #2f5d50;
+  --f-display: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15191e; --paper: #1c2127; --ink: #e7eae6; --muted: #98a2ad; --line: #2f363e;
+    --accent: #7fbfa8; --accent-ink: #10201a; --st-plan: #93a3b6; --st-make: #e0a94a; --st-ready: #a98be0;
+    --st-live: #6cc792; --danger: #ef7a6f; --spark: #7fbfa8; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15191e; --paper: #1c2127; --ink: #e7eae6; --muted: #98a2ad; --line: #2f363e;
+  --accent: #7fbfa8; --accent-ink: #10201a; --st-plan: #93a3b6; --st-make: #e0a94a; --st-ready: #a98be0;
+  --st-live: #6cc792; --danger: #ef7a6f; --spark: #7fbfa8; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.6; }
+.wrap { max-width: 920px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 64px; display: grid; gap: 20px; }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
+h1 { font-family: var(--f-display); font-weight: 900; font-size: 1.6rem; margin: 0; letter-spacing: .02em; text-wrap: balance; }
+.sub { color: var(--muted); font-size: .85rem; margin: 2px 0 0; }
+button { font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); padding: 8px 14px; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 700; }
+.danger { color: var(--danger); border-color: var(--danger); background: transparent; }
+.banner { border: 1px dashed var(--line); border-radius: 8px; padding: 10px 14px; color: var(--muted); font-size: .85rem; }
+
+.totals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 2px solid var(--ink); }
+.total { padding: 12px 14px; display: grid; gap: 2px; min-width: 0; }
+.total + .total { border-left: 1px solid var(--line); }
+.total .k { font-size: .72rem; color: var(--muted); letter-spacing: .08em; }
+.total .v { font-family: var(--f-num); font-weight: 600; font-size: 1.45rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.total .v small { font-family: var(--f-body); font-size: .75rem; color: var(--muted); margin-left: 2px; }
+@media (max-width: 560px) { .totals { grid-template-columns: repeat(2, minmax(0, 1fr)); } .total:nth-child(3) { border-left: 0; } .total:nth-child(n+3) { border-top: 1px solid var(--line); } }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border-radius: 999px; padding: 4px 12px; font-size: .85rem; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.list { display: grid; border-top: 1px solid var(--line); }
+.row { border-bottom: 1px solid var(--line); }
+.row > .head { width: 100%; text-align: left; border: 0; border-radius: 0; background: transparent; padding: 14px 4px;
+  display: grid; grid-template-columns: 6.2em minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+.row > .head:hover { background: color-mix(in srgb, var(--paper) 70%, transparent); }
+.pill { font-size: .72rem; font-weight: 700; border-radius: 4px; padding: 2px 0; text-align: center; border: 1.5px solid currentColor; letter-spacing: .04em; }
+.s-plan { color: var(--st-plan); } .s-make { color: var(--st-make); } .s-ready { color: var(--st-ready); } .s-live { color: var(--st-live); }
+.t { min-width: 0; }
+.t .title { font-weight: 700; overflow-wrap: anywhere; }
+.t .meta { color: var(--muted); font-size: .8rem; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.nums { display: flex; align-items: center; gap: 14px; font-family: var(--f-num); font-variant-numeric: tabular-nums; text-align: right; }
+.nums .c { display: grid; line-height: 1.2; }
+.nums .c b { font-weight: 600; font-size: 1rem; }
+.nums .c span { font-family: var(--f-body); font-size: .68rem; color: var(--muted); }
+svg.spark { width: 64px; height: 26px; display: block; }
+@media (max-width: 560px) {
+  .row > .head { grid-template-columns: 5.4em minmax(0, 1fr); }
+  .nums { grid-column: 2; justify-content: flex-start; }
+}
+
+.detail { padding: 4px 4px 18px; display: grid; gap: 16px; }
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 12px; min-width: 0; }
+.panel h3 { margin: 0; font-size: .85rem; letter-spacing: .06em; color: var(--muted); }
+.form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+.form .full { grid-column: 1 / -1; }
+@media (max-width: 560px) { .form { grid-template-columns: minmax(0, 1fr); } }
+label { display: grid; gap: 4px; font-size: .78rem; color: var(--muted); }
+input, select, textarea { font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; width: 100%; min-width: 0; }
+textarea { min-height: 4.5em; resize: vertical; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.actions .spacer { flex: 1; }
+.confirm { color: var(--danger); font-size: .85rem; }
+.log { overflow-x: auto; }
+.log table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.log th, .log td { text-align: right; padding: 4px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.log th:first-child, .log td:first-child { text-align: left; }
+.log th { font-size: .72rem; color: var(--muted); font-weight: 500; }
+.log td { font-family: var(--f-num); }
+.viewform { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 8px; align-items: end; }
+@media (max-width: 560px) { .viewform { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.empty { padding: 28px 8px; color: var(--muted); text-align: center; }
+.err { color: var(--danger); font-size: .85rem; }
+@media (prefers-reduced-motion: no-preference) { .detail { animation: open .18s ease-out; } @keyframes open { from { opacity: .4; transform: translateY(-4px); } } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>YouTube制作台帳</h1>
+      <p class="sub">企画・かかったお金・再生数を、動画ごとにまとめて記録</p>
+    </div>
+    <button class="primary" id="add">＋ 動画を追加</button>
+  </header>
+  <div class="banner" id="banner" hidden></div>
+
+  <section class="totals" aria-label="合計">
+    <div class="total"><span class="k">動画</span><span class="v" id="t-count">0<small>本</small></span></div>
+    <div class="total"><span class="k">かかったお金</span><span class="v" id="t-yen">¥0</span></div>
+    <div class="total"><span class="k">再生数（最新の合計）</span><span class="v" id="t-views">0<small>回</small></span></div>
+    <div class="total"><span class="k">1再生あたり</span><span class="v" id="t-per">—</span></div>
+  </section>
+
+  <nav class="chips" id="chips" aria-label="チャンネルで絞り込む"></nav>
+  <div id="new"></div>
+  <section class="list" id="list" aria-live="polite">
+    <p class="empty" id="loading">読み込み中…</p>
+  </section>
+</div>
+
+<script>
+const STATUS = [
+  { key: "plan", label: "企画" },
+  { key: "make", label: "制作中" },
+  { key: "ready", label: "公開前" },
+  { key: "live", label: "公開済み" },
+];
+const KINDS = ["長尺", "Shorts"];
+const SAMPLE = [
+  { id: "s1", title: "（見本）もしも○○だったら？", channel: "見本チャンネル", kind: "長尺", status: "live", published: "2026-10-01",
+    yen: 500, credits: 0, memo: "見本の行です。保存されません。", views: [{ date: "2026-10-02", views: 12, hours: 0.4 }, { date: "2026-10-05", views: 40, hours: 1.6 }] },
+  { id: "s2", title: "（見本）次の企画", channel: "見本チャンネル", kind: "長尺", status: "plan", published: "", yen: 0, credits: 0, memo: "", views: [] },
+];
+
+let videos = [];
+let filter = "all";
+let openId = null;
+let editing = null;      // id being edited, or "new"
+let confirmDel = null;
+let canWrite = true;
+let store = null;
+
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const yen = (n) => "¥" + Math.round(n || 0).toLocaleString("ja-JP");
+const num = (n) => Math.round(n || 0).toLocaleString("ja-JP");
+const today = () => { const d = new Date(); return new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); };
+const latest = (v) => (v.views && v.views.length ? v.views[v.views.length - 1] : null);
+const statusOf = (k) => STATUS.find((s) => s.key === k) || STATUS[0];
+
+function spark(v) {
+  const pts = (v.views || []).map((p) => p.views);
+  if (pts.length < 2) return "";
+  const max = Math.max(...pts, 1), w = 64, h = 26, pad = 3;
+  const xy = pts.map((p, i) => [pad + (i * (w - pad * 2)) / (pts.length - 1), h - pad - (p / max) * (h - pad * 2)]);
+  const line = xy.map((p) => p.join(",")).join(" ");
+  const last = xy[xy.length - 1];
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" aria-hidden="true">
+    <polygon points="${pad},${h - pad} ${line} ${last[0]},${h - pad}" fill="var(--spark)" fill-opacity=".14"/>
+    <polyline points="${line}" fill="none" stroke="var(--spark)" stroke-width="1.6"/>
+    <circle cx="${last[0]}" cy="${last[1]}" r="2.4" fill="var(--spark)"/></svg>`;
+}
+
+function visible() {
+  const order = Object.fromEntries(STATUS.map((s, i) => [s.key, i]));
+  return videos
+    .filter((v) => filter === "all" || v.channel === filter)
+    .sort((a, b) => (order[b.status] ?? 0) - (order[a.status] ?? 0) || String(b.published || "").localeCompare(String(a.published || "")) || String(b.created || "").localeCompare(String(a.created || "")));
+}
+
+function renderTotals(list) {
+  const totalYen = list.reduce((s, v) => s + (Number(v.yen) || 0), 0);
+  const totalViews = list.reduce((s, v) => s + (latest(v)?.views || 0), 0);
+  $("#t-count").innerHTML = `${list.length}<small>本</small>`;
+  $("#t-yen").textContent = yen(totalYen);
+  $("#t-views").innerHTML = `${num(totalViews)}<small>回</small>`;
+  $("#t-per").textContent = totalViews ? yen(totalYen / totalViews) : "—";
+}
+
+function renderChips() {
+  const chans = [...new Set(videos.map((v) => v.channel).filter(Boolean))];
+  if (filter !== "all" && !chans.includes(filter)) filter = "all";
+  $("#chips").innerHTML = ["all", ...chans].map((c) =>
+    `<button class="chip" data-chip="${esc(c)}" aria-pressed="${filter === c}">${c === "all" ? "すべて" : esc(c)}</button>`).join("");
+}
+
+function formHTML(v, id) {
+  const chans = [...new Set(videos.map((x) => x.channel).filter(Boolean))];
+  return `<form class="panel" data-form="${esc(id)}">
+    <h3>${id === "new" ? "新しい動画" : "動画の情報"}</h3>
+    <div class="form">
+      <label class="full">タイトル（企画名でOK）<input id="f-title-${esc(id)}" name="title" required value="${esc(v.title)}"></label>
+      <label>チャンネル<input id="f-channel-${esc(id)}" name="channel" list="chans" value="${esc(v.channel)}"></label>
+      <label>種類<select id="f-kind-${esc(id)}" name="kind">${KINDS.map((k) => `<option ${v.kind === k ? "selected" : ""}>${k}</option>`).join("")}</select></label>
+      <label>状態<select id="f-status-${esc(id)}" name="status">${STATUS.map((s) => `<option value="${s.key}" ${v.status === s.key ? "selected" : ""}>${s.label}</option>`).join("")}</select></label>
+      <label>公開日<input id="f-published-${esc(id)}" name="published" type="date" value="${esc(v.published)}"></label>
+      <label>かかったお金（円）<input id="f-yen-${esc(id)}" name="yen" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.yen ?? "")}"></label>
+      <label>クレジット（任意）<input id="f-credits-${esc(id)}" name="credits" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(v.credits ?? "")}"></label>
+      <label class="full">メモ（企画の中身、反省点など）<textarea id="f-memo-${esc(id)}" name="memo">${esc(v.memo)}</textarea></label>
+    </div>
+    <datalist id="chans">${chans.map((c) => `<option value="${esc(c)}">`).join("")}</datalist>
+    <div class="actions">
+      <button class="primary" type="submit">保存</button>
+      <button type="button" data-cancel>閉じる</button>
+      <span class="spacer"></span>
+      ${id === "new" ? "" : confirmDel === id
+        ? `<span class="confirm">この動画を消しますか？</span><button type="button" class="danger" data-del-yes="${esc(id)}">消す</button><button type="button" data-del-no>やめる</button>`
+        : `<button type="button" class="danger" data-del="${esc(id)}">削除</button>`}
+    </div>
+    <p class="err" data-err hidden></p>
+  </form>`;
+}
+
+function viewsHTML(v) {
+  const rows = (v.views || []).slice().reverse().map((p) =>
+    `<tr><td>${esc(p.date)}</td><td>${num(p.views)}</td><td>${p.hours != null && p.hours !== "" ? Number(p.hours).toFixed(1) : "—"}</td></tr>`).join("");
+  return `<div class="panel">
+    <h3>再生数の記録</h3>
+    ${rows ? `<div class="log"><table><thead><tr><th>日付</th><th>再生数</th><th>総再生時間（時間）</th></tr></thead><tbody>${rows}</tbody></table></div>`
+      : `<p class="sub">まだ記録がありません。YouTube Studioの数字を入れてください。</p>`}
+    ${canWrite ? `<form class="viewform" data-vform="${esc(v.id)}">
+      <label>日付<input id="v-date-${esc(v.id)}" name="date" type="date" value="${today()}" required></label>
+      <label>再生数<input id="v-views-${esc(v.id)}" name="views" type="number" min="0" step="1" inputmode="numeric" required></label>
+      <label>総再生時間<input id="v-hours-${esc(v.id)}" name="hours" type="number" min="0" step="0.1" inputmode="decimal"></label>
+      <button class="primary" type="submit">記録</button>
+    </form>` : ""}
+  </div>`;
+}
+
+function render() {
+  const list = visible();
+  renderChips();
+  renderTotals(list);
+  $("#add").hidden = !canWrite;
+  $("#new").innerHTML = editing === "new" ? formHTML({ kind: "長尺", status: "plan", channel: filter === "all" ? "" : filter }, "new") : "";
+  if (!list.length) {
+    $("#list").innerHTML = `<p class="empty">まだ動画がありません。「＋ 動画を追加」から、企画だけでも登録できます。</p>`;
+    return;
+  }
+  $("#list").innerHTML = list.map((v) => {
+    const st = statusOf(v.status), l = latest(v), open = openId === v.id;
+    return `<article class="row">
+      <button class="head" data-open="${esc(v.id)}" aria-expanded="${open}">
+        <span class="pill s-${st.key}">${st.label}</span>
+        <span class="t"><span class="title">${esc(v.title)}</span>
+          <span class="meta"><span>${esc(v.channel || "チャンネル未設定")}</span><span>${esc(v.kind || "")}</span>${v.published ? `<span>公開 ${esc(v.published)}</span>` : ""}</span></span>
+        <span class="nums">${spark(v)}
+          <span class="c"><b>${yen(v.yen)}</b><span>${v.credits ? `${v.credits} cr` : "費用"}</span></span>
+          <span class="c"><b>${l ? num(l.views) : "—"}</b><span>${l ? `再生 ${esc(l.date.slice(5))}` : "再生"}</span></span></span>
+      </button>
+      ${open ? `<div class="detail">${editing === v.id ? formHTML(v, v.id) : `
+        ${v.memo ? `<p class="sub" style="white-space:pre-wrap">${esc(v.memo)}</p>` : ""}
+        ${canWrite ? `<div class="actions"><button data-edit="${esc(v.id)}">情報を編集</button></div>` : ""}`}
+        ${viewsHTML(v)}</div>` : ""}
+    </article>`;
+  }).join("");
+}
+
+function readForm(f) {
+  const d = Object.fromEntries(new FormData(f));
+  return {
+    title: d.title.trim(), channel: (d.channel || "").trim(), kind: d.kind, status: d.status,
+    published: d.published || "", memo: d.memo || "",
+    yen: d.yen === "" ? 0 : Number(d.yen), credits: d.credits === "" ? 0 : Number(d.credits),
+  };
+}
+
+async function guarded(fn, form) {
+  try { await fn(); return true; }
+  catch (e) {
+    const el = form && form.querySelector("[data-err]");
+    const msg = e && e.code === "quota_exceeded" ? "保存できる件数の上限に達しました。古い動画を消してから試してください。"
+      : e && e.code === "invalid_argument" ? "このページを編集する権限がないため、保存できませんでした。"
+      : "保存できませんでした。通信状態を確認して、もう一度押してください。";
+    if (el) { el.textContent = msg; el.hidden = false; }
+    if (e && e.code === "invalid_argument") { canWrite = false; }
+    return false;
+  }
+}
+
+document.addEventListener("click", async (ev) => {
+  const t = ev.target.closest("button");
+  if (!t) return;
+  if (t.id === "add") { editing = "new"; openId = null; render(); $("#f-title-new")?.focus(); return; }
+  if (t.dataset.chip) { filter = t.dataset.chip; render(); return; }
+  if (t.dataset.open) { openId = openId === t.dataset.open ? null : t.dataset.open; editing = null; confirmDel = null; render(); return; }
+  if (t.dataset.edit) { editing = t.dataset.edit; render(); return; }
+  if (t.hasAttribute("data-cancel")) { editing = null; confirmDel = null; render(); return; }
+  if (t.dataset.del) { confirmDel = t.dataset.del; render(); return; }
+  if (t.hasAttribute("data-del-no")) { confirmDel = null; render(); return; }
+  if (t.dataset.delYes) {
+    const id = t.dataset.delYes;
+    if (await guarded(() => store.remove(id), t.closest("form"))) { openId = editing = confirmDel = null; render(); }
+  }
+});
+
+document.addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const f = ev.target;
+  if (f.dataset.form) {
+    const id = f.dataset.form, data = readForm(f);
+    if (!data.title) return;
+    const prev = videos.find((v) => v.id === id);
+    const body = { ...(prev ? { views: prev.views || [], created: prev.created } : { views: [], created: new Date().toISOString() }), ...data };
+    let newId = id;
+    if (await guarded(async () => { newId = await store.save(id === "new" ? null : id, body); }, f)) {
+      editing = null; openId = newId; render();
+    }
+  } else if (f.dataset.vform) {
+    const v = videos.find((x) => x.id === f.dataset.vform);
+    const d = Object.fromEntries(new FormData(f));
+    const entry = { date: d.date, views: Number(d.views), hours: d.hours === "" ? null : Number(d.hours) };
+    const list = (v.views || []).filter((p) => p.date !== entry.date).concat(entry).sort((a, b) => a.date.localeCompare(b.date));
+    const { id, ...rest } = v;
+    await guarded(() => store.save(v.id, { ...rest, views: list }), f);
+    render();
+  }
+});
+
+// ---------- storage: the shared db when served by claude.ai, otherwise an in-memory sample
+function sampleStore() {
+  videos = SAMPLE.map((v) => ({ ...v }));
+  return {
+    async save(id, body) { const nid = id || "s" + Date.now(); videos = videos.filter((v) => v.id !== nid).concat({ id: nid, ...body }); render(); return nid; },
+    async remove(id) { videos = videos.filter((v) => v.id !== id); render(); },
+  };
+}
+
+async function start() {
+  const db = window.claude ? await window.claude.use("db") : null;
+  if (!db) {
+    store = sampleStore();
+    $("#banner").textContent = "見本を表示しています。claude.aiで開くと、入力した内容が保存されます。";
+    $("#banner").hidden = false;
+    render();
+    return;
+  }
+  const user = await window.claude.use("user");
+  const w = user ? await user.can("data.write") : null;
+  canWrite = w !== false;
+  const col = db.collection("videos");
+  store = {
+    async save(id, body) { const ref = id ? col.doc(id) : col.doc(); await ref.set(body); return ref.id; },
+    async remove(id) { await col.doc(id).delete(); },
+  };
+  col.onSnapshot((snap) => {
+    videos = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    if (editing && editing !== "new" && !videos.some((v) => v.id === editing)) editing = null;
+    // don't wipe a form someone is typing into; the next action re-renders
+    if (document.activeElement && document.activeElement.closest("form")) { renderTotals(visible()); return; }
+    render();
+  }, () => {
+    $("#banner").textContent = "データを読み込めなくなりました。ページを開き直してください。";
+    $("#banner").hidden = false;
+  });
+}
+start();
+</script>
