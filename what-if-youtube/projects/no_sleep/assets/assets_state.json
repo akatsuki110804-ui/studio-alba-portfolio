@@ -1,0 +1,50 @@
+{
+  "T1": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T1_bg.png",
+    "fingerprint": "918f31741713c925",
+    "imported": "2026-10-12T01:06:27+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "3e08d543-212a-4929-80e1-27674beed40c",
+    "prompt": "Close-up of a tired young adult face in the dark on the right side of the frame, eyes wide open and bloodshot, lit only by the cold blue glow of a phone screen, dark empty negative space on the left for title text. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
+    "last_error": null
+  },
+  "T2": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T2_bg.png",
+    "fingerprint": "5e1f5fb9cccf3ab4",
+    "imported": "2026-10-12T01:06:29+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "c5357948-957b-4f2d-8e2a-476485db18de",
+    "prompt": "A dim bedroom at night on the right side of the frame, an empty unmade bed, a digital clock glowing on the nightstand, cold blue moonlight through curtains, eerie and quiet, dark negative space on the left for title text. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
+    "last_error": null
+  },
+  "T3": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T3_bg.png",
+    "fingerprint": "55184b2ba95dc9ac",
+    "imported": "2026-10-12T01:06:31+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "85204517-af72-4fba-b53f-01febbc73b87",
+    "prompt": "Stylized glowing human brain made of soft pink and blue light floating in darkness on the right side of the frame, small particles drifting away from it, scientific and calm mood, dark negative space on the left for title text. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
+    "last_error": null
+  },
+  "C01": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C01.mp4",
+    "fingerprint": "acf70764314ecdd5",
+    "imported": "2026-10-12T01:06:51+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "033f6109-67a7-40e9-ba10-2b6133631cd9",
+    "prompt": "A young adult lying awake in bed in bedroom (a quiet modern Japanese apartment bedroom at night, dim blue moonlight through sheer curtains, a digital clock glowing faintly on the nightstand, city lights far outside the window), eyes wide open staring at the ceiling, blinking slowly, unable to sleep, the digital clock on the nightstand reads 3:00, very slow push-in toward the face, quiet, tense, realistic. Style: photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, cartoon, fast cuts, shaky camera, distorted hands, distorted face",
+    "last_error": null
+  }
+}

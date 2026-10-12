@@ -51,6 +51,7 @@ voice:
     100分の1: ひゃくぶんのいち
     海の上: うみのうえ
     赤道: せきどう
+    日本人: にほんじん
 
 audio:
   target_lufs: -14          # YouTube playback reference

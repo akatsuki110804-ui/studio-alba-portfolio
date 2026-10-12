@@ -1,0 +1,10 @@
+{
+  "thumbnails": [
+    {"id": "T1", "text": ["眠らないと", "どうなる？"], "accent": "どうなる？", "layout": "left",
+     "prompt": "Close-up of a tired young adult face in the dark on the right side of the frame, eyes wide open and bloodshot, lit only by the cold blue glow of a phone screen, dark empty negative space on the left for title text"},
+    {"id": "T2", "text": ["11日間", "眠らなかった", "人間"], "accent": "11日間", "layout": "left",
+     "prompt": "A dim bedroom at night on the right side of the frame, an empty unmade bed, a digital clock glowing on the nightstand, cold blue moonlight through curtains, eerie and quiet, dark negative space on the left for title text"},
+    {"id": "T3", "text": ["眠らない脳で", "何が起きる？"], "accent": "何が起きる？", "layout": "left",
+     "prompt": "Stylized glowing human brain made of soft pink and blue light floating in darkness on the right side of the frame, small particles drifting away from it, scientific and calm mood, dark negative space on the left for title text"}
+  ]
+}

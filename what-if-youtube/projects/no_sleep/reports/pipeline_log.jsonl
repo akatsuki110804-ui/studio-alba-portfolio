@@ -1,0 +1,28 @@
+{"ts": "2026-10-12T00:58:53+00:00", "project": "no_sleep", "stage": "plan", "event": "start", "inputs": {"topic": "もしも人間が眠らなかったら？"}}
+{"ts": "2026-10-12T00:58:53+00:00", "project": "no_sleep", "stage": "plan", "event": "waiting", "error": "[plan] manual LLM mode: answer the prompt in projects/no_sleep/prompts/plan.prompt.md and save the JSON to projects/no_sleep/plan/plan.json, then re-run the command. (Set llm.provider: anthropic in config to call the Claude API instead.)"}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "plan", "event": "start", "inputs": {"topic": "もしも人間が眠らなかったら？"}}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "plan", "event": "done", "outputs": ["plan/plan.json"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "research", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "research", "event": "done", "outputs": ["research/research.json"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "script", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "script", "event": "done", "outputs": ["scripts/script.json", "scripts/script.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["34 words ≈ 0.2 min at 150 wpm"]}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "storyboard", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "storyboard", "event": "done", "outputs": ["storyboard/storyboard.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["36 cuts: image=0, video=1, motion=35, diagram=0, title=0"]}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "shorts_plan", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T01:03:56+00:00", "project": "no_sleep", "stage": "shorts_plan", "event": "done", "outputs": ["shorts/shorts.json"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T01:04:16+00:00", "project": "no_sleep", "stage": "voice", "event": "start", "inputs": {"cuts": 36}}
+{"ts": "2026-10-12T01:05:59+00:00", "project": "no_sleep", "stage": "voice", "event": "done", "outputs": ["audio/narration.wav", "audio/timing.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["381.5s narration; sentences generated=76 reused from cache=0"]}
+{"ts": "2026-10-12T01:06:27+00:00", "project": "no_sleep", "stage": "assets", "event": "imported", "item": "T1", "path": "thumbnails/T1_bg.png", "credits": 0.25, "job_id": "3e08d543-212a-4929-80e1-27674beed40c"}
+{"ts": "2026-10-12T01:06:29+00:00", "project": "no_sleep", "stage": "assets", "event": "imported", "item": "T2", "path": "thumbnails/T2_bg.png", "credits": 0.25, "job_id": "c5357948-957b-4f2d-8e2a-476485db18de"}
+{"ts": "2026-10-12T01:06:31+00:00", "project": "no_sleep", "stage": "assets", "event": "imported", "item": "T3", "path": "thumbnails/T3_bg.png", "credits": 0.25, "job_id": "85204517-af72-4fba-b53f-01febbc73b87"}
+{"ts": "2026-10-12T01:06:51+00:00", "project": "no_sleep", "stage": "assets", "event": "imported", "item": "C01", "path": "assets/video/C01.mp4", "credits": 7.5, "job_id": "033f6109-67a7-40e9-ba10-2b6133631cd9"}
+{"ts": "2026-10-12T01:06:56+00:00", "project": "no_sleep", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T01:06:56+00:00", "project": "no_sleep", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-12T01:06:56+00:00", "project": "no_sleep", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-12T01:12:43+00:00", "project": "no_sleep", "stage": "edit", "event": "done", "outputs": ["output/no_sleep_long.mp4", "subtitles/no_sleep_ja.srt"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T01:12:43+00:00", "project": "no_sleep", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-12T01:16:14+00:00", "project": "no_sleep", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T01:16:14+00:00", "project": "no_sleep", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-12T01:16:15+00:00", "project": "no_sleep", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-12T01:16:15+00:00", "project": "no_sleep", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-12T01:17:20+00:00", "project": "no_sleep", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=2 publishable=True"]}

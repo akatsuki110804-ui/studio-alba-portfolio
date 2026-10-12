@@ -588,8 +588,10 @@ class Sea(Renderer):
                 if abs(xx - W * 0.62) < 300:
                     yy = y0 + amp * math.sin(xx / (90 + layer * 30) + t * speed + layer)
                     d.line([(xx - 20, yy), (xx + 20, yy)], fill=(255, 210, 160), width=2)
-        text(img, (W / 2, 120), "巨大津波は起きない", font(60, "Black"), INK, eo(window(t, 0.5, 1.5)), "mt", stroke=2)
-        text(img, (W / 2, 210), "外洋の潮の盛り上がりは1メートル未満", font(40, "Regular"), INK, eo(window(t, 1.2, 2.2)), "mt", stroke=2)
+        title = self.p.get("title", "巨大津波は起きない")
+        sub = self.p.get("subtitle", "外洋の潮の盛り上がりは1メートル未満")
+        text(img, (W / 2, 120), title, font(60, "Black"), INK, eo(window(t, 0.5, 1.5)), "mt", stroke=2)
+        text(img, (W / 2, 210), sub, font(40, "Regular"), INK, eo(window(t, 1.2, 2.2)), "mt", stroke=2)
         return img
 
 
@@ -648,8 +650,11 @@ class NumberCards(Renderer):
             yoff = 40 * (1 - k)
             d.rounded_rectangle([x, 330 + yoff, x + cw, 330 + ch + yoff], 28, outline=mix(BG_MID, col, k), width=5, fill=(14, 24, 46))
             val = count_text(c["value"], window(t, 0.6 + i * 0.5, 2.2 + i * 0.5))
-            text(img, (x + cw / 2, 480 + yoff), val, font(120, "Black"), col, k, "mm")
+            size = 120 if len(c["value"]) <= 7 else 96 if len(c["value"]) <= 9 else 76
+            text(img, (x + cw / 2, 480 + yoff), val, font(size, "Black"), col, k, "mm")
             text(img, (x + cw / 2, 640 + yoff), c["label"], font(40, "Regular"), INK, k, "mm")
+            if self.p.get("joiner") and i + 1 < len(cards):
+                text(img, (x + cw + gap / 2, 540), self.p["joiner"], font(90, "Black"), INK, eo(window(t, 1.0, 1.6)), "mm")
             x += cw + gap
         return img
 
@@ -856,6 +861,217 @@ class ClimateBands(Renderer):
         return img
 
 
+class AwakeClock(Renderer):
+    """'起きてから N 時間' — a counter and a 24-hour ring that fills as the hours pass."""
+
+    def frame(self, t):
+        p = self.p
+        img = self.base(t, (3, 0))
+        d = ImageDraw.Draw(img)
+        h0, h1 = float(p.get("from_h", 0)), float(p.get("to_h", 24))
+        k = eio(window(t, 0.6, self.T - 0.8))
+        h = h0 + (h1 - h0) * k
+        cx, cy, R = 600, H / 2 - 30, 250
+        d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=GRID, width=26)
+        frac = (h % 24) / 24 if h < h1 or h1 % 24 else 1.0
+        d.arc([cx - R, cy - R, cx + R, cy + R], -90, -90 + 360 * frac, fill=AMBER, width=26)
+        days = int(h // 24)
+        for i in range(min(days, 12)):
+            a = math.radians(-90 + i * 30)
+            d.ellipse([cx + (R + 55) * math.cos(a) - 9, cy + (R + 55) * math.sin(a) - 9,
+                       cx + (R + 55) * math.cos(a) + 9, cy + (R + 55) * math.sin(a) + 9], fill=CYAN)
+        start = float(p.get("start_clock", 7))
+        clock = (start + h) % 24
+        text(img, (cx, cy - 30), f"{int(clock):d}:{int((clock % 1) * 60):02d}", font(96, "Black"), INK, 1, "mm")
+        text(img, (cx, cy + 60), "時刻", font(32, "Regular"), MUTED, 1, "mm")
+        text(img, (1180, 330), p.get("label", "起きてから"), font(48, "Bold"), MUTED, eo(window(t, 0, 0.6)), "lm")
+        text(img, (1180, 470), f"{h:.0f} 時間", font(150, "Black"), AMBER, 1, "lm")
+        if days:
+            text(img, (1180, 600), f"= {days}日{int(h % 24)}時間", font(48, "Bold"), CYAN, 1, "lm")
+        for m in p.get("marks", []):
+            if h >= m["h"]:
+                text(img, (1180, 700), m["text"], font(46, "Black"), INK, eo(window(h, m["h"], m["h"] + (h1 - h0) * 0.08)), "lm")
+        return img
+
+
+class Microsleep(Renderer):
+    """Eyelids close for a few seconds without warning — the screen goes dark, then returns."""
+
+    def frame(self, t):
+        img = background((20, 26, 48), (40, 52, 84))
+        self.stars.draw(ImageDraw.Draw(img), t, (8, 0))
+        text(img, (W / 2, 380), self.p.get("title", "マイクロスリープ"), font(96, "Black"), INK, 1, "mm")
+        text(img, (W / 2, 500), self.p.get("subtitle", "数秒〜十数秒、脳が勝手に眠る"), font(48, "Bold"), AMBER, 1, "mm")
+        # closures: (start, length) in seconds, scaled to the clip
+        closed = 0.0
+        for st, ln in ((0.30, 0.10), (0.62, 0.16)):
+            a, b = st * self.T, (st + ln) * self.T
+            closed = max(closed, min(window(t, a, a + 0.35), 1 - window(t, b - 0.35, b)))
+        if closed > 0:
+            lid = int(H / 2 * eio(closed))
+            d = ImageDraw.Draw(img)
+            d.rectangle([0, 0, W, lid], fill=(2, 2, 6))
+            d.rectangle([0, H - lid, W, H], fill=(2, 2, 6))
+            if closed > 0.95:
+                text(img, (W - 60, 60), "記憶がない時間", font(34, "Bold"), (120, 120, 140), 1, "ra")
+        return img
+
+
+class Distort(Renderer):
+    """The world starts to ripple and split — perception distorting with time awake."""
+
+    def __init__(self, p, T):
+        super().__init__(p, T)
+        base = background((10, 16, 40), (30, 30, 60))
+        Stars(700, seed=21).draw(ImageDraw.Draw(base), 0, (0, 0), twinkle=False)
+        glow(base, W * 0.7, H * 0.35, 220, (255, 170, 90), 0.5)
+        glow(base, W * 0.25, H * 0.65, 260, (120, 90, 255), 0.45)
+        self.base_arr = np.asarray(base, np.float32)
+
+    def frame(self, t):
+        strength = float(self.p.get("strength", 1.0)) * (0.3 + 0.7 * eio(t / self.T))
+        arr = self.base_arr
+        ys = np.arange(H)
+        shift = (np.sin(ys / 38.0 + t * 2.2) * 18 * strength).astype(int)
+        out = np.empty_like(arr)
+        for c, off in enumerate((-1, 0, 1)):
+            rows = (shift + off * int(6 * strength)) % W
+            idx = (np.arange(W)[None, :] - rows[:, None]) % W
+            out[..., c] = np.take_along_axis(arr[..., c], idx, axis=1)
+        img = Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
+        text(img, (W / 2, 160), self.p.get("title", ""), font(72, "Black"), INK, eo(window(t, 0.3, 1.2)), "mt", stroke=3)
+        for i, w in enumerate(self.p.get("words", [])):
+            k = eo(window(t, 1.0 + i * 0.7, 1.6 + i * 0.7))
+            text(img, (W / 2 + (i - (len(self.p["words"]) - 1) / 2) * 420, 560 + 8 * math.sin(t * 3 + i)), w,
+                 font(64, "Black"), AMBER, k, "mm", stroke=3)
+        return img
+
+
+class BrainClean(Renderer):
+    """A brain icon and a magnified lens: cells shrink apart while asleep and fluid washes waste out."""
+
+    LX, LY, LR = 1180, 530, 270  # magnifier lens
+
+    def __init__(self, p, T):
+        super().__init__(p, T)
+        r = random.Random(4)
+        self.cells = []
+        for _ in range(2500):
+            x, y = r.uniform(self.LX - self.LR, self.LX + self.LR), r.uniform(self.LY - self.LR, self.LY + self.LR)
+            if (x - self.LX) ** 2 + (y - self.LY) ** 2 < self.LR ** 2 and not any(
+                    (x - a) ** 2 + (y - b) ** 2 < 46 ** 2 for a, b in self.cells):
+                self.cells.append((x, y))
+        self.waste = [(r.uniform(self.LX - 260, self.LX + 260), r.uniform(self.LY - 260, self.LY + 260), r.uniform(0, 6.28))
+                      for _ in range(110)]
+        self.mask = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(self.mask).ellipse([self.LX - self.LR, self.LY - self.LR, self.LX + self.LR, self.LY + self.LR], fill=255)
+        # brain icon: lobes + folds
+        icon = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(icon)
+        bx, by = 470, 470
+        for dx, dy, rx, ry in ((-90, -40, 150, 120), (60, -60, 160, 120), (120, 40, 120, 100), (-60, 50, 150, 100)):
+            d.ellipse([bx + dx - rx, by + dy - ry, bx + dx + rx, by + dy + ry], fill=(214, 150, 190, 255))
+        d.ellipse([bx + 90, by + 90, bx + 210, by + 180], fill=(190, 125, 170, 255))  # cerebellum
+        for k in range(7):
+            pts = [(bx - 200 + i * 12, by - 120 + k * 38 + 14 * math.sin(i / 2.2 + k)) for i in range(34)]
+            d.line(pts, fill=(170, 100, 150, 255), width=5)
+        d.rectangle([bx + 40, by + 120, bx + 80, by + 230], fill=(190, 125, 170, 255))  # stem
+        self.icon = icon
+
+    def frame(self, t):
+        p = self.p
+        img = self.base(t, (2, 0))
+        img.paste(self.icon, (0, 0), self.icon)
+        d0 = ImageDraw.Draw(img)
+        d0.ellipse([530, 380, 600, 450], outline=AMBER, width=5)
+        d0.line([(600, 415), (self.LX - self.LR, self.LY)], fill=AMBER, width=3)
+        mode = p.get("mode", "gap")
+        sleep_k = 1.0 if mode == "flush" else eio(window(t, 0.8, self.T * 0.5))
+        layer = Image.new("RGB", (W, H), mix((40, 30, 70), (40, 110, 200), sleep_k))
+        d = ImageDraw.Draw(layer)
+        cr = 24 * (1 - 0.2 * sleep_k)
+        for x, y in self.cells:
+            d.ellipse([x - cr, y - cr, x + cr, y + cr], fill=(210, 150, 190))
+        flush = window(t, self.T * 0.25, self.T) if mode == "flush" else 0.0
+        for x, y, ph in self.waste:
+            if flush:
+                k = eio(min(1, flush * 1.3 + (ph / 6.28) * 0.3))
+                xx, yy = x + (self.LX + 120 - x) * k * 0.4, y + (self.LY + self.LR + 80 - y) * k
+            else:
+                xx, yy = x, y + 4 * math.sin(t * 2 + ph)
+            d.ellipse([xx - 7, yy - 7, xx + 7, yy + 7], fill=AMBER)
+        img.paste(layer, (0, 0), self.mask)
+        ImageDraw.Draw(img).ellipse([self.LX - self.LR, self.LY - self.LR, self.LX + self.LR, self.LY + self.LR],
+                                    outline=(236, 241, 250), width=6)
+        text(img, (self.LX, self.LY - self.LR - 30), "脳の中（拡大）", font(34, "Bold"), MUTED, 1, "mb")
+        state = "眠っている" if sleep_k > 0.5 else "起きている"
+        text(img, (470, 760), state, font(44, "Black"), CYAN if sleep_k > 0.5 else INK, 1, "mm")
+        text(img, (W / 2, 70), p.get("title", "眠っている間、脳では"), font(56, "Bold"), INK, eo(window(t, 0, 0.8)), "mt")
+        if p.get("label"):
+            text(img, (W / 2, SAFE_Y), p["label"], font(46, "Black"), AMBER, eo(window(t, self.T * 0.45, self.T * 0.45 + 1)), "mm")
+        note(img, "マウスの実験結果をもとにした模式図", 1)
+        return img
+
+
+class RosGut(Renderer):
+    """A section of gut: harmful molecules (ROS) pile up day by day; antioxidants clear them."""
+
+    def __init__(self, p, T):
+        super().__init__(p, T)
+        r = random.Random(8)
+        self.path = [(260 + i * 14, 520 + 150 * math.sin(i / 11)) for i in range(101)]
+        self.spots = [(r.randrange(0, 101), r.uniform(-55, 55), r.uniform(0, 1)) for _ in range(260)]
+
+    def frame(self, t):
+        p = self.p
+        img = self.base(t, (2, 0))
+        d = ImageDraw.Draw(img)
+        d.line(self.path, fill=(120, 60, 70), width=150, joint="curve")
+        d.line(self.path, fill=(190, 110, 110), width=120, joint="curve")
+        mode = p.get("mode", "accumulate")
+        if mode == "accumulate":
+            day = 1 + 9 * eio(window(t, 0.6, self.T - 0.8))
+            level, clear = (day - 1) / 9, 0.0
+            text(img, (W / 2, 90), f"眠らせないハエの腸　{int(day)}日目", font(56, "Black"), INK, 1, "mt")
+        else:
+            level, clear = 1.0, eio(window(t, 1.0, self.T * 0.7))
+            text(img, (W / 2, 90), "抗酸化物質を与えると", font(56, "Black"), INK, 1, "mt")
+        for i, off, th in self.spots:
+            x, y = self.path[i]
+            yy = y + off
+            if th < level and th >= clear:
+                d.ellipse([x - 9, yy - 9, x + 9, yy + 9], fill=RED)
+            elif th < clear:
+                d.ellipse([x - 7, yy - 7, x + 7, yy + 7], fill=GREEN)
+        msg = "活性酸素（赤）がたまっていく" if mode == "accumulate" else "活性酸素が消え、寿命は普通に"
+        text(img, (W / 2, SAFE_Y), msg, font(46, "Black"), AMBER, eo(window(t, 1.0, 2.0)), "mm")
+        note(img, "ショウジョウバエの研究（Vaccaro ほか 2020）を図にした模式図", 1)
+        return img
+
+
+class HalfBrain(Renderer):
+    """Dolphin-style sleep: the two halves of the brain take turns."""
+
+    def frame(self, t):
+        img = self.base(t, (2, 0))
+        d = ImageDraw.Draw(img)
+        swap = (t / self.T) > 0.5
+        for i, (x0, label) in enumerate(((560, "左の脳"), (980, "右の脳"))):
+            asleep = (i == 0) != swap
+            col = (40, 60, 120) if asleep else (230, 160, 200)
+            d.ellipse([x0, 300, x0 + 380, 760], fill=col, outline=(236, 241, 250), width=5)
+            text(img, (x0 + 190, 270), label, font(40, "Bold"), INK, 1, "mb")
+            state = "眠っている" if asleep else "起きている"
+            text(img, (x0 + 190, 540), state, font(48, "Black"), INK if asleep else (40, 20, 40), 1, "mm")
+            if asleep:
+                for j in range(3):
+                    zz = (t * 0.8 + j / 3) % 1
+                    text(img, (x0 + 290 + zz * 60, 380 - zz * 90), "z", font(int(40 + j * 12), "Bold"), CYAN, 1 - zz, "mm")
+        text(img, (W / 2, 80), "イルカは、脳の半分ずつ交代で眠る", font(56, "Black"), INK, eo(window(t, 0, 0.8)), "mt")
+        text(img, (W / 2, SAFE_Y), "それぞれ1日およそ4時間", font(46, "Black"), AMBER, eo(window(t, 1.2, 2.2)), "mm")
+        return img
+
+
 class Pending(Renderer):
     """Animatic stand-in for an AI shot that has not been generated yet (clearly labelled, still moving)."""
 
@@ -875,7 +1091,8 @@ class Pending(Renderer):
 
 
 RENDERERS = {
-    "pending": Pending,
+    "pending": Pending, "awake_clock": AwakeClock, "microsleep": Microsleep, "distort": Distort,
+    "brain_clean": BrainClean, "ros_gut": RosGut, "half_brain": HalfBrain,
     "title": Title, "legend": Legend, "timeline": Timeline, "barycenter": Barycenter, "bar_compare": BarCompare,
     "orbit": Orbit, "log_scale": LogScale, "night_sky": NightSky, "particles": Particles,
     "tide_section": TideSection, "sea": Sea, "spring_neap": SpringNeap, "number_cards": NumberCards,

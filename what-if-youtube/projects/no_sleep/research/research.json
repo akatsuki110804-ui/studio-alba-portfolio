@@ -1,0 +1,346 @@
+{
+  "research_status": "complete",
+  "research_notes": "2026-10-12 にWeb検索で調査。コンテナからは論文ページを直接開けないものが多く、確認は検索結果の要約経由。'verified' は一次資料・公的機関の要約間で一致したことを意味する。公開前に S03・S05・S06・S07 の原文確認を推奨。健康情報を扱うため、医学的助言ではない旨を動画内と概要欄に明記する。",
+  "assumptions": [
+    "今夜から一切眠れなくなる（意識的に我慢するのではなく、体が眠りに入れない）という思考実験。",
+    "人間で数日以上の完全断眠を意図的に行う実験は現在は倫理的に行われない。長期の影響は過去の記録・動物実験・病気の例から推測する。",
+    "動物実験（マウス・ラット・ショウジョウバエ）の結果が、そのまま人間に当てはまるとは限らない。",
+    "この動画は医学的な助言ではない。"
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Lessons from sleeplessness: The 60th anniversary of Randy Gardner's world record",
+      "publisher": "NPR",
+      "url": "https://www.npr.org/2024/01/28/1227217274/sleep-deprivation-record",
+      "type": "報道（本人インタビュー）",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S02",
+      "title": "Sleep deprivation in the rat: III. Total sleep deprivation (Everson, Bergmann & Rechtschaffen), Sleep 12(1), 1989",
+      "publisher": "Sleep (journal) / PubMed",
+      "url": "https://pesquisa.bvsalud.org/ses/resource/pt/mdl-2928622",
+      "type": "査読論文（抄録）",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S03",
+      "title": "Moderate sleep deprivation produces impairments in cognitive and motor performance equivalent to legally prescribed levels of alcohol intoxication (Williamson & Feyer), Occup Environ Med 2000",
+      "publisher": "Occupational and Environmental Medicine",
+      "url": "https://soon.works/research/sleep-deprivation-compared-with-alcohol-impairment",
+      "type": "査読論文（レビュー経由）",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S04",
+      "title": "Fatigue, alcohol and performance impairment (Dawson & Reid), Nature 1997 ／ Arnedt ほか 2000（運転シミュレーター）",
+      "publisher": "Nature ほか（二次資料経由）",
+      "url": "https://soon.works/research/sleep-deprivation-compared-with-alcohol-impairment",
+      "type": "査読論文（二次資料経由）",
+      "accessed": "2026-10-12",
+      "access_method": "secondary summaries only"
+    },
+    {
+      "id": "S05",
+      "title": "Severe Sleep Deprivation Causes Hallucinations and a Gradual Progression Toward Psychosis With Increasing Time Awake (Waters ほか), Frontiers in Psychiatry 9:303, 2018",
+      "publisher": "Frontiers in Psychiatry",
+      "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2018.00303/full",
+      "type": "系統的レビュー",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S06",
+      "title": "Sleep Drives Metabolite Clearance from the Adult Brain (Xie ほか), Science 2013 ／ NIH news release 'Brain may flush out toxins during sleep'",
+      "publisher": "Science / NIH",
+      "url": "https://www.nih.gov/news-events/news-releases/brain-may-flush-out-toxins-during-sleep",
+      "type": "査読論文＋公的機関",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S07",
+      "title": "Sleep Loss Can Cause Death through Accumulation of Reactive Oxygen Species in the Gut (Vaccaro ほか), Cell 2020 ／ Harvard Gazette",
+      "publisher": "Cell / Harvard",
+      "url": "https://news.harvard.edu/gazette/story/2020/06/study-reveals-guts-role-in-causing-death-by-sleep-deprivation",
+      "type": "査読論文＋大学発表",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S08",
+      "title": "Fatal familial insomnia",
+      "publisher": "GARD (NIH) / NORD",
+      "url": "https://rarediseases.org/gard-rare-disease/fatal-familial-insomnia/",
+      "type": "公的機関",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S09",
+      "title": "Behaviorally assessed sleep and susceptibility to the common cold (Prather ほか), SLEEP 38(9), 2015",
+      "publisher": "SLEEP（Healio 報道経由）",
+      "url": "https://www.healio.com/news/infectious-disease/20151014/sleep-duration-influences-infection-susceptibility",
+      "type": "査読論文（報道経由）",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S10",
+      "title": "Microsleep: What Is It, What Causes It, and Is It Safe?",
+      "publisher": "Sleep Foundation",
+      "url": "https://www.sleepfoundation.org/how-sleep-works/microsleep",
+      "type": "医療情報サイト",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S11",
+      "title": "Meet the animals that literally sleep with one eye open ／ Mukhametov らのイルカEEG研究",
+      "publisher": "Scientific American / PMC",
+      "url": "https://www.scientificamerican.com/article/meet-the-animals-that-literally-sleep-with-one-eye-open/",
+      "type": "科学誌＋論文",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S12",
+      "title": "OECD調査：日本人の睡眠時間は最短（Gender Data Portal）",
+      "publisher": "nippon.com",
+      "url": "https://www.nippon.com/ja/japan-data/h00424/",
+      "type": "報道（OECD統計の紹介）",
+      "accessed": "2026-10-12",
+      "access_method": "web search summary"
+    }
+  ],
+  "claims": [
+    {
+      "id": "A01",
+      "text": "今夜から一切眠れなくなる、という設定は思考実験。人間で長期の完全断眠を行う実験は倫理的に行われない。",
+      "category": "inference",
+      "source_ids": [
+        "S05"
+      ],
+      "status": "verified",
+      "notes": "Waters 2018 は48時間超の断眠は現在は非倫理的とする。"
+    },
+    {
+      "id": "C01",
+      "text": "17〜19時間起き続けると、一部のテストの成績は血中アルコール濃度0.05%と同等かそれ以下になった。",
+      "category": "fact",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "verified",
+      "notes": "39人の実験。すべてのテストではない。時間帯（体内時計の谷）と交絡。"
+    },
+    {
+      "id": "C02",
+      "text": "24時間起き続けると、血中アルコール濃度0.08〜0.10%相当の成績低下という研究がある。",
+      "category": "fact",
+      "source_ids": [
+        "S04"
+      ],
+      "status": "partially_verified",
+      "notes": "Dawson & Reid 1997 は0.10%（二次資料）。Arnedt 2000 は運転で0.08%。幅で表現する。"
+    },
+    {
+      "id": "C03",
+      "text": "マイクロスリープは数秒〜15秒ほどの短い眠りで、目を開けたまま起きることもあり、本人が気づかないことがある。",
+      "category": "fact",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C04",
+      "text": "断眠24〜48時間で知覚のゆがみ・不安・いらいらが始まり、48〜90時間で複雑な幻覚、72時間以降で妄想が報告されている。3日目にはすべての感覚で幻覚の報告がある。",
+      "category": "fact",
+      "source_ids": [
+        "S05"
+      ],
+      "status": "verified",
+      "notes": "古い研究を含む系統的レビュー（21研究・760人）。"
+    },
+    {
+      "id": "C05",
+      "text": "多くの例で、十分に眠ると幻覚などの症状はおさまった（すべてではない）。",
+      "category": "fact",
+      "source_ids": [
+        "S05"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C06",
+      "text": "マウスでは、眠っている間に脳の細胞のすき間（間質腔）が約60%広がり、老廃物（βアミロイドなど）の排出が速くなった。",
+      "category": "fact",
+      "source_ids": [
+        "S06"
+      ],
+      "status": "verified",
+      "notes": "マウスの結果。人間にどこまで当てはまるかは未確定。"
+    },
+    {
+      "id": "C07",
+      "text": "睡眠が6時間未満の人は、7時間を超える人に比べて風邪をひく割合が約4.2倍だった。",
+      "category": "fact",
+      "source_ids": [
+        "S09"
+      ],
+      "status": "partially_verified",
+      "notes": "164人の観察研究。因果は未確定。"
+    },
+    {
+      "id": "C08",
+      "text": "1963〜64年、17歳のランディ・ガードナーは264時間（約11日）眠らずに過ごした。スタンフォード大学のウィリアム・デメント博士が観察した。",
+      "category": "fact",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C09",
+      "text": "ガードナー本人によると、体の問題はなかったが、いらいら・記憶の問題・吐き気など心の面が悪化した。その後14時間眠り、普通の人と同じ程度のぼんやり感で目覚めた。",
+      "category": "fact",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "verified",
+      "notes": "幻覚の有無は今回の資料では確認できなかったので言及しない。"
+    },
+    {
+      "id": "C10",
+      "text": "完全に眠らせないようにしたラットは、10匹すべてが11〜32日で死亡した（または死が迫り安楽死）。解剖しても明確な死因は見つからなかった。",
+      "category": "fact",
+      "source_ids": [
+        "S02"
+      ],
+      "status": "verified",
+      "notes": "Everson ほか 1989。"
+    },
+    {
+      "id": "C11",
+      "text": "2020年の研究で、眠らせないようにしたショウジョウバエの腸に活性酸素がたまり、10日目ごろにピークになった。抗酸化物質を与えると、眠れなくても寿命は普通に戻った。マウスの腸でも活性酸素の蓄積が見られた。",
+      "category": "fact",
+      "source_ids": [
+        "S07"
+      ],
+      "status": "verified",
+      "notes": "死の直接原因が腸なのか全身なのかは未確定。"
+    },
+    {
+      "id": "C12",
+      "text": "致死性家族性不眠症は、遺伝子の変異で起きるまれなプリオン病で、眠れなくなる症状が進み、発症から多くは6〜36か月で亡くなる。",
+      "category": "fact",
+      "source_ids": [
+        "S08"
+      ],
+      "status": "verified",
+      "notes": "眠れないことだけが死因とは言い切れない（脳の病気全体）。表現に注意。"
+    },
+    {
+      "id": "C13",
+      "text": "イルカは脳の半分ずつを交代で眠らせ、起きている側で泳ぎや呼吸を続ける。",
+      "category": "fact",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "verified",
+      "notes": "飼育下の研究が中心。"
+    },
+    {
+      "id": "C14",
+      "text": "OECDの統計で、日本人の平均睡眠時間は7時間22分で、調査国の中で最も短い。",
+      "category": "fact",
+      "source_ids": [
+        "S12"
+      ],
+      "status": "partially_verified",
+      "notes": "調査国数（29か33）は資料により異なるので言わない。"
+    },
+    {
+      "id": "C15",
+      "text": "人間が何日眠らずに生きられるかは分かっていない。長期の完全断眠を人で調べることはできないから。",
+      "category": "inference",
+      "source_ids": [
+        "S05",
+        "S02"
+      ],
+      "status": "partially_verified",
+      "notes": ""
+    },
+    {
+      "id": "C16",
+      "text": "完全断眠のラットには、食べる量が増えるのに体重が減る、後期に体温が下がる、皮膚の傷（病変）ができる、などの共通した症状が出た。",
+      "category": "fact",
+      "source_ids": [
+        "S02"
+      ],
+      "status": "verified",
+      "notes": "Rechtschaffen ほか 1989 の総合考察（Sleep deprivation in the rat: X）の要約から。"
+    },
+    {
+      "id": "C17",
+      "text": "睡眠中に排出が速まった老廃物には、アルツハイマー病との関わりが指摘されるβアミロイドが含まれていた（マウス）。",
+      "category": "fact",
+      "source_ids": [
+        "S06"
+      ],
+      "status": "verified",
+      "notes": "因果関係ではなく『関わりが指摘されている』と表現。"
+    },
+    {
+      "id": "C18",
+      "text": "イルカは脳の半分ずつがそれぞれ1日におよそ4時間の徐波睡眠をとる。",
+      "category": "fact",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "partially_verified",
+      "notes": "Live Science が引用するレビューによる。"
+    },
+    {
+      "id": "C19",
+      "text": "デメント博士は、ガードナーが起きていられるよう、バスケットボールやピンボールに付き合った。",
+      "category": "fact",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C20",
+      "text": "致死性家族性不眠症では、睡眠障害のほか、高血圧、多汗、体温調節の障害などの症状が出る。",
+      "category": "fact",
+      "source_ids": [
+        "S08"
+      ],
+      "status": "verified",
+      "notes": "GARD の記載。"
+    },
+    {
+      "id": "D01",
+      "text": "冒頭の場面設定（今夜、ベッドで眠れない）と締めの呼びかけ。",
+      "category": "dramatization",
+      "source_ids": [],
+      "status": "verified",
+      "notes": ""
+    }
+  ],
+  "open_questions": [
+    "眠らないと死ぬ直接の仕組み（腸の活性酸素か、全身の影響か）",
+    "マウスの脳の掃除の結果が、人間でどの程度起きているか",
+    "24時間覚醒のアルコール換算値は研究・課題によって0.08〜0.10%と幅がある"
+  ]
+}

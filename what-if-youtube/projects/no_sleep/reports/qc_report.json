@@ -1,0 +1,380 @@
+{
+  "generated": "2026-10-12T01:16:15+00:00",
+  "project": "no_sleep",
+  "videos": {
+    "long": {
+      "file": "output/no_sleep_long.mp4",
+      "duration": 385.5,
+      "lufs": -14.0,
+      "true_peak": -2.5
+    },
+    "S1": {
+      "file": "output/shorts/S1.mp4",
+      "duration": 38.666667,
+      "lufs": -14.0,
+      "true_peak": -2.5
+    },
+    "S2": {
+      "file": "output/shorts/S2.mp4",
+      "duration": 39.266667,
+      "lufs": -14.0,
+      "true_peak": -2.5
+    },
+    "S3": {
+      "file": "output/shorts/S3.mp4",
+      "duration": 32.266667,
+      "lufs": -14.0,
+      "true_peak": -2.5
+    }
+  },
+  "previews": [
+    "previews/long_contact_sheet.jpg",
+    "previews/long_audio_sample.mp3",
+    "previews/S1_contact_sheet.jpg",
+    "previews/S2_contact_sheet.jpg",
+    "previews/S3_contact_sheet.jpg"
+  ],
+  "publishable": true,
+  "errors": 0,
+  "warnings": 2,
+  "checks": [
+    {
+      "check": "research: saved with sources",
+      "ok": true,
+      "severity": "info",
+      "detail": "12 sources"
+    },
+    {
+      "check": "research: status complete",
+      "ok": true,
+      "severity": "info",
+      "detail": "complete"
+    },
+    {
+      "check": "research: no unverified fact claims",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "research: claims only partially verified (human should check)",
+      "ok": false,
+      "severity": "warning",
+      "detail": "C02, C07, C14, C15, C18"
+    },
+    {
+      "check": "assets: none failed permanently",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "assets: none stale (prompt changed since generation)",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "assets: all AI shots generated",
+      "ok": true,
+      "severity": "info",
+      "detail": "pending: []"
+    },
+    {
+      "check": "no_sleep_long.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "no_sleep_long.mp4: resolution 1920×1080",
+      "ok": true,
+      "severity": "info",
+      "detail": "1920×1080"
+    },
+    {
+      "check": "no_sleep_long.mp4: duration in 345–495s",
+      "ok": true,
+      "severity": "info",
+      "detail": "385.5s"
+    },
+    {
+      "check": "no_sleep_long.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.0 LUFS"
+    },
+    {
+      "check": "no_sleep_long.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-2.5 dBTP"
+    },
+    {
+      "check": "no_sleep_long.mp4: no black runs > 1s",
+      "ok": false,
+      "severity": "warning",
+      "detail": "[[79.9, 81.1]]"
+    },
+    {
+      "check": "no_sleep_long.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "no_sleep_ja.srt: 83 cues ordered, non-overlapping, ≤2 lines",
+      "ok": true,
+      "severity": "info",
+      "detail": "bad cues: []"
+    },
+    {
+      "check": "no_sleep_ja.srt: ends before video ends",
+      "ok": true,
+      "severity": "info",
+      "detail": "last cue 380.62s"
+    },
+    {
+      "check": "long-form: final (non-animatic) render exists",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "long narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "voice: reading list saved for review (audio/readings.md)",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "voice: credit line 'VOICEVOX:冥鳴ひまり' must go in the video description",
+      "ok": true,
+      "severity": "info",
+      "detail": "VOICEVOX:冥鳴ひまり"
+    },
+    {
+      "check": "shorts: 2–3 produced",
+      "ok": true,
+      "severity": "info",
+      "detail": "3"
+    },
+    {
+      "check": "S1.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "S1.mp4: resolution 1080×1920",
+      "ok": true,
+      "severity": "info",
+      "detail": "1080×1920"
+    },
+    {
+      "check": "S1.mp4: duration in 30–60s",
+      "ok": true,
+      "severity": "info",
+      "detail": "38.7s"
+    },
+    {
+      "check": "S1.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.0 LUFS"
+    },
+    {
+      "check": "S1.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-2.5 dBTP"
+    },
+    {
+      "check": "S1.mp4: no black runs > 1s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S1.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S1 narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "S2.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "S2.mp4: resolution 1080×1920",
+      "ok": true,
+      "severity": "info",
+      "detail": "1080×1920"
+    },
+    {
+      "check": "S2.mp4: duration in 30–60s",
+      "ok": true,
+      "severity": "info",
+      "detail": "39.3s"
+    },
+    {
+      "check": "S2.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.0 LUFS"
+    },
+    {
+      "check": "S2.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-2.5 dBTP"
+    },
+    {
+      "check": "S2.mp4: no black runs > 1s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S2.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S2 narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "S3.mp4: opens with video+audio",
+      "ok": true,
+      "severity": "info",
+      "detail": "video=1 audio=1"
+    },
+    {
+      "check": "S3.mp4: resolution 1080×1920",
+      "ok": true,
+      "severity": "info",
+      "detail": "1080×1920"
+    },
+    {
+      "check": "S3.mp4: duration in 30–60s",
+      "ok": true,
+      "severity": "info",
+      "detail": "32.3s"
+    },
+    {
+      "check": "S3.mp4: loudness ≈ -14.0 LUFS",
+      "ok": true,
+      "severity": "info",
+      "detail": "-14.0 LUFS"
+    },
+    {
+      "check": "S3.mp4: true peak ≤ -1 dBTP",
+      "ok": true,
+      "severity": "info",
+      "detail": "-2.5 dBTP"
+    },
+    {
+      "check": "S3.mp4: no black runs > 1s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S3.mp4: no silence > 3s",
+      "ok": true,
+      "severity": "info",
+      "detail": "[]"
+    },
+    {
+      "check": "S3 narration: speech rate plausible for every sentence",
+      "ok": true,
+      "severity": "info",
+      "detail": ""
+    },
+    {
+      "check": "thumbnails: 3 candidates",
+      "ok": true,
+      "severity": "info",
+      "detail": "3"
+    },
+    {
+      "check": "T1.jpg: 1280×720, < 2 MB",
+      "ok": true,
+      "severity": "info",
+      "detail": "(1280, 720), 99 KB"
+    },
+    {
+      "check": "T2.jpg: 1280×720, < 2 MB",
+      "ok": true,
+      "severity": "info",
+      "detail": "(1280, 720), 100 KB"
+    },
+    {
+      "check": "T3.jpg: 1280×720, < 2 MB",
+      "ok": true,
+      "severity": "info",
+      "detail": "(1280, 720), 149 KB"
+    },
+    {
+      "check": "cost: ledger recorded",
+      "ok": true,
+      "severity": "info",
+      "detail": "¥61.05 / 8.25 credits"
+    },
+    {
+      "check": "cost: within per-video budget",
+      "ok": true,
+      "severity": "info",
+      "detail": "¥61.05 of ¥2500"
+    }
+  ],
+  "cost": {
+    "by_stage": {
+      "voice": {
+        "items": 2,
+        "credits": 0.0,
+        "cost_jpy": 0.0,
+        "kinds": [
+          "free"
+        ]
+      },
+      "images": {
+        "items": 3,
+        "credits": 0.75,
+        "cost_jpy": 5.55,
+        "kinds": [
+          "actual"
+        ]
+      },
+      "video_clips": {
+        "items": 1,
+        "credits": 7.5,
+        "cost_jpy": 55.5,
+        "kinds": [
+          "actual"
+        ]
+      }
+    },
+    "total_jpy": 61.05,
+    "total_credits": 8.25,
+    "month_total_jpy": 843.6
+  },
+  "human_review_required": true
+}

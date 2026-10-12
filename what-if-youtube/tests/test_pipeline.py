@@ -67,12 +67,13 @@ def test_every_script_line_has_a_cut():
     assert lines == {c["line_id"] for c in sb["cuts"]}
 
 
-def test_all_motion_specs_render_and_move():
-    sb = json.loads((SAMPLE / "storyboard/storyboard.json").read_text())
+@pytest.mark.parametrize("project", ["moon_disappeared", "no_sleep"])
+def test_all_motion_specs_render_and_move(project):
+    sb = json.loads((PROJECTS_DIR / project / "storyboard/storyboard.json").read_text())
     for c in sb["cuts"]:
         if c["asset_type"] == "motion":
             a = motion.still(c["diagram"], 0.5, 8.0)
-            b = motion.still(c["diagram"], 5.0, 8.0)
+            b = motion.still(c["diagram"], 5.5, 8.0)
             assert a.size == (1920, 1080)
             assert a.tobytes() != b.tobytes(), f"{c['id']} ({c['diagram']['type']}) does not move"
 

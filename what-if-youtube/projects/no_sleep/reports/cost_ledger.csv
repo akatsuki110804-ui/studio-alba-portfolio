@@ -1,0 +1,7 @@
+ts,project,stage,item,provider,model,units,credits,cost_jpy,kind,note
+2026-10-12T01:05:59+00:00,no_sleep,voice,long-form narration,voicevox (local),VOICEVOX:冥鳴ひまり,76,0.0,0,free,local CPU synthesis
+2026-10-12T01:06:27+00:00,no_sleep,images,T1,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,3e08d543-212a-4929-80e1-27674beed40c
+2026-10-12T01:06:29+00:00,no_sleep,images,T2,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,c5357948-957b-4f2d-8e2a-476485db18de
+2026-10-12T01:06:31+00:00,no_sleep,images,T3,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,85204517-af72-4fba-b53f-01febbc73b87
+2026-10-12T01:06:51+00:00,no_sleep,video_clips,C01,higgsfield,kling3_0,1,7.5,55.5,actual,033f6109-67a7-40e9-ba10-2b6133631cd9
+2026-10-12T01:16:14+00:00,no_sleep,voice,shorts narration,voicevox (local),,19,0.0,0,free,

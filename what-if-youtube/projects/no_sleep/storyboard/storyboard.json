@@ -1,0 +1,1125 @@
+{
+  "style_bible": {
+    "global_style": "photorealistic cinematic footage, 35mm anamorphic lens look, natural color grade with deep blue-black shadows and warm highlights, smooth slow camera movement, physically plausible lighting, no text, no letters, no watermark, no logo",
+    "negative": "text, captions, watermark, logo, cartoon, fast cuts, shaky camera, distorted hands, distorted face",
+    "entities": {
+      "BEDROOM": "a quiet modern Japanese apartment bedroom at night, dim blue moonlight through sheer curtains, a digital clock glowing faintly on the nightstand, city lights far outside the window"
+    }
+  },
+  "cuts": [
+    {
+      "id": "C01",
+      "line_id": "L01",
+      "section": "hook",
+      "narration": "もしも今夜から、あなたが二度と眠れなくなったら。目を閉じても、体はもう眠りに落ちてくれません。",
+      "purpose": "フック：眠れない夜",
+      "subject": "フック：眠れない夜",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "A young adult lying awake in bed in BEDROOM, eyes wide open staring at the ceiling, blinking slowly, unable to sleep, the digital clock on the nightstand reads 3:00, very slow push-in toward the face, quiet, tense, realistic",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "D01"
+      ],
+      "entities": [
+        "BEDROOM"
+      ]
+    },
+    {
+      "id": "C02",
+      "line_id": "L02",
+      "section": "hook",
+      "narration": "人間は、何日もつのでしょうか。そして最初に壊れるのは、体のどこなのでしょうか。",
+      "purpose": "問い",
+      "subject": "問い",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "人間は、何日もつ？",
+          "subtitle": "そして、最初に壊れるのは？",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C03",
+      "line_id": "L03",
+      "section": "rules",
+      "narration": "これは思考実験です。人を何日も眠らせない実験は、危険なので、今は倫理的に行われていません。絶対に真似しないでください。",
+      "purpose": "思考実験・注意",
+      "subject": "思考実験・注意",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "思考実験",
+          "subtitle": "危険です。絶対に真似しないでください"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "A01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C04",
+      "line_id": "L04",
+      "section": "rules",
+      "narration": "だからこの先は、過去の記録、動物の実験、そして病気の例から読み解いていきます。測定された事実、そこからの推論、まだ分かっていないこと。この三つを分けてお話しします。",
+      "purpose": "手がかりの3種類",
+      "subject": "手がかりの3種類",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "過去の記録",
+              "1964年・11日間の挑戦"
+            ],
+            [
+              "動物の実験",
+              "ラット・ハエ・マウス"
+            ],
+            [
+              "病気の例",
+              "致死性家族性不眠症"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C15"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C05",
+      "line_id": "L05",
+      "section": "day1",
+      "narration": "朝7時に起きたとします。夜中を過ぎても、眠れません。",
+      "purpose": "朝7時に起きて夜中へ",
+      "subject": "朝7時に起きて夜中へ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "awake_clock",
+        "params": {
+          "from_h": 0,
+          "to_h": 17,
+          "start_clock": 7,
+          "label": "起きてから"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "D01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C06",
+      "line_id": "L06",
+      "section": "day1",
+      "narration": "起きてから17時間から19時間。ある実験では、この時点で一部のテストの成績が、血中アルコール濃度0.05%の人と同じか、それより悪くなりました。",
+      "purpose": "17〜19時間＝0.05%",
+      "subject": "17〜19時間＝0.05%",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "17〜19時間",
+              "label": "起きている"
+            },
+            {
+              "value": "0.05%",
+              "label": "血中アルコール濃度"
+            }
+          ],
+          "joiner": "≈"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C07",
+      "line_id": "L07",
+      "section": "day1",
+      "narration": "そして24時間。別の研究では、0.08%から0.1%に相当するところまで落ち込みます。お酒を飲んで、はっきり酔っている状態です。",
+      "purpose": "24時間＝0.08〜0.1%",
+      "subject": "24時間＝0.08〜0.1%",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "24時間",
+              "label": "起きている"
+            },
+            {
+              "value": "0.08〜0.1%",
+              "label": "血中アルコール濃度"
+            }
+          ],
+          "joiner": "≈"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C02"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C08",
+      "line_id": "L08",
+      "section": "day1",
+      "narration": "このころ、マイクロスリープが始まります。数秒から十数秒、脳が勝手に眠ってしまう現象です。目を開けたままのこともあり、本人は気づきません。",
+      "purpose": "マイクロスリープ",
+      "subject": "マイクロスリープ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "microsleep",
+        "params": {
+          "title": "マイクロスリープ",
+          "subtitle": "数秒〜十数秒、脳が勝手に眠る"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C03"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C09",
+      "line_id": "L09",
+      "section": "day1",
+      "narration": "でもこの思考実験では、そのわずかな眠りさえ訪れません。",
+      "purpose": "そのわずかな眠りもない",
+      "subject": "そのわずかな眠りもない",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "わずかな眠りさえ、訪れない"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C10",
+      "line_id": "L10",
+      "section": "day2_3",
+      "narration": "2日目。目に映るものが、少しずつゆがみ始めます。不安や、いらいらも強くなっていきます。",
+      "purpose": "2日目のゆがみ",
+      "subject": "2日目のゆがみ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "distort",
+        "params": {
+          "title": "2日目",
+          "words": [
+            "ゆがみ",
+            "不安",
+            "いらいら"
+          ],
+          "strength": 0.7
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C04"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C11",
+      "line_id": "L11",
+      "section": "day2_3",
+      "narration": "21の研究、760人分の記録をまとめた2018年のレビューでは、48時間を過ぎると複雑な幻覚が現れ、72時間を過ぎると、事実ではないことを信じ込む妄想まで報告されています。",
+      "purpose": "幻覚の段階",
+      "subject": "幻覚の段階",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "24〜48時間",
+              "知覚のゆがみ・不安"
+            ],
+            [
+              "48〜90時間",
+              "複雑な幻覚"
+            ],
+            [
+              "72時間〜",
+              "妄想"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C04"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C12",
+      "line_id": "L12",
+      "section": "day2_3",
+      "narration": "3日目には、見えるもの、聞こえるもの、触れるもの。すべての感覚で幻覚が報告されました。",
+      "purpose": "3日目の幻覚",
+      "subject": "3日目の幻覚",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "distort",
+        "params": {
+          "title": "3日目",
+          "words": [
+            "見える",
+            "聞こえる",
+            "触れる"
+          ],
+          "strength": 1.4
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C04"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C13",
+      "line_id": "L13",
+      "section": "day2_3",
+      "narration": "ただし多くの例では、ぐっすり眠ると、こうした症状はおさまりました。眠りは、脳を元に戻す力を持っているのです。",
+      "purpose": "眠ると戻る",
+      "subject": "眠ると戻る",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "night_sky",
+        "params": {
+          "forest": true,
+          "city_glow": false,
+          "milky_way": 0.4
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C05"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C14",
+      "line_id": "L14",
+      "section": "why_sleep",
+      "narration": "では、眠っている間、脳では何が起きているのでしょうか。",
+      "purpose": "問い：眠っている間の脳",
+      "subject": "問い：眠っている間の脳",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "眠っている間、脳では？",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C15",
+      "line_id": "L15",
+      "section": "why_sleep",
+      "narration": "2013年、マウスの実験で、眠っている間は脳の細胞と細胞のすき間が、およそ60%も広がることが分かりました。",
+      "purpose": "すき間が広がる",
+      "subject": "すき間が広がる",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "brain_clean",
+        "params": {
+          "mode": "gap",
+          "label": "細胞のすき間が約60%広がる（マウス）"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C06"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C16",
+      "line_id": "L16",
+      "section": "why_sleep",
+      "narration": "広がったすき間を液体が流れ、起きている間にたまった老廃物を押し流していきます。その中には、アルツハイマー病との関わりが指摘されている、βアミロイドというたんぱく質も含まれていました。眠りは、脳の掃除の時間だったのです。",
+      "purpose": "老廃物を押し流す",
+      "subject": "老廃物を押し流す",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "brain_clean",
+        "params": {
+          "mode": "flush",
+          "label": "老廃物（βアミロイドなど）を押し流す"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C06",
+        "C17"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C17",
+      "line_id": "L17",
+      "section": "why_sleep",
+      "narration": "眠りは、体を守る力とも関係しています。睡眠が6時間未満の人は、7時間より長く眠る人に比べて、風邪をひく割合がおよそ4.2倍高かったという研究もあります。",
+      "purpose": "風邪をひく割合",
+      "subject": "風邪をひく割合",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "bar_compare",
+        "params": {
+          "title": "風邪をひいた割合（比較）",
+          "unit": "relative",
+          "bars": [
+            {
+              "label": "睡眠6時間未満",
+              "value": 4.2,
+              "text": "約4.2倍"
+            },
+            {
+              "label": "睡眠7時間超",
+              "value": 1,
+              "text": "基準"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C07"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C18",
+      "line_id": "L18",
+      "section": "day11",
+      "narration": "では、人間は実際に何日起きていられたのでしょうか。",
+      "purpose": "問い：何日起きていられた",
+      "subject": "問い：何日起きていられた",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "人間は、何日起きていられた？",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C19",
+      "line_id": "L19",
+      "section": "day11",
+      "narration": "1963年の冬、アメリカの17歳の高校生、ランディ・ガードナーは、学校の自由研究として、眠らない挑戦を始めました。",
+      "purpose": "1963年の挑戦",
+      "subject": "1963年の挑戦",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "1963年",
+              "label": "冬・アメリカ"
+            },
+            {
+              "value": "17歳",
+              "label": "高校生の自由研究"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C08"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C20",
+      "line_id": "L20",
+      "section": "day11",
+      "narration": "記録は264時間。およそ11日間です。スタンフォード大学の睡眠研究者、ウィリアム・デメント博士が、その様子を見守りました。眠気に負けそうになると、博士は彼をバスケットボールやピンボールに誘い、体を動かして起こし続けたそうです。",
+      "purpose": "264時間",
+      "subject": "264時間",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "awake_clock",
+        "params": {
+          "from_h": 0,
+          "to_h": 264,
+          "start_clock": 6,
+          "label": "ランディ・ガードナー（17歳）",
+          "marks": [
+            {
+              "h": 264,
+              "text": "記録：264時間"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C08",
+        "C19"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C21",
+      "line_id": "L21",
+      "section": "day11",
+      "narration": "本人によると、体の問題はなかったそうです。でも心は崩れていきました。いらいらが募り、物事を覚えられなくなり、吐き気にも襲われました。",
+      "purpose": "体と心の変化",
+      "subject": "体と心の変化",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "体",
+              "大きな問題はなかった"
+            ],
+            [
+              "心",
+              "いらいら・覚えられない"
+            ],
+            [
+              "体調",
+              "吐き気"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C09"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C22",
+      "line_id": "L22",
+      "section": "day11",
+      "narration": "挑戦を終えた彼は、14時間眠りました。目覚めたときの感覚は、普通の寝起きと変わらなかったといいます。",
+      "purpose": "14時間眠った",
+      "subject": "14時間眠った",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "14時間",
+              "label": "挑戦のあとに眠った時間"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C09"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C23",
+      "line_id": "L23",
+      "section": "beyond",
+      "narration": "それでは、11日を越えたら。人間で確かめた記録は、ありません。手がかりは、動物の実験です。",
+      "purpose": "11日を越えたら",
+      "subject": "11日を越えたら",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "11日を越えたら？",
+          "subtitle": "人間で確かめた記録は、ない"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C15"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C24",
+      "line_id": "L24",
+      "section": "beyond",
+      "narration": "1980年代、ラットを完全に眠らせない実験では、10匹すべてが11日から32日のうちに死んでしまいました。",
+      "purpose": "ラット10匹すべて",
+      "subject": "ラット10匹すべて",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "10匹中10匹",
+              "label": "完全に眠らせないラット"
+            },
+            {
+              "value": "11〜32日",
+              "label": "で死亡"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C10",
+        "C16"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C25",
+      "line_id": "L24",
+      "section": "beyond",
+      "narration": "たくさん食べているのに体重は減り、体温は下がり、皮膚には傷ができていきました。しかも解剖しても、はっきりした死因は見つかりませんでした。",
+      "purpose": "ラットの症状",
+      "subject": "ラットの症状",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "体重",
+              "食べても減る"
+            ],
+            [
+              "体温",
+              "下がる"
+            ],
+            [
+              "皮膚",
+              "傷ができる"
+            ],
+            [
+              "死因",
+              "見つからない"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C10",
+        "C16"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C26",
+      "line_id": "L25",
+      "section": "beyond",
+      "narration": "眠らないと、なぜ死ぬのか。その謎に迫ったのが、2020年のハーバード大学の研究です。",
+      "purpose": "なぜ死ぬのか",
+      "subject": "なぜ死ぬのか",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "眠らないと、なぜ死ぬのか",
+          "subtitle": "2020年・ハーバード大学の研究"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C11"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C27",
+      "line_id": "L26",
+      "section": "beyond",
+      "narration": "眠らせないようにしたショウジョウバエの腸に、活性酸素という、細胞を傷つける物質がたまっていきました。そのピークは、10日目ごろ。",
+      "purpose": "腸の活性酸素",
+      "subject": "腸の活性酸素",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "ros_gut",
+        "params": {
+          "mode": "accumulate"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C11"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C28",
+      "line_id": "L27",
+      "section": "beyond",
+      "narration": "ところが、活性酸素を取り除く物質を与えると、眠れなくても、ハエは普通の寿命まで生きました。マウスの腸でも、同じように活性酸素がたまることが確認されています。",
+      "purpose": "抗酸化物質で回復",
+      "subject": "抗酸化物質で回復",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "ros_gut",
+        "params": {
+          "mode": "clear"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C11"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C29",
+      "line_id": "L28",
+      "section": "beyond",
+      "narration": "そして人間にも、眠れなくなる病気があります。致死性家族性不眠症。遺伝子の変異で起きる、とてもまれな脳の病気です。",
+      "purpose": "致死性家族性不眠症",
+      "subject": "致死性家族性不眠症",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "致死性家族性不眠症",
+          "subtitle": "遺伝子の変異で起きる、まれな脳の病気"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C12",
+        "C20"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C30",
+      "line_id": "L28",
+      "section": "beyond",
+      "narration": "眠れない状態に加えて、血圧が上がる、汗が止まらない、体温をうまく保てないといった症状が現れ、多くは発症から6か月から3年ほどで亡くなります。",
+      "purpose": "症状と経過",
+      "subject": "症状と経過",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "症状",
+              "眠れない・血圧上昇・多汗・体温の乱れ"
+            ],
+            [
+              "経過",
+              "多くは発症から6か月〜3年"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C12",
+        "C20"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C31",
+      "line_id": "L29",
+      "section": "dolphins",
+      "narration": "では、生き物は眠りを捨てられないのでしょうか。海の中に、ヒントがあります。",
+      "purpose": "海の中のヒント",
+      "subject": "海の中のヒント",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "sea",
+        "params": {
+          "title": "眠りを捨てた生き物は？",
+          "subtitle": "ヒントは、海の中に"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C32",
+      "line_id": "L30",
+      "section": "dolphins",
+      "narration": "イルカは、脳の半分ずつを交代で眠らせています。それぞれの半分が眠るのは、1日におよそ4時間ずつ。起きている側で泳ぎ続け、息つぎも忘れません。眠らないのではなく、眠り方を工夫しているのです。",
+      "purpose": "イルカの半球睡眠",
+      "subject": "イルカの半球睡眠",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "half_brain",
+        "params": {}
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C13",
+        "C18"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C33",
+      "line_id": "L31",
+      "section": "ending",
+      "narration": "もしも人間が眠らなかったら。1日目には酔ったような判断力に、3日目には幻覚に、そしてその先には、命の危険が待っています。",
+      "purpose": "まとめ",
+      "subject": "まとめ",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "legend",
+        "params": {
+          "items": [
+            [
+              "1日目",
+              "酔ったような判断力"
+            ],
+            [
+              "3日目",
+              "幻覚"
+            ],
+            [
+              "その先",
+              "命の危険"
+            ]
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C02",
+        "C04",
+        "C10"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C34",
+      "line_id": "L32",
+      "section": "ending",
+      "narration": "最初に壊れるのは、体ではなく、心と判断力でした。",
+      "purpose": "結論",
+      "subject": "結論",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "最初に壊れるのは、心と判断力"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C09",
+        "C04"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C35",
+      "line_id": "L33",
+      "section": "ending",
+      "narration": "ところでOECDの統計では、日本人の平均睡眠時間は7時間22分。調査した国の中で、最も短いのです。",
+      "purpose": "日本人の睡眠",
+      "subject": "日本人の睡眠",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "7時間22分",
+              "label": "日本人の平均睡眠（OECD）"
+            },
+            {
+              "value": "最短",
+              "label": "調査した国の中で"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "C14"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C36",
+      "line_id": "L34",
+      "section": "ending",
+      "narration": "私たちは毎日、この思考実験の、ほんの入り口に立っているのかもしれません。今夜は、少しだけ早く眠ってみませんか。",
+      "purpose": "今夜は早く",
+      "subject": "今夜は早く",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "night_sky",
+        "params": {
+          "forest": false,
+          "city_glow": true,
+          "milky_way": 0.3
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "D01"
+      ],
+      "entities": []
+    }
+  ]
+}
