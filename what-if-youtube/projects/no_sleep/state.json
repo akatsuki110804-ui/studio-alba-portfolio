@@ -131,12 +131,12 @@
     },
     "shorts": {
       "status": "done",
-      "started": "2026-10-12T12:18:32+00:00",
+      "started": "2026-10-13T12:57:33+00:00",
       "inputs": {
         "count": 3,
         "animatic": false
       },
-      "finished": "2026-10-12T12:19:19+00:00",
+      "finished": "2026-10-13T13:01:40+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [

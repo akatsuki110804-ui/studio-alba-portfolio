@@ -32,3 +32,5 @@
 {"ts": "2026-10-12T12:14:54+00:00", "project": "no_sleep", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
 {"ts": "2026-10-12T12:18:32+00:00", "project": "no_sleep", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
 {"ts": "2026-10-12T12:19:19+00:00", "project": "no_sleep", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-13T12:57:33+00:00", "project": "no_sleep", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-13T13:01:40+00:00", "project": "no_sleep", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}

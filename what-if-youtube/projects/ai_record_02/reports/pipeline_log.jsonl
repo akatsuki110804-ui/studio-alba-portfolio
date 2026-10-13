@@ -36,3 +36,5 @@
 {"ts": "2026-10-13T10:12:03+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "T3", "path": "thumbnails/T3_bg.png", "credits": 0.0, "job_id": "local composite"}
 {"ts": "2026-10-13T10:12:03+00:00", "project": "ai_record_02", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
 {"ts": "2026-10-13T10:12:04+00:00", "project": "ai_record_02", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-13T13:03:55+00:00", "project": "ai_record_02", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-13T13:04:54+00:00", "project": "ai_record_02", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}

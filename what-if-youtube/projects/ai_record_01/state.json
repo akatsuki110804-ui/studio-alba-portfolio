@@ -71,12 +71,12 @@
     },
     "shorts": {
       "status": "done",
-      "started": "2026-10-12T12:19:19+00:00",
+      "started": "2026-10-13T13:01:40+00:00",
       "inputs": {
         "count": 2,
         "animatic": false
       },
-      "finished": "2026-10-12T12:20:15+00:00",
+      "finished": "2026-10-13T13:03:55+00:00",
       "error": null,
       "fingerprint": null,
       "outputs": [
