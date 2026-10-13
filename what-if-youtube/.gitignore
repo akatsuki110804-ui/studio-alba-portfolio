@@ -17,3 +17,4 @@ projects/*/thumbnails/*.jpg
 projects/*/thumbnails/*.png
 projects/*/subtitles/*.ass
 deliver/
+projects/*/rec/

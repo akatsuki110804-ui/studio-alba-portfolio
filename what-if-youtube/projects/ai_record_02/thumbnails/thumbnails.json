@@ -1,0 +1,37 @@
+{
+  "thumbnails": [
+    {
+      "id": "T1",
+      "text": [
+        "経験ゼロの27歳",
+        "AIに3回頼んで",
+        "アプリ完成"
+      ],
+      "accent": "アプリ完成",
+      "layout": "left",
+      "prompt": "LOCAL COMPOSITE: the real app on a phone, right side"
+    },
+    {
+      "id": "T2",
+      "text": [
+        "1行も",
+        "書いてないのに",
+        "450行"
+      ],
+      "accent": "450行",
+      "layout": "left",
+      "prompt": "LOCAL COMPOSITE: code scroll and the app"
+    },
+    {
+      "id": "T3",
+      "text": [
+        "AIが作ったアプリ",
+        "データを",
+        "守っていた"
+      ],
+      "accent": "守っていた",
+      "layout": "left",
+      "prompt": "LOCAL COMPOSITE: the collision diagram"
+    }
+  ]
+}

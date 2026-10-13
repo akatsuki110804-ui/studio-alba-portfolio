@@ -1,0 +1,20 @@
+topic: プログラミング経験ゼロの27歳が、AIだけで動画の管理アプリを作った結果
+slug: ai_record_02
+created: '2026-10-13T00:00:00+00:00'
+overrides:
+  channel:
+    name: AIでつくる、27歳の記録
+  video:
+    target_minutes:
+    - 3
+    - 8
+  voice:
+    voicevox:
+      vvm: vvms/4.vvm
+      style_id: 11
+      credit: VOICEVOX:玄野武宏
+      speed: 1.08
+    readings:
+      Shorts: ショーツ
+      ショート: ショート
+      What If Lab: ワットイフラボ

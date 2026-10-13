@@ -1,0 +1,150 @@
+{
+  "assumptions": [
+    "数字は実験ログ・git・YouTube Studioのスクリーンショット（2026-10-12〜13）による"
+  ],
+  "research_status": "complete",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "実験ログ（指示の原文・作業時間）",
+      "url": "projects/ai_record_02/experiment_log.md",
+      "access_method": "local file"
+    },
+    {
+      "id": "R02",
+      "title": "制作台帳アプリのソースと変更履歴（git）",
+      "url": "apps/production-ledger/index.html",
+      "access_method": "local file + git log"
+    },
+    {
+      "id": "R03",
+      "title": "台帳データベースの書き込み記録（バージョン不一致で拒否→読み直して保存）",
+      "url": "claude.ai artifact db（会話記録）",
+      "access_method": "session log"
+    },
+    {
+      "id": "R04",
+      "title": "YouTube Studio スクリーンショット（Shorts 26.0%・1,107回／38.4%・コンテンツ一覧）",
+      "url": "projects/ai_record_02/assets/screens/",
+      "access_method": "screenshot"
+    },
+    {
+      "id": "R05",
+      "title": "本人の回答（感想・プログラムを書いていないこと）",
+      "url": "chat log 2026-10-13",
+      "access_method": "conversation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "F01",
+      "text": "指示3回の原文",
+      "category": "fact",
+      "source_ids": [
+        "R01"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F02",
+      "text": "アプリの機能（状態・費用・再生数推移、Shortsの親子表示、継続率と目標メーター）",
+      "category": "fact",
+      "source_ids": [
+        "R02"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F03",
+      "text": "作業時間 約20分・約10分・約25分（計約55分、3回目は動画側の修正を含む）",
+      "category": "fact",
+      "source_ids": [
+        "R01"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F04",
+      "text": "初Shortsの視聴を継続26.0%（公開1.5時間）",
+      "category": "fact",
+      "source_ids": [
+        "R04"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F05",
+      "text": "ユーザー入力（282回）直後のAIの書き込みがバージョン不一致で拒否され、読み直して両方を保存",
+      "category": "fact",
+      "source_ids": [
+        "R03"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F06",
+      "text": "プログラム約450行（447行、2026-10-13）",
+      "category": "fact",
+      "source_ids": [
+        "R02"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F07",
+      "text": "1本目は公開12時間で再生1回",
+      "category": "fact",
+      "source_ids": [
+        "R04",
+        "R05"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F07b",
+      "text": "同Shortsは約13時間で1,107回・継続38.4%",
+      "category": "fact",
+      "source_ids": [
+        "R04"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F08",
+      "text": "本人の感想",
+      "category": "fact",
+      "source_ids": [
+        "R05"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F09",
+      "text": "本人の反応",
+      "category": "fact",
+      "source_ids": [
+        "R05"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F10",
+      "text": "本人はプログラムを1行も書いていない",
+      "category": "fact",
+      "source_ids": [
+        "R05"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "F11",
+      "text": "再生数は手入力（自動取得は未実装）",
+      "category": "fact",
+      "source_ids": [
+        "R02"
+      ],
+      "status": "verified"
+    }
+  ],
+  "open_questions": []
+}

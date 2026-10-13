@@ -1,0 +1,76 @@
+{
+  "language": "ja",
+  "titles": [
+    "プログラミング経験ゼロの27歳が、AIだけで「動画の管理アプリ」を作った結果",
+    "AIに「アプリ作って」と頼んだら、55分で使えるものができた",
+    "経験ゼロでもアプリは作れる？AIに3回頼んだだけの記録",
+    "AIが作ったアプリ、私が気づかないうちにデータを守っていた",
+    "1行も書かずに450行のアプリができた話"
+  ],
+  "unique_angle": "実際の指示・時間・失敗をそのまま見せる",
+  "overview_ja": "AIに3回頼んで制作台帳アプリを作った記録",
+  "why_interesting": [
+    "本物の指示と時間"
+  ],
+  "hook": "プログラミング経験ゼロの私が、AIにこう頼みました。「YouTubeの動画を作るときに、企画とか、かかったお金とか、再生数をまとめて見られるアプリを作って」",
+  "structure": [
+    {
+      "section": "フック",
+      "goal": "フック",
+      "approx_seconds": 25
+    },
+    {
+      "section": "前回のおさらい",
+      "goal": "前回のおさらい",
+      "approx_seconds": 25
+    },
+    {
+      "section": "1回目の指示",
+      "goal": "1回目の指示",
+      "approx_seconds": 25
+    },
+    {
+      "section": "2回目の指示",
+      "goal": "2回目の指示",
+      "approx_seconds": 25
+    },
+    {
+      "section": "3回目の指示",
+      "goal": "3回目の指示",
+      "approx_seconds": 25
+    },
+    {
+      "section": "気づかないところで",
+      "goal": "気づかないところで",
+      "approx_seconds": 25
+    },
+    {
+      "section": "結果",
+      "goal": "結果",
+      "approx_seconds": 25
+    },
+    {
+      "section": "正直なところ",
+      "goal": "正直なところ",
+      "approx_seconds": 25
+    },
+    {
+      "section": "締め",
+      "goal": "締め",
+      "approx_seconds": 25
+    }
+  ],
+  "target_seconds": 240,
+  "estimated_cuts": 21,
+  "shorts_candidates": [
+    {
+      "idea": "3回の指示"
+    },
+    {
+      "idea": "書き込みが断られた"
+    }
+  ],
+  "claims_to_verify": [
+    "実験ログの数字"
+  ]
+}

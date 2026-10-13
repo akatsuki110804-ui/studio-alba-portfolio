@@ -1,0 +1,664 @@
+{
+  "style_bible": {
+    "global_style": "screen recordings of the real app and code-drawn graphics; no new AI generation",
+    "negative": "",
+    "entities": {}
+  },
+  "cuts": [
+    {
+      "id": "C01",
+      "line_id": "L01",
+      "section": "hook",
+      "narration": "プログラミング経験ゼロの私が、AIにこう頼みました。「YouTubeの動画を作るときに、企画とか、かかったお金とか、再生数をまとめて見られるアプリを作って」",
+      "purpose": "プログラミング経験ゼロの私が、AIにこう",
+      "subject": "プログラミング経験ゼロの私が、AIにこう",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "chat",
+        "params": {
+          "messages": [
+            {
+              "role": "user",
+              "text": "YouTubeの動画を作るときに、企画とか、かかったお金とか、再生数をまとめて見られるアプリを作って"
+            }
+          ],
+          "note": "実際に送った指示"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C02",
+      "line_id": "L02",
+      "section": "hook",
+      "narration": "返ってきたのが、このアプリです。",
+      "purpose": "返ってきたのが、このアプリです。",
+      "subject": "返ってきたのが、このアプリです。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: app_now",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F02"
+      ],
+      "entities": [],
+      "vertical": "fit",
+      "vertical_src": "rec/app_v3.mp4",
+      "footage": "app_now"
+    },
+    {
+      "id": "C03",
+      "line_id": "L03",
+      "section": "recap",
+      "narration": "前回、AIだけでYouTubeを始めたら、1本目の再生数は、12時間で1回でした。",
+      "purpose": "前回、AIだけでYouTubeを始めたら",
+      "subject": "前回、AIだけでYouTubeを始めたら",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "screen",
+        "params": {
+          "image": "projects/ai_record_02/assets/screens/studio_content.webp",
+          "zoom": [
+            [
+              0.15,
+              0.05,
+              1.0,
+              0.45
+            ],
+            [
+              0.7,
+              0.25,
+              0.95,
+              0.42
+            ]
+          ],
+          "highlight": [
+            0.88,
+            0.315,
+            0.91,
+            0.36
+          ],
+          "highlight_at": 1.6,
+          "caption": "1本目・公開から約12時間"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F07"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C04",
+      "line_id": "L04",
+      "section": "recap",
+      "narration": "数字をちゃんと記録しないと、何がよくて、何がダメだったのか分からない。だから今回は、記録するための道具も、AIに作ってもらうことにしました。",
+      "purpose": "数字をちゃんと記録しないと、何がよくて、",
+      "subject": "数字をちゃんと記録しないと、何がよくて、",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "記録する道具も、AIに作らせる"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C05",
+      "line_id": "L05",
+      "section": "v1",
+      "narration": "1回目の指示は、さっきの一言だけ。",
+      "purpose": "1回目の指示は、さっきの一言だけ。",
+      "subject": "1回目の指示は、さっきの一言だけ。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "chat",
+        "params": {
+          "messages": [
+            {
+              "role": "user",
+              "text": "YouTubeの動画を作るときに、企画とか、かかったお金とか、再生数をまとめて見られるアプリを作って"
+            },
+            {
+              "role": "ai",
+              "text": "動画ごとに状態・費用・再生数の推移を記録できるページを作ります。これまでの動画も登録しておきます。"
+            }
+          ],
+          "note": "実際のやりとりを再現（AIの返答は要約）"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C06",
+      "line_id": "L06",
+      "section": "v1",
+      "narration": "AIは、動画ごとに、企画、制作中、公開前、公開済みの状態と、かかったお金、再生数の推移を記録できるページを作りました。これまでの動画のデータも、最初から入れてくれました。",
+      "purpose": "AIは、動画ごとに、企画、制作中、公開前",
+      "subject": "AIは、動画ごとに、企画、制作中、公開前",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: app_v1",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F02"
+      ],
+      "entities": [],
+      "vertical": "fit",
+      "vertical_src": "rec/app_v1.mp4",
+      "footage": "app_v1"
+    },
+    {
+      "id": "C07",
+      "line_id": "L07",
+      "section": "v1",
+      "narration": "記録では、ここまで、およそ20分です。",
+      "purpose": "記録では、ここまで、およそ20分です。",
+      "subject": "記録では、ここまで、およそ20分です。",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "約20分",
+              "label": "1回目（実験ログの記録）"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F03"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C08",
+      "line_id": "L08",
+      "section": "v1",
+      "narration": "ストックで作った動画がどんな状況か確認できるのは、便利だなと思いました。",
+      "purpose": "ストックで作った動画がどんな状況か確認で",
+      "subject": "ストックで作った動画がどんな状況か確認で",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "bubble",
+        "params": {
+          "text": "ストックで作った動画がどんな状況か\n確認できるのは便利だなと思った",
+          "label": "27歳の本音"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F08"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C09",
+      "line_id": "L09",
+      "section": "v2",
+      "narration": "使ってみて、すぐに足りないものに気づきました。ショートです。送ったのは、「ショートも一緒に管理しよう」の一言。",
+      "purpose": "使ってみて、すぐに足りないものに気づきま",
+      "subject": "使ってみて、すぐに足りないものに気づきま",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "chat",
+        "params": {
+          "messages": [
+            {
+              "role": "user",
+              "text": "ショートも一緒に管理しよう"
+            },
+            {
+              "role": "ai",
+              "text": "Shortsを元の長尺動画の下に並べて、本数と合計の再生数を出します。"
+            }
+          ],
+          "note": "実際のやりとりを再現（AIの返答は要約）"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C10",
+      "line_id": "L10",
+      "section": "v2",
+      "narration": "10分ほどで、ショートが元の長尺動画の下に並び、何本あって、合計で何回見られたかが出るようになりました。",
+      "purpose": "10分ほどで、ショートが元の長尺動画の下",
+      "subject": "10分ほどで、ショートが元の長尺動画の下",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: app_v2",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F03",
+        "F02"
+      ],
+      "entities": [],
+      "vertical": "fit",
+      "vertical_src": "rec/app_v2.mp4",
+      "footage": "app_v2"
+    },
+    {
+      "id": "C11",
+      "line_id": "L11",
+      "section": "v3",
+      "narration": "そのころ、初めてのショートの数字が出ました。スワイプせずに見続けてくれた人は、26%。4人に3人が、すぐ次の動画へ移っていました。",
+      "purpose": "そのころ、初めてのショートの数字が出まし",
+      "subject": "そのころ、初めてのショートの数字が出まし",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "screen",
+        "params": {
+          "image": "projects/ai_record_02/assets/screens/shorts_engagement_26.png",
+          "zoom": [
+            [
+              0.0,
+              0.2,
+              1.0,
+              0.56
+            ],
+            [
+              0.0,
+              0.38,
+              1.0,
+              0.58
+            ]
+          ],
+          "highlight": [
+            0.0,
+            0.47,
+            0.98,
+            0.55
+          ],
+          "highlight_at": 2.2,
+          "caption": "初めてのShorts・公開1時間半"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F04"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C12",
+      "line_id": "L12",
+      "section": "v3",
+      "narration": "そこで、3回目。「フックも大事にして、70%以上を目指そう」。",
+      "purpose": "そこで、3回目。「フックも大事にして、7",
+      "subject": "そこで、3回目。「フックも大事にして、7",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "chat",
+        "params": {
+          "messages": [
+            {
+              "role": "user",
+              "text": "じゃあ今後はフックも大事にして再生支持率を70%以上が目指そうよ"
+            },
+            {
+              "role": "ai",
+              "text": "Shortsごとに「視聴を継続」を記録する欄と、目標70%に対する今の位置が分かるメーターを足します。"
+            }
+          ],
+          "note": "実際のやりとりを再現（AIの返答は要約）"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F01"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C13",
+      "line_id": "L13",
+      "section": "v3",
+      "narration": "AIは、ショートごとに継続率を記録する欄と、目標の70%に対して、今どこにいるかのメーターを足しました。",
+      "purpose": "AIは、ショートごとに継続率を記録する欄",
+      "subject": "AIは、ショートごとに継続率を記録する欄",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: app_v3",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F02"
+      ],
+      "entities": [],
+      "vertical": "fit",
+      "vertical_src": "rec/app_v3.mp4",
+      "footage": "app_v3"
+    },
+    {
+      "id": "C14",
+      "line_id": "L14",
+      "section": "sync",
+      "narration": "実は、私が気づかないところで、小さな事件が起きていました。私がスマホで再生数を入力した直後、AIも、同じ動画のデータを書き換えようとしていたんです。でもデータベースは、AIの書き込みを、読んだあとにデータが変わっています、と断りました。AIはデータを読み直して、私の282回を消さずに、継続率の26%を足して保存しました。",
+      "purpose": "実は、私が気づかないところで、小さな事件",
+      "subject": "実は、私が気づかないところで、小さな事件",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "sync",
+        "params": {
+          "title": "同じデータに、ほぼ同時に書き込んだら"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F05"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C15",
+      "line_id": "L15",
+      "section": "sync",
+      "narration": "入力がぶつかったなんて、あったっけ？",
+      "purpose": "入力がぶつかったなんて、あったっけ？",
+      "subject": "入力がぶつかったなんて、あったっけ？",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "bubble",
+        "params": {
+          "text": "入力がぶつかったなんて、あったっけ？",
+          "label": "27歳の本音"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F09"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C16",
+      "line_id": "L16",
+      "section": "result",
+      "narration": "指示は3回。記録上の作業時間は、合わせて55分ほど。",
+      "purpose": "指示は3回。記録上の作業時間は、合わせて",
+      "subject": "指示は3回。記録上の作業時間は、合わせて",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "number_cards",
+        "params": {
+          "cards": [
+            {
+              "value": "3回",
+              "label": "送った指示"
+            },
+            {
+              "value": "約55分",
+              "label": "記録上の作業時間"
+            }
+          ]
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F03"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C17",
+      "line_id": "L17",
+      "section": "result",
+      "narration": "書かれたプログラムは、今はおよそ450行あります。私は、1行も書いていません。",
+      "purpose": "書かれたプログラムは、今はおよそ450行",
+      "subject": "書かれたプログラムは、今はおよそ450行",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "code",
+        "params": {
+          "file": "apps/production-ledger/index.html",
+          "start": 160,
+          "caption": "AIが書いたプログラム（apps/production-ledger/index.html）",
+          "speed": 80
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F06",
+        "F10"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C18",
+      "line_id": "L18",
+      "section": "result",
+      "narration": "そして今、このアプリには、ショートの再生数1,107回、継続率38.4%が記録されています。",
+      "purpose": "そして今、このアプリには、ショートの再生",
+      "subject": "そして今、このアプリには、ショートの再生",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "screen",
+        "params": {
+          "image": "projects/ai_record_02/assets/screens/shorts_views_1107.png",
+          "zoom": [
+            [
+              0.0,
+              0.15,
+              1.0,
+              0.5
+            ],
+            [
+              0.0,
+              0.26,
+              1.0,
+              0.4
+            ]
+          ],
+          "highlight": [
+            0.07,
+            0.31,
+            0.25,
+            0.355
+          ],
+          "highlight_at": 1.8,
+          "caption": "同じShorts・公開から約13時間"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [
+        "F07b"
+      ],
+      "entities": []
+    },
+    {
+      "id": "C19",
+      "line_id": "L19",
+      "section": "honest",
+      "narration": "ただし、全部が自動になったわけではありません。再生数は今も、YouTubeの画面を見て、私が手で入れています。次は、この数字を自動で取ってこられるようにするつもりです。",
+      "purpose": "ただし、全部が自動になったわけではありま",
+      "subject": "ただし、全部が自動になったわけではありま",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "push_in",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "video",
+      "prompt": "LOCAL FOOTAGE: app_now",
+      "diagram": null,
+      "science_notes": "",
+      "claim_ids": [
+        "F11"
+      ],
+      "entities": [],
+      "vertical": "fit",
+      "vertical_src": "rec/app_v3.mp4",
+      "footage": "app_now"
+    },
+    {
+      "id": "C20",
+      "line_id": "L20",
+      "section": "ending",
+      "narration": "AIは、頼めば道具まで作ってくれる。でも、何が足りないかに気づくのは、使っている自分でした。",
+      "purpose": "AIは、頼めば道具まで作ってくれる。でも",
+      "subject": "AIは、頼めば道具まで作ってくれる。でも",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "足りないものに気づくのは、使う自分"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    },
+    {
+      "id": "C21",
+      "line_id": "L21",
+      "section": "ending",
+      "narration": "次回は、この台帳を使って、ショートの継続率を70%に近づけられるかを試します。",
+      "purpose": "次回は、この台帳を使って、ショートの継続",
+      "subject": "次回は、この台帳を使って、ショートの継続",
+      "location": "",
+      "camera_angle": "",
+      "camera_motion": "static",
+      "lighting": "",
+      "onscreen_text": "",
+      "asset_type": "motion",
+      "prompt": null,
+      "diagram": {
+        "type": "title",
+        "params": {
+          "title": "次回：継続率70%に挑戦",
+          "subtitle": "AIでつくる、27歳の記録",
+          "mode": "question"
+        }
+      },
+      "science_notes": "",
+      "claim_ids": [],
+      "entities": []
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "C02": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C02.mp4",
+    "fingerprint": "0d28fda9d4e7777f",
+    "imported": "2026-10-13T09:46:06+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:app_now",
+    "prompt": "LOCAL FOOTAGE: app_now. Style: screen recordings of the real app and code-drawn graphics; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C06": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C06.mp4",
+    "fingerprint": "af7ed86804b7824f",
+    "imported": "2026-10-13T09:46:07+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:app_v1",
+    "prompt": "LOCAL FOOTAGE: app_v1. Style: screen recordings of the real app and code-drawn graphics; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C10": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C10.mp4",
+    "fingerprint": "3435c7542f6b8958",
+    "imported": "2026-10-13T09:46:07+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:app_v2",
+    "prompt": "LOCAL FOOTAGE: app_v2. Style: screen recordings of the real app and code-drawn graphics; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C13": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C13.mp4",
+    "fingerprint": "6ae249ef1aa0a44c",
+    "imported": "2026-10-13T09:46:07+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:app_v3",
+    "prompt": "LOCAL FOOTAGE: app_v3. Style: screen recordings of the real app and code-drawn graphics; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "C19": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/video/C19.mp4",
+    "fingerprint": "0d28fda9d4e7777f",
+    "imported": "2026-10-13T09:46:08+00:00",
+    "provider": "higgsfield",
+    "model": "kling3_0",
+    "job_id": "local:app_now",
+    "prompt": "LOCAL FOOTAGE: app_now. Style: screen recordings of the real app and code-drawn graphics; no new AI generation. Avoid: ",
+    "last_error": null
+  },
+  "T1": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T1_bg.png",
+    "fingerprint": "141c40a16d306c69",
+    "imported": "2026-10-13T09:46:18+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "local composite",
+    "prompt": "LOCAL COMPOSITE: the real app on a phone, right side. Style: screen recordings of the real app and code-drawn graphics; no new AI generation",
+    "last_error": null
+  },
+  "T2": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T2_bg.png",
+    "fingerprint": "4367e3980b549d85",
+    "imported": "2026-10-13T09:46:18+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "local composite",
+    "prompt": "LOCAL COMPOSITE: code scroll and the app. Style: screen recordings of the real app and code-drawn graphics; no new AI generation",
+    "last_error": null
+  },
+  "T3": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T3_bg.png",
+    "fingerprint": "68a8289562b62418",
+    "imported": "2026-10-13T09:46:18+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "local composite",
+    "prompt": "LOCAL COMPOSITE: the collision diagram. Style: screen recordings of the real app and code-drawn graphics; no new AI generation",
+    "last_error": null
+  }
+}

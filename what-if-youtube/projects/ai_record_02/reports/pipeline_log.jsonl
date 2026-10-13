@@ -1,0 +1,11 @@
+{"ts": "2026-10-13T09:46:06+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "C02", "path": "assets/video/C02.mp4", "credits": 0.0, "job_id": "local:app_now"}
+{"ts": "2026-10-13T09:46:07+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "C06", "path": "assets/video/C06.mp4", "credits": 0.0, "job_id": "local:app_v1"}
+{"ts": "2026-10-13T09:46:07+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "C10", "path": "assets/video/C10.mp4", "credits": 0.0, "job_id": "local:app_v2"}
+{"ts": "2026-10-13T09:46:07+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "C13", "path": "assets/video/C13.mp4", "credits": 0.0, "job_id": "local:app_v3"}
+{"ts": "2026-10-13T09:46:08+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "C19", "path": "assets/video/C19.mp4", "credits": 0.0, "job_id": "local:app_now"}
+{"ts": "2026-10-13T09:46:18+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "T1", "path": "thumbnails/T1_bg.png", "credits": 0.0, "job_id": "local composite"}
+{"ts": "2026-10-13T09:46:18+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "T2", "path": "thumbnails/T2_bg.png", "credits": 0.0, "job_id": "local composite"}
+{"ts": "2026-10-13T09:46:18+00:00", "project": "ai_record_02", "stage": "assets", "event": "imported", "item": "T3", "path": "thumbnails/T3_bg.png", "credits": 0.0, "job_id": "local composite"}
+{"ts": "2026-10-13T09:46:23+00:00", "project": "ai_record_02", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-13T09:46:23+00:00", "project": "ai_record_02", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-13T09:46:23+00:00", "project": "ai_record_02", "stage": "voice", "event": "start", "inputs": {"cuts": 21}}

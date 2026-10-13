@@ -1373,8 +1373,63 @@ class Code(Renderer):
         return img
 
 
+class Sync(Renderer):
+    """Two writers, one record: the store refuses a write based on an outdated read, the writer re-reads and merges."""
+
+    def frame(self, t):
+        img = self.base(t, (2, 0))
+        d = ImageDraw.Draw(img)
+        T = self.T
+        title_bar(img, self.p.get("title", "同じデータに、ほぼ同時に書き込んだら"), t, y=40)
+        ph = [(0.10, "ai_read"), (0.28, "user_write"), (0.46, "ai_write"), (0.62, "reject"), (0.74, "ai_reread"), (0.86, "merge")]
+        k = lambda i: eo(window(t, ph[i][0] * T, ph[i][0] * T + 0.6))
+        # actors
+        ux, ax, dbx, cy = 190, 1730, W / 2, 470
+        for x, label, col in ((ux, "あなた（スマホ）", AMBER), (ax, "AI", CYAN)):
+            d.ellipse([x - 88, cy - 88, x + 88, cy + 88], outline=col, width=6, fill=(14, 22, 42))
+            text(img, (x, cy), label.split("（")[0], font(40, "Black"), col, 1, "mm")
+            if "（" in label:
+                text(img, (x, cy + 125), "（" + label.split("（")[1], font(28, "Regular"), MUTED, 1, "mm")
+        # database card
+        stage = sum(1 for i in range(len(ph)) if t >= ph[i][0] * T + 0.3)
+        version = 2 + (1 if stage >= 2 else 0) + (1 if stage >= 6 else 0)
+        views = "282回" if stage >= 2 else "—"
+        stayed = "26%" if stage >= 6 else "—"
+        rej = k(3) * (1 - k(4))
+        border = mix(mix(GRID, CYAN, 0.6), RED, rej) if stage < 6 else mix(GRID, GREEN, k(5))
+        d.rounded_rectangle([dbx - 230, 290, dbx + 230, 650], 26, fill=(14, 22, 42), outline=border, width=6)
+        text(img, (dbx, 330), "データベース：月S2", font(34, "Bold"), MUTED, 1, "mm")
+        text(img, (dbx, 400), f"版 v{version}", font(56, "Black"), INK, 1, "mm")
+        text(img, (dbx, 480), f"再生数　{views}", font(40, "Bold"), AMBER if stage >= 2 else MUTED, 1, "mm")
+        text(img, (dbx, 540), f"継続率　{stayed}", font(40, "Bold"), CYAN if stage >= 6 else MUTED, 1, "mm")
+
+        def arrow(x0, x1, y, kk, col, label):
+            if kk <= 0:
+                return
+            xe = x0 + (x1 - x0) * kk
+            d.line([x0, y, xe, y], fill=col, width=6)
+            sgn = 1 if x1 > x0 else -1
+            d.polygon([(xe, y), (xe - sgn * 22, y - 13), (xe - sgn * 22, y + 13)], fill=col)
+            text(img, ((x0 + x1) / 2, y - 34), label, font(30, "Bold"), col, kk, "mm")
+        if stage < 3:
+            arrow(dbx + 240, ax - 100, 400, k(0), CYAN, "① 読む（v2）")
+        if stage < 2:
+            pass
+        arrow(ux + 100, dbx - 240, 470, k(1) * (1 - k(5) * 0.6), AMBER, "② 282回を入力")
+        if 3 <= stage < 5 or (stage == 2 and k(2) > 0):
+            arrow(ax - 100, dbx + 240, 540, k(2), CYAN, "③ 26%を書く（v2のまま）")
+        if rej > 0.02:
+            text(img, (dbx, 700), "× 断る：読んだあとにデータが変わっています", font(40, "Black"), RED, rej, "mm")
+        if stage >= 5:
+            arrow(dbx + 240, ax - 100, 400, k(4) * (1 - k(5)), CYAN, "④ 読み直す（v3）")
+        if stage >= 6:
+            arrow(ax - 100, dbx + 240, 540, k(5), GREEN, "⑤ 26%を足して保存")
+            text(img, (dbx, 700), "どちらの数字も消えなかった", font(44, "Black"), GREEN, k(5), "mm")
+        return img
+
+
 RENDERERS = {
-    "chat": Chat, "screen": Screen, "flow": Flow, "table": Table, "bubble": Bubble, "code": Code,
+    "chat": Chat, "sync": Sync, "screen": Screen, "flow": Flow, "table": Table, "bubble": Bubble, "code": Code,
     "pending": Pending, "awake_clock": AwakeClock, "microsleep": Microsleep, "distort": Distort,
     "brain_clean": BrainClean, "ros_gut": RosGut, "half_brain": HalfBrain,
     "title": Title, "legend": Legend, "timeline": Timeline, "barycenter": Barycenter, "bar_compare": BarCompare,

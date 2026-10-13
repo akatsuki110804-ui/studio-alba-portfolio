@@ -37,8 +37,15 @@ def _claims_ok(project: Project, short: dict) -> None:
 
 
 def vertical_segment(src: Path, kind: str, motion: str, frames: int, out: Path, *, fps: int,
-                     w: int = 1080, h: int = 1920, fill: bool = False) -> Path:
+                     w: int = 1080, h: int = 1920, fill: bool = False, portrait: bool = False) -> Path:
     fw, fh = w, round(w * 9 / 16 / 2) * 2
+    if portrait:  # a vertical screen recording: full height, centered on a plain background
+        vf = (f"scale=-2:{h},pad={w}:{h}:(ow-iw)/2:0:color=0x0b1226,fps={fps},"
+              f"tpad=stop_mode=clone:stop_duration={frames / fps:.3f},format=yuv420p,setsar=1")
+        out.parent.mkdir(parents=True, exist_ok=True)
+        run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, "-frames:v", str(frames), "-an",
+             "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", str(fps), str(out)])
+        return out
     if fill:  # real footage: crop to 9:16 and use the whole screen
         vf = (f"scale=-2:{h},crop={w}:{h},fps={fps},tpad=stop_mode=clone:stop_duration={frames / fps:.3f},"
               f"format=yuv420p,setsar=1")
@@ -89,6 +96,11 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
         kind, motion = cut["asset_type"], cut["camera_motion"]
         spec = cut["diagram"] if kind == "motion" else None
         src = None if kind == "motion" else am.cut_asset(project, cut, sb["style_bible"])
+        portrait = bool(cut.get("vertical_src"))
+        if portrait:  # Shorts use the original vertical recording instead of the 16:9 composite
+            src = project.path(cut["vertical_src"])
+            if not src.exists():
+                raise PipelineError(f"{sid}: vertical source missing: {src}")
         if kind != "motion" and src is None:
             if not animatic:
                 raise PipelineError(f"{sid}: cut {cut['id']} has no ready asset (use --animatic for a draft)")
@@ -100,7 +112,7 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
             key = sha(spec, editor.MOTION_CODE_HASH, frames, LAYOUT)
         else:
             st = src.stat()
-            key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames, LAYOUT, cut.get("vertical", "fill"))
+            key = sha(str(src), st.st_size, st.st_mtime, kind, motion, frames, LAYOUT, cut.get("vertical", "fill"), portrait)
         out = seg_dir / f"{sid}_{i:02d}_{key}.mp4"
         if not out.exists():
             for old in seg_dir.glob(f"{sid}_{i:02d}_*.mp4"):
@@ -112,7 +124,7 @@ def build_short(project: Project, short: dict, animatic: bool) -> dict:
                 tmp.unlink()
             else:
                 # raw footage fills the screen; composites (side-by-side, screen captures) keep their full frame
-                vertical_segment(src, kind, motion, frames, out, fps=fps,
+                vertical_segment(src, kind, motion, frames, out, fps=fps, portrait=portrait,
                                  fill=kind == "video" and cut.get("vertical", "fill") == "fill")
         seg_paths.append(out)
 
