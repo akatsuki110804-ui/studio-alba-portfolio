@@ -1,0 +1,361 @@
+# YouTube制作 AI社員チーム — 役割インデックス（機械可読）
+# 状態: 下書き（ユーザー回答待ち）。人が読む説明は roles/*.md、境界は overlaps.md を参照。
+# upstream/downstream の user はユーザー本人。implemented_by のパスはリポジトリ直下からの相対パス。
+
+version: 0.1-draft
+status: 下書き（ユーザー回答待ち）
+channel: AIでつくる、27歳の記録     # シリーズ「What If Lab」を含む
+deliverables: [長尺動画, Shorts]   # Shortsは長尺からの派生が多い
+video_folder: videos/<YYYYMMDD>_<slug>/
+publishing:
+  default: manual               # ユーザーがYouTube Studioで手動アップロード・公開
+  api_upload: not_configured    # YouTube Data API（Google Cloudプロジェクト＋OAuth同意画面）はユーザーの設定と承認が済むまで使わない
+  api_upload_privacy: [private, scheduled]   # 設定後も非公開 or 予約公開でアップロードし、最終公開はG4で承認
+phases: [リサーチ, 企画, 台本, レビュー, 素材準備, 編集, 品質確認, 投稿, 分析, 改善, 進行]
+approval_gates:
+  - {id: G1, name: 企画の承認, owner: R07}
+  - {id: G2, name: 台本の承認, owner: R13}
+  - {id: G3, name: 費用がかかる生成の前, owner: [R17, R21]}
+  - {id: G4, name: 投稿の前, owner: R23, note: アップロード（API時）と最終公開の両方}
+
+roles:
+  - id: R01
+    name: 市場調査
+    phase: リサーチ
+    file: roles/R01_市場調査.md
+    upstream: [R28]
+    downstream: [R06, R05]
+    approval_required:
+      required: false
+      reason: "社内向けの調査メモで、外部公開・費用発生がないため"
+    implemented_by:
+      - "未実装"
+    implemented_note: "チャンネル方針は what-if-youtube/docs/channel_plan_ai27.md に手書きで記録されている"
+  - id: R02
+    name: 競合調査
+    phase: リサーチ
+    file: roles/R02_競合調査.md
+    upstream: [R28, R03]
+    downstream: [R06, R09]
+    approval_required:
+      required: false
+      reason: "社内向けの分析で、外部公開・費用発生がないため"
+    implemented_by:
+      - "未実装"
+  - id: R03
+    name: 投稿収集
+    phase: リサーチ
+    file: roles/R03_投稿収集.md
+    upstream: [R28]
+    downstream: [R02, R04, R16]
+    approval_required:
+      required: false
+      reason: "公開動画のURLと表示情報の記録のみで、素材の再利用はしないため（再利用はR16で承認。API利用は設定時に承認）"
+    implemented_by:
+      - "未実装"
+  - id: R04
+    name: トレンド調査
+    phase: リサーチ
+    file: roles/R04_トレンド調査.md
+    upstream: [R28, R03]
+    downstream: [R06, R07]
+    approval_required:
+      required: false
+      reason: "社内向けの調査で、外部公開・費用発生がないため"
+    implemented_by:
+      - "未実装"
+  - id: R05
+    name: 視聴者分析
+    phase: リサーチ
+    file: roles/R05_視聴者分析.md
+    upstream: [R28, R01, R26, R25]
+    downstream: [R06, R08, R09]
+    approval_required:
+      required: false
+      reason: "社内向けの分析で、外部公開・費用発生がないため"
+    implemented_by:
+      - "未実装"
+  - id: R06
+    name: 企画立案
+    phase: 企画
+    file: roles/R06_企画立案.md
+    upstream: [R01, R02, R04, R05, R27]
+    downstream: [R07]
+    approval_required:
+      required: false
+      reason: "候補を出す段階。承認はR07のテーマ選定後にまとめて行う"
+    implemented_by:
+      - "what-if-youtube/src/planning.py（plan工程）"
+      - "what-if-youtube/config/prompts.yaml"
+    implemented_note: "1テーマから plan.json を作る。複数案の比較は未実装"
+  - id: R07
+    name: テーマ選定
+    phase: 企画
+    file: roles/R07_テーマ選定.md
+    upstream: [R06, R04]
+    downstream: [R08]
+    approval_required:
+      required: true
+      reason: "承認ゲートG1「企画の承認」。ユーザーが採用案を決める"
+    implemented_by:
+      - "未実装"
+    implemented_note: "承認状況の記録先として YouTube制作台帳（what-if-youtube/apps/production-ledger/index.html）を使える可能性あり"
+  - id: R08
+    name: 構成設計
+    phase: 企画
+    file: roles/R08_構成設計.md
+    upstream: [R07, R05]
+    downstream: [R09, R10, R11, R12, R18]
+    approval_required:
+      required: false
+      reason: "台本承認（G2）で台本と合わせて確認するため"
+    implemented_by:
+      - "what-if-youtube/src/planning.py（storyboard工程）"
+    implemented_note: "絵コンテ（カット・素材種別・モーション指定）を作る"
+  - id: R09
+    name: フック作成
+    phase: 台本
+    file: roles/R09_フック作成.md
+    upstream: [R08, R05, R02]
+    downstream: [R10, R11]
+    approval_required:
+      required: false
+      reason: "台本承認（G2）で台本と合わせて確認するため"
+    implemented_by:
+      - "what-if-youtube/src/planning.py（script工程の一部）"
+    implemented_note: "独立したフック案比較の工程は未実装"
+  - id: R10
+    name: 台本作成
+    phase: 台本
+    file: roles/R10_台本作成.md
+    upstream: [R08, R09, R12]
+    downstream: [R13, R14, R15]
+    approval_required:
+      required: false
+      reason: "台本自体の承認はR13のレビュー後、承認ゲートG2で行う"
+    implemented_by:
+      - "what-if-youtube/src/planning.py（script工程）"
+    implemented_note: "未確認の事実主張を参照するとエラーで止まる仕組みがある"
+  - id: R11
+    name: タイトル作成
+    phase: 台本
+    file: roles/R11_タイトル作成.md
+    upstream: [R08, R09]
+    downstream: [R13, R17, R24, R23]
+    approval_required:
+      required: false
+      reason: "台本承認（G2）で確認し、最終形は公開前承認（G4）で確認するため"
+    implemented_by:
+      - "what-if-youtube/src/thumbnail.py（サムネ文字・強調語の描画）"
+    implemented_note: "タイトル案は plan.json にも出る。複数案比較は未実装"
+  - id: R12
+    name: CTA設計
+    phase: 台本
+    file: roles/R12_CTA設計.md
+    upstream: [R08, R28]
+    downstream: [R10, R24]
+    approval_required:
+      required: false
+      reason: "台本承認（G2）で確認するため"
+    implemented_by:
+      - "未実装"
+    implemented_note: "過去の例: shorts_v2_upload_kit.md の「続きは本編で」・固定コメント"
+  - id: R13
+    name: 台本レビュー
+    phase: レビュー
+    file: roles/R13_台本レビュー.md
+    upstream: [R10, R14, R15]
+    downstream: [R16, R17, R18, R21, R24]
+    approval_required:
+      required: true
+      reason: "承認ゲートG2「台本の承認」。R14・R15の結果と合わせてユーザーに提示する"
+    implemented_by:
+      - "未実装"
+    implemented_note: "現状はユーザーが目視で確認している"
+  - id: R14
+    name: 事実確認
+    phase: レビュー
+    file: roles/R14_事実確認.md
+    upstream: [R10]
+    downstream: [R13, R18, R24]
+    approval_required:
+      required: false
+      reason: "結果は台本承認（G2）でユーザーに提示する"
+    implemented_by:
+      - "what-if-youtube/src/planning.py（research工程: 主張ごとの fact/inference/dramatization と確認状況）"
+      - "what-if-youtube/src/shorts.py（_claims_ok）"
+    implemented_note: "research/sources.md に出典を出力"
+  - id: R15
+    name: 表現チェック
+    phase: レビュー
+    file: roles/R15_表現チェック.md
+    upstream: [R10, R05]
+    downstream: [R13, R24]
+    approval_required:
+      required: false
+      reason: "結果は台本承認（G2）でユーザーに提示する"
+    implemented_by:
+      - "未実装"
+  - id: R16
+    name: 素材収集
+    phase: 素材準備
+    file: roles/R16_素材収集.md
+    upstream: [R13, R03]
+    downstream: [R20, R17, R24]
+    approval_required:
+      required: true
+      reason: "他者の著作物・人物の写り込み・有料素材の利用はユーザー承認が必要"
+    implemented_by:
+      - "what-if-youtube/src/asset_manager.py（assets import: 手動ファイルの取り込み）"
+      - "what-if-youtube/assets_library/"
+    implemented_note: "権利台帳としての列は未実装"
+  - id: R17
+    name: 画像生成
+    phase: 素材準備
+    file: roles/R17_画像生成.md
+    upstream: [R16, R13, R11]
+    downstream: [R20, R22, R23]
+    approval_required:
+      required: true
+      reason: "承認ゲートG3「費用がかかる生成の前」。有料生成は見積もり提示→承認→実行"
+    implemented_by:
+      - "what-if-youtube/src/asset_manager.py（requests.json: プロンプト・モデル・推定クレジット）"
+      - "what-if-youtube/src/thumbnail.py（背景＋文字の合成）"
+      - "Higgsfield（MCP経由）"
+    implemented_note: "予算の80%超で --confirm-spend が必要な仕組みがある"
+  - id: R18
+    name: 図解作成
+    phase: 素材準備
+    file: roles/R18_図解作成.md
+    upstream: [R08, R14, R13]
+    downstream: [R20, R22]
+    approval_required:
+      required: false
+      reason: "確認済みデータを無料の手段（コード）で描くため。有料ツールを使う場合はR17と同じ承認を取る"
+    implemented_by:
+      - "what-if-youtube/src/motion.py（モーショングラフィック20種類）"
+      - "what-if-youtube/src/diagrams.py（静止図解・互換用）"
+  - id: R19
+    name: 字幕作成
+    phase: 編集
+    file: roles/R19_字幕作成.md
+    upstream: [R13, R21]
+    downstream: [R20, R22, R23]
+    approval_required:
+      required: false
+      reason: "承認済み台本の文言をそのまま字幕化するため"
+    implemented_by:
+      - "what-if-youtube/src/editor.py（subtitle_events・wrap_lines）"
+      - "what-if-youtube/templates/subtitles/"
+    implemented_note: "字幕ルールは config/settings.yaml の subtitles"
+  - id: R20
+    name: 動画編集
+    phase: 編集
+    file: roles/R20_動画編集.md
+    upstream: [R16, R17, R18, R19, R21]
+    downstream: [R22]
+    approval_required:
+      required: false
+      reason: "完成動画は品質確認後、公開前承認（G4）でユーザーが確認する"
+    implemented_by:
+      - "what-if-youtube/src/editor.py（長尺のFFmpeg編集）"
+      - "what-if-youtube/src/shorts.py（縦型Shorts）"
+      - "what-if-youtube/src/main.py produce"
+    implemented_note: "素材未完成時は書き出しを拒否し、--animatic で PENDING 下書きを出す"
+  - id: R21
+    name: 音声調整
+    phase: 編集
+    file: roles/R21_音声調整.md
+    upstream: [R13, R16]
+    downstream: [R19, R20, R22, R24]
+    approval_required:
+      required: true
+      reason: "有料の音声生成、ユーザー本人の声・他者の声の使用はユーザー承認が必要（VOICEVOX等のローカル生成は費用なし）"
+    implemented_by:
+      - "what-if-youtube/src/voice.py（VOICEVOX/Kokoro、文単位キャッシュ、読み確認リスト）"
+      - "what-if-youtube/src/editor.py（BGM・ラウドネス）"
+    implemented_note: "既存設定: VOICEVOX 冥鳴ひまり（クレジット必須）、target_lufs -14"
+  - id: R22
+    name: 品質確認
+    phase: 品質確認
+    file: roles/R22_品質確認.md
+    upstream: [R20, R17, R18, R19, R21]
+    downstream: [R23]
+    approval_required:
+      required: false
+      reason: "結果は公開前承認（G4）でユーザーに提示する"
+    implemented_by:
+      - "what-if-youtube/src/quality_check.py（尺・解像度・音声・ラウドネス・黒画面・無音・字幕・出典・費用）"
+    implemented_note: "reports/qc_report.md と previews/ を出力"
+  - id: R23
+    name: 投稿管理
+    phase: 投稿
+    file: roles/R23_投稿管理.md
+    upstream: [R22, R24, R11, R17]
+    downstream: [R25, R26]
+    approval_required:
+      required: true
+      reason: "承認ゲートG4「投稿の前」。アップロード（API利用時）と最終の公開はそれぞれユーザー承認が必要"
+    implemented_by:
+      - "what-if-youtube/docs/shorts_v2_upload_kit.md（手動アップロード用キットの前例）"
+      - "YouTube制作台帳（what-if-youtube/apps/production-ledger/index.html）"
+    implemented_note: "API経由のアップロードは未実装"
+  - id: R24
+    name: キャプション作成
+    phase: 投稿
+    file: roles/R24_キャプション作成.md
+    upstream: [R13, R11, R12, R14, R15, R16, R21]
+    downstream: [R23]
+    approval_required:
+      required: false
+      reason: "公開前承認（G4）でアップロード設定と一緒に確認するため"
+    implemented_by:
+      - "what-if-youtube/docs/shorts_v2_upload_kit.md（説明文・固定コメントの手書き例）"
+    implemented_note: "自動生成は未実装"
+  - id: R25
+    name: コメント分析
+    phase: 分析
+    file: roles/R25_コメント分析.md
+    upstream: [R23]
+    downstream: [R27, R05]
+    approval_required:
+      required: false
+      reason: "社内向けの分析。コメントへの返信・削除は行わない（行う場合は外部送信として承認が必要）"
+    implemented_by:
+      - "未実装"
+  - id: R26
+    name: 数値分析
+    phase: 分析
+    file: roles/R26_数値分析.md
+    upstream: [R23]
+    downstream: [R27, R05]
+    approval_required:
+      required: false
+      reason: "社内向けの分析で、外部公開・費用発生がないため（YouTube Analytics APIを使う場合は設定時に承認）"
+    implemented_by:
+      - "YouTube制作台帳（what-if-youtube/apps/production-ledger/index.html: 再生数・総再生時間・Shortsの「視聴を継続」を記録）"
+    implemented_note: "他の指標・比較レポートは未実装"
+  - id: R27
+    name: 改善提案
+    phase: 改善
+    file: roles/R27_改善提案.md
+    upstream: [R25, R26, R22, R28]
+    downstream: [R06, R28]
+    approval_required:
+      required: true
+      reason: "ルールファイルの変更・企画方針の変更はユーザー承認が必要"
+    implemented_by:
+      - "未実装"
+  - id: R28
+    name: 進行管理
+    phase: 進行
+    file: roles/R28_進行管理.md
+    upstream: [user, R27]
+    downstream: [R01, R02, R03, R04, R05, R12]
+    approval_required:
+      required: true
+      reason: "依頼内容（ブリーフ）の確定時と、各承認ゲートの依頼・記録を担うため"
+    implemented_by:
+      - "what-if-youtube/src/main.py（status）"
+      - "what-if-youtube/src/cost_tracker.py（費用台帳・予算ガード）"
+      - "YouTube制作台帳（what-if-youtube/apps/production-ledger/index.html）"
