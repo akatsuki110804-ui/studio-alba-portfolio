@@ -17,11 +17,94 @@
       ]
     },
     "voice": {
-      "status": "running",
+      "status": "done",
       "started": "2026-10-13T09:46:23+00:00",
       "inputs": {
         "cuts": 21
-      }
+      },
+      "finished": "2026-10-13T09:49:34+00:00",
+      "error": null,
+      "fingerprint": "8f46db0554e22641",
+      "outputs": [
+        "audio/narration.wav",
+        "audio/timing.json"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "174.6s narration; sentences generated=37 reused from cache=0"
+      ]
+    },
+    "edit": {
+      "status": "done",
+      "started": "2026-10-13T09:49:34+00:00",
+      "inputs": {
+        "animatic": false
+      },
+      "finished": "2026-10-13T09:56:54+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "output/ai_record_02_long.mp4",
+        "subtitles/ai_record_02_ja.srt"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": []
+    },
+    "shorts": {
+      "status": "done",
+      "started": "2026-10-13T10:06:45+00:00",
+      "inputs": {
+        "count": 3,
+        "animatic": false
+      },
+      "finished": "2026-10-13T10:10:52+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "output/shorts/S1.mp4",
+        "output/shorts/S2.mp4",
+        "output/shorts/S3.mp4"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": []
+    },
+    "validate": {
+      "status": "done",
+      "started": "2026-10-13T10:10:52+00:00",
+      "inputs": {},
+      "finished": "2026-10-13T10:11:49+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "reports/qc_report.json",
+        "reports/qc_report.md"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "errors=0 warnings=0 publishable=True"
+      ]
+    },
+    "thumbnails": {
+      "status": "done",
+      "started": "2026-10-13T10:12:03+00:00",
+      "inputs": {
+        "count": 3
+      },
+      "finished": "2026-10-13T10:12:04+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "thumbnails/T1.jpg",
+        "thumbnails/T2.jpg",
+        "thumbnails/T3.jpg"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": []
     }
   }
 }

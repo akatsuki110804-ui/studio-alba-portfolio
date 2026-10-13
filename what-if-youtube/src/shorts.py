@@ -20,7 +20,7 @@ from . import motion as motion_mod
 from .common import PipelineError, Project, read_json, run, sha, write_json
 
 FG_Y_OFFSET = -110  # shot sits slightly above center
-LAYOUT = "hook-fill-v2"  # part of every segment cache key
+LAYOUT = "hook-fill-v2b"  # part of every segment cache key
 HOOK_SECONDS = 1.8  # how long the big centered hook stays before it moves to the header
 MOTION_T0 = 1.2  # seconds of animation skipped at the start of a motion cut
 
@@ -40,7 +40,7 @@ def vertical_segment(src: Path, kind: str, motion: str, frames: int, out: Path, 
                      w: int = 1080, h: int = 1920, fill: bool = False, portrait: bool = False) -> Path:
     fw, fh = w, round(w * 9 / 16 / 2) * 2
     if portrait:  # a vertical screen recording: full height, centered on a plain background
-        vf = (f"scale=-2:{h},pad={w}:{h}:(ow-iw)/2:0:color=0x0b1226,fps={fps},"
+        vf = (f"scale=-2:{h - 280},pad={w}:{h}:(ow-iw)/2:280:color=0x0b1226,fps={fps},"
               f"tpad=stop_mode=clone:stop_duration={frames / fps:.3f},format=yuv420p,setsar=1")
         out.parent.mkdir(parents=True, exist_ok=True)
         run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-vf", vf, "-frames:v", str(frames), "-an",
