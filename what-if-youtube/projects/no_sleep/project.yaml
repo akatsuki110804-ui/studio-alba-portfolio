@@ -4,4 +4,8 @@ created: '2026-10-12T00:00:00+00:00'
 overrides:
   voice:
     voicevox:
-      speed: 1.0   # slower, calmer delivery for a sleep topic
+      speed: 1.0
+  video:
+    shorts_seconds:
+    - 15
+    - 60
