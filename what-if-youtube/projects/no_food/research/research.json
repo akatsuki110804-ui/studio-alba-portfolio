@@ -1,0 +1,432 @@
+{
+  "research_status": "complete",
+  "research_notes": "2026-10-19 にWeb検索で調査。このコンテナからは WebFetch・curl で論文ページを直接開けなかったため、すべて検索結果の要約経由で確認。'verified' は一次資料の抄録や公的機関の要約が複数の検索結果で一致したことを意味する。公開前に S03・S04・S11・S16 の原文確認を推奨。健康情報を扱うため、医学的助言ではない旨と「絶対に真似しない」旨を動画内と概要欄に明記する。減量の話として扱わない。",
+  "assumptions": [
+    "今日から一切の食べ物を口にしない（水は飲める）という思考実験。水も断つ場合は扱わない。",
+    "人に長期間何も食べさせない実験は倫理的に行えない。長期の影響は、医師が管理した記録・ハンガーストライキ・過去の研究から推測する。",
+    "紹介する382日の記録は、医師の管理下で、大きな体の蓄えがある人に行われたきわめて特殊な例であり、目標や手本ではない。",
+    "この動画は医学的な助言ではない。"
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Physiology, Fasting",
+      "publisher": "StatPearls (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK534877/",
+      "type": "医学教科書（査読付きオンライン）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S02",
+      "title": "Biochemistry, Gluconeogenesis ／ Lippincott 準拠の講義資料（肝グリコーゲンは10〜18時間）",
+      "publisher": "StatPearls (NCBI Bookshelf) ほか",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK541119/",
+      "type": "医学教科書",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S03",
+      "title": "Brain metabolism during short-term starvation in humans (Hasselbalch ほか), J Cereb Blood Flow Metab 14(1):125-131, 1994",
+      "publisher": "Journal of Cerebral Blood Flow and Metabolism（Region Hovedstaden 研究ポータル）",
+      "url": "https://research.regionh.dk/en/publications/brain-metabolism-during-short-term-starvation-in-humans/",
+      "type": "査読論文（抄録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S04",
+      "title": "Brain Metabolism during Fasting (Owen, Morgan, Kemp, Sullivan, Herrera & Cahill), J Clin Invest 46(10):1589-1595, 1967",
+      "publisher": "Journal of Clinical Investigation (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC292907/",
+      "type": "査読論文（抄録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S05",
+      "title": "Fuel metabolism in starvation (Cahill GF Jr.), Annu Rev Nutr 26:1-22, 2006",
+      "publisher": "Annual Review of Nutrition (PubMed)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16848698/",
+      "type": "総説（抄録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S06",
+      "title": "Physiological adaptation to prolonged starvation",
+      "publisher": "Deranged Physiology",
+      "url": "https://derangedphysiology.com/main/node/2235",
+      "type": "医学教育サイト",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S07",
+      "title": "Hunger strikes (Peel M), BMJ 315:829-830, 1997",
+      "publisher": "BMJ",
+      "url": "https://www.bmj.com/content/315/7112/829",
+      "type": "論説（全文は有料）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary (opening section only)"
+    },
+    {
+      "id": "S08",
+      "title": "Rested Guinness World Records titles and why we no longer monitor them",
+      "publisher": "Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/news/2024/11/rested-guinness-world-records-titles-and-why-we-no-longer-monitor-them",
+      "type": "公式発表",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S09",
+      "title": "Starvation and body nitrogen (Cahill ほか), 1971",
+      "publisher": "True North Health Foundation 文献データベース（PDF）",
+      "url": "https://truenorthhealthfoundation.org/sites/default/files/docs/fasting-database-article/Cahill_et_al_1971_Starvation_and_body_nitrogen.pdf",
+      "type": "総説（二次ホスト）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S10",
+      "title": "The Hunger Strike of 1981 - List of Dead and Other Hunger Strikers",
+      "publisher": "CAIN (Ulster University)",
+      "url": "https://cain.ulster.ac.uk/events/hstrike/dead.htm",
+      "type": "大学のアーカイブ",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S11",
+      "title": "Refeeding Syndrome",
+      "publisher": "StatPearls (NCBI Bookshelf)",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK564513/",
+      "type": "医学教科書",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S12",
+      "title": "Refeeding syndrome に関するレビュー（PMC7447285。論文タイトルは未確認）",
+      "publisher": "PubMed Central",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7447285/",
+      "type": "総説",
+      "accessed": "2026-10-19",
+      "access_method": "web search snippet only (title not confirmed)"
+    },
+    {
+      "id": "S13",
+      "title": "Refeeding syndrome の歴史に触れたレビュー（Br J Hosp Med 2010;71(12):686 ほか。タイトルは未確認）",
+      "publisher": "British Journal of Hospital Medicine ほか",
+      "url": "https://storage.imrpress.com/IMR/hmed/application/10.12968/hmed.2010.71.12.686.pdf",
+      "type": "総説",
+      "accessed": "2026-10-19",
+      "access_method": "web search snippet only (title not confirmed)"
+    },
+    {
+      "id": "S14",
+      "title": "Starvation Experiment of Dr. Ancel Keys, 1944–1945 ／ APA Monitor on Psychology 2013年10月号の記事",
+      "publisher": "MNopedia (Minnesota Historical Society) / American Psychological Association",
+      "url": "https://www.mnhs.org/mnopedia/search/index/event/starvation-experiment-dr-ancel-keys-1944-1945",
+      "type": "歴史事典＋学会誌記事",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S15",
+      "title": "The Effects of Starvation",
+      "publisher": "InsideOut Institute (University of Sydney)",
+      "url": "https://insideoutinstitute.org.au/resource-library/the-effects-of-starvation",
+      "type": "医療機関の解説資料",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S16",
+      "title": "Features of a successful therapeutic fast of 382 days' duration (Stewart WK & Fleming LW), Postgrad Med J 49:203-209, 1973",
+      "publisher": "Postgraduate Medical Journal (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2495396/",
+      "type": "査読論文（症例報告・抄録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S17",
+      "title": "Angus Barbieri's fast",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Angus_Barbieri%27s_fast",
+      "type": "百科事典（二次資料）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    }
+  ],
+  "claims": [
+    {
+      "id": "A01",
+      "text": "何も食べない状態を人で意図的に長く続ける実験は、危険なので行えない。長期の絶食の知見は、医師が管理した記録・ハンガーストライキ・過去の研究から推測する。",
+      "category": "inference",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "status": "partially_verified",
+      "notes": "Peel 1997 は長期の飢餓に関する公表データが少ないと述べる（冒頭部分のみ確認）。Guinness は健康上の懸念から断食記録を休止。"
+    },
+    {
+      "id": "C01",
+      "text": "絶食の最初の24時間は、肝臓（グリコーゲンの分解）が血糖の維持の主役で、およそ24時間で肝臓のグリコーゲンはほぼ尽きる。",
+      "category": "fact",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "status": "partially_verified",
+      "notes": "StatPearls は約24時間。Lippincott 準拠資料は10〜18時間とする。台本では「およそ1日」「もっと早いという見方もある」と幅で表現。"
+    },
+    {
+      "id": "C02",
+      "text": "グリコーゲンが尽きると、体は乳酸・グリセロール・アミノ酸（たんぱく質由来）などから糖を作る（糖新生）。",
+      "category": "fact",
+      "source_ids": [
+        "S02",
+        "S06"
+      ],
+      "status": "verified",
+      "notes": "複数の教科書系資料で一致。"
+    },
+    {
+      "id": "C03",
+      "text": "1994年の研究では、9人が3.5日間絶食したあと、ケトン体が脳のエネルギーのおよそ4分の1をまかない、脳は3日目には燃料の変化に適応していた。",
+      "category": "fact",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "verified",
+      "notes": "PETによる測定。抄録の結論文で確認（検索要約経由）。"
+    },
+    {
+      "id": "C04",
+      "text": "1967年の研究で、5〜6週間絶食した患者（肥満の3人）の脳では、ケトン体（βヒドロキシ酪酸とアセト酢酸）がブドウ糖に代わって主な燃料になっていた。",
+      "category": "fact",
+      "source_ids": [
+        "S04"
+      ],
+      "status": "verified",
+      "notes": "対象は医療下で絶食した肥満患者3人。一般化に注意。"
+    },
+    {
+      "id": "C05",
+      "text": "ケーヒルは、脳がケトン体（D-βヒドロキシ酪酸）を使えることが、人が長い飢餓を生き延びることを可能にしたと述べている。",
+      "category": "fact",
+      "source_ids": [
+        "S05"
+      ],
+      "status": "verified",
+      "notes": "2006年総説の抄録。"
+    },
+    {
+      "id": "C06",
+      "text": "絶食が続くと、糖新生のあとにケトン体の産生が中心になる。さらに長引くと、たんぱく質の分解で体の構造に重要なたんぱく質が壊れ、臓器の機能障害が起きる。",
+      "category": "fact",
+      "source_ids": [
+        "S06",
+        "S09"
+      ],
+      "status": "partially_verified",
+      "notes": "教育サイトと Cahill 1971 の要約。死に至るたんぱく質喪失の閾値は資料なし（open question）。"
+    },
+    {
+      "id": "C07",
+      "text": "脳がケトン体を使うと、脳が必要とする糖が減り、糖の材料として筋肉を分解するペースを抑えられると考えられている。",
+      "category": "inference",
+      "source_ids": [
+        "S06",
+        "S09"
+      ],
+      "status": "partially_verified",
+      "notes": "ケトン体自体が直接たんぱく質を節約するかは議論あり（Féry & Balasse 1980）。台本では「考えられています」と表現。"
+    },
+    {
+      "id": "C08",
+      "text": "1981年、北アイルランドの刑務所でハンガーストライキが行われ、10人が亡くなった。食べ物を断っていた期間は46日から73日（ボビー・サンズは66日）。",
+      "category": "fact",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "verified",
+      "notes": "CAIN の一覧で確認（検索要約経由）。Peel 1997 は45〜61日と記述しており食い違いあり。"
+    },
+    {
+      "id": "C09",
+      "text": "1981年のハンガーストライキで最も短い46日で亡くなったマーティン・ハーソンは、およそ40日目以降、水を受けつけなくなっていたと伝えられる。",
+      "category": "fact",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "partially_verified",
+      "notes": "CAIN と Wikipedia の要約で一致。原文未確認。"
+    },
+    {
+      "id": "C10",
+      "text": "人が食べずにどれだけ生きられるかは、体の蓄え・水分・健康状態などで大きく変わり、一つの数字では示せない。",
+      "category": "inference",
+      "source_ids": [
+        "S07",
+        "S10",
+        "S16"
+      ],
+      "status": "partially_verified",
+      "notes": "46〜73日（ハンスト）と382日（医療管理下・大きな体の蓄え）の差から推論。"
+    },
+    {
+      "id": "C11",
+      "text": "リフィーディング症候群は、栄養不良の人に栄養を再開したときに、体液と電解質が急に移動して起きる、命にかかわりうる状態。低リン血症が特徴で、カリウム・マグネシウム・チアミンも関わる。",
+      "category": "fact",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "status": "verified",
+      "notes": "StatPearls と複数のレビューで一致。"
+    },
+    {
+      "id": "C12",
+      "text": "栄養の再開でインスリンが増え、リン・カリウム・マグネシウムが細胞内に移って血中で不足する（これらは飢えでもともと減っている）。飢えで弱った心臓に水分の負担が加わり、心不全や不整脈などにつながりうる。医療では栄養をゆっくり増やし、最初の数日は電解質を監視する。",
+      "category": "fact",
+      "source_ids": [
+        "S12",
+        "S11"
+      ],
+      "status": "verified",
+      "notes": "レビュー要約で確認。台本では医療現場の説明にとどめ、指示はしない。"
+    },
+    {
+      "id": "C13",
+      "text": "リフィーディング症候群は、第二次世界大戦のあと、捕虜や収容所の生存者などが栄養を再開した際に予想外の病気や死亡が見られたことで認識された。",
+      "category": "fact",
+      "source_ids": [
+        "S13"
+      ],
+      "status": "partially_verified",
+      "notes": "二次資料のレビューのみ。「日本人捕虜で最初に記述」という細部は台本に使わない。"
+    },
+    {
+      "id": "C14",
+      "text": "ミネソタ飢餓実験（キーズら、1944年〜1945年）では、36人の健康な若い男性（良心的兵役拒否者）が、約6か月間、それまでのおよそ半分の食事で過ごした。",
+      "category": "fact",
+      "source_ids": [
+        "S14",
+        "S15"
+      ],
+      "status": "partially_verified",
+      "notes": "終了月（1945年10月か12月か）とカロリー値は資料で差。台本では「およそ半年」「半分ほど」と表現。"
+    },
+    {
+      "id": "C15",
+      "text": "ミネソタ飢餓実験の参加者は、食べ物のことばかり考えるようになり、料理本やメニューを夜通し読む人もいた。抑うつ・不安・いらいらも強まった。体の力や持久力も落ちた。",
+      "category": "fact",
+      "source_ids": [
+        "S14",
+        "S15"
+      ],
+      "status": "partially_verified",
+      "notes": "複数の二次資料で一致。原著（1950年）未確認。"
+    },
+    {
+      "id": "C16",
+      "text": "1965年から1966年、スコットランドの27歳の男性（アンガス・バービエリ）が医師の管理のもとで382日間の断食を行い、1973年に Stewart と Fleming が Postgraduate Medical Journal で報告した。外来で通院していた。",
+      "category": "fact",
+      "source_ids": [
+        "S16",
+        "S17"
+      ],
+      "status": "verified",
+      "notes": "論文抄録と二次資料で一致。終了日は6月30日説と7月11日説がある。"
+    },
+    {
+      "id": "C17",
+      "text": "断食中は、紅茶・コーヒー・炭酸水などカロリーのほとんどない飲み物と、ビタミンなどの補給（時期によってカリウム・ナトリウムも）をとっていた。",
+      "category": "fact",
+      "source_ids": [
+        "S17",
+        "S16"
+      ],
+      "status": "partially_verified",
+      "notes": "二次資料の要約。補給内容の細部は論文原文で要確認。"
+    },
+    {
+      "id": "C18",
+      "text": "バービエリの断食開始時の体重は約207kg（456ポンド）だった。",
+      "category": "fact",
+      "source_ids": [
+        "S17",
+        "S16"
+      ],
+      "status": "partially_verified",
+      "notes": "456ポンドは論文由来とされる。当時の報道には472ポンドの数字もある。終了時体重は減量の枠組みを避けるため台本に使わない。"
+    },
+    {
+      "id": "C19",
+      "text": "断食の最後の8か月、血糖値は約30mg/100mlで推移したが、彼は歩いて外来に通っていた。",
+      "category": "fact",
+      "source_ids": [
+        "S16"
+      ],
+      "status": "verified",
+      "notes": "論文抄録。"
+    },
+    {
+      "id": "C20",
+      "text": "ギネス世界記録は、健康への懸念から断食に関する記録の挑戦を受け付けていない（バービエリの記録は歴史的記録として残る）。",
+      "category": "fact",
+      "source_ids": [
+        "S08"
+      ],
+      "status": "verified",
+      "notes": "公式ページの要約で確認。1989年に「大食い・断食」系の記録を廃止した経緯も報道あり。"
+    },
+    {
+      "id": "C21",
+      "text": "382日の断食中、血糖値が低いまま活動できたのは、脳がケトン体を燃料として使っていたためと考えられる。",
+      "category": "inference",
+      "source_ids": [
+        "S16",
+        "S04",
+        "S05"
+      ],
+      "status": "partially_verified",
+      "notes": "論文抄録は血糖値と外来通院を報告。ケトン体の寄与は一般的な飢餓生理からの推論で、この症例で脳のケトン利用を測ったかは未確認。"
+    },
+    {
+      "id": "D01",
+      "text": "冒頭の場面設定（今日から何も食べない、水は飲める）と、締めの呼びかけ。",
+      "category": "dramatization",
+      "source_ids": [],
+      "status": "verified",
+      "notes": "演出。"
+    },
+    {
+      "id": "D02",
+      "text": "前回の「眠らなかったら」回（no_sleep）への言及。眠りは脳の掃除の時間だった、という前回の要約。",
+      "category": "dramatization",
+      "source_ids": [],
+      "status": "verified",
+      "notes": "前回動画の内容の要約（前回の C06 に基づく）。"
+    }
+  ],
+  "open_questions": [
+    "1981年のハンストの日数：CAIN は46〜73日、Peel（BMJ 1997）は45〜61日と記述。台本は CAIN の値を採用。",
+    "肝臓のグリコーゲンが尽きる時間：約24時間（StatPearls）と10〜18時間（Lippincott 準拠資料）で差がある。",
+    "ケトン体がたんぱく質の分解を直接抑えるのか（Féry & Balasse 1980 は否定的）。台本では「考えられています」にとどめた。",
+    "水を飲まない場合の生存日数：一般向けサイトの数字（3日など）しか見つからず、台本から除外。",
+    "「人は食べずに3週間〜2か月生きられる」といった一般的な目安：一般向けサイトのみで出典が弱いため除外。",
+    "ガンジーの21日間の断食：一般向けサイトの記述のみで未確認のため除外。",
+    "ケトン体が数週間で脳のエネルギーの「3分の2」をまかなうという数字：二次資料のみで除外（1967年研究の「主な燃料」の表現を採用）。",
+    "バービエリの断食の終了日（1966年6月30日か7月11日か）。",
+    "ミネソタ飢餓実験の終了月（1945年10月か12月か）と1日のカロリー値（1,570kcal）は原典未確認。",
+    "リフィーディング症候群が「日本人捕虜で最初に記述された」という細部は二次資料のみ。",
+    "死に至るたんぱく質喪失の割合（閾値）は確認できる資料なし。"
+  ]
+}

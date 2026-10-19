@@ -1,0 +1,11 @@
+topic: もしも人間が何も食べなかったら？
+slug: no_food
+created: '2026-10-19T00:00:00+00:00'
+overrides:
+  voice:
+    voicevox:
+      speed: 1.0
+  video:
+    shorts_seconds:
+    - 15
+    - 60
