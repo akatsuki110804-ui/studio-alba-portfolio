@@ -5,3 +5,5 @@ ts,project,stage,item,provider,model,units,credits,cost_jpy,kind,note
 2026-10-19T07:58:22+00:00,no_spacesuit,images,T1,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,d9f7506e-e47e-40a9-a03a-7a17bcb7b5ac
 2026-10-19T07:58:24+00:00,no_spacesuit,images,T2,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,2b8b40bc-8770-444f-997f-ed306a21072a
 2026-10-19T07:58:27+00:00,no_spacesuit,images,T3,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,d75f6287-5f75-4d68-b3c6-45d751d997bf
+2026-10-19T08:14:34+00:00,no_spacesuit,voice,long-form narration,voicevox (local),VOICEVOX:冥鳴ひまり,97,0.0,0,free,local CPU synthesis
+2026-10-19T08:23:15+00:00,no_spacesuit,voice,shorts narration,voicevox (local),,18,0.0,0,free,

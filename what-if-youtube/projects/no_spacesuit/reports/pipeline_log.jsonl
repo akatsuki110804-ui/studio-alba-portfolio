@@ -4,3 +4,15 @@
 {"ts": "2026-10-19T07:58:22+00:00", "project": "no_spacesuit", "stage": "assets", "event": "imported", "item": "T1", "path": "thumbnails/T1_bg.png", "credits": 0.25, "job_id": "d9f7506e-e47e-40a9-a03a-7a17bcb7b5ac"}
 {"ts": "2026-10-19T07:58:24+00:00", "project": "no_spacesuit", "stage": "assets", "event": "imported", "item": "T2", "path": "thumbnails/T2_bg.png", "credits": 0.25, "job_id": "2b8b40bc-8770-444f-997f-ed306a21072a"}
 {"ts": "2026-10-19T07:58:27+00:00", "project": "no_spacesuit", "stage": "assets", "event": "imported", "item": "T3", "path": "thumbnails/T3_bg.png", "credits": 0.25, "job_id": "d75f6287-5f75-4d68-b3c6-45d751d997bf"}
+{"ts": "2026-10-19T08:12:32+00:00", "project": "no_spacesuit", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-19T08:12:32+00:00", "project": "no_spacesuit", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-19T08:12:32+00:00", "project": "no_spacesuit", "stage": "voice", "event": "start", "inputs": {"cuts": 48}}
+{"ts": "2026-10-19T08:14:34+00:00", "project": "no_spacesuit", "stage": "voice", "event": "done", "outputs": ["audio/narration.wav", "audio/timing.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["406.2s narration; sentences generated=97 reused from cache=0"]}
+{"ts": "2026-10-19T08:14:34+00:00", "project": "no_spacesuit", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-19T08:20:09+00:00", "project": "no_spacesuit", "stage": "edit", "event": "done", "outputs": ["output/no_spacesuit_long.mp4", "subtitles/no_spacesuit_ja.srt"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-19T08:20:09+00:00", "project": "no_spacesuit", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-19T08:23:15+00:00", "project": "no_spacesuit", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-19T08:23:15+00:00", "project": "no_spacesuit", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-19T08:23:16+00:00", "project": "no_spacesuit", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-19T08:23:16+00:00", "project": "no_spacesuit", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-19T08:24:27+00:00", "project": "no_spacesuit", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=1 publishable=True"]}

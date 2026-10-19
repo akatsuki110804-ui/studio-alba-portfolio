@@ -1,81 +1,8 @@
 {
-  "generated_at": "2026-10-19T07:56:32+00:00",
-  "count": 6,
-  "est_credits": 1.5,
-  "est_jpy": 11.1,
+  "generated_at": "2026-10-19T08:12:32+00:00",
+  "count": 0,
+  "est_credits": 0,
+  "est_jpy": 0.0,
   "note": "Estimates from settings.pricing_credits (Higgsfield get_cost preflight). Record the actual charge on import.",
-  "requests": [
-    {
-      "id": "C01",
-      "kind": "image",
-      "fingerprint": "bc7f1482c325a0c2",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "astronaut (an astronaut in a plain white modern spacesuit with no flags, patches or insignia, helmet with a reflective gold visor fully lowered, face never visible) seen from behind, floating alone in orbit above night earth (the night side of Earth seen from low orbit, dark oceans and clouds, faint clusters of warm city lights, a thin glowing blue airglow line along the curved horizon, black starry space above), the back of the helmet and the life-support backpack toward the camera, the curved dark planet filling the lower half of the frame, very slow push-in, still and tense, no face visible. Style: photorealistic cinematic still, 35mm anamorphic lens look, real NASA-style orbital photography, deep black space, natural color grade with cold blue shadows, physically plausible lighting, calm and quiet mood, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, visible face, human face, eyes, open helmet showing a face, flags, mission patches, insignia, real astronaut likeness, blood, gore, explosion, swollen body, frozen body, cartoon, distorted hands",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C01.png"
-    },
-    {
-      "id": "C07",
-      "kind": "image",
-      "fingerprint": "a3a5e9c231c28f0b",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "First-person view from inside a spacesuit helmet, looking out through the curved visor glass at pitch-black space with faint stars, the dim glowing rim of night earth (the night side of Earth seen from low orbit, dark oceans and clouds, faint clusters of warm city lights, a thin glowing blue airglow line along the curved horizon, black starry space above) along the bottom edge, faint reflections on the inside of the visor, a few tiny glittering ice crystals drifting past outside, quiet and ominous, no person visible. Style: photorealistic cinematic still, 35mm anamorphic lens look, real NASA-style orbital photography, deep black space, natural color grade with cold blue shadows, physically plausible lighting, calm and quiet mood, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, visible face, human face, eyes, open helmet showing a face, flags, mission patches, insignia, real astronaut likeness, blood, gore, explosion, swollen body, frozen body, cartoon, distorted hands",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C07.png"
-    },
-    {
-      "id": "C48",
-      "kind": "image",
-      "fingerprint": "baba20c50d19ac6d",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Very wide shot of a tiny astronaut (an astronaut in a plain white modern spacesuit with no flags, patches or insignia, helmet with a reflective gold visor fully lowered, face never visible) seen from behind, drifting against the vast curve of night earth (the night side of Earth seen from low orbit, dark oceans and clouds, faint clusters of warm city lights, a thin glowing blue airglow line along the curved horizon, black starry space above), the thin blue airglow line of the atmosphere glowing along the horizon, the astronaut small in the frame, slow pull-out revealing more of the dark planet, quiet and reflective, no face visible. Style: photorealistic cinematic still, 35mm anamorphic lens look, real NASA-style orbital photography, deep black space, natural color grade with cold blue shadows, physically plausible lighting, calm and quiet mood, no text, no letters, no watermark, no logo. Avoid: text, captions, watermark, logo, visible face, human face, eyes, open helmet showing a face, flags, mission patches, insignia, real astronaut likeness, blood, gore, explosion, swollen body, frozen body, cartoon, distorted hands",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "assets/images/C48.png"
-    },
-    {
-      "id": "T1",
-      "kind": "image",
-      "fingerprint": "6fa602607da619fb",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "Dark silhouette of an astronaut seen from behind on the right side of the frame, helmet removed and held at the side, the head only a black silhouette against the glow so no face is visible, floating above the night side of Earth with faint city lights and a thin blue airglow horizon, black starry space, dark empty negative space on the left for title text. Style: photorealistic cinematic still, 35mm anamorphic lens look, real NASA-style orbital photography, deep black space, natural color grade with cold blue shadows, physically plausible lighting, calm and quiet mood, no text, no letters, no watermark, no logo",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "thumbnails/T1_bg.png"
-    },
-    {
-      "id": "T2",
-      "kind": "image",
-      "fingerprint": "c93feb15f234baa2",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "An empty white spacesuit helmet drifting in black space on the right side of the frame, its gold visor reflecting the curved night side of Earth and a thin blue airglow line, faint stars, calm and eerie, dark empty negative space on the left for title text. Style: photorealistic cinematic still, 35mm anamorphic lens look, real NASA-style orbital photography, deep black space, natural color grade with cold blue shadows, physically plausible lighting, calm and quiet mood, no text, no letters, no watermark, no logo",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "thumbnails/T2_bg.png"
-    },
-    {
-      "id": "T3",
-      "kind": "image",
-      "fingerprint": "aae4804a2ea75320",
-      "provider": "higgsfield",
-      "model": "gpt_image_2_5",
-      "aspect_ratio": "16:9",
-      "prompt": "View from inside a spacesuit helmet looking out through the curved visor glass at pitch-black space and the dark night side of Earth with faint city lights, soft reflections on the visor, on the right side of the frame, quiet and tense, dark empty negative space on the left for title text. Style: photorealistic cinematic still, 35mm anamorphic lens look, real NASA-style orbital photography, deep black space, natural color grade with cold blue shadows, physically plausible lighting, calm and quiet mood, no text, no letters, no watermark, no logo",
-      "params": {},
-      "est_credits": 0.25,
-      "dest": "thumbnails/T3_bg.png"
-    }
-  ]
+  "requests": []
 }

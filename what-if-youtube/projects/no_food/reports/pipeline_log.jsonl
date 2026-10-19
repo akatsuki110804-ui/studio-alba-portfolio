@@ -7,3 +7,12 @@
 {"ts": "2026-10-19T07:58:55+00:00", "project": "no_food", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
 {"ts": "2026-10-19T07:58:55+00:00", "project": "no_food", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
 {"ts": "2026-10-19T07:58:55+00:00", "project": "no_food", "stage": "voice", "event": "start", "inputs": {"cuts": 48}}
+{"ts": "2026-10-19T08:01:08+00:00", "project": "no_food", "stage": "voice", "event": "done", "outputs": ["audio/narration.wav", "audio/timing.json"], "retries": 0, "cost_jpy": 0.0, "notes": ["406.0s narration; sentences generated=77 reused from cache=1"]}
+{"ts": "2026-10-19T08:01:08+00:00", "project": "no_food", "stage": "edit", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-19T08:07:14+00:00", "project": "no_food", "stage": "edit", "event": "done", "outputs": ["output/no_food_long.mp4", "subtitles/no_food_ja.srt"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-19T08:07:14+00:00", "project": "no_food", "stage": "shorts", "event": "start", "inputs": {"count": 3, "animatic": false}}
+{"ts": "2026-10-19T08:11:14+00:00", "project": "no_food", "stage": "shorts", "event": "done", "outputs": ["output/shorts/S1.mp4", "output/shorts/S2.mp4", "output/shorts/S3.mp4"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-19T08:11:14+00:00", "project": "no_food", "stage": "thumbnails", "event": "start", "inputs": {"count": 3}}
+{"ts": "2026-10-19T08:11:14+00:00", "project": "no_food", "stage": "thumbnails", "event": "done", "outputs": ["thumbnails/T1.jpg", "thumbnails/T2.jpg", "thumbnails/T3.jpg"], "retries": 0, "cost_jpy": 0.0, "notes": []}
+{"ts": "2026-10-19T08:11:15+00:00", "project": "no_food", "stage": "validate", "event": "start", "inputs": {}}
+{"ts": "2026-10-19T08:12:32+00:00", "project": "no_food", "stage": "validate", "event": "done", "outputs": ["reports/qc_report.json", "reports/qc_report.md"], "retries": 0, "cost_jpy": 0.0, "notes": ["errors=0 warnings=3 publishable=True"]}

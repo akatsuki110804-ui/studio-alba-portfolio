@@ -1,0 +1,110 @@
+{
+  "stages": {
+    "assets": {
+      "status": "done",
+      "started": "2026-10-19T08:12:32+00:00",
+      "inputs": {
+        "animatic": false
+      },
+      "finished": "2026-10-19T08:12:32+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"
+      ]
+    },
+    "voice": {
+      "status": "done",
+      "started": "2026-10-19T08:12:32+00:00",
+      "inputs": {
+        "cuts": 48
+      },
+      "finished": "2026-10-19T08:14:34+00:00",
+      "error": null,
+      "fingerprint": "190406223a302cee",
+      "outputs": [
+        "audio/narration.wav",
+        "audio/timing.json"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "406.2s narration; sentences generated=97 reused from cache=0"
+      ]
+    },
+    "edit": {
+      "status": "done",
+      "started": "2026-10-19T08:14:34+00:00",
+      "inputs": {
+        "animatic": false
+      },
+      "finished": "2026-10-19T08:20:09+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "output/no_spacesuit_long.mp4",
+        "subtitles/no_spacesuit_ja.srt"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": []
+    },
+    "shorts": {
+      "status": "done",
+      "started": "2026-10-19T08:20:09+00:00",
+      "inputs": {
+        "count": 3,
+        "animatic": false
+      },
+      "finished": "2026-10-19T08:23:15+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "output/shorts/S1.mp4",
+        "output/shorts/S2.mp4",
+        "output/shorts/S3.mp4"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": []
+    },
+    "thumbnails": {
+      "status": "done",
+      "started": "2026-10-19T08:23:15+00:00",
+      "inputs": {
+        "count": 3
+      },
+      "finished": "2026-10-19T08:23:16+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "thumbnails/T1.jpg",
+        "thumbnails/T2.jpg",
+        "thumbnails/T3.jpg"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": []
+    },
+    "validate": {
+      "status": "done",
+      "started": "2026-10-19T08:23:16+00:00",
+      "inputs": {},
+      "finished": "2026-10-19T08:24:27+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [
+        "reports/qc_report.json",
+        "reports/qc_report.md"
+      ],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "errors=0 warnings=1 publishable=True"
+      ]
+    }
+  }
+}
