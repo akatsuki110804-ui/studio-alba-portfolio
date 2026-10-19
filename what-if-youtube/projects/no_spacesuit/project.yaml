@@ -1,0 +1,11 @@
+topic: もしも宇宙で宇宙服を脱いだら？
+slug: no_spacesuit
+created: '2026-10-19T00:00:00+00:00'
+overrides:
+  voice:
+    voicevox:
+      speed: 1.0
+  video:
+    shorts_seconds:
+    - 15
+    - 60

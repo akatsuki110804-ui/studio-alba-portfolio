@@ -1,0 +1,486 @@
+{
+  "research_status": "complete",
+  "research_notes": "2026-10-19 にWeb検索で調査。このコンテナからは WebFetch で各ページを直接開けなかった（DNSエラー）ため、すべて検索結果の要約経由で確認。'verified' は公的機関・一次資料の要約を含む複数の資料で一致したことを意味する。公開前に S01・S02（ルブランの年と14秒）、S03（NASA CliFF の9〜11秒）、S05（犬の120秒）、S11（ソユーズ11号の評価）の原文確認を推奨。危険な行為を勧める内容ではない旨を動画内と概要欄に明記する。",
+  "assumptions": [
+    "地球を回る軌道の上（地球の影の側＝日の当たらない側）で、宇宙服を脱いで真空にさらされるという思考実験。日なたでの紫外線・日焼けは扱わない。",
+    "人を真空にさらす実験は行われない。分かっていることは少数の事故の記録と、1960年代の動物実験（犬・チンパンジー）による。",
+    "動物実験の結果が、そのまま人間に当てはまるとは限らない。",
+    "事故で亡くなった方については、敬意をもって事実だけを伝える。",
+    "この動画は医学的な助言ではない。"
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Highest equivalent altitude exposure survived (Jim LeBlanc)",
+      "publisher": "Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/world-records/447311-highest-equivalent-altitude-exposure-survived",
+      "type": "記録認定ページ",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S02",
+      "title": "Pressure perils（LeBlanc の事故。NASA Roundup 1967年1月6日号を出典に挙げる）",
+      "publisher": "Institute of Physics (IOP) Spark",
+      "url": "https://spark.iop.org/pressure-perils",
+      "type": "教育機関の解説",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S03",
+      "title": "Branch Clinical Finding Form (CliFF) Baseline ICL37_Ebullism",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/wp-content/uploads/2026/08/ebullism-cliff-2023.pdf",
+      "type": "公的機関（臨床資料）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary (snippets of the PDF)"
+    },
+    {
+      "id": "S04",
+      "title": "Rapid decompression of dogs to near vacuum environment to estimate times of consciousness, collapse, and survival (Bancroft & Dunn), SAM-TR-65-48, 1965",
+      "publisher": "USAF School of Aerospace Medicine / NASA NTRS",
+      "url": "https://ntrs.nasa.gov/citations/19660005051",
+      "type": "技術報告（目録・抄録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S05",
+      "title": "Experimental animal decompressions to a near-vacuum environment（ASTM シンポジウム論文, 1966）",
+      "publisher": "ASTM International",
+      "url": "https://store.astm.org/stp46440s.html",
+      "type": "シンポジウム論文（抄録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S06",
+      "title": "Pathophysiology, Prevention, and Treatment of Ebullism (Murray ほか), Aviat Space Environ Med 84(2):89-96, 2013",
+      "publisher": "Aerospace Medical Association",
+      "url": "https://asma.kglmeridian.com/view/journals/asem/84/2/article-p89.xml",
+      "type": "査読レビュー（抄録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary of abstract"
+    },
+    {
+      "id": "S07",
+      "title": "50 Years of Spacesuits（Armstrong Line とつばの沸騰、血液は沸騰しない）",
+      "publisher": "NASA Armstrong Flight Research Center",
+      "url": "https://www.nasa.gov/centers/armstrong/Features/50_years_of_spacesuits.html",
+      "type": "公的機関",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S08",
+      "title": "Armstrong limit",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Armstrong_limit",
+      "type": "百科事典（二次資料）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S09",
+      "title": "50 Years Ago: Remembering the Crew of Soyuz 11",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/history/50-years-ago-remembering-the-crew-of-soyuz-11/",
+      "type": "公的機関（歴史記事）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S10",
+      "title": "System Failure Case Studies: Descent Into the Void (Soyuz 11)",
+      "publisher": "NASA Office of Safety and Mission Assurance",
+      "url": "https://sma.nasa.gov/SignificantIncidents/assets/descent-into-the-void.pdf",
+      "type": "公的機関（事故分析）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary (snippets of the PDF)"
+    },
+    {
+      "id": "S11",
+      "title": "NASA-STD-3001 Technical Brief: Decompression Mishaps",
+      "publisher": "NASA OCHMO",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/12/ochmo-tb-038-decompression-mishaps.pdf",
+      "type": "公的機関（技術概要）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary (snippets of the PDF)"
+    },
+    {
+      "id": "S12",
+      "title": "Rapid (Explosive) Decompression Emergencies（1960年代の総説, NASA NTRS 19690004637）",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/19690004637/downloads/19690004637.pdf",
+      "type": "技術報告",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary (snippets of the PDF)"
+    },
+    {
+      "id": "S13",
+      "title": "Diving Gas Embolism",
+      "publisher": "StatPearls / NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK482321/",
+      "type": "医学教科書（オンライン）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S14",
+      "title": "How long could you survive in space without a spacesuit?",
+      "publisher": "Space.com",
+      "url": "https://www.space.com/how-long-could-you-survive-in-space-without-spacesuit",
+      "type": "科学ニュース",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S15",
+      "title": "Cosmicopia — Ask Us: Heat, Temperature, and the Electromagnetic Spectrum",
+      "publisher": "NASA Goddard",
+      "url": "https://cosmicopia.gsfc.nasa.gov/qa_sp_ht.html",
+      "type": "公的機関（Q&A）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S16",
+      "title": "NASA 教育資料（dressing-for-altitude-nov-2017.pdf：『一瞬で凍りつくことはない』の記述）",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/05/dressing-for-altitude-nov-2017.pdf",
+      "type": "公的機関（教育資料）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary (snippets of the PDF)"
+    },
+    {
+      "id": "S17",
+      "title": "FAA Advisory Circular 61-107（有効意識時間の表 1-1：50,000ft超で9〜12秒）",
+      "publisher": "FAA（二次資料経由）",
+      "url": "https://oikofuge.com/human-exposure-to-vacuum-part-2/",
+      "type": "公的機関の文書（二次資料経由）",
+      "accessed": "2026-10-19",
+      "access_method": "secondary summaries only"
+    },
+    {
+      "id": "S18",
+      "title": "16 August 1960 (Excelsior III)",
+      "publisher": "This Day in Aviation",
+      "url": "https://www.thisdayinaviation.com/16-august-1960/",
+      "type": "航空史サイト",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S19",
+      "title": "Anniversary of a record jump",
+      "publisher": "Holloman Air Force Base",
+      "url": "https://www.holloman.af.mil/News/Display/Article/318811/anniversary-of-a-record-jump/",
+      "type": "公的機関（米空軍）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S20",
+      "title": "Survival in Space Unprotected Is Possible--Briefly",
+      "publisher": "Scientific American",
+      "url": "https://www.scientificamerican.com/article/survival-in-space-unprotected-possible/",
+      "type": "科学誌",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary"
+    },
+    {
+      "id": "S21",
+      "title": "Replication and Extension of Rapid Decompression of Chimpanzees to a Near Vacuum (Koestler 編), ARL-TR-67-2, 1967",
+      "publisher": "6571st Aeromedical Research Laboratory / NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/19670015829/downloads/19670015829.pdf",
+      "type": "技術報告（目録）",
+      "accessed": "2026-10-19",
+      "access_method": "web search summary (catalog listing only)"
+    },
+    {
+      "id": "S22",
+      "title": "Human Exposure to Vacuum（Bioastronautics Data Book の記述を引用する解説。Landis）",
+      "publisher": "home.bway.net（二次資料）",
+      "url": "https://home.bway.net/rjnoonan/humans_in_space/vacuum.html",
+      "type": "個人の解説ページ（二次資料）",
+      "accessed": "2026-10-19",
+      "access_method": "secondary summaries only"
+    }
+  ],
+  "claims": [
+    {
+      "id": "A01",
+      "text": "宇宙で宇宙服を脱ぐという設定は思考実験。人を真空にさらす実験は行われない。人での知見は少数の事故に限られ、多くは1960年代の動物実験による。",
+      "category": "inference",
+      "source_ids": [
+        "S06",
+        "S04",
+        "S03"
+      ],
+      "status": "verified",
+      "notes": "Murray 2013 は人と動物での研究は極めて限られるとする。"
+    },
+    {
+      "id": "C01",
+      "text": "急に真空にさらされると低酸素で意識を失う。NASAの資料では意識を失うまでおよそ9〜11秒。FAAの表では高度5万フィート超の有効意識時間は9〜12秒。",
+      "category": "fact",
+      "source_ids": [
+        "S03",
+        "S17",
+        "S22"
+      ],
+      "status": "verified",
+      "notes": "数値は資料で幅がある（9〜15秒）。台本では『およそ10秒』『9秒から11秒』と表現。"
+    },
+    {
+      "id": "C02",
+      "text": "1960年代、ヒューストンのNASAの真空室で宇宙服のテスト中、ジム・ルブランのホースが外れて服の圧力が失われた。意識はおよそ14秒もち、最後の記憶は舌の上でつばが泡立つ（沸騰する）感覚だった。",
+      "category": "fact",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "status": "partially_verified",
+      "notes": "年が資料で1965／1966／1967と異なるため台本では『1960年代』とする。14秒は検索要約経由。"
+    },
+    {
+      "id": "C03",
+      "text": "ルブランは部屋の圧力が急いで戻されると意識を取り戻し、後遺症はなかった（仲間2人による救助）。",
+      "category": "fact",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "status": "verified",
+      "notes": "再加圧までの時間（15秒／87秒）は資料で異なるので言わない。"
+    },
+    {
+      "id": "C04",
+      "text": "急減圧のとき肺に空気を閉じ込める（息を止める）と、ふくらむ空気で肺が破れるおそれがある。宇宙船の急減圧でも起こりうる。",
+      "category": "fact",
+      "source_ids": [
+        "S12",
+        "S13",
+        "S22"
+      ],
+      "status": "verified",
+      "notes": "『息を吐く』は助言ではなく仕組みの説明として扱う。"
+    },
+    {
+      "id": "C05",
+      "text": "気圧が約6.3kPa（47mmHg）以下になると水は体温（37度）で沸騰する。地球では高度およそ18〜19kmで、アームストロング限界と呼ばれる。",
+      "category": "fact",
+      "source_ids": [
+        "S07",
+        "S08",
+        "S06"
+      ],
+      "status": "verified",
+      "notes": "NASA Armstrong のページは 63,000ft とする。"
+    },
+    {
+      "id": "C06",
+      "text": "アームストロング限界より上では、つばや涙のようなむき出しの水分は沸騰するが、血管の中の血液は体の圧力がかかっているので沸騰しない。",
+      "category": "fact",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C07",
+      "text": "ほぼ真空にさらされた犬は9〜10秒ほどで倒れ、体と手足が大きく腫れ、けいれんや無呼吸が見られた。",
+      "category": "fact",
+      "source_ids": [
+        "S04",
+        "S03"
+      ],
+      "status": "verified",
+      "notes": "1965年、米空軍航空宇宙医学校の報告。人体が破裂しない根拠は C08（短時間なら生存）と組み合わせて示す。"
+    },
+    {
+      "id": "C08",
+      "text": "約1秒でほぼ真空（2mmHg未満）にした犬の実験で、意識を失うのは9〜12秒ほど。120秒未満なら全頭が生き延び（肺の一時的な損傷あり）、120〜180秒では約15〜18%が死亡した。",
+      "category": "fact",
+      "source_ids": [
+        "S05",
+        "S04",
+        "S20"
+      ],
+      "status": "partially_verified",
+      "notes": "Scientific American は『90秒まで生存、2分以上で死亡が多い』と要約。台本では『2分未満は全頭生存』『2分から3分で死ぬ犬が出始めた』に留める。"
+    },
+    {
+      "id": "C09",
+      "text": "NASAの資料によると、動物のデータでは90秒未満のさらされ方なら、すばやく完全に回復するのが普通。重さはさらされた時間で決まると考えられる。",
+      "category": "fact",
+      "source_ids": [
+        "S03",
+        "S22"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C10",
+      "text": "真空には熱を運ぶ空気がなく、体の熱は放射でゆっくり逃げるだけなので、一瞬で凍ることはない。凍るより先に減圧で命を落とす。",
+      "category": "fact",
+      "source_ids": [
+        "S15",
+        "S16",
+        "S14"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C11",
+      "text": "人の体は赤外線としておよそ100ワットの熱を放っている。",
+      "category": "fact",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "partially_verified",
+      "notes": "Space.com のみ。"
+    },
+    {
+      "id": "C12",
+      "text": "1971年、サリュート1号に3週間あまり滞在したソユーズ11号の3人（ドブロボルスキー、ボルコフ、パツァーエフ）は、帰還中に弁が早く開いて船内の空気が抜け、亡くなった。3人は与圧服を着ていなかった。",
+      "category": "fact",
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "status": "verified",
+      "notes": "弁の大きさは資料で異なるので言わない。"
+    },
+    {
+      "id": "C13",
+      "text": "NASAの技術概要は、ソユーズ11号の乗員は与圧服を正しく着ていれば減圧を生き延びられただろうとしている。",
+      "category": "fact",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "partially_verified",
+      "notes": "検索要約経由。"
+    },
+    {
+      "id": "C14",
+      "text": "ソユーズ11号の乗員は、圧力が失われてから40秒ほど（1分以内）で亡くなったとされる。",
+      "category": "fact",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "partially_verified",
+      "notes": "台本では使わない（数字が資料で異なる）。"
+    },
+    {
+      "id": "C15",
+      "text": "1960年8月16日、ジョー・キッティンジャーは気球エクセルシオール3号で高度約31km（102,800フィート）まで上昇。上昇中に右手の手袋の圧力が抜けて手が痛みとともに腫れたが、中止を恐れて地上に伝えずに飛び降りた。手はその後元どおり使えるようになった。",
+      "category": "fact",
+      "source_ids": [
+        "S18",
+        "S19"
+      ],
+      "status": "verified",
+      "notes": "腫れ始めた高度（43,000〜50,000ft）と『2倍』は資料で異なるため言わない。"
+    },
+    {
+      "id": "C16",
+      "text": "Bioastronautics Data Book は、60〜90秒以内に耐えられる圧力まで戻せば生存の可能性があるとする。",
+      "category": "fact",
+      "source_ids": [
+        "S22"
+      ],
+      "status": "partially_verified",
+      "notes": "二次資料経由の引用のみ。"
+    },
+    {
+      "id": "C17",
+      "text": "人で確かめることはできないが、動物の結果から、助かるかどうかの境目はおよそ1分半から2分のあいだにあると考えられる。",
+      "category": "inference",
+      "source_ids": [
+        "S03",
+        "S05",
+        "S22"
+      ],
+      "status": "partially_verified",
+      "notes": "動物の結果を人に当てはめた推論。"
+    },
+    {
+      "id": "C18",
+      "text": "1965〜67年、NASAとの契約でチンパンジーを急減圧してほぼ真空にさらす実験も行われた（ホロマン空軍基地、Koestler 編の報告）。",
+      "category": "fact",
+      "source_ids": [
+        "S21"
+      ],
+      "status": "verified",
+      "notes": "生存時間（150秒／3.5分）は資料で異なるため言わない。"
+    },
+    {
+      "id": "C19",
+      "text": "人と動物でのエビュリズム（体液の気化）の研究は極めて限られている。",
+      "category": "fact",
+      "source_ids": [
+        "S06"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C20",
+      "text": "宇宙飛行で起きたエビュリズムは、ソユーズ11号とスペースシャトル・コロンビアのような機体の大事故を除いて報告がない。",
+      "category": "fact",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "verified",
+      "notes": ""
+    },
+    {
+      "id": "C21",
+      "text": "エビュリズムでは、心臓で気体がたまって血液を送れなくなる『ベーパーロック』や肺の虚脱などが起こりうる。",
+      "category": "fact",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "partially_verified",
+      "notes": "検索要約経由。"
+    },
+    {
+      "id": "C22",
+      "text": "体は腫れても、皮膚と組織が約1気圧の差に耐えるので、体が破裂することはない。",
+      "category": "fact",
+      "source_ids": [
+        "S08",
+        "S07",
+        "S04"
+      ],
+      "status": "partially_verified",
+      "notes": "『破裂しない』は複数の資料が一致。皮膚の強さの数値は二次資料のみなので言わない。"
+    },
+    {
+      "id": "D01",
+      "text": "冒頭と途中の場面設定（地球の影の側で宇宙服を脱ぐ、0秒・30秒などの時間表示）と締めの言葉。",
+      "category": "dramatization",
+      "source_ids": [],
+      "status": "verified",
+      "notes": ""
+    }
+  ],
+  "open_questions": [
+    "ジム・ルブランの事故の年（1965／1966／1967と資料で異なる）と、再加圧までの時間（約15秒／87秒）",
+    "有効意識時間の幅（NASA CliFF 9〜11秒、FAA 9〜12秒、Space.com 約15秒）。台本では『およそ10秒』とした",
+    "犬が全頭生存した上限（ASTM抄録は120秒、Scientific Americanの要約は90秒）",
+    "チンパンジーの生存時間（150秒か3.5分か）— 台本から除外",
+    "キッティンジャーの手が『2倍』に腫れたか、腫れ始めた高度（43,000／50,000フィート）— 台本から除外",
+    "ソユーズ11号で亡くなるまでの時間（40秒か1分以内か）と弁の開口の大きさ — 台本から除外",
+    "全身が『2倍の体積』に腫れるという Bioastronautics Data Book の記述（二次資料のみ）— 台本から除外",
+    "日なたの場合の紫外線・やけどの影響 — 調査していない",
+    "Koestler／Bancroft 報告の原文（PDF）は未確認"
+  ]
+}
