@@ -1428,6 +1428,188 @@ class Sync(Renderer):
         return img
 
 
+
+# ------------------------------------------------------------------ generic charts (人体の限界シリーズ)
+class Gauge(Renderer):
+    """Vertical tanks whose levels move from `from` to `to` (0–1). params: title, tanks[{label, from, to, color?, text?}], note."""
+
+    def frame(self, t):
+        img = self.base(t)
+        d = ImageDraw.Draw(img)
+        p = self.p
+        title_bar(img, p.get("title", ""), t)
+        tanks = p["tanks"]
+        tw, th, gap = 240, 470, 200
+        x = (W - (tw * len(tanks) + gap * (len(tanks) - 1))) / 2
+        cols = {"cyan": CYAN, "amber": AMBER, "red": RED, "green": GREEN}
+        for i, tk in enumerate(tanks):
+            k0 = eo(window(t, 0.2 + i * 0.3, 0.8 + i * 0.3))
+            k = eio(window(t, 0.9 + i * 0.3, max(2.0, self.T * 0.75)))
+            lvl = tk["from"] + (tk["to"] - tk["from"]) * k
+            col = cols.get(tk.get("color", ""), [AMBER, CYAN, GREEN][i % 3])
+            if lvl < 0.2:
+                col = mix(col, RED, 1 - lvl / 0.2)
+            top = 250
+            d.rounded_rectangle([x, top, x + tw, top + th], 30, outline=mix(BG_MID, MUTED, k0), width=5, fill=(12, 20, 40))
+            fh = (th - 20) * max(0.0, min(1.0, lvl))
+            if fh > 4:
+                d.rounded_rectangle([x + 10, top + th - 10 - fh, x + tw - 10, top + th - 10], 22, fill=col)
+            if tk.get("text") or p.get("show_pct"):  # percentages only when they are real numbers
+                text(img, (x + tw / 2, top + th / 2), tk.get("text") or f"{round(lvl * 100)}%", font(56, "Black"), INK, k0, "mm")
+            text(img, (x + tw / 2, top + th + 50), tk["label"], font(40, "Bold"), INK, k0, "mm")
+            x += tw + gap
+        if p.get("note"):
+            note(img, p["note"], eo(window(t, 1, 2)))
+        return img
+
+
+class Donut(Renderer):
+    """Share of a whole, morphing from `from` to `to`. params: title, center, slices[{label, from, to}], note."""
+
+    def frame(self, t):
+        img = self.base(t)
+        p = self.p
+        title_bar(img, p.get("title", ""), t)
+        k0 = eo(window(t, 0.2, 1.0))
+        k = eio(window(t, 1.0, max(2.2, self.T * 0.7)))
+        cx, cy, R, r = 700, 560, 300, 175
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        dl = ImageDraw.Draw(layer)
+        cols = [CYAN, AMBER, GREEN, RED]
+        vals = [s["from"] + (s["to"] - s["from"]) * k for s in p["slices"]]
+        tot = sum(vals) or 1
+        a = -90.0
+        for i, v in enumerate(vals):
+            sweep = 360 * v / tot * k0
+            if sweep > 0.5:
+                dl.pieslice([cx - R, cy - R, cx + R, cy + R], a, a + sweep, fill=cols[i % 4] + (255,))
+            a += 360 * v / tot
+        dl.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(0, 0, 0, 0))
+        hole = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(hole).ellipse([cx - r, cy - r, cx + r, cy + r], fill=255)
+        layer.putalpha(Image.composite(Image.new("L", (W, H), 0), layer.getchannel("A"), hole))
+        img.paste(layer, (0, 0), layer)
+        if p.get("center"):
+            text(img, (cx, cy), p["center"], font(52, "Black"), INK, k0, "mm")
+        for i, (s, v) in enumerate(zip(p["slices"], vals)):
+            y = 400 + i * 130
+            kk = eo(window(t, 0.6 + i * 0.4, 1.3 + i * 0.4))
+            ImageDraw.Draw(img).rounded_rectangle([1130, y - 24, 1178, y + 24], 10, fill=mix(BG_MID, cols[i % 4], kk))
+            label = s["label"] if not s.get("text") else f"{s['label']}  {s['text'] if k >= 0.98 else ''}"
+            text(img, (1210, y), label, font(50, "Bold"), INK, kk, "lm")
+        if p.get("note"):
+            note(img, p["note"], eo(window(t, 1, 2)))
+        return img
+
+
+class Countdown(Renderer):
+    """A big counter with a ring. params: start, end, unit, label, color, seconds (counting time), sub."""
+
+    def frame(self, t):
+        img = self.base(t)
+        p = self.p
+        dur = p.get("seconds", max(1.5, self.T * 0.7))
+        k = window(t, 0.3, 0.3 + dur)
+        v = p["start"] + (p["end"] - p["start"]) * k
+        col = {"cyan": CYAN, "amber": AMBER, "red": RED, "green": GREEN}.get(p.get("color", "amber"), AMBER)
+        cx, cy, R = W / 2, 470, 250
+        d = ImageDraw.Draw(img)
+        d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=GRID, width=18)
+        if k > 0:
+            d.arc([cx - R, cy - R, cx + R, cy + R], -90, -90 + 360 * k, fill=col, width=18)
+        num = f"{v:.0f}" if p.get("digits", 0) == 0 else f"{v:.{p['digits']}f}"
+        text(img, (cx, cy - 10), num, font(190, "Black"), INK, 1, "mm")
+        text(img, (cx, cy + 120), p.get("unit", ""), font(52, "Bold"), MUTED, 1, "mm")
+        text(img, (cx, cy + R + 80), p.get("label", ""), font(50, "Bold"), INK, eo(window(t, 0.2, 0.9)), "mm")
+        if p.get("sub"):
+            note(img, p["sub"], eo(window(t, 1, 2)))
+        return img
+
+
+class LineChart(Renderer):
+    """A line drawn left to right. params: title, x_label, y_label, points[[x,y]], x_ticks, y_ticks,
+    mark{x, y, label} (a highlighted point), band{y, label} (a horizontal reference line)."""
+
+    def frame(self, t):
+        img = self.base(t)
+        d = ImageDraw.Draw(img)
+        p = self.p
+        title_bar(img, p.get("title", ""), t)
+        pts = p["points"]
+        xs, ys = [q[0] for q in pts], [q[1] for q in pts]
+        xmin, xmax = p.get("x_min", min(xs)), p.get("x_max", max(xs))
+        ymin, ymax = p.get("y_min", min(ys)), p.get("y_max", max(ys))
+        x0, x1, y0, y1 = 360, W - 260, SAFE_Y - 60, 260
+        X = lambda v: x0 + (v - xmin) / (xmax - xmin) * (x1 - x0)
+        Y = lambda v: y0 - (v - ymin) / (ymax - ymin) * (y0 - y1)
+        d.line([(x0, y0), (x1, y0)], fill=GRID, width=4)
+        d.line([(x0, y0), (x0, y1)], fill=GRID, width=4)
+        for v in p.get("x_ticks", []):
+            text(img, (X(v), y0 + 36), str(v), font(30, "Regular"), MUTED, 1, "mm")
+        for v in p.get("y_ticks", []):
+            text(img, (x0 - 24, Y(v)), str(v), font(30, "Regular"), MUTED, 1, "rm")
+        text(img, (x1, y0 + 80), p.get("x_label", ""), font(32, "Bold"), MUTED, 1, "rm")
+        text(img, (x0, y1 - 40), p.get("y_label", ""), font(32, "Bold"), MUTED, 1, "lm")
+        k = eio(window(t, 0.5, max(2.0, self.T * 0.6)))
+        xe = xmin + (xmax - xmin) * k
+        line = []
+        for (a, b), (c, e) in zip(pts, pts[1:]):
+            if a > xe:
+                break
+            line.append((X(a), Y(b)))
+            if c > xe:
+                f = (xe - a) / (c - a)
+                line.append((X(xe), Y(b + (e - b) * f)))
+                break
+        else:
+            line.append((X(pts[-1][0]), Y(pts[-1][1])))
+        if len(line) > 1:
+            d.line(line, fill=CYAN, width=8, joint="curve")
+        if p.get("band"):
+            b = p["band"]
+            kb = eo(window(t, 1.0, 1.8))
+            for xx in range(x0, x1, 28):
+                d.line([(xx, Y(b["y"])), (xx + 14, Y(b["y"]))], fill=mix(BG_MID, AMBER, kb), width=3)
+            text(img, (x0 + 24, Y(b["y"]) - 30), b.get("label", ""), font(32, "Bold"), AMBER, kb, "lm")
+        if p.get("mark") and k >= 0.95:
+            m = p["mark"]
+            km = eo(window(t, max(2.0, self.T * 0.6), max(2.0, self.T * 0.6) + 0.6))
+            glow(img, X(m["x"]), Y(m["y"]), 50, RED, 0.9 * km)
+            d.ellipse([X(m["x"]) - 14, Y(m["y"]) - 14, X(m["x"]) + 14, Y(m["y"]) + 14], fill=RED)
+            text(img, (X(m["x"]) + 30, Y(m["y"]) - 40), m.get("label", ""), font(44, "Black"), INK, km, "lm")
+        if p.get("note"):
+            note(img, p["note"], eo(window(t, 1, 2)))
+        return img
+
+
+class Verdict(Renderer):
+    """Claims stamped ○ / ✕ one by one. params: title, rows[{claim, ok, why}]."""
+
+    def frame(self, t):
+        img = self.base(t)
+        d = ImageDraw.Draw(img)
+        p = self.p
+        title_bar(img, p.get("title", ""), t)
+        rows = p["rows"]
+        step = min(1.6, self.T * 0.7 / max(1, len(rows)))
+        y = 300 if len(rows) > 2 else 380
+        for i, r in enumerate(rows):
+            k = eo(window(t, 0.3 + i * step, 0.8 + i * step))
+            ks = eo(window(t, 0.8 + i * step, 1.1 + i * step))
+            text(img, (360, y), r["claim"], font(58, "Black"), INK, k, "lm")
+            if r.get("why"):
+                text(img, (360, y + 62), r["why"], font(34, "Regular"), MUTED, ks, "lm")
+            if ks > 0:
+                col = GREEN if r["ok"] else RED
+                cx, cy, s = 250, y + 10, 46 * (1.4 - 0.4 * ks)
+                if r["ok"]:
+                    d.ellipse([cx - s, cy - s, cx + s, cy + s], outline=col, width=12)
+                else:
+                    d.line([(cx - s, cy - s), (cx + s, cy + s)], fill=col, width=14)
+                    d.line([(cx - s, cy + s), (cx + s, cy - s)], fill=col, width=14)
+            y += 165
+        return img
+
 RENDERERS = {
     "chat": Chat, "sync": Sync, "screen": Screen, "flow": Flow, "table": Table, "bubble": Bubble, "code": Code,
     "pending": Pending, "awake_clock": AwakeClock, "microsleep": Microsleep, "distort": Distort,
@@ -1437,6 +1619,7 @@ RENDERERS = {
     "tide_section": TideSection, "sea": Sea, "spring_neap": SpringNeap, "number_cards": NumberCards,
     "globe": Globe, "tilt": Tilt, "range_compare": RangeCompare, "precession": Precession,
     "solar_system": SolarSystem, "seasons": Seasons, "climate_bands": ClimateBands,
+    "gauge": Gauge, "donut": Donut, "countdown": Countdown, "line_chart": LineChart, "verdict": Verdict,
 }
 
 
