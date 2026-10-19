@@ -1,0 +1,1654 @@
+{
+ "style_bible": {
+  "global_style": "photorealistic cinematic still, 35mm anamorphic lens look, real NASA-style orbital photography, deep black space, natural color grade with cold blue shadows, physically plausible lighting, calm and quiet mood, no text, no letters, no watermark, no logo",
+  "negative": "text, captions, watermark, logo, visible face, human face, eyes, open helmet showing a face, flags, mission patches, insignia, real astronaut likeness, blood, gore, explosion, swollen body, frozen body, cartoon, distorted hands",
+  "entities": {
+   "ASTRONAUT": "an astronaut in a plain white modern spacesuit with no flags, patches or insignia, helmet with a reflective gold visor fully lowered, face never visible",
+   "NIGHT_EARTH": "the night side of Earth seen from low orbit, dark oceans and clouds, faint clusters of warm city lights, a thin glowing blue airglow line along the curved horizon, black starry space above"
+  }
+ },
+ "cuts": [
+  {
+   "id": "C01",
+   "line_id": "L01",
+   "section": "hook",
+   "narration": "宇宙服に穴があいて、空気が抜けてしまったら。意識は、何秒もつのでしょうか。",
+   "purpose": "フック：地球の影の側を漂う宇宙飛行士（後ろ姿）",
+   "subject": "フック：地球の影の側を漂う宇宙飛行士（後ろ姿）",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "push_in",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "image",
+   "prompt": "ASTRONAUT seen from behind, floating alone in orbit above NIGHT_EARTH, the back of the helmet and the life-support backpack toward the camera, the curved dark planet filling the lower half of the frame, very slow push-in, still and tense, no face visible",
+   "diagram": null,
+   "science_notes": "AI画像。顔は見せない（後ろ姿のみ）。",
+   "claim_ids": [
+    "D01",
+    "C01"
+   ],
+   "entities": [
+    "ASTRONAUT",
+    "NIGHT_EARTH"
+   ]
+  },
+  {
+   "id": "C02",
+   "line_id": "L02",
+   "section": "hook",
+   "narration": "体は破裂するのでしょうか。それとも、一瞬で凍りつくのでしょうか。",
+   "purpose": "問い：破裂？凍る？",
+   "subject": "問い：破裂？凍る？",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "破裂する？凍りつく？",
+     "subtitle": "映画でよく見る、あの場面",
+     "mode": "question"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C03",
+   "line_id": "L03",
+   "section": "hook",
+   "narration": "実は、宇宙服の空気が抜けてしまった人が、本当にいます。その人が最後に感じたのは、舌の上で、つばが泡立つ感覚でした。",
+   "purpose": "本当にいた人",
+   "subject": "本当にいた人",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "空気が抜けた人が、本当にいる",
+     "subtitle": "最後の感覚：舌の上で、つばが泡立つ"
+    }
+   },
+   "science_notes": "C02：ルブランさんの記録（L37で詳述）。",
+   "claim_ids": [
+    "C02"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C04",
+   "line_id": "L04",
+   "section": "rules",
+   "narration": "これは思考実験です。人を真空にさらす実験は、行われていません。分かっていることの多くは、少しの事故の記録と、昔の動物実験からです。",
+   "purpose": "思考実験と手がかり",
+   "subject": "思考実験と手がかり",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "思考実験",
+       "人での実験は行われていない"
+      ],
+      [
+       "手がかり",
+       "少しの事故の記録"
+      ],
+      [
+       "手がかり",
+       "昔の動物実験"
+      ]
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "A01",
+    "C19"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C05",
+   "line_id": "L05",
+   "section": "rules",
+   "narration": "舞台は、地球を回る軌道の上。太陽の光が当たらない、地球の影の側で、宇宙服を脱いだとします。",
+   "purpose": "舞台：地球の影の側",
+   "subject": "舞台：地球の影の側",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "globe",
+    "params": {
+     "dark": true,
+     "label": "舞台：地球の影の側（日の当たらない側）"
+    }
+   },
+   "science_notes": "D01：思考実験の設定。日なたの紫外線は扱わない。",
+   "claim_ids": [
+    "D01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C06",
+   "line_id": "L06",
+   "section": "rules",
+   "narration": "測定された事実と、そこからの推論は、分けてお話しします。0秒から2分まで、時間を追って見ていきましょう。",
+   "purpose": "0秒から2分へ",
+   "subject": "0秒から2分へ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "timeline",
+    "params": {
+     "title": "事実と推論を分けて、0秒 → 2分",
+     "ticks": [
+      "0秒",
+      "10秒",
+      "30秒",
+      "90秒",
+      "2分"
+     ],
+     "travel": true
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C07",
+   "line_id": "L07",
+   "section": "sec0",
+   "narration": "0秒。まわりの空気が、一気になくなります。",
+   "purpose": "0秒：バイザーの外は真っ暗な宇宙",
+   "subject": "0秒：バイザーの外は真っ暗な宇宙",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "push_in",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "image",
+   "prompt": "First-person view from inside a spacesuit helmet, looking out through the curved visor glass at pitch-black space with faint stars, the dim glowing rim of NIGHT_EARTH along the bottom edge, faint reflections on the inside of the visor, a few tiny glittering ice crystals drifting past outside, quiet and ominous, no person visible",
+   "diagram": null,
+   "science_notes": "AI画像。空気が抜ける表現は控えめに（氷の粒が少し漂う程度）。",
+   "claim_ids": [
+    "D01"
+   ],
+   "entities": [
+    "NIGHT_EARTH"
+   ]
+  },
+  {
+   "id": "C08",
+   "line_id": "L08",
+   "section": "sec0",
+   "narration": "ここで、やってはいけないことがあります。息を止めることです。",
+   "purpose": "息を止めない",
+   "subject": "息を止めない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "息を止めない",
+     "subtitle": "ここで、やってはいけないこと"
+    }
+   },
+   "science_notes": "C04",
+   "claim_ids": [
+    "C04"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C09",
+   "line_id": "L09",
+   "section": "sec0",
+   "narration": "外の圧力がなくなると、肺の中の空気は一気にふくらもうとします。息を止めていると、その力で肺が破れるおそれがあるのです。",
+   "purpose": "肺がふくらむ",
+   "subject": "肺がふくらむ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "gauge",
+    "params": {
+     "title": "息を止めていると…",
+     "tanks": [
+      {
+       "label": "外の圧力",
+       "from": 1.0,
+       "to": 0.02,
+       "color": "cyan"
+      },
+      {
+       "label": "肺がふくらむ力",
+       "from": 0.3,
+       "to": 0.95,
+       "color": "red"
+      }
+     ],
+     "note": "イメージ図（目盛りは数値ではありません）"
+    }
+   },
+   "science_notes": "C04：肺が破れるおそれ。図はイメージ。",
+   "claim_ids": [
+    "C04"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C10",
+   "line_id": "L10",
+   "section": "sec10",
+   "narration": "次に襲ってくるのは、酸素が足りない状態です。",
+   "purpose": "酸素が足りない",
+   "subject": "酸素が足りない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "gauge",
+    "params": {
+     "title": "酸素が足りない状態へ",
+     "tanks": [
+      {
+       "label": "脳に届く酸素",
+       "from": 0.9,
+       "to": 0.08,
+       "color": "cyan"
+      }
+     ],
+     "note": "イメージ図（目盛りは数値ではありません）"
+    }
+   },
+   "science_notes": "C01",
+   "claim_ids": [
+    "C01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C11",
+   "line_id": "L11",
+   "section": "sec10",
+   "narration": "NASAの資料では、意識を失うまでの時間は、およそ9秒から11秒。自分で何かができるのは、10秒ほどしかありません。",
+   "purpose": "意識 9〜11秒",
+   "subject": "意識 9〜11秒",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "countdown",
+    "params": {
+     "start": 0,
+     "end": 10,
+     "unit": "秒",
+     "label": "意識を失うまで：およそ9〜11秒",
+     "color": "red",
+     "sub": "NASAの資料より"
+    }
+   },
+   "science_notes": "C01：NASA 9〜11秒。カウンターは「10秒ほど」まで。",
+   "claim_ids": [
+    "C01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C12",
+   "line_id": "L12",
+   "section": "ebullism",
+   "narration": "同じころ、体がふくらみ始めます。",
+   "purpose": "同じころ",
+   "subject": "同じころ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "timeline",
+    "params": {
+     "title": "同じころ、体がふくらみ始める",
+     "ticks": [
+      "0秒",
+      "10秒",
+      "30秒",
+      "90秒",
+      "2分"
+     ],
+     "highlight": [
+      0,
+      1
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C07"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C13",
+   "line_id": "L13",
+   "section": "ebullism",
+   "narration": "地上からおよそ19キロより上では、気圧がとても低く、水が体温と同じ37度で沸騰します。アームストロング限界と呼ばれる境目です。",
+   "purpose": "高度と沸点",
+   "subject": "高度と沸点",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "line_chart",
+    "params": {
+     "title": "高さと、水が沸騰する温度",
+     "points": [
+      [
+       0,
+       100
+      ],
+      [
+       19,
+       37
+      ]
+     ],
+     "x_min": 0,
+     "x_max": 30,
+     "y_min": 0,
+     "y_max": 110,
+     "x_ticks": [
+      0,
+      19
+     ],
+     "y_ticks": [
+      37,
+      100
+     ],
+     "x_label": "高さ（km）",
+     "y_label": "沸騰する温度（℃）",
+     "band": {
+      "y": 37,
+      "label": "体温 37℃"
+     },
+     "mark": {
+      "x": 19,
+      "y": 37,
+      "label": "アームストロング限界"
+     },
+     "note": "2つの点を直線で結んだイメージ図"
+    }
+   },
+   "science_notes": "C05：確認済みの点は (0 km, 100℃) と (約19 km, 37℃) の2つだけ。間は直線でつないだイメージ。",
+   "claim_ids": [
+    "C05"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C14",
+   "line_id": "L14",
+   "section": "ebullism",
+   "narration": "皮膚の下の水分が気体に変わり、体はむくむように腫れていきます。犬の実験では、体や手足が大きく腫れ、けいれんも見られました。",
+   "purpose": "皮膚の下で気体に",
+   "subject": "皮膚の下で気体に",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "皮膚の下",
+       "水分が気体に → むくむ"
+      ],
+      [
+       "犬の実験",
+       "体・手足が大きく腫れる"
+      ],
+      [
+       "そして",
+       "けいれんも"
+      ]
+     ]
+    }
+   },
+   "science_notes": "C05, C07：犬の実験は文字のみ。動物の写真・イラストは使わない。",
+   "claim_ids": [
+    "C05",
+    "C07"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C15",
+   "line_id": "L15",
+   "section": "ebullism",
+   "narration": "それでも、体が破裂することはありません。皮膚と体の組織が、持ちこたえるのです。",
+   "purpose": "破裂はしない",
+   "subject": "破裂はしない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "それでも、破裂はしない",
+     "subtitle": "皮膚と体の組織が、持ちこたえる"
+    }
+   },
+   "science_notes": "C22",
+   "claim_ids": [
+    "C22"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C16",
+   "line_id": "L16",
+   "section": "saliva",
+   "narration": "一方で、むき出しの水分は別です。舌の上のつばや、目の涙は、沸騰し始めます。",
+   "purpose": "むき出しの水分は沸騰",
+   "subject": "むき出しの水分は沸騰",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "table",
+    "params": {
+     "title": "むき出しの水分は？",
+     "columns": [
+      "水分",
+      "沸騰する？"
+     ],
+     "rows": [
+      [
+       "舌の上のつば",
+       "沸騰する"
+      ],
+      [
+       "目の涙",
+       "沸騰する"
+      ]
+     ],
+     "widths": [
+      0.45,
+      0.55
+     ],
+     "highlight_cols": [
+      1
+     ]
+    }
+   },
+   "science_notes": "C06",
+   "claim_ids": [
+    "C06"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C17",
+   "line_id": "L17",
+   "section": "saliva",
+   "narration": "でも、血管の中の血液は沸騰しません。体が、血液に圧力をかけ続けているからです。",
+   "purpose": "血液は沸騰しない",
+   "subject": "血液は沸騰しない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "table",
+    "params": {
+     "title": "でも、血液は別",
+     "columns": [
+      "水分",
+      "沸騰する？"
+     ],
+     "rows": [
+      [
+       "舌の上のつば",
+       "沸騰する"
+      ],
+      [
+       "目の涙",
+       "沸騰する"
+      ],
+      [
+       "血管の中の血液",
+       "沸騰しない（体が圧力をかける）"
+      ]
+     ],
+     "widths": [
+      0.45,
+      0.55
+     ],
+     "highlight_cols": [
+      1
+     ]
+    }
+   },
+   "science_notes": "C06",
+   "claim_ids": [
+    "C06"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C18",
+   "line_id": "L18",
+   "section": "temperature",
+   "narration": "では、寒さはどうでしょう。宇宙はとても冷たい場所のはずです。",
+   "purpose": "問い：すぐ凍る？",
+   "subject": "問い：すぐ凍る？",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "宇宙は冷たい。すぐ凍る？",
+     "mode": "question"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C19",
+   "line_id": "L19",
+   "section": "temperature",
+   "narration": "ところが、体はすぐには凍りません。真空には、熱を運ぶ空気がないからです。熱は赤外線として、少しずつ逃げていくだけです。",
+   "purpose": "熱の逃げ方",
+   "subject": "熱の逃げ方",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "table",
+    "params": {
+     "title": "熱の逃げ方",
+     "columns": [
+      "場所",
+      "熱の逃げ方"
+     ],
+     "rows": [
+      [
+       "空気がある場所",
+       "伝導・対流・放射"
+      ],
+      [
+       "真空",
+       "放射（赤外線）だけ"
+      ]
+     ],
+     "widths": [
+      0.4,
+      0.6
+     ],
+     "highlight_cols": [
+      1
+     ]
+    }
+   },
+   "science_notes": "C10",
+   "claim_ids": [
+    "C10"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C20",
+   "line_id": "L20",
+   "section": "temperature",
+   "narration": "その量は、およそ100ワット。凍るよりずっと先に、真空そのものが命をおびやかします。",
+   "purpose": "約100ワット",
+   "subject": "約100ワット",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "約100W",
+       "label": "体が赤外線で出す熱"
+      }
+     ]
+    }
+   },
+   "science_notes": "C11（一部確認）",
+   "claim_ids": [
+    "C11",
+    "C10"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C21",
+   "line_id": "L21",
+   "section": "limit",
+   "narration": "30秒。意識はもうありません。それでも体の中では、変化が続いています。心臓の中にまで気体がたまり、血液を送れなくなるおそれもあります。",
+   "purpose": "30秒",
+   "subject": "30秒",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "timeline",
+    "params": {
+     "title": "30秒 — 意識はもうない",
+     "ticks": [
+      "0秒",
+      "10秒",
+      "30秒",
+      "90秒",
+      "2分"
+     ],
+     "highlight": [
+      0,
+      2
+     ]
+    }
+   },
+   "science_notes": "D01（時間表示）, C21：心臓に気体がたまるおそれ。",
+   "claim_ids": [
+    "D01",
+    "C21"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C22",
+   "line_id": "L22",
+   "section": "limit",
+   "narration": "では、何秒までなら助かるのか。1960年代、アメリカでは犬を使った実験が行われました。",
+   "purpose": "問い：何秒までなら助かる？",
+   "subject": "問い：何秒までなら助かる？",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "何秒までなら助かる？",
+     "subtitle": "1960年代・アメリカの犬の実験",
+     "mode": "question"
+    }
+   },
+   "science_notes": "C08：動物の写真・イラストは使わない。",
+   "claim_ids": [
+    "C08"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C23",
+   "line_id": "L23",
+   "section": "limit",
+   "narration": "ほぼ真空にさらされた犬は、9秒から12秒ほどで意識を失いました。それでも、2分未満で元の気圧に戻された犬は、すべて生き延びました。",
+   "purpose": "犬：9〜12秒／2分未満",
+   "subject": "犬：9〜12秒／2分未満",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "9〜12秒",
+       "label": "意識を失うまで（犬）"
+      },
+      {
+       "value": "2分未満",
+       "label": "元に戻せば、すべて生存"
+      }
+     ]
+    }
+   },
+   "science_notes": "C08：文字のみ。",
+   "claim_ids": [
+    "C08"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C24",
+   "line_id": "L24",
+   "section": "limit",
+   "narration": "ところが2分から3分になると、死んでしまう犬が出始めました。",
+   "purpose": "犬：2〜3分で死亡",
+   "subject": "犬：2〜3分で死亡",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "2分未満",
+       "label": "すべて生き延びた"
+      },
+      {
+       "value": "2〜3分",
+       "label": "死んでしまう犬が出始めた"
+      }
+     ],
+     "joiner": "→"
+    }
+   },
+   "science_notes": "C08（一部確認）：棒グラフのみ。動物の写真・イラストは使わない。",
+   "claim_ids": [
+    "C08"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C25",
+   "line_id": "L25",
+   "section": "limit",
+   "narration": "NASAの資料も、動物では90秒より短ければ、すばやく完全に回復するのが普通だとしています。",
+   "purpose": "NASA：90秒未満なら回復",
+   "subject": "NASA：90秒未満なら回復",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "90秒未満",
+       "label": "動物：すばやく完全に回復"
+      }
+     ]
+    }
+   },
+   "science_notes": "C09",
+   "claim_ids": [
+    "C09"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C26",
+   "line_id": "L26",
+   "section": "limit",
+   "narration": "人で確かめることはできません。それでも助かるかどうかの境目は、およそ1分半から2分のあいだにある、と考えられています。",
+   "purpose": "境目は1分半〜2分（推論）",
+   "subject": "境目は1分半〜2分（推論）",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "境目は、1分半〜2分のあいだ",
+     "subtitle": "【推論】動物の結果から。人では確かめられない"
+    }
+   },
+   "science_notes": "C17：推論ラベルを表示。",
+   "claim_ids": [
+    "C17"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C27",
+   "line_id": "L27",
+   "section": "recovery",
+   "narration": "助かる条件は、ひとつ。すぐに空気のある場所へ戻ることです。",
+   "purpose": "助かる条件",
+   "subject": "助かる条件",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "助かる条件は、ひとつ",
+     "subtitle": "すぐに、空気のある場所へ戻ること"
+    }
+   },
+   "science_notes": "C09, C16",
+   "claim_ids": [
+    "C09",
+    "C16"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C28",
+   "line_id": "L28",
+   "section": "recovery",
+   "narration": "意識を失っていても、圧力が戻れば、目を覚ますことがあります。実際に、そうして助かった人がいます。",
+   "purpose": "圧力が戻れば目を覚ます",
+   "subject": "圧力が戻れば目を覚ます",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "flow",
+    "params": {
+     "title": "圧力が戻れば",
+     "steps": [
+      "意識を失う",
+      "すぐ空気へ",
+      "圧力が戻る",
+      "目を覚ます"
+     ]
+    }
+   },
+   "science_notes": "C03",
+   "claim_ids": [
+    "C03"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C29",
+   "line_id": "L29",
+   "section": "myths",
+   "narration": "ここで、映画でよく見る場面と比べてみましょう。",
+   "purpose": "映画と現実",
+   "subject": "映画と現実",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "映画と現実",
+     "subtitle": "よく見る場面と、比べてみる"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C30",
+   "line_id": "L30",
+   "section": "myths",
+   "narration": "体が破裂する。これは、間違いです。腫れはしますが、破裂はしません。",
+   "purpose": "破裂 ✕",
+   "subject": "破裂 ✕",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "映画の場面は、本当？",
+     "rows": [
+      {
+       "claim": "体が破裂する",
+       "ok": false,
+       "why": "腫れはするが、破裂はしない"
+      }
+     ]
+    }
+   },
+   "science_notes": "C22, C07",
+   "claim_ids": [
+    "C22",
+    "C07"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C31",
+   "line_id": "L31",
+   "section": "myths",
+   "narration": "一瞬で凍りつく。これも、間違いです。真空は、熱を逃がしにくいのです。",
+   "purpose": "凍結 ✕",
+   "subject": "凍結 ✕",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "映画の場面は、本当？",
+     "rows": [
+      {
+       "claim": "体が破裂する",
+       "ok": false,
+       "why": "腫れはするが、破裂はしない"
+      },
+      {
+       "claim": "一瞬で凍りつく",
+       "ok": false,
+       "why": "真空は、熱を逃がしにくい"
+      }
+     ]
+    }
+   },
+   "science_notes": "C10",
+   "claim_ids": [
+    "C10"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C32",
+   "line_id": "L32",
+   "section": "myths",
+   "narration": "血が沸騰する。血管の中では、起きません。沸騰するのは、つばや涙のような、むき出しの水分です。",
+   "purpose": "血の沸騰 ✕",
+   "subject": "血の沸騰 ✕",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "映画の場面は、本当？",
+     "rows": [
+      {
+       "claim": "体が破裂する",
+       "ok": false,
+       "why": "腫れはするが、破裂はしない"
+      },
+      {
+       "claim": "一瞬で凍りつく",
+       "ok": false,
+       "why": "真空は、熱を逃がしにくい"
+      },
+      {
+       "claim": "血が沸騰する",
+       "ok": false,
+       "why": "沸騰するのは、つばや涙"
+      }
+     ]
+    }
+   },
+   "science_notes": "C06",
+   "claim_ids": [
+    "C06"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C33",
+   "line_id": "L33",
+   "section": "myths",
+   "narration": "本当に怖いのは、爆発でも凍結でもありません。10秒ほどで、意識が消えてしまうことです。",
+   "purpose": "本当に怖いのは意識",
+   "subject": "本当に怖いのは意識",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "countdown",
+    "params": {
+     "start": 0,
+     "end": 10,
+     "unit": "秒",
+     "label": "本当に怖いのは：意識が消えること",
+     "color": "red"
+    }
+   },
+   "science_notes": "C01",
+   "claim_ids": [
+    "C01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C34",
+   "line_id": "L34",
+   "section": "records",
+   "narration": "ここからは、実際の記録です。",
+   "purpose": "実際の記録",
+   "subject": "実際の記録",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "table",
+    "params": {
+     "title": "ここからは、実際の記録",
+     "columns": [
+      "年",
+      "記録"
+     ],
+     "rows": [
+      [
+       "1960年代",
+       "ルブランさん（NASAの真空室）"
+      ],
+      [
+       "1960年",
+       "キッティンジャーさん（気球）"
+      ],
+      [
+       "1971年",
+       "ソユーズ11号"
+      ]
+     ],
+     "widths": [
+      0.3,
+      0.7
+     ]
+    }
+   },
+   "science_notes": "年表カード。実在の人物の顔は使わない。",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C35",
+   "line_id": "L35",
+   "section": "records",
+   "narration": "1960年代、アメリカのヒューストン。NASAの真空室で、宇宙服のテストが行われていました。中にいたのは、ジム・ルブランさんです。",
+   "purpose": "ルブランさん",
+   "subject": "ルブランさん",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "1960年代",
+       "アメリカ・ヒューストン"
+      ],
+      [
+       "場所",
+       "NASAの真空室"
+      ],
+      [
+       "中の人",
+       "ジム・ルブランさん"
+      ]
+     ]
+    }
+   },
+   "science_notes": "C02：年は資料で不一致のため「1960年代」。顔写真なし。",
+   "claim_ids": [
+    "C02"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C36",
+   "line_id": "L36",
+   "section": "records",
+   "narration": "テストの途中、宇宙服につながるホースが外れ、服の中の空気が抜けてしまいました。",
+   "purpose": "ホースが外れる",
+   "subject": "ホースが外れる",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "flow",
+    "params": {
+     "title": "宇宙服のテスト中に",
+     "steps": [
+      "NASAの真空室",
+      "宇宙服テスト",
+      "ホースが外れ",
+      "空気が抜ける"
+     ]
+    }
+   },
+   "science_notes": "C02",
+   "claim_ids": [
+    "C02"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C37",
+   "line_id": "L37",
+   "section": "records",
+   "narration": "意識がもったのは、およそ14秒。最後に覚えていたのは、舌の上で、つばが泡立つ感覚でした。",
+   "purpose": "意識 およそ14秒",
+   "subject": "意識 およそ14秒",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "countdown",
+    "params": {
+     "start": 0,
+     "end": 14,
+     "unit": "秒",
+     "label": "ルブランさんの意識：およそ14秒",
+     "color": "amber",
+     "sub": "最後の記憶：舌の上で、つばが泡立つ"
+    }
+   },
+   "science_notes": "C02（一部確認）",
+   "claim_ids": [
+    "C02"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C38",
+   "line_id": "L38",
+   "section": "records",
+   "narration": "仲間がすぐに部屋に空気を戻し、彼は意識を取り戻しました。後遺症はなかったといいます。備えのある施設での、事故です。絶対に真似しないでください。",
+   "purpose": "絶対に真似しない",
+   "subject": "絶対に真似しない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "絶対に真似しないでください",
+     "subtitle": "備えのある施設での事故。後遺症はなかった"
+    }
+   },
+   "science_notes": "C03：大きく表示。",
+   "claim_ids": [
+    "C03"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C39",
+   "line_id": "L39",
+   "section": "records",
+   "narration": "1960年、気球で高さおよそ31キロまで上ったジョー・キッティンジャーさん。上昇の途中で、右手の手袋の圧力が抜けてしまいました。",
+   "purpose": "キッティンジャーさん",
+   "subject": "キッティンジャーさん",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "1960年",
+       "label": "ジョー・キッティンジャーさん"
+      },
+      {
+       "value": "約31km",
+       "label": "気球で上った高さ"
+      }
+     ]
+    }
+   },
+   "science_notes": "C15：顔写真なし。",
+   "claim_ids": [
+    "C15"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C40",
+   "line_id": "L40",
+   "section": "records",
+   "narration": "右手は、痛みとともに腫れ上がりました。それでも彼は、計画が中止になるのを恐れて地上に伝えず、そのまま飛び降りました。手は、そのあと元どおりに使えるようになりました。",
+   "purpose": "右手が腫れた",
+   "subject": "右手が腫れた",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "右手",
+       "痛みとともに腫れた"
+      ],
+      [
+       "判断",
+       "伝えずに飛び降りた"
+      ],
+      [
+       "その後",
+       "元どおり使えた"
+      ]
+     ]
+    }
+   },
+   "science_notes": "C15",
+   "claim_ids": [
+    "C15"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C41",
+   "line_id": "L41",
+   "section": "records",
+   "narration": "そして1971年。宇宙ステーション、サリュート1号での3週間あまりの滞在を終えた、ソユーズ11号の3人です。",
+   "purpose": "ソユーズ11号",
+   "subject": "ソユーズ11号",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "1971年　ソユーズ11号",
+     "subtitle": "サリュート1号での、3週間あまりの滞在のあと"
+    }
+   },
+   "science_notes": "C12：文字のみ。劇的な映像・効果音は使わない。",
+   "claim_ids": [
+    "C12"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C42",
+   "line_id": "L42",
+   "section": "records",
+   "narration": "地球へ戻る途中、船の弁が早く開いてしまい、船内の空気が宇宙へ抜けていきました。3人は、宇宙服を着ていませんでした。",
+   "purpose": "弁が開いた",
+   "subject": "弁が開いた",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "帰還の途中",
+       "船の弁が早く開いた"
+      ],
+      [
+       "船内",
+       "空気が宇宙へ抜けた"
+      ],
+      [
+       "3人は",
+       "宇宙服を着ていなかった"
+      ]
+     ]
+    }
+   },
+   "science_notes": "C12：文字のみ。",
+   "claim_ids": [
+    "C12"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C43",
+   "line_id": "L43",
+   "section": "records",
+   "narration": "ゲオルギー・ドブロボルスキーさん、ウラジスラフ・ボルコフさん、ビクトル・パツァーエフさん。3人は、帰らぬ人となりました。",
+   "purpose": "3人の名前",
+   "subject": "3人の名前",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "table",
+    "params": {
+     "title": "ソユーズ11号の3人",
+     "columns": [
+      "乗員"
+     ],
+     "rows": [
+      [
+       "ゲオルギー・ドブロボルスキーさん"
+      ],
+      [
+       "ウラジスラフ・ボルコフさん"
+      ],
+      [
+       "ビクトル・パツァーエフさん"
+      ]
+     ]
+    }
+   },
+   "science_notes": "C12：名前を静かに表示するだけ。顔写真・事故の描写なし。",
+   "claim_ids": [
+    "C12"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C44",
+   "line_id": "L44",
+   "section": "records",
+   "narration": "NASAの分析は、宇宙服を正しく着ていれば、助かっていただろうとしています。",
+   "purpose": "宇宙服を着ていれば",
+   "subject": "宇宙服を着ていれば",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "宇宙服を正しく着ていれば",
+     "subtitle": "助かっていただろう（NASAの分析）"
+    }
+   },
+   "science_notes": "C13（一部確認）",
+   "claim_ids": [
+    "C13"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C45",
+   "line_id": "L45",
+   "section": "records",
+   "narration": "宇宙飛行で、体の水分が気体になるほどの減圧が報告されているのは、こうした機体の大事故のときだけです。",
+   "purpose": "大事故のときだけ",
+   "subject": "大事故のときだけ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "globe",
+    "params": {
+     "dark": true,
+     "label": "体の水分が気体になるほどの減圧：報告は機体の大事故のときだけ"
+    }
+   },
+   "science_notes": "C20",
+   "claim_ids": [
+    "C20"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C46",
+   "line_id": "L46",
+   "section": "ending",
+   "narration": "もしも宇宙で、宇宙服を脱いだら。体は破裂せず、すぐに凍ることもありません。",
+   "purpose": "結論：破裂しない・すぐ凍らない",
+   "subject": "結論：破裂しない・すぐ凍らない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "もしも宇宙服を脱いだら",
+     "rows": [
+      {
+       "claim": "体が破裂する",
+       "ok": false,
+       "why": "破裂はしない"
+      },
+      {
+       "claim": "すぐに凍る",
+       "ok": false,
+       "why": "すぐには凍らない"
+      }
+     ]
+    }
+   },
+   "science_notes": "C22, C10",
+   "claim_ids": [
+    "C22",
+    "C10"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C47",
+   "line_id": "L47",
+   "section": "ending",
+   "narration": "でも、意識は10秒ほどで消え、1分半から2分で、助かる望みは小さくなっていきます。",
+   "purpose": "10秒と1分半〜2分",
+   "subject": "10秒と1分半〜2分",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "timeline",
+    "params": {
+     "title": "意識は10秒ほど。境目は1分半〜2分（推論）",
+     "ticks": [
+      "0秒",
+      "10秒",
+      "30秒",
+      "90秒",
+      "2分"
+     ],
+     "highlight": [
+      0,
+      4
+     ]
+    }
+   },
+   "science_notes": "C01, C17（推論）",
+   "claim_ids": [
+    "C01",
+    "C17"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C48",
+   "line_id": "L48",
+   "section": "ending",
+   "narration": "宇宙服は、ただの服ではありません。地球の空気を、体のまわりに持ち歩くための、小さな宇宙船なのです。",
+   "purpose": "締め：夜の地球と小さな宇宙飛行士（引き）",
+   "subject": "締め：夜の地球と小さな宇宙飛行士（引き）",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "pull_out",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "image",
+   "prompt": "Very wide shot of a tiny ASTRONAUT seen from behind, drifting against the vast curve of NIGHT_EARTH, the thin blue airglow line of the atmosphere glowing along the horizon, the astronaut small in the frame, slow pull-out revealing more of the dark planet, quiet and reflective, no face visible",
+   "diagram": null,
+   "science_notes": "AI画像。顔は見せない。",
+   "claim_ids": [
+    "D01"
+   ],
+   "entities": [
+    "ASTRONAUT",
+    "NIGHT_EARTH"
+   ]
+  }
+ ]
+}

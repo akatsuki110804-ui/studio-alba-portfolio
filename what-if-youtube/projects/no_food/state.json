@@ -1,0 +1,27 @@
+{
+  "stages": {
+    "assets": {
+      "status": "done",
+      "started": "2026-10-19T07:58:55+00:00",
+      "inputs": {
+        "animatic": false
+      },
+      "finished": "2026-10-19T07:58:55+00:00",
+      "error": null,
+      "fingerprint": null,
+      "outputs": [],
+      "retries": 0,
+      "cost_jpy": 0.0,
+      "notes": [
+        "diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"
+      ]
+    },
+    "voice": {
+      "status": "running",
+      "started": "2026-10-19T07:58:55+00:00",
+      "inputs": {
+        "cuts": 48
+      }
+    }
+  }
+}

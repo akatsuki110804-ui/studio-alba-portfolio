@@ -1,0 +1,74 @@
+{
+  "C01": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/images/C01.png",
+    "fingerprint": "023ad77a101caefa",
+    "imported": "2026-10-19T07:58:06+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "ba98e0b1-a221-4541-aa8b-e96d4490e060",
+    "prompt": "An empty white ceramic plate with a single silver fork placed beside it on dining table (a plain dark wooden dining table in a quiet Japanese home at night, lit only by one dim warm pendant lamp, deep shadows all around), nothing else on the table, centered composition with dark negative space around the plate, very slow push-in toward the empty plate, quiet, lonely, realistic. Style: photorealistic cinematic still photograph, 35mm lens look, shallow depth of field, natural color grade with deep blue-black shadows and warm highlights, physically plausible lighting, quiet and calm mood, no people, no text, no letters, no watermark, no logo. Avoid: text, captions, letters, numbers, watermark, logo, cartoon, illustration, person, human face, hands, crowd, prison, barbed wire, camp, patient in bed, medical gore, distorted objects",
+    "last_error": null
+  },
+  "C37": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/images/C37.png",
+    "fingerprint": "c229a65ea388d39c",
+    "imported": "2026-10-19T07:58:08+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "e8cb8d45-8f37-45fd-b38e-7ef41e97cf59",
+    "prompt": "A long empty hospital corridor in hospital 1960s (a 1960s British hospital interior with pale green painted walls, tall sash windows, polished linoleum floor, old wooden doors with small glass panes, slightly faded vintage film color), no people, soft daylight falling through the tall windows onto the polished floor in long bright rectangles, dust drifting in the light, slow push-in down the corridor, calm, still, realistic. Style: photorealistic cinematic still photograph, 35mm lens look, shallow depth of field, natural color grade with deep blue-black shadows and warm highlights, physically plausible lighting, quiet and calm mood, no people, no text, no letters, no watermark, no logo. Avoid: text, captions, letters, numbers, watermark, logo, cartoon, illustration, person, human face, hands, crowd, prison, barbed wire, camp, patient in bed, medical gore, distorted objects",
+    "last_error": null
+  },
+  "C48": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "assets/images/C48.png",
+    "fingerprint": "5e8334981344ee31",
+    "imported": "2026-10-19T07:58:10+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "c410ccb5-5f35-4515-b669-72e9d26aa943",
+    "prompt": "A warm Japanese breakfast on breakfast table (a light wooden dining table beside a window in a Japanese home on a clear morning, warm golden sunlight, white curtains glowing softly): a bowl of steaming white rice, miso soup with rising steam, grilled fish and a small dish of pickles, chopsticks resting on a holder, soft golden morning sunlight, slow pull-out revealing the whole table, bright, warm, hopeful, realistic. Style: photorealistic cinematic still photograph, 35mm lens look, shallow depth of field, natural color grade with deep blue-black shadows and warm highlights, physically plausible lighting, quiet and calm mood, no people, no text, no letters, no watermark, no logo. Avoid: text, captions, letters, numbers, watermark, logo, cartoon, illustration, person, human face, hands, crowd, prison, barbed wire, camp, patient in bed, medical gore, distorted objects",
+    "last_error": null
+  },
+  "T1": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T1_bg.png",
+    "fingerprint": "683e9a9fdbe15960",
+    "imported": "2026-10-19T07:58:12+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "f46ab26d-be01-46eb-8873-0c509c7981ad",
+    "prompt": "An empty white ceramic plate with a single silver fork beside it on a dark wooden dining table at night on the right side of the frame, lit by one dim warm pendant lamp, deep shadows, no people, large dark empty negative space on the left for title text. Style: photorealistic cinematic still photograph, 35mm lens look, shallow depth of field, natural color grade with deep blue-black shadows and warm highlights, physically plausible lighting, quiet and calm mood, no people, no text, no letters, no watermark, no logo",
+    "last_error": null
+  },
+  "T2": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T2_bg.png",
+    "fingerprint": "4eefdbcfc23fb4b1",
+    "imported": "2026-10-19T07:58:14+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "e87b8f41-d877-4251-b675-9c36afd49bcb",
+    "prompt": "A long empty 1960s hospital corridor with pale green walls and tall windows on the right side of the frame, soft daylight falling on the polished floor in bright rectangles, no people, vintage film color, darker empty space on the left for title text. Style: photorealistic cinematic still photograph, 35mm lens look, shallow depth of field, natural color grade with deep blue-black shadows and warm highlights, physically plausible lighting, quiet and calm mood, no people, no text, no letters, no watermark, no logo",
+    "last_error": null
+  },
+  "T3": {
+    "attempts": 1,
+    "status": "ready",
+    "path": "thumbnails/T3_bg.png",
+    "fingerprint": "2e53ed34aecf1109",
+    "imported": "2026-10-19T07:58:50+00:00",
+    "provider": "higgsfield",
+    "model": "gpt_image_2_5",
+    "job_id": "",
+    "prompt": "LOCAL COMPOSITE: motion still of C27 (particles drifting in deep blue water with light rays), label text removed, full frame. Style: photorealistic cinematic still photograph, 35mm lens look, shallow depth of field, natural color grade with deep blue-black shadows and warm highlights, physically plausible lighting, quiet and calm mood, no people, no text, no letters, no watermark, no logo",
+    "last_error": null
+  }
+}

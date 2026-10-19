@@ -1,0 +1,7 @@
+ts,project,stage,item,provider,model,units,credits,cost_jpy,kind,note
+2026-10-19T07:58:06+00:00,no_food,images,C01,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,ba98e0b1-a221-4541-aa8b-e96d4490e060
+2026-10-19T07:58:08+00:00,no_food,images,C37,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,e8cb8d45-8f37-45fd-b38e-7ef41e97cf59
+2026-10-19T07:58:10+00:00,no_food,images,C48,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,c410ccb5-5f35-4515-b669-72e9d26aa943
+2026-10-19T07:58:12+00:00,no_food,images,T1,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,f46ab26d-be01-46eb-8873-0c509c7981ad
+2026-10-19T07:58:14+00:00,no_food,images,T2,higgsfield,gpt_image_2_5,1,0.25,1.85,actual,e87b8f41-d877-4251-b675-9c36afd49bcb
+2026-10-19T07:58:50+00:00,no_food,images,T3,higgsfield,gpt_image_2_5,1,0.0,0.0,actual,

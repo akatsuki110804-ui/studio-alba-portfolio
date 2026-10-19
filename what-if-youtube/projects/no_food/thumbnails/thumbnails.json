@@ -1,0 +1,39 @@
+{
+ "thumbnails": [
+  {
+   "id": "T1",
+   "text": [
+    "382日",
+    "何も食べなかった男"
+   ],
+   "accent": "382日",
+   "layout": "left",
+   "bg_source": "C01 (AI)",
+   "prompt": "An empty white ceramic plate with a single silver fork beside it on a dark wooden dining table at night on the right side of the frame, lit by one dim warm pendant lamp, deep shadows, no people, large dark empty negative space on the left for title text"
+  },
+  {
+   "id": "T2",
+   "text": [
+    "382日",
+    "何も食べなかった男",
+    "体の中で何が起きた？"
+   ],
+   "accent": "382日",
+   "layout": "left",
+   "bg_source": "C37 (AI)",
+   "prompt": "A long empty 1960s hospital corridor with pale green walls and tall windows on the right side of the frame, soft daylight falling on the polished floor in bright rectangles, no people, vintage film color, darker empty space on the left for title text"
+  },
+  {
+   "id": "T3",
+   "text": [
+    "何も食べないと",
+    "体の中で",
+    "何が起きる？"
+   ],
+   "accent": "何が起きる？",
+   "layout": "left",
+   "bg_source": "C27 (motion still)",
+   "prompt": "LOCAL COMPOSITE: motion still of C27 (particles drifting in deep blue water with light rays), label text removed, full frame"
+  }
+ ]
+}

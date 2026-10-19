@@ -1,0 +1,9 @@
+{"ts": "2026-10-19T07:58:06+00:00", "project": "no_food", "stage": "assets", "event": "imported", "item": "C01", "path": "assets/images/C01.png", "credits": 0.25, "job_id": "ba98e0b1-a221-4541-aa8b-e96d4490e060"}
+{"ts": "2026-10-19T07:58:08+00:00", "project": "no_food", "stage": "assets", "event": "imported", "item": "C37", "path": "assets/images/C37.png", "credits": 0.25, "job_id": "e8cb8d45-8f37-45fd-b38e-7ef41e97cf59"}
+{"ts": "2026-10-19T07:58:10+00:00", "project": "no_food", "stage": "assets", "event": "imported", "item": "C48", "path": "assets/images/C48.png", "credits": 0.25, "job_id": "c410ccb5-5f35-4515-b669-72e9d26aa943"}
+{"ts": "2026-10-19T07:58:12+00:00", "project": "no_food", "stage": "assets", "event": "imported", "item": "T1", "path": "thumbnails/T1_bg.png", "credits": 0.25, "job_id": "f46ab26d-be01-46eb-8873-0c509c7981ad"}
+{"ts": "2026-10-19T07:58:14+00:00", "project": "no_food", "stage": "assets", "event": "imported", "item": "T2", "path": "thumbnails/T2_bg.png", "credits": 0.25, "job_id": "e87b8f41-d877-4251-b675-9c36afd49bcb"}
+{"ts": "2026-10-19T07:58:50+00:00", "project": "no_food", "stage": "assets", "event": "imported", "item": "T3", "path": "thumbnails/T3_bg.png", "credits": 0.0, "job_id": ""}
+{"ts": "2026-10-19T07:58:55+00:00", "project": "no_food", "stage": "assets", "event": "start", "inputs": {"animatic": false}}
+{"ts": "2026-10-19T07:58:55+00:00", "project": "no_food", "stage": "assets", "event": "done", "outputs": [], "retries": 0, "cost_jpy": 0.0, "notes": ["diagrams rendered=0; pending AI assets=0 (≈0 credits, ≈¥0.0)"]}
+{"ts": "2026-10-19T07:58:55+00:00", "project": "no_food", "stage": "voice", "event": "start", "inputs": {"cuts": 48}}

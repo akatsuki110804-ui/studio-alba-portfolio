@@ -1,0 +1,7 @@
+{
+  "thumbnails": [
+    {"id": "T1", "text": ["宇宙服を脱いだら", "意識は何秒？"], "accent": "意識は何秒？", "layout": "left", "prompt": "Dark silhouette of an astronaut seen from behind on the right side of the frame, helmet removed and held at the side, the head only a black silhouette against the glow so no face is visible, floating above the night side of Earth with faint city lights and a thin blue airglow horizon, black starry space, dark empty negative space on the left for title text"},
+    {"id": "T2", "text": ["宇宙服を脱いで", "0秒から2分", "何が起きる？"], "accent": "何が起きる？", "layout": "left", "prompt": "An empty white spacesuit helmet drifting in black space on the right side of the frame, its gold visor reflecting the curved night side of Earth and a thin blue airglow line, faint stars, calm and eerie, dark empty negative space on the left for title text"},
+    {"id": "T3", "text": ["宇宙服の空気が", "抜けた人の意識は", "約14秒"], "accent": "約14秒", "layout": "left", "prompt": "View from inside a spacesuit helmet looking out through the curved visor glass at pitch-black space and the dark night side of Earth with faint city lights, soft reflections on the visor, on the right side of the frame, quiet and tense, dark empty negative space on the left for title text"}
+  ]
+}

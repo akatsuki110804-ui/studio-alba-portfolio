@@ -1,0 +1,1630 @@
+{
+ "style_bible": {
+  "global_style": "photorealistic cinematic still photograph, 35mm lens look, shallow depth of field, natural color grade with deep blue-black shadows and warm highlights, physically plausible lighting, quiet and calm mood, no people, no text, no letters, no watermark, no logo",
+  "negative": "text, captions, letters, numbers, watermark, logo, cartoon, illustration, person, human face, hands, crowd, prison, barbed wire, camp, patient in bed, medical gore, distorted objects",
+  "entities": {
+   "DINING_TABLE": "a plain dark wooden dining table in a quiet Japanese home at night, lit only by one dim warm pendant lamp, deep shadows all around",
+   "HOSPITAL_1960S": "a 1960s British hospital interior with pale green painted walls, tall sash windows, polished linoleum floor, old wooden doors with small glass panes, slightly faded vintage film color",
+   "BREAKFAST_TABLE": "a light wooden dining table beside a window in a Japanese home on a clear morning, warm golden sunlight, white curtains glowing softly"
+  }
+ },
+ "cuts": [
+  {
+   "id": "C01",
+   "line_id": "L01",
+   "section": "hook",
+   "narration": "382日間。何も食べずに過ごした男が、本当にいました。",
+   "purpose": "フック：夜の食卓の空のお皿",
+   "subject": "フック：夜の食卓の空のお皿",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "push_in",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "image",
+   "prompt": "An empty white ceramic plate with a single silver fork placed beside it on DINING_TABLE, nothing else on the table, centered composition with dark negative space around the plate, very slow push-in toward the empty plate, quiet, lonely, realistic",
+   "diagram": null,
+   "science_notes": "AI画像。実在の人物・顔は出さない。文字なし。",
+   "claim_ids": [
+    "C16"
+   ],
+   "entities": [
+    "DINING_TABLE"
+   ]
+  },
+  {
+   "id": "C02",
+   "line_id": "L02",
+   "section": "hook",
+   "narration": "もしも人間が、何も食べなかったら。体は、どんな順番で、何を燃やしていくのでしょうか。",
+   "purpose": "問い：何を燃やすのか",
+   "subject": "問い：何を燃やすのか",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "体は、何を燃やしていく？",
+     "subtitle": "もしも人間が、何も食べなかったら",
+     "mode": "question"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C03",
+   "line_id": "L03",
+   "section": "hook",
+   "narration": "そして、本当に危ないのは、いつなのでしょうか。",
+   "purpose": "問い：危ないのはいつ",
+   "subject": "問い：危ないのはいつ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "本当に危ないのは、いつ？",
+     "mode": "question"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C04",
+   "line_id": "L04",
+   "section": "rules",
+   "narration": "これは思考実験です。今日から、食べ物を一切口にしない。ただし、水だけは飲めることにします。",
+   "purpose": "思考実験のルール",
+   "subject": "思考実験のルール",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "思考実験のルール",
+     "rows": [
+      {
+       "claim": "食べ物",
+       "ok": false,
+       "why": "今日から、一切口にしない"
+      },
+      {
+       "claim": "水",
+       "ok": true,
+       "why": "水だけは飲めることにする"
+      }
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "D01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C05",
+   "line_id": "L05",
+   "section": "rules",
+   "narration": "人に何も食べさせない実験は、危険なので行えません。だからこの先は、医師が見守った記録、過去の研究、そして歴史上の出来事から読み解いていきます。",
+   "purpose": "手がかりの3種類",
+   "subject": "手がかりの3種類",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "医師が見守った記録",
+       ""
+      ],
+      [
+       "過去の研究",
+       ""
+      ],
+      [
+       "歴史上の出来事",
+       ""
+      ]
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "A01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C06",
+   "line_id": "L06",
+   "section": "rules",
+   "narration": "絶対に真似しないでください。この動画は、医学的な助言ではありません。",
+   "purpose": "注意：真似しない・医学的助言ではない",
+   "subject": "注意：真似しない・医学的助言ではない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "絶対に真似しないでください",
+     "subtitle": "この動画は、医学的な助言ではありません"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C07",
+   "line_id": "L07",
+   "section": "day1",
+   "narration": "最後の食事から、数時間。体はまず、肝臓にためておいた糖、グリコーゲンを取り崩します。",
+   "purpose": "肝臓の糖を取り崩す",
+   "subject": "肝臓の糖を取り崩す",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "gauge",
+    "params": {
+     "title": "肝臓の糖（グリコーゲン）を取り崩す",
+     "tanks": [
+      {
+       "label": "肝臓の糖",
+       "from": 1.0,
+       "to": 0.7,
+       "color": "amber"
+      }
+     ],
+     "note": "イメージ図"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C08",
+   "line_id": "L08",
+   "section": "day1",
+   "narration": "血液の中の糖を、一定に保つ。最初の24時間、その主役は肝臓です。",
+   "purpose": "最初の24時間の主役は肝臓",
+   "subject": "最初の24時間の主役は肝臓",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "countdown",
+    "params": {
+     "start": 0,
+     "end": 24,
+     "unit": "時間",
+     "label": "血液の糖を保つ主役：肝臓",
+     "color": "amber"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C09",
+   "line_id": "L09",
+   "section": "day1",
+   "narration": "でも、その蓄えは多くありません。およそ1日で、ほぼ空になります。もっと早いという見方もあります。",
+   "purpose": "約1日でほぼ空",
+   "subject": "約1日でほぼ空",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "gauge",
+    "params": {
+     "title": "およそ1日で、ほぼ空に",
+     "tanks": [
+      {
+       "label": "肝臓の糖",
+       "from": 0.7,
+       "to": 0.03,
+       "color": "amber"
+      }
+     ],
+     "note": "イメージ図・もっと早いという見方もある"
+    }
+   },
+   "science_notes": "C01は一部確認：10〜18時間とする資料もあるため「もっと早いという見方」をnoteで表示",
+   "claim_ids": [
+    "C01"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C10",
+   "line_id": "L10",
+   "section": "day1",
+   "narration": "蓄えが尽きると、体は別の材料から糖を作り始めます。そのひとつが、筋肉などのたんぱく質を分解して生まれる、アミノ酸です。",
+   "purpose": "たんぱく質から糖を作る",
+   "subject": "たんぱく質から糖を作る",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "アミノ酸",
+       "label": "筋肉などのたんぱく質から"
+      },
+      {
+       "value": "糖",
+       "label": "体の中で作る"
+      }
+     ],
+     "joiner": "→"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C02"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C11",
+   "line_id": "L11",
+   "section": "day1",
+   "narration": "脂肪から取り出されるグリセロールや、乳酸も、糖の材料として使われます。",
+   "purpose": "糖の材料",
+   "subject": "糖の材料",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "アミノ酸",
+       "たんぱく質から"
+      ],
+      [
+       "グリセロール",
+       "脂肪から"
+      ],
+      [
+       "乳酸",
+       ""
+      ]
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C02"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C12",
+   "line_id": "L12",
+   "section": "day2_3",
+   "narration": "2日目、3日目。体の中で、燃料の切り替えが進みます。",
+   "purpose": "燃料の切り替えが進む",
+   "subject": "燃料の切り替えが進む",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "timeline",
+    "params": {
+     "title": "燃料の切り替えが進む",
+     "ticks": [
+      "1日目",
+      "2日目",
+      "3日目",
+      "1週間",
+      "数週間"
+     ],
+     "highlight": [
+      1,
+      2
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C06"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C13",
+   "line_id": "L13",
+   "section": "day2_3",
+   "narration": "脂肪から、ケトン体という物質が作られ、エネルギーとして使われ始めるのです。",
+   "purpose": "脂肪からケトン体",
+   "subject": "脂肪からケトン体",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "脂肪",
+       "label": "から作られる"
+      },
+      {
+       "value": "ケトン体",
+       "label": "エネルギーとして使われる"
+      }
+     ],
+     "joiner": "→"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C06"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C14",
+   "line_id": "L14",
+   "section": "day2_3",
+   "narration": "1994年の研究では、3日半の断食のあと、脳のエネルギーのおよそ4分の1を、このケトン体がまかなっていました。",
+   "purpose": "脳のエネルギー約1/4がケトン体",
+   "subject": "脳のエネルギー約1/4がケトン体",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "donut",
+    "params": {
+     "title": "脳のエネルギー（3日半の断食のあと）",
+     "center": "脳",
+     "slices": [
+      {
+       "label": "ケトン体",
+       "from": 0,
+       "to": 1,
+       "text": "約4分の1"
+      },
+      {
+       "label": "ブドウ糖など",
+       "from": 1,
+       "to": 3
+      }
+     ],
+     "note": "Hasselbalch ほか 1994"
+    }
+   },
+   "science_notes": "C03：9人・3.5日の断食。円グラフは「約4分の1」のみが実数。",
+   "claim_ids": [
+    "C03"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C15",
+   "line_id": "L15",
+   "section": "day2_3",
+   "narration": "脳は糖しか使えない、と思われがちです。でも実際には、3日目にはもう、新しい燃料に適応し始めていたのです。",
+   "purpose": "脳は糖しか使えない？",
+   "subject": "脳は糖しか使えない？",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "脳は糖しか使えない？",
+     "rows": [
+      {
+       "claim": "脳は糖しか使えない",
+       "ok": false,
+       "why": "3日目には、新しい燃料に適応し始めていた"
+      }
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C03"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C16",
+   "line_id": "L16",
+   "section": "weeks",
+   "narration": "1週間、そして数週間。",
+   "purpose": "1週間、数週間",
+   "subject": "1週間、数週間",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "timeline",
+    "params": {
+     "title": "1週間、そして数週間",
+     "ticks": [
+      "1日目",
+      "2日目",
+      "3日目",
+      "1週間",
+      "数週間"
+     ],
+     "travel": true
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C17",
+   "line_id": "L17",
+   "section": "weeks",
+   "narration": "1967年の研究では、5週間から6週間断食した人の脳で、ケトン体が、ブドウ糖に代わる主な燃料になっていました。",
+   "purpose": "5〜6週間で主な燃料に",
+   "subject": "5〜6週間で主な燃料に",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "5〜6週間",
+       "label": "断食した人の脳では"
+      },
+      {
+       "value": "ケトン体",
+       "label": "ブドウ糖に代わる主な燃料"
+      }
+     ],
+     "joiner": "→"
+    }
+   },
+   "science_notes": "比率は出さない（「3分の2」は要確認のため不使用）",
+   "claim_ids": [
+    "C04"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C18",
+   "line_id": "L18",
+   "section": "weeks",
+   "narration": "調べられたのは、医師の管理のもとで断食していた、3人の患者です。",
+   "purpose": "患者3人",
+   "subject": "患者3人",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "3人",
+       "label": "医師の管理のもとで断食した患者"
+      }
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C04"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C19",
+   "line_id": "L19",
+   "section": "weeks",
+   "narration": "この切り替えには、意味があると考えられています。脳が糖ばかり求め続けると、体はその材料として、筋肉を削り続けることになるからです。",
+   "purpose": "筋肉を削るペース",
+   "subject": "筋肉を削るペース",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "gauge",
+    "params": {
+     "title": "筋肉の減り方（考えられている仕組み）",
+     "tanks": [
+      {
+       "label": "糖ばかり求める",
+       "from": 1.0,
+       "to": 0.25,
+       "color": "red"
+      },
+      {
+       "label": "ケトン体を使う",
+       "from": 1.0,
+       "to": 0.7,
+       "color": "green"
+      }
+     ],
+     "note": "イメージ図（数値ではありません）"
+    }
+   },
+   "science_notes": "C07は推論。ゲージはイメージ図で数値なし。",
+   "claim_ids": [
+    "C07"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C20",
+   "line_id": "L20",
+   "section": "weeks",
+   "narration": "この仕組みを長く研究したケーヒル博士は、脳がケトン体を使えることが、人が長い飢えを生き延びられる理由だと述べています。",
+   "purpose": "ケーヒル博士",
+   "subject": "ケーヒル博士",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "脳がケトン体を使えること",
+     "subtitle": "それが、長い飢えを生き延びられる理由\n— ケーヒル博士"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C05"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C21",
+   "line_id": "L21",
+   "section": "weeks",
+   "narration": "それでも、蓄えには限りがあります。たんぱく質の分解が進むと、体を形づくる大切なたんぱく質まで壊れ、臓器がうまく働かなくなっていきます。",
+   "purpose": "蓄えには限りがある",
+   "subject": "蓄えには限りがある",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "たんぱく質の分解",
+       "進んでいく"
+      ],
+      [
+       "大切なたんぱく質",
+       "まで壊れる"
+      ],
+      [
+       "臓器",
+       "うまく働かなくなる"
+      ]
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C06"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C22",
+   "line_id": "L22",
+   "section": "limit",
+   "narration": "では、人は何日もつのでしょうか。",
+   "purpose": "問い：何日もつ",
+   "subject": "問い：何日もつ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "人は、何日もつ？",
+     "mode": "question"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [],
+   "entities": []
+  },
+  {
+   "id": "C23",
+   "line_id": "L23",
+   "section": "limit",
+   "narration": "1981年、北アイルランドの刑務所で、ハンガーストライキが行われました。亡くなった10人が食べ物を断っていた期間は、46日から73日でした。",
+   "purpose": "1981年のハンスト 46〜73日",
+   "subject": "1981年のハンスト 46〜73日",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "timeline",
+    "params": {
+     "title": "1981年 北アイルランド（亡くなった10人）",
+     "ticks": [
+      "断食の開始",
+      "46日",
+      "66日",
+      "73日"
+     ],
+     "highlight": [
+      1,
+      3
+     ]
+    }
+   },
+   "science_notes": "C08（CAIN）。Peel 1997の45〜61日は不使用。刑務所の映像は使わない。",
+   "claim_ids": [
+    "C08"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C24",
+   "line_id": "L24",
+   "section": "limit",
+   "narration": "最初に亡くなったボビー・サンズは、66日目でした。",
+   "purpose": "66日目",
+   "subject": "66日目",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "countdown",
+    "params": {
+     "start": 0,
+     "end": 66,
+     "unit": "日目",
+     "label": "最初に亡くなったボビー・サンズ",
+     "color": "red"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C08"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C25",
+   "line_id": "L25",
+   "section": "limit",
+   "narration": "最も短かった46日の人は、終わりのころ、水も受けつけなくなっていたと伝えられています。",
+   "purpose": "46日の人",
+   "subject": "46日の人",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "46日",
+       "最も短かった人"
+      ],
+      [
+       "終わりのころ",
+       "水も受けつけなくなった"
+      ]
+     ]
+    }
+   },
+   "science_notes": "C09は一部確認（「伝えられています」）。",
+   "claim_ids": [
+    "C09"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C26",
+   "line_id": "L26",
+   "section": "limit",
+   "narration": "何日もつかは、体の蓄え、水分、健康状態によって大きく変わります。ひとつの数字で言うことは、できません。",
+   "purpose": "ひとつの数字では言えない",
+   "subject": "ひとつの数字では言えない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "ひとつの数字では、言えない",
+     "subtitle": "体の蓄え・水分・健康状態で大きく変わる"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C10"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C27",
+   "line_id": "L27",
+   "section": "refeeding",
+   "narration": "そして、もうひとつの危険があります。それは、もう一度食べ始めるときです。",
+   "purpose": "もうひとつの危険",
+   "subject": "もうひとつの危険",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "particles",
+    "params": {
+     "density": 1.2,
+     "label": "もうひとつの危険は、食べ始めるとき"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C11"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C28",
+   "line_id": "L28",
+   "section": "refeeding",
+   "narration": "長く飢えたあとに急に栄養が入ると、血液の中のリンやカリウム、マグネシウムが、急に足りなくなることがあります。飢えた体では、もともとこれらが減っているからです。リフィーディング症候群と呼ばれ、命にかかわることもあります。",
+   "purpose": "血液中のリン・カリウム・マグネシウム",
+   "subject": "血液中のリン・カリウム・マグネシウム",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "gauge",
+    "params": {
+     "title": "血液の中で、急に足りなくなる",
+     "tanks": [
+      {
+       "label": "リン",
+       "from": 0.55,
+       "to": 0.1,
+       "color": "cyan"
+      },
+      {
+       "label": "カリウム",
+       "from": 0.55,
+       "to": 0.14,
+       "color": "amber"
+      },
+      {
+       "label": "マグネシウム",
+       "from": 0.55,
+       "to": 0.16,
+       "color": "green"
+      }
+     ],
+     "note": "イメージ図（数値ではありません）"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C11",
+    "C12"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C29",
+   "line_id": "L29",
+   "section": "refeeding",
+   "narration": "飢えで弱った心臓に負担がかかり、心不全や不整脈につながることがあるのです。",
+   "purpose": "弱った心臓に負担",
+   "subject": "弱った心臓に負担",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "弱った心臓",
+       "label": "負担がかかる"
+      },
+      {
+       "value": "心不全",
+       "label": "不整脈につながることも"
+      }
+     ],
+     "joiner": "→"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C12"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C30",
+   "line_id": "L30",
+   "section": "refeeding",
+   "narration": "この危険は、第二次世界大戦のあと、長い飢えから解放された捕虜や収容所の人たちが、食事を再開したときに知られるようになりました。",
+   "purpose": "第二次世界大戦のあと",
+   "subject": "第二次世界大戦のあと",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "第二次世界大戦のあと",
+     "subtitle": "長い飢えのあと、食事を再開したときに知られた"
+    }
+   },
+   "science_notes": "C13は一部確認。収容所・捕虜の写実的な映像や年号カードは使わない。",
+   "claim_ids": [
+    "C13"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C31",
+   "line_id": "L31",
+   "section": "refeeding",
+   "narration": "だから医療の現場では、飢えた体に栄養を戻すときこそ、時間をかけて、慎重に見守ります。",
+   "purpose": "医療ではゆっくり",
+   "subject": "医療ではゆっくり",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "栄養を戻すときこそ",
+     "rows": [
+      {
+       "claim": "急に栄養を戻す",
+       "ok": false,
+       "why": ""
+      },
+      {
+       "claim": "時間をかけて、慎重に見守る",
+       "ok": true,
+       "why": "医療の現場で"
+      }
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C12"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C32",
+   "line_id": "L32",
+   "section": "mind",
+   "narration": "飢えは、心も変えていきます。",
+   "purpose": "飢えと心",
+   "subject": "飢えと心",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "飢えは、心も変えていく"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C15"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C33",
+   "line_id": "L33",
+   "section": "mind",
+   "narration": "1944年からアメリカで行われた実験では、36人の健康な若い男性が、およそ半年のあいだ、それまでの半分ほどの食事で過ごしました。",
+   "purpose": "1944年 36人",
+   "subject": "1944年 36人",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "1944年",
+       "label": "アメリカで始まった実験"
+      },
+      {
+       "value": "36人",
+       "label": "健康な若い男性"
+      }
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C14"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C34",
+   "line_id": "L34",
+   "section": "mind",
+   "narration": "彼らは、食べ物のことばかり考えるようになりました。料理の本やメニューを夜通し読む人もいて、落ち込みやいらいらも強くなったと記録されています。",
+   "purpose": "心の変化",
+   "subject": "心の変化",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "食べ物のことばかり",
+       ""
+      ],
+      [
+       "料理の本を夜通し",
+       ""
+      ],
+      [
+       "落ち込み・いらいら",
+       ""
+      ]
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C15"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C35",
+   "line_id": "L35",
+   "section": "mind",
+   "narration": "体の力や持久力も、落ちていきました。",
+   "purpose": "体の力も落ちた",
+   "subject": "体の力も落ちた",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "gauge",
+    "params": {
+     "title": "体の力や持久力も、落ちていった",
+     "tanks": [
+      {
+       "label": "体の力",
+       "from": 0.9,
+       "to": 0.45,
+       "color": "cyan"
+      },
+      {
+       "label": "持久力",
+       "from": 0.9,
+       "to": 0.4,
+       "color": "amber"
+      }
+     ],
+     "note": "イメージ図（数値ではありません）"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C15"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C36",
+   "line_id": "L36",
+   "section": "mind",
+   "narration": "何も食べないのではありません。半分に減らしただけで、です。",
+   "purpose": "半分にしただけ",
+   "subject": "半分にしただけ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "donut",
+    "params": {
+     "title": "何も食べないのではなく、半分に",
+     "center": "食事",
+     "slices": [
+      {
+       "label": "食べた分",
+       "from": 1,
+       "to": 1
+      },
+      {
+       "label": "減らした分",
+       "from": 0,
+       "to": 1
+      }
+     ],
+     "note": "イメージ図・およそ半分"
+    }
+   },
+   "science_notes": "カロリーの数字は出さない。",
+   "claim_ids": [
+    "C14"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C37",
+   "line_id": "L37",
+   "section": "record",
+   "narration": "では、最初にお話しした382日の男性に戻りましょう。",
+   "purpose": "382日の男性へ：1960年代の病院の廊下（人物なし）",
+   "subject": "382日の男性へ：1960年代の病院の廊下（人物なし）",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "push_in",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "image",
+   "prompt": "A long empty hospital corridor in HOSPITAL_1960S, no people, soft daylight falling through the tall windows onto the polished floor in long bright rectangles, dust drifting in the light, slow push-in down the corridor, calm, still, realistic",
+   "diagram": null,
+   "science_notes": "AI画像。実在の人物・顔は出さない。文字なし。",
+   "claim_ids": [],
+   "entities": [
+    "HOSPITAL_1960S"
+   ]
+  },
+  {
+   "id": "C38",
+   "line_id": "L38",
+   "section": "record",
+   "narration": "1965年、スコットランド。27歳の男性が、医師の管理のもとで断食を始めました。体重は、200キロを超えていました。",
+   "purpose": "1965年 27歳",
+   "subject": "1965年 27歳",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "1965年",
+       "label": "スコットランド"
+      },
+      {
+       "value": "27歳",
+       "label": "医師の管理のもとで断食"
+      }
+     ]
+    }
+   },
+   "science_notes": "体重（200キロ超）は画面に出さない。",
+   "claim_ids": [
+    "C16",
+    "C18"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C39",
+   "line_id": "L39",
+   "section": "record",
+   "narration": "口にしたのは、水と、紅茶やコーヒーなどカロリーのほとんどない飲み物、そしてビタミンなどの補給だけ。期間は382日に及びました。",
+   "purpose": "382日",
+   "subject": "382日",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "countdown",
+    "params": {
+     "start": 0,
+     "end": 382,
+     "unit": "日",
+     "label": "口にしたのは、水・紅茶やコーヒー・ビタミンなど",
+     "color": "amber"
+    }
+   },
+   "science_notes": "カウンターの数字は382のみが実数。",
+   "claim_ids": [
+    "C16",
+    "C17"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C40",
+   "line_id": "L40",
+   "section": "record",
+   "narration": "最後の8か月、血糖値はかなり低いままでした。それでも彼は、歩いて病院に通い続けていました。",
+   "purpose": "最後の8か月",
+   "subject": "最後の8か月",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "8か月",
+       "label": "最後の期間、血糖値はかなり低いまま"
+      },
+      {
+       "value": "歩いて",
+       "label": "病院に通い続けた"
+      }
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C19"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C41",
+   "line_id": "L41",
+   "section": "record",
+   "narration": "糖が少ない中で、ケトン体が脳を支えていたと考えられます。",
+   "purpose": "ケトン体が脳を支えた",
+   "subject": "ケトン体が脳を支えた",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "number_cards",
+    "params": {
+     "cards": [
+      {
+       "value": "ケトン体",
+       "label": "糖が少ない中で"
+      },
+      {
+       "value": "脳",
+       "label": "を支えていたと考えられる"
+      }
+     ],
+     "joiner": "→"
+    }
+   },
+   "science_notes": "C21は推論。",
+   "claim_ids": [
+    "C21"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C42",
+   "line_id": "L42",
+   "section": "record",
+   "narration": "この記録は、1973年に医学雑誌で報告されています。ただしこれは、とても大きな体の蓄えがある人を、医師が検査しながら見守った、ごく特別な例です。",
+   "purpose": "ごく特別な例",
+   "subject": "ごく特別な例",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "table",
+    "params": {
+     "title": "ごく特別な例",
+     "columns": [
+      "",
+      ""
+     ],
+     "widths": [
+      0.3,
+      0.7
+     ],
+     "rows": [
+      [
+       "報告",
+       "1973年・医学雑誌"
+      ],
+      [
+       "体",
+       "とても大きな体の蓄えがあった"
+      ],
+      [
+       "見守り",
+       "医師が検査しながら見守った"
+      ]
+     ],
+     "highlight_cols": [
+      1
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C16",
+    "C18",
+    "C10"
+   ],
+   "entities": [],
+   "vertical": "fit"
+  },
+  {
+   "id": "C43",
+   "line_id": "L43",
+   "section": "record",
+   "narration": "今では、ギネス世界記録も、健康への懸念から、断食の記録への挑戦を受け付けていません。",
+   "purpose": "ギネスは受け付けない",
+   "subject": "ギネスは受け付けない",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "verdict",
+    "params": {
+     "title": "ギネス世界記録",
+     "rows": [
+      {
+       "claim": "断食の記録への挑戦",
+       "ok": false,
+       "why": "健康への懸念から、受け付けていない"
+      }
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C20"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C44",
+   "line_id": "L44",
+   "section": "ending",
+   "narration": "もしも人間が、何も食べなかったら。1日目に糖の蓄えを使い切り、3日目には脳が燃料を切り替え、数週間かけて、体は自分自身を少しずつ燃やしていきます。",
+   "purpose": "まとめ",
+   "subject": "まとめ",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "legend",
+    "params": {
+     "items": [
+      [
+       "1日目",
+       "糖の蓄えを使い切る"
+      ],
+      [
+       "3日目",
+       "脳が燃料を切り替える"
+      ],
+      [
+       "数週間",
+       "体が自分を燃やしていく"
+      ]
+     ]
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C01",
+    "C03",
+    "C06"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C45",
+   "line_id": "L45",
+   "section": "ending",
+   "narration": "そして危険は、飢えている間だけでなく、もう一度食べ始めるときにも待っています。",
+   "purpose": "危険は食べ始めるときにも",
+   "subject": "危険は食べ始めるときにも",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "particles",
+    "params": {
+     "density": 0.8,
+     "label": "危険は、もう一度食べ始めるときにも"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C11"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C46",
+   "line_id": "L46",
+   "section": "ending",
+   "narration": "脳は思っていたよりもしぶとく、そして体は、思っていたよりもずっと繊細でした。",
+   "purpose": "結論",
+   "subject": "結論",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "title",
+    "params": {
+     "title": "脳はしぶとく、体は繊細",
+     "subtitle": "思っていたよりも、ずっと"
+    }
+   },
+   "science_notes": "",
+   "claim_ids": [
+    "C03",
+    "C12"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C47",
+   "line_id": "L47",
+   "section": "ending",
+   "narration": "前回は、眠らなかったら、を考えました。眠りは、脳を掃除する時間でした。",
+   "purpose": "前回：眠らなかったら",
+   "subject": "前回：眠らなかったら",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "static",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "motion",
+   "prompt": null,
+   "diagram": {
+    "type": "night_sky",
+    "params": {
+     "forest": false,
+     "city_glow": true,
+     "milky_way": 0.3
+    }
+   },
+   "science_notes": "前回（眠らなかったら）の夜空につなぐ。文字なし。",
+   "claim_ids": [
+    "D02"
+   ],
+   "entities": []
+  },
+  {
+   "id": "C48",
+   "line_id": "L48",
+   "section": "ending",
+   "narration": "食べることは、体を毎日、少しずつ作り直す時間なのかもしれません。今日のごはんは、何でしたか。",
+   "purpose": "締め：朝の温かいごはん",
+   "subject": "締め：朝の温かいごはん",
+   "location": "",
+   "camera_angle": "",
+   "camera_motion": "pull_out",
+   "lighting": "",
+   "onscreen_text": "",
+   "asset_type": "image",
+   "prompt": "A warm Japanese breakfast on BREAKFAST_TABLE: a bowl of steaming white rice, miso soup with rising steam, grilled fish and a small dish of pickles, chopsticks resting on a holder, soft golden morning sunlight, slow pull-out revealing the whole table, bright, warm, hopeful, realistic",
+   "diagram": null,
+   "science_notes": "AI画像。実在の人物・顔は出さない。文字なし。",
+   "claim_ids": [
+    "D01"
+   ],
+   "entities": [
+    "BREAKFAST_TABLE"
+   ]
+  }
+ ]
+}
